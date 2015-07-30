@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
     if($ID)
         $userID="&ID=$ID";
@@ -19,7 +19,7 @@ require("config.php");
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
-<title><? echo $resortFull; ?></title>
+<title><?php echo $resortFull; ?></title>
 <base target="contents">
 
 </head>
@@ -28,10 +28,10 @@ require("config.php");
 <table border="0"  cellspacing="0" cellpadding="0" width="932" >
   <tr>
     <td>
-    <a href="<? echo $resortURL; ?>"><img border="0" src="<? echo $resortImg; ?>" height="90"></a>
+    <a href="<?php echo $resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" height="90"></a>
     </td>
     <td align="center">
-      <h1><? echo $resortFull; ?>&nbsp;
+      <h1><?php echo $resortFull; ?>&nbsp;
       <img border="0" src="images/cadeuc4.gif" width="32" height="33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </h1>
     </td>
@@ -55,17 +55,17 @@ require("config.php");
       <p align="center">
 
 <font size="4">
-<a class="button" target="main" href="/nspCode/MonthCalendar?resort=<? echo $resort; ?><? echo $userID; ?>">Online Schedule</a>
+<a class="button" target="main" href="/nspCode/MonthCalendar?resort=<?php echo $resort; ?><?php echo $userID; ?>">Online Schedule</a>
 &nbsp;&nbsp;
-<a class="button" target="main" href="/nspCode/ListAssignments?resort=<? echo $resort; ?><? echo $userID; ?>">My Assignments</a>
+<a class="button" target="main" href="/nspCode/ListAssignments?resort=<?php echo $resort; ?><?php echo $userID; ?>">My Assignments</a>
 &nbsp;&nbsp;
-<a class="button" target="main" href="/nspCode/SubList?resort=<? echo $resort; ?><? echo $userID; ?>">Sub List</a>
+<a class="button" target="main" href="/nspCode/SubList?resort=<?php echo $resort; ?><?php echo $userID; ?>">Sub List</a>
 &nbsp;&nbsp;
-<a class="button" target="main" href="/nspCode/UpdateInfo?resort=<? echo $resort; ?><? echo $userID; ?>">My Info</a>
+<a class="button" target="main" href="/nspCode/UpdateInfo?resort=<?php echo $resort; ?><?php echo $userID; ?>">My Info</a>
 &nbsp;&nbsp;
-<a class="button" target="main" href="/nspCode/MemberList?resort=<? echo $resort; ?><? echo $userID; ?>">Staff</a>
+<a class="button" target="main" href="/nspCode/MemberList?resort=<?php echo $resort; ?><?php echo $userID; ?>">Staff</a>
 &nbsp;&nbsp;
-<a class="button" target="main" href="/nspCode/Directors?resort=<? echo $resort; ?><? echo $userID; ?>">Supervisors</a>
+<a class="button" target="main" href="/nspCode/Directors?resort=<?php echo $resort; ?><?php echo $userID; ?>">Supervisors</a>
 </font></p>
 
     </td>

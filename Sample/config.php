@@ -1,4 +1,11 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resort="Sample";
+$resortFull = "Sample Resort";
+$resortURL  = "www.nspOnline.org";
+$resortImg  = "/images/Brighton.gif";
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

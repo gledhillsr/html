@@ -1,4 +1,4 @@
-<?
+<?php
   require("config.php");
   if($ID) {
     $szID1 = "?ID=$ID";
@@ -27,14 +27,14 @@ if (self != top)
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 <META HTTP-EQUIV="Expires" CONTENT="-1">
-<title><? echo $resort; ?> NSP</title>
+<title><?php echo $resort; ?> NSP</title>
 
 </head>
 
 <frameset rows="125,*">
-<?
+<?php
   echo "<frame name=\"banner\" scrolling=\"no\" target=\"contents\" src=\"resort_header.php$szID1\">";
-  echo "<frame name=\"main\" src=\"/nspCode/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
+  echo "<frame name=\"main\" src=\"/calendar-1/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
 ?>
   <noframes>
   <body>
