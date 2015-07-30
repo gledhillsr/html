@@ -1,0 +1,100 @@
+body {
+	background:#fff;
+	color:#000;
+}
+
+div.menubar, div.menubar a:button {
+	font: bold .9em arial,helvetica,sans-serif;
+	font-size: 14px;
+	text-decoration: none; 
+	color: #000080;
+}
+
+div.menubar {
+	background: #000080;
+	padding: 2px 2px;  /* 4px 2px; */
+	border: 2px solid;
+	border-color: #000080; /* #ff9 #777 #777 #ff9; */
+	text-align: left; /* for ie when centering */
+	text-decoration: none; 
+	text-color: white; /* new */
+}
+
+div.menubar a.button {
+	background: transparent;
+/*	border: 1px solid #fd0; */
+	cursor: default;
+	left: 0px;
+	top: 0px;
+	margin: 1px;
+	padding: 1px 4px;
+	position: relative;
+	z-index: 100;
+	color: white;
+	text-decoration: none; 
+}
+
+
+div.menubar a.button:hover {
+  background: #FF7070; /* transparent; */
+  border-color: #ff9 #993 #993 #ff9;
+  color: white;
+}
+
+div.menubar a.active,
+div.menuBar a.active:hover {
+  background: green; /* #777; */
+  border-color: #333 #ff9 #ff9 #333;
+  color: white; /* fff */
+  left: 1px;
+  top: 1px;
+}
+
+/* ---------menubar2--------- */
+div.menubar2, div.menubar2 a:button {
+	font: bold .9em arial,helvetica,sans-serif;
+	font-size: 14px;
+	text-decoration: none; 
+	color: red;
+}
+
+div.menubar2 {
+	background: #FF4040;
+	padding: 2px 2px; /* 4px 2px; */
+	border: 2px solid;
+	border-color: red; /* #ff9 #777 #777 #ff9; */
+	text-align: left; /* for ie when centering */
+	text-decoration: none; 
+	text-color: white; /* new */
+}
+
+div.menubar2 a.button {
+	background: transparent;
+/*	border: 1px solid yellow; */ /* #fd0; */
+	cursor: default;
+	left: 0px;
+	top: 0px;
+	margin: 1px;
+	padding: 1px 4px;
+	position: relative;
+	z-index: 100;
+	color: white;
+	text-decoration: none; 
+}
+
+div.menubar2 a.button:hover {
+  background: blue;
+  border-color: red; /* #ff9 #993 #993 #ff9; */
+  color: white;
+  text-decoration: none; 
+}
+
+ /* active button stuff */
+div.menubar2 a.active,
+div.menuBar2 a.active:hover {
+  background: #777;
+  border-color: #333 #ff9 #ff9 #333;
+  color: #fff;
+  left: 1px;
+  top: 1px;
+}

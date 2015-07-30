@@ -1,0 +1,135 @@
+/*
+ * DoRobot.java
+ *
+ * Created on February 28, 2003, 6:32 AM
+ */
+
+/**
+ *
+ * @author  Jim
+ */
+import java.io.*;
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class cvt2sql {
+boolean trace = false;
+boolean debug = false;
+String amt1,amt36,amt60;
+String carrier;
+String npanxx;
+    /** Creates a new instance of DoRobot */
+    public cvt2sql(String[] args) {
+        if(args.length != 1 && args.length != 22) {
+            System.out.println("Error!  Usage: java cvt2sql <directory> [<-debug> <-traceRobot>]");
+            System.exit(1);
+        }
+        String szDir = args[0];
+        if(args.length == 2) {
+//System.out.println("("+args[1].substring(0,2)+")");            
+            if(args[1].substring(0,2).equals("-d")) {
+                debug = true;
+            } else if(args[1].substring(0,2).equals("-t")) {
+                trace = true;
+			}
+        }
+        System.out.println("Using directory file: " + szDir);
+        File dr = new File(szDir);
+        if(dr == null || !dr.exists()  || !dr.isDirectory()) {
+            System.out.println("Error!  Directory: (" + szDir + ") must exist.");
+            System.exit(1);
+        }
+		//loop through all files looking for correct names
+		File[] files = dr.listFiles();
+		for(int i=0; i < files.length; ++i) {
+			String szFileName = files[i].getName();
+			if(szFileName.endsWith(".txt") && szFileName.startsWith("npanxx.")) {
+				int pos2 =szFileName.indexOf('.',8);
+				carrier = szFileName.subString(7,pos2);
+				npanxx = szFileName.subString(pos2+1,pos2+7);
+				if(parseFile(files[i]))
+					writeData();
+			}
+		}
+		
+	}
+// ---------
+	private boolean parseFile(File fh) {
+		System.out.println("processing: "+fh.getName());
+		if(!fh.canRead()) {
+			System.out.println("Error, can't read file");
+			return false;
+		}
+        RandomAccessFile inFile = null;
+		try {
+	        inFile = new RandomAccessFile(fh, "r");
+		} catch (Exception e) {}		
+		if(inFile == null) {
+			System.out.println("Error, can't open file");
+			return false;
+		}
+        String line;
+		int cnt = 0;
+		boolean found = false;
+		try {
+			while ((line = inFile.readLine())!= null) {
+		        StringTokenizer st = new StringTokenizer(line);
+		        if (st.hasMoreTokens()) {
+		            String tok = st.nextToken();
+					if(found) {
+						if(cnt++ >= 3)
+							break;
+						else {
+							//process
+			            String tok2 = st.nextToken();
+						if(tok != null && tok2 != null)
+							System.out.print(tok+"\t "+tok2);
+							//validate tokens
+							try {
+								int k = Integer.parseInt(tok);
+								//validate 1,36,60
+								if(tok2.charAt(0) == '$' &&
+									((cnt == 1 && k == 1) || (cnt == 2 && k == 36) || (cnt == 3 && k == 60))) {
+								   	//ok
+									float val = Float.parseFloat(tok2.substring(1));
+										System.out.println(" --- OK "+k+"\t"+val);
+										if(cnt == 1) 		amt1 = tok2.substring(1);
+										else if(cnt == 2)	amt36 = tok2.substring(1);
+										else if(cnt == 3)	amt60 = tok2.substring(1);
+								} else {
+									System.out.println("parse error on line:" + line);
+									return false;
+								}
+							} catch (Exception e) {
+								System.out.println("parse error on line:" + line);
+								return false;
+							}
+						}	
+					} else if(tok.equals("MO")) {
+						found = true;
+					}
+				}	
+	        }
+		} catch (Exception e) {
+			System.out.println("Oops, Exception:" + e);
+		}		
+		try {
+			inFile.close();
+		} catch (Exception e) {}		
+		return true;
+	}
+// ---------
+	private void writeData() {
+//		System.out.println("  writeData: "+amt1+" "+amt36+" "+amt60);
+		String szQuery = "INSERT INTO foo VALUES ('"+carrier+"', '"+amt36+"', '"+amt60+"') WHERE npanxx="+npanxx;
+		System.out.println(szQuery);
+//String amt1,amt36,amt60;
+	}
+// ---------
+    public static void main(String[] args) {
+        new cvt2sql(args);
+    }
+
+
+}	//end of class cvt2sql

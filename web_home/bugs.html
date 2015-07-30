@@ -1,0 +1,256 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Steve Gledhill</title>
+</head>
+
+<body>
+
+<h1 align="center">Steve Gledhill's - Ski Patrol Online Scheduling</h1>
+<table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="18%" bgcolor="#F0F0F0" align="center">Fixed</td>
+    <td width="82%" bgcolor="#F0F0F0"><b><font size="5">Change Log</font></b></td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">8 / 15 / 2004</td>
+    <td width="82%">When a Director changes a patroller ID, find and change all 
+    assignments to reflect the new ID.&nbsp; Also verify that the ID does not 
+    already exist.&nbsp; Also validate patroller ID to be between 100000 and 
+    999999</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">8 / 15 / 2004</td>
+    <td width="82%">Remove hard coded dates on some date range indicators (2006
+      was specified as end of range)</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">7 / 10 / 2004</td>
+    <td width="82%">Fix buttons for older browsers (Brighton Only)</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 15 / 2004</td>
+    <td width="82%">bug displaying &quot;Only list if less than
+    <select size="1" name="MinDays">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option selected>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+    <option>13</option>
+    <option>14</option>
+    <option>15</option>
+    <option>16</option>
+    <option>17</option>
+    <option>18</option>
+    <option>19</option>
+    <option>20</option>
+    </select> days.&quot; for days or nights on the &quot;Customized List&quot; page</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 15 / 2004</td>
+    <td width="82%">Changing ID's does NOT work (now fixed)</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 13 / 2004</td>
+    <td width="82%">Don't allow a patroller to be placed twice on the same shift 
+    assignment</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 8 / 2004</td>
+    <td width="82%">When adding or changing a patroller, verify that a first and 
+    last name exist. (causes problems in printing)</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 7 / 2004</td>
+    <td width="82%">Add capability to set font size for calendar (used for 
+    printing calendar)&nbsp; </td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 7 / 2004</td>
+    <td width="82%">Don't allow ANY emails from demo site (disable Send button)</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 7 / 2004</td>
+    <td width="82%">Add Print button on many different pages (confusing when 
+    printing within frames)</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 1 / 2004</td>
+    <td width="82%">Fix Security issue with ID cookie and wrong resort</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 1 / 2004</td>
+    <td width="82%">&quot;Closed&quot; and &quot;Not Yet Available&quot; are mixed together on 
+    April 2004 Demo site </td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">4 / 1 / 2004</td>
+    <td width="82%">Clean up directors page</td>
+  </tr>
+  <tr>
+    <td width="18%" align="center">3 / 29 / 2004</td>
+    <td width="82%">Fixed mass emailing for large groups</td>
+  </tr>
+</table>
+<table border="1" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2" cellpadding="2">
+  <tr>
+    <td width="11%" bgcolor="#F0F0F0" align="center">Reported:</td>
+    <td width="7%" bgcolor="#F0F0F0" align="center">Priority</td>
+    <td width="169%" bgcolor="#F0F0F0"><b><font size="5">Outstanding Bugs</font></b></td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">8/18/2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">on Directors &quot;Customized list&quot;, if you limit the
+      patrollers to those who &quot;have less than 'n' days&quot; of skiing,
+      when you click on &quot;email these patrollers&quot;&nbsp; it is
+      displaying all of the patrollers for the email</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">4/7/2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">fix voucher update to handle spaces in the file name. And 
+    enter date. 
+    (Brighton Only)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">bug when displaying the count of BOTH the Days &amp; Night 
+    patrolled on the customized list (Brighton Only)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">Add record locking on calendar for individual assignments 
+    (click on assignment). Can hold onto lock for 3 minutes</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">Add record locking on calendar for Directors group 
+    assignments (Click on Date). Can hold for 10 minutes.</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">small bugs in deleting assignments on days.&nbsp; Also 
+    can't delete ALL assignments for a day (template kicks in)<br>
+    -Workaround, create new assignments first. or, if no assignments wanted, 
+    make last one have 'blank' start time</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">8 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">When a director is modifying a shift template, if the
+      'Save' button was not pushed first, then changes may not be saved when the
+      New or Delete (add or remove assignment field) buttons were
+      pushed.&nbsp;&nbsp;<br>
+      Example: change the shift title, then click an &quot;Add&quot;, and the
+      shift title was now saved.<br>
+      -Workaround: click on Save, before clicking on Add or Delete.</td>
+  </tr>
+  </table>
+<table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3">
+  <tr>
+    <td width="11%" bgcolor="#F0F0F0" align="center">Reported:</td>
+    <td width="7%" bgcolor="#F0F0F0" align="center">Priority</td>
+    <td width="169%" bgcolor="#F0F0F0"><b><font size="5">Enhancement Requests</font></b></td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">4 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">On Custom Listing, show &quot;Missed Shifts&quot; (and 
+    possible dates missed?, and possible all Days, Nights, Swing, Missed)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">Add button for Directors to send out each patrollers 
+    &quot;Personal Info&quot; and/or &quot;My Assignments&quot; to that patroller. </td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">Add button for Directors to get a printout of ALL &quot;My 
+    Assignments&quot; to handout to patrollers</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">Add capability to set name display length in calendar (by 
+    directors, used 
+    for printing calendar)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">Differentiate between Day - Swing - Night shifts (any one, 
+    two, or three).&nbsp; <br>
+    Include on &quot;My Schedule&quot; &amp; &quot;Customized List&quot;</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">Allow up to 30 patrollers per shift assignment (currently 
+    only 9 allowed)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">Add &quot;Palm Pilot Download&quot; for all resorts</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">2</td>
+    <td width="169%">Add &quot;Q &amp; A&quot; section (with screen shots) for &quot;Patrollers&quot; 
+    and for &quot;Directors&quot;.&nbsp; (and have submit question button)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">Track total logins per resort, and logins per person (for 
+    Directors)</td>
+  </tr>
+  <tr>
+    <td width="11%" align="center">3 / 2004</td>
+    <td width="7%" align="center">3</td>
+    <td width="169%">Clean up Customized Lists page 
+    (for less than X days patrolled)</td>
+  </tr>
+  </table>
+<form>
+
+<!--
+<a href="http://64.32.145.130:8080/nspCode/servlet/EmailForm?resort=none&ID=xyzzy1&report=1">
+Submit Bug Report</a>
+-->
+
+  <p><br>
+
+  <a href="mailto:Steve@Gledhills.com?subject=Enhancement Request for Online Scheduling">
+  Submit Enhancement Request
+<!--  <input type="button" value="Submit Enhancement Request" name="B3"> -->
+  </a>&nbsp;&nbsp;
+  <a href="mailto:Steve@Gledhills.com?subject=Bug Report for Online Scheduling">
+  Submit Bug Report
+<!--  <input type="button" value="Submit Bug Report" name="B4"> -->
+  </a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="button" value="Return" onClick=history.back()> </p>
+</form>
+
+</body>
+
+</html>

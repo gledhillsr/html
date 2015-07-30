@@ -1,0 +1,40 @@
+<!-- The Next Generation of Genealogy Sitebuilding, v.2.7.0, Written by Darrin Lythgoe, 2001-2002 -->
+<html>
+<head>
+	<link href="genstyle.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Home Page</h1>
+
+<h2>Search for Names</h2>
+<!-- Do not change the form action or field names! -->
+<form action="search.php" method="GET">
+<table border="0" cellspacing="5" cellpadding="0">
+	<tr><td><span class="normal">Last Name: </span><br><input type="text" name="mylastname" size="14"></td></tr>
+	<tr><td><span class="normal">First Name:</span><br><input type="text" name="myfirstname" size="14"></td></tr>
+	<tr><td><input type="hidden" name="mybool" value="AND"><input type="submit" name="search" value="Search"> <input type="reset" value="Start Over"></td></tr>
+</table>
+</form>
+
+<h2>Other Features</h2>
+
+<ul>
+	<li><a href="login.php">Log In</a></li>
+	<li><a href="searchform.php">Advanced Search</a></li>
+	<li><a href="surnames.php">Surnames</a></li>
+	<li><a href="browsetrees.php">Family Trees</a></li>
+	<li><a href="browsephotos.php">Photos</a></li>
+	<li><a href="browsedocs.php">Histories & Documents</a></li>
+	<!-- In the following line, you must add the personID and tree ID of the person after the respective equal signs (=).
+		For example: "extrastree.php?personID=I123&tree=smith" -->
+	<li><a href="extrastree.php?personID=&tree=">Photos & Histories for Ancestors of [Person]</a></li>
+	<li><a href="cemeteries.php">Cemeteries & Headstones</a></li>
+	<li><a href="reports.php">Reports</a></li>
+	<li><a href="browsesources.php">Sources</a></li>
+	<li><a href="whatsnew.php">What's New</a></li>
+	<li><a href="showlog.php">Access Log</a></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!-- The Next Generation of Genealogy Sitebuilding, v.3.0.0, Written by Darrin Lythgoe, 2001-2003 -->
+<html>
+<head>
+	<link href="genstyle.css" rel="stylesheet">
+	<title>Installation Instructions</title>
+	<style>
+		TD { font-size: 10 pt; }
+		.topmenu {
+			font-family: Verdana,Arial, Helvetica, sans-serif; 
+			font-size: 9px;
+			color: #993333;
+			text-decoration : none;
+		.topmenu:Link  {text-decoration : none; color: #663300;} 
+		.topmenu:Visited  {text-decoration : none; color: #663300;} 
+		.topmenu:Active  {text-decoration : underline;}
+		.topmenu:Hover  {
+			color: #993333;
+			text-decoration : underline;
+		} 
+		
+		.topsmallest {
+			font-size: 1px;
+		}
+	</style>
+</head>
+
+<body>
+<h1>Documentation</h1>
+<br>
+<h2>Installation Instructions</h2>
+<p>Are you an expert? Try the <a href="readme-express.html">express instructions</a>. Otherwise, continue:</p>
+<ol>
+	<li><p>To start, you might want to print this document for convenience.</p></li>
+	<li><p>Extract all files to a new folder on your hard drive (since you're reading this file, you probably already did this). You can name this folder anything you'd like, 
+	but for convenience we'll call it the "genealogy" folder. Some files should extract into a subfolder called 'admin'.
+	Others will extract into a subfolder called 'English' (or whatever language your TNG came in). Some images used with this readme file will go in the 'samples' folder. 
+	These will not be needed on your web site.</p></li>
+	<li><p>To make system-wide changes to TNG's look and feel, open <em>genstyle.css</em> in a text or HTML editor, make, the changes, and save the file. This is entirely optional. If you make no changes, you'll get
+	the default color and font schemes (red & khaki). You can also try the alternate style sheet (navy & light blue) by <em>renaming genstyle2.css</em> to <em>genstyle.css</em> 
+	(backup the original first). If you don't like those, you can always repeat this step at a later time and upload the file again. For more information on style sheets, see <a href="http://www.htmlhelp.com/reference/css/" target="_blank">http://www.htmlhelp.com/reference/css/</a></p></li>
+	<li><p>Open <em>meta.html</em>, <em>topmenu.html</em> and <em>footer.html</em> in your text or HTML editor and customize them as needed. 
+	The first file (meta.html) is used in the head section of every page (in case you have Javascript, other style sheets, etc. that you want to include on the page). 
+	The next file (topmenu.html) will be included at the top of every page generated 
+	by TNG, so you might want to include your site name and/or logo, plus a menu or other navigation scheme. It also includes the &lt;BODY&gt; tag. 
+	The following is one example of what you might do in this space:
+	<hr style="color: 993333;" size="1" width="100%" align="center">
+	<center>
+		<table border="0" cellspacing="3" cellpadding="0">
+			<tr>
+				<td valign="top" ><img src="sample/Horse64.jpg" width="50" height="50"></td>
+				<td valign="bottom" ><img src="sample/FamLogo.gif" width="360" height="40" alt="family"></td>
+				<td valign="top" ><img src="sample/Horse64.jpg" width="50" height="50"></td>
+			</tr>
+		</table>
+	</center>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+	<tr><td align="center"><span class="topmenu">&nbsp;&nbsp;<b>Home</b>&nbsp;&nbsp;</span></td>
+		<td align="center"><span class="topmenu">|</span></td>
+		<td align="center"><span class="topmenu">&nbsp;<b>Search for Names</b>&nbsp;</span></td>
+		<td align="center"><span class="topmenu">|</span></td>
+		<td align="center"><span class="topmenu">&nbsp;<b>Photos</b>&nbsp;</span></td>
+		<td align="center"><span class="topmenu">|</span></td>
+		<td align="center"><span class="topmenu">&nbsp;<b>Histories</b>&nbsp;</span></td>
+		<td align="center"><span class="topmenu">|</span></td>
+		<td align="center"><span class="topmenu">&nbsp;<b>Cemeteries</b>&nbsp;</span></td>
+		<td align="center"><span class="topmenu">|</span></td>
+	</tr></table><hr style="color: 993333;" size="1" width="100%" align="center">
+	
+	The last file (footer.html) appears at the bottom of every page. It does NOT include the &lt;/BODY&gt; tag (intentional). I would ask that you
+	leave the line crediting me as the author. Once again, you can always return to this step at a later time if you're not sure what you want here yet. NOTE: You may substitute
+	other files (for example, if you wanted to use PHP code in your header, it would have to be named topmenu.php), but you must enter the new names in the appropriate fields
+	in the General Settings (see below).</p></li>
+	<li><p>On your web site, create a folder for your TNG files, much like the one you already created on your own computer. Again, we'll call it "genealogy."</p></li>
+	<li><p>Using an FTP program or similar file transfer method, publish all TNG files NOT in a subfolder of 'genealogy' to the 'genealogy' folder on your web site.</p></li>
+	<li><p>Within the 'genealogy' folder on your web site, create two subfolders called 'admin' (all lower case) and 'English' (or whatever language your TNG came in). </p></li>
+	<li><p>Also within the same 'genealogy' folder on your web site, create folders for your photos, histories and headstones (if you plan to use these features). If you wish to further subdivide those folders (i.e., by
+	surname), create those subfolders now as well. Here's an example of what your folder structure might look like, including optional subfolders:<br>	<center><img src="sample/subfolders.jpg" alt="subfolder" width="236" height="316" border="0"></center></p></li>
+	<li><p>Also create two more subfolders of 'genealogy' called 'backups' (for use later in backing up your database) and 'gendex' (if you plan to submit your data to GENDEX).</p></li>
+	<li><p>Make ALL the subfolders created in the previous two steps world-writeable (<em>chmod 755</em>, if you're using Unix/Linux commands). Here's an example of the properties box you might
+	see (NOTE: box shows 777 properties):<br><center><img src="sample/set777.jpg" width="349" height="306" alt="filetoLoadup"></center></p></li>
+	<li><p>Make <em>genlog.txt</em>, <em>config.php</em> and  <em>pedconfig.php</em> writeable (use <em>chmod 666</em>). That might look like this (read=4, write=2, execute=1 &#151; that's where the <em>chmod</em> numbers come from): 
+	<center><img src="sample/set766.jpg" width="349" height="306" alt="filetoLoadup"></center>	</p></li>
+	<li><p>Publish all files in the 'English' folder (or whatever language your TNG came in) on your computer to the new 'English' folder on your web site. If you want to support additional languages,
+		create another folder for each language. For example, you could also have a 'Spanish' and/or a 'Dutch' folder. For each additional language, make a copy of the files in the English folder, 
+		then translate the text to the new language, then upload the new files to the new language folder(s). If you do not need to translate the Administration pages into another language, the only file you will need to translate is <em>text.php</em>.
+		To allow visitors to change languages, you will also need to use the Administration page to set up records for those languages. NOTE: If you do not plan on using an 'English' folder, you will have to manually edit the config.php file and change the
+		language name there before continuing. Otherwise, no text will be visible.</p>
+		<p>One more note concerning other languages: If you are using a language other than English, you may want to edit the file 'datelib.php' in the admin folder. This file handles
+		the conversion of text dates to true dates. Near the top of that file you'll find a list of all month names, plus "BEF" (before) and "AFT" (after). Add to or translate the entries
+		you see there in order to convert dates in your language.</p></li>
+	<li><p>Publish all files in the 'admin' folder on your computer to the new 'admin' folder on your web site.</p></li>
+	<li><p>If you are not your own site administrator (you're using a hosting provider), you can skip this step. Otherwise, please make sure that your php.ini file contains the
+		following settings: register_globals = ON, short_open_tag = ON, file_uploads = ON, and error_reporting = 2039 (or any value not including E_NOTICE). If you make changes to your php.ini file,
+		you must restart your PHP service before the changes take effect.</p></li>
+	<li><p>Open your web browser and go to http://yoursite/genealogy/admin/setup.php. This is the initial setup page.</p></li>
+	<li><p>From the setup page, select "Configuration/General Settings" to set up all system variables. Edit the settings to reflect your web site's file layout, your mySQL database, and other configurables. 
+	Click on the <em>Help</em> link at the top of the page for explanations of anything you see there. NOTE on the Root Path setting: The value you see here the first time should be the correct value, so you shouldn't have to tamper with this. If you do, you can retrieve the original
+		value by blanking out the value and saving the page. You must then return to the Settings page and save it again.</p>
+	</li>
+	<li><p>Again from the setup page, select "Configuration/Pedigree Settings" to set up all pedigree chart variables. Edit the settings to reflect your web site's overall style as well as your data. An
+	extensive help file is accessible from this page to explain all options found there. You might find it necessary to return to this page several times before you are satisfied will all pedigree settings.</p></li>
+	<li><p>Next (also from the setup page), select "Create Tables" to set up the database tables. You will see a message indicating whether the operation was successful or
+	unsuccessful. If the operation did not succeed, the script is not communicating with the database. Please go back into the general configuration settings and check the database options again. NOTE: You must
+	set up your mySQL database before you can proceed with this step. Your host provider can help you with this. If you are acting as your own webmaster, be sure to also add a
+	user to your database.</p></li>
+	<li><p>Now you should set up any custom or non-standard events or attributes you'll be using. First go to the Administration page (there's a link to it at the top of the Setup page). 
+	Click on <em>People</em>, then act like you're adding a new person by clicking Continue near the top of the page. That will allow
+	you to see which fields are standard for individuals. Next, back up and do the same for Families to see which fields are standard there. Finally, back up to the Administration page and
+	choose <em>Custom Event Types</em>.</p></li>
+	<li><p>Create a new Individual or Family Event Type for each custom or non-standard Event Type you plan to use. For each Event Type, the <em>Tag</em> will be the event tag.
+	In other words, this is the text that appears next to the number 1 on a GEDCOM line (i.e., "1 OCCU", "1 EDUC" or "1 _FA3"). Custom events (as defined by desktop genealogy systems),
+	always have the tag "EVEN". In those cases, look for a subsequent GEDCOM line that starts "2 TYPE". The text immediately following goes in the "Type/Description" field. This field
+	should only be filled in for "EVEN" tags. You may set up an unlimited number of "EVEN" tags, as long as they have different Types. Next to "On Import" on the "New Event Type" screen, make sure you select "Accept" to have the data for this event 
+	accepted on import and displayed. Even if you plan to enter your data manually, choose "Accept." On the other hand, if you have any Event Types in your GEDCOM file that you
+	wish to ignore (ie, maybe you don't want "REFN" to show up), create Event Types for those anyway and choose "Ignore." You can change these settings at any time, but adding new
+	Event Types might require you to re-import your data. Data for all GEDCOM events not covered as "standard" in this application or created here by you will be ignored. However,
+	an Event Type will be created for those events (and the flag set to "Ignore").</p></li>
+	<li><p>Now go back to the Administration page and click on <em>Trees</em>. We're almost ready to input some actual data, but before we do that we need to create a Tree.
+	Click on the <em>Continue...</em> button under Add New Tree and enter the information for a new tree. The first two fields are required, but everything else is optional (see the <em>Help</em>
+	link on the Trees page for more information). Most people will only need to create one tree, but if you're planning on maintaining more than one independent GEDCOM,
+	you will need to create a new tree for each.</p></li>
+	<li><p>If you are not planning on importing any data from a GEDCOM file, skip this step. Otherwise, go back to the administration page and click on <em>Data Import</em>
+	to import your GEDCOM file. This must be in standard 5.5 or 4.0 format. Please read the <em>Help</em> file linked to from this page for detailed information about all import options.
+	If you are using multibyte characters in any part of your file (i.e., characters you can't find on a standard Western keyboard), you should
+	also be careful to use the ANSI character set when creating your file. If you are using Family Tree Maker to create your GEDCOM, be sure that the file is NOT indented.
+	When you are ready to begin the import, click on the <em>Import Data</em> button at the bottom.
+	</p> 
+	<p>If your GEDCOM file is large and fails to import, your site may have a limit on the size of uploaded files. 
+	If you cannot resolve this with your site administrator, load the GEDCOM file to the admin folder on your site using FTP (NOTE: The file must be in the admin folder, and you must use ASCII mode to transfer this file). Then proceed to import the file, leaving the first field blank (see the Help on that page for 
+	more details). If the import begins but fails before you see the "Finished" message, your web server may be killing the import to save resources for other processes. If this happens, return
+	to the Configuration General Settings (see above) and check the box labeled Save Import State before trying your import again. This time you will see a link at the top of the page that says, "If Import 
+	fails, click here to resume." Click on that link and the import will begin again at the point it failed. You might have to click this link multiple times, depending on how large your file is.</p></li>
+	<li><p>If you are planning to enter your data manually, Choose People, Families or Sources to get started. Everything should be fairly self-explanatory,
+	but all pages have associated help files you can use if you need them.</p></li>
+	<li><p>Back on the Administration page under Secondary Processes, create a GENDEX file (if desired) and trace the lines of descent within your genealogy (this places a small mark next 
+	to children in a family group who have offspring of their own, allowing users to more easily follow your lines of descent). Note on GENDEX: You will have to register the location of your 
+	GENDEX file with the GENDEX site before your data can be indexed aby GENDEX. When you register, the URL prefix will be <em>"http://yourdomain/genealogy/getperson.php?personID="</em> (no quotes).</p></li>
+	<li><p>Now it's time to add users. A "user" can be one person or many people who have the same rights. To add users, go back to the Administration page and click on <em>Users</em>.
+	You may add as many users as you like, but the first user you add MUST be an administrator (that's you). An administrator must have all possible rights (LDS is optional) and not
+	be assigned to any one tree. If you	do not create an administrator first, you may have trouble getting back here! Again, see the <em>Help</em> on this page for more information.</p>
+	<p>If you will not be setting up any users, I highly recommend that you password-protect the admin folder! If you don't, it's possible that a hacker
+	could use the pages there to damage or erase your data. Most hosting providers allow you to do this via a web-based control panel. If you don't have access to such a control panel, 
+	ask your hosting provider how to password-protect a folder. I will likely involve creating an .htaccess file. If you are unable to complete this step now, or if you don't wish to protect this folder, you can
+	proceed to the next step. Assuming you do succeed in protecting this directory, please write down your username and password and keep them handy.</p>
+	<p>NOTE: If you do not have any users set up and you enter the Admin area, TNG will consider you "logged in", and you will have access to data for living individuals through the public
+	area until you close your browser.</p>
+	</li>
+	<li><p>Use the administration pages to re-import data if necessary, and to add and manage photos, histories, headstones, reports and cemeteries as needed. See the Help on those pages for more information.</p></li>
+	<li><p>To add small photos to your pedigree charts and at the top of your individual reports, first create a small photo of the individual, preferrably no bigger than 50 pixels wide or tall.
+	Then follow the normal procedure for adding a new photo, but be sure to check the box on the Add New Photo page that says "Use this photo on pedigree charts and in name titles".</p></li>
+</ol>
+<p><strong>Note on database connections:</strong> When TNG connects to your database, it uses a "persistent" connect. Usually this is more efficient because a new connection
+does not have to be established every time you access a new page. If you are using a shared server and persistent connections are a problem, please edit the file <em>genlib.php</em>
+in a text editor and locate the function call <strong>@mysql_pconnect</strong> (near the top). Change it to say <strong>@mysql_connect</strong> (no "p") and save the file. This
+will cause your server to drop your database connection every time a script exits, eliminating any problem that might be caused by having simultaneous open connections.</p>
+<br>
+<p><a href="appendix.html">Appendix</a></p>
+</body>
+</html>

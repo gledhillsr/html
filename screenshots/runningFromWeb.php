@@ -1,0 +1,3 @@
+<?php
+$runningFromWeb=true;
+?>

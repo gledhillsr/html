@@ -1,0 +1,11 @@
+<ruleset comparisonMethod="maven"> 
+    <rules>
+    <rule groupId="org.familysearch" comparisonMethod="mercury"/> 
+<!--
+    The original version comparisonMethod by Maven 2 is called "maven".  Which only uses numeric sorting for the 
+    first 3 fields (Major,Minor,incremental), but we can use 4 fields, the last one being a build #.
+    The problem is that the 4th field is alphabetically sorted.  Which sorts a 5 later than 56.
+    The "mercury" method, will first try a numeric sorting for all fields
+-->     
+  </rules>
+</ruleset>

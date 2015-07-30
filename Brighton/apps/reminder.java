@@ -1,0 +1,249 @@
+/*
+ * reminder.java
+ *
+ * Created on January 29, 2003, 6:52 AM
+ */
+
+/**
+ *
+ * @author  Steve Gledhill
+ */
+import java.util.*;
+import java.io.*;
+import java.text.DateFormat;
+
+public class reminder {
+    int status = 0;
+    DBAccess dbAccess = null;
+    Order order;
+    Vector emailTo = new Vector();
+	static String ORDER_ON_HOLD="Order On Hold";
+/** Creates a new instance of reminder */
+    public reminder() {
+        if((dbAccess = new DBAccess(null,"tracking")) != null) {
+
+//            dbAccess.resetAgent();
+//            Agent agent;
+//            while((agent=dbAccess.nextAgent()) != null) {
+//              System.out.println(agent.getFirstName());
+//            }
+            dbAccess.resetOrder();
+            Order order;
+            String from = "Steve@Gledhills.com";
+            String smtp="mail.gledhills.com";
+			MailMan mail= new MailMan(smtp,from);
+            if(mail == null) {
+                System.out.println("Critical Error, could not connect to Mail system.  Aborting");
+                System.exit(0);
+            }
+//loop for each order            
+            String onHoldMessage = "You have an Order On Hold!";
+            String onHoldSubject = "Order on hold from OrderTracker :-) ";
+            String criticalStartMessage = "Order Critical Time Notification";
+            String criticalStartSubject = "Critical time period for order ";
+//            int curCount = 0;
+/****
+            while((order=dbAccess.nextOrder()) != null) {
+			//just read in NEW order
+                int frequency = order.getOnHoldFreq();
+                boolean validOrderOnHold = ORDER_ON_HOLD.equals(order.getStatus()) && frequency != 0;
+                boolean validCriticalPeriod = order.getCritStart() > 0;
+//System.out.println((++curCount) + ") "+order.getName()+"----");
+                if(!validOrderOnHold && !validCriticalPeriod)
+                      continue;
+                String agentList = order.getNotifyAgent();
+                StringTokenizer st = new StringTokenizer(agentList,",");
+//                int cnt = 0;
+                emailTo.clear();
+                while (st.hasMoreTokens()) {
+			    //loop for each mail recipient
+			  	String tok = st.nextToken();
+				String first,last;
+				tok = tok.trim();
+				if(tok.length() > 0) {
+					//add this person to your email list
+//					cnt++;
+					StringTokenizer fullName = new StringTokenizer(tok);
+					first = fullName.nextToken();
+					if(fullName.hasMoreTokens())
+						last = fullName.nextToken();
+					else
+						last = "";
+                  
+				  	System.out.print(order.getIndex()+") "+first+" "+last+" ");
+		            Agent agent;
+					if((agent=dbAccess.getAgent(first,last)) != null) {
+						//OK, agent exists
+						//is the due date gone by?
+//----------- status change stuff --------------------                        
+						Calendar rightNow = Calendar.getInstance();
+						int current = (int)(rightNow.getTimeInMillis() / 1000);
+						int due = order.getStatusChange();
+						due += frequency * 24 * 3600;
+                        int diffDays = ((current - due)/(3600*24));
+//System.out.println("curr="+current+", due="+due+", diff in days = "+diffDays);
+//System.out.println("send ONLY if 0: "+(diffDays % frequency)); 
+						if(validOrderOnHold && diffDays > 0 && (diffDays % frequency) == 0) {
+							System.out.print("emailing Status Change to: "+agent.getEmail());
+                        	try {
+                                mail.sendMessage(onHoldSubject, onHoldMessage, agent.getEmail());
+                                System.out.println(" Successful");
+                            } catch ( MailManException ex) {
+                                System.out.println("Failed "+ex);
+                            } //end try/catch
+						} //end if valid day to send statuc change notification
+//----------- Critical start/ Critical End stuff --------------------                        
+                        int critStart = order.getCritStart();
+                        int critEnd = order.getCriticalDate();
+                        if(!validCriticalPeriod || current < critStart || current > critEnd)
+                            continue;
+                        String str = order.getCritFreq();
+                        int critFreq = 0;
+                        try {
+                            critFreq = Integer.parseInt(str);
+                        } catch (Exception e) {
+                            System.out.println("error parsing critFreq("+str+") for "+order);
+                            continue;
+                        }
+                        diffDays = ((current - critStart + (3600*24))/(3600*24));
+//System.out.println(" diffDays="+diffDays);                        
+                        if((diffDays % critFreq) == 0) {
+							System.out.print("emailing Critical time period to: "+agent.getEmail());
+                        	try {
+                                mail.sendMessage(criticalStartSubject + order.getName(), criticalStartMessage, agent.getEmail());
+                                System.out.println(" Successful");
+                            } catch ( MailManException ex) {
+                                System.out.println("Failed "+ex);
+                            } //end try/catch
+                        }
+                        
+		            } else {
+						System.out.println(" ERROR, agent does not exist");
+					}
+				} //is this a non-blank agent to notify
+			  } //end loop for each agent
+			  if(emailTo.size() > 0) {
+System.out.println("using smtp="+smtp+" from="+from);
+//System.out.println("bye bye");
+//System.exit(0);
+//					try {
+//System.out.println("emailTo.size() = " + emailTo.size());
+//                        for(int i=0; i < emailTo.size(); ++i) {
+//                            mail.sendMessage(subject, message, (String)emailTo.elementAt(i));
+//                            System.out.println("mail sent to: "+emailTo.elementAt(i));	//no e-mail, JUST LOG IT
+//                         }
+////                        amc.setRemindDate(st);
+////                        dbAccess.updateAMC(amc);
+//					} catch ( MailManException ex) {
+//						System.out.println("error "+ex);
+//						System.out.println("attempting to send mail to: "+emailTo);	//no e-mail, JUST LOG IT
+//					} //end try/catch
+			   } //anybody to email this to
+//-------------------------------------------------------------              
+			} //end loop for each order
+**/
+System.out.println("finished processing ALL orders");
+            if(mail != null)
+                mail.close();
+            dbAccess.close();
+        } //end if
+        System.exit(status);
+    }
+
+void sendOnHold(Order order){
+
+}
+
+
+void sendCritical(Order order){
+
+}
+    /**
+     * getEmailBody
+     */
+    String getEmailBody() {
+      String message=null;
+/***
+        String users = "";
+        String userIDs = amc.getUsersNotified();
+        User user;
+        int count = 0,endPos = 0,startPos = 0;
+        //loop for all users in the Notify list
+        while(true) {
+            endPos = userIDs.indexOf(' ',endPos);
+            if(endPos == -1)
+                endPos = userIDs.length();
+            if(endPos <= startPos)
+                break;
+            String userID = userIDs.substring(startPos,endPos);
+            //convert userID to Name
+            user = dbAccess.findUser(userID);
+            String userName = user.getUserName();
+            if(user != null) {
+                if(count++ > 0) {
+                    users += ", ";
+                }
+                users += userName;
+                emailTo.add( user.getEmail());
+            }
+
+            //convert userID to e-mail
+            startPos = ++endPos;
+//System.out.println("(" + userID + ")");
+        } //end while
+    if(emailTo.equals(""))
+        return null;
+    String requestedID = amc.getRequestedBy();
+    String customerID = amc.getCustomerID();
+    Customer customer = dbAccess.findCustomer(customerID);
+    String customerName = "";
+    if(customer != null)
+        customerName = customer.getName();
+    user = dbAccess.findUser(requestedID);
+    String dat1 = UnixToDate(amc.getRequestDate());
+    String RemindDate = UnixToDate(amc.getRemindDate()); //remove the last 8 digets "hh:mm PM"
+    RemindDate = RemindDate.substring(0,RemindDate.length()-8);
+    message= "=============Add, Move, or Change Request:===========\n\n---Past Due---\n"
+        + "\nBTN:                  " + amc.getBTN()
+        + "\nService:              " + amc.getService()
+        + "\nInitial Request by:   " + user.getUserName()
+        + "\nInitial Request date: " + UnixToDate(amc.getRequestDate())
+        + "\nInstructions:         " + amc.getInstructions()
+        + "\nResponse:             " + amc.getResponse()
+        + "\nOrder Number:         " + amc.getOrderNum()
+        + "\nRemindDate:              " + RemindDate
+        + "\nStatus:               " + amc.getStatus()
+        + "\nLast Modified Date:   " + UnixToDate(amc.getLastModified())
+        + "\nCustomer:             " + customerName
+        + "\nNotify List:          " + users;
+ ****/
+        return message;
+    }
+
+    /**
+     ** UnixToDate
+     ***/
+    String UnixToDate(String seconds) {
+        long millis;
+        if(seconds.charAt(0) == '-')
+            return "";
+        DateFormat dt = DateFormat.getDateTimeInstance(DateFormat.LONG ,DateFormat.SHORT);
+        Date myDate = new Date();
+        //convert string to long
+        try {
+            millis = Long.parseLong(seconds);
+        } catch (Exception e) {
+            return "";
+        }
+        millis *= 1000; //convert Unix (seconds) to Java (milli-seconds)
+        myDate.setTime(millis); //build a Date object
+        return dt.format(myDate);   //format
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        new reminder();
+    }
+
+}

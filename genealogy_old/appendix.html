@@ -1,0 +1,270 @@
+<!-- The Next Generation of Genealogy Sitebuilding, v.2.7.0, Written by Darrin Lythgoe, 2001-2002 -->
+<html>
+<head>
+	<link href="genstyle.css" rel="stylesheet">
+	<title>Appendix</title>
+</head>
+
+<body>
+<h1>Appendix</h1>
+<br>
+<h2>Description of Files</h2>
+<table cellspacing="4">
+	<tr><td valign="top" colspan="2"><b>Configuration Pages</b></td></tr>
+	<tr><td valign="top">config.php</td><td valign="top">Database and other settings. You need to customize this before anything will work.</td></tr>
+	<tr><td valign="top">footer.html</td><td valign="top">HTML to be included at the bottom of each page. Blank to start with except for some text crediting me as the author of TNG. You may use a different file, but you must specify the new file in the General Settings.</td></tr>
+	<tr><td valign="top">genlog.txt</td><td valign="top">Contains raw log data (starts empty). Must be made writeable (chmod 766).</td></tr>
+	<tr><td valign="top">genstyle.css</td><td valign="top">Contains font face, size and color information for various text types and background areas. 
+		You can customize this if you know enough about style sheets. Otherwise, leave this page alone.</td></tr>
+	<tr><td valign="top">genstyle2.css</td><td valign="top">An alternate style sheet. Rename to genstyle.css before using.</td></tr>
+	<tr><td valign="top">meta.html</td><td valign="top">For HTML or scripting language to be included in the HEAD section of each page. Blank to start with. Customization is optional. You may use a different file, but you must specify the new file in the General Settings.</td></tr>
+	<tr><td valign="top">pedconfig.php</td><td valign="top">Settings for the pedigree charts. You will likely want to customize these in order to more closely integrate the charts with
+		the rest of your site..</td></tr>
+	<tr><td valign="top">topmenu.html</td><td valign="top">HTML to be included at top of each page. Blank to start with except for the &lt;BODY&gt; tag. I recommend you put your site navigation here. You may use a different file, but you must specify the new file in the General Settings.</td></tr>
+	<tr>
+		<td valign="top" colspan="2">&nbsp;</td>
+	</tr>
+	<tr><td valign="top" colspan="2"><b>Public Pages You Might Want to Link To</b></td></tr>
+	<tr><td valign="top">browsedocs.php</td><td valign="top">Displays a list of all histories.</td></tr>
+	<tr><td valign="top">browsephotos.php</td><td valign="top">Displays a list of all photos.</td></tr>
+	<tr><td valign="top">browsesources.php</td><td valign="top">Displays a list of all sources.</td></tr>
+	<tr><td valign="top">browsetrees.php</td><td valign="top">Displays a list of all trees.</td></tr>
+	<tr><td valign="top">headstones.php</td><td valign="top">Displays list of all cemeteries (lets you drill down to find headstones).</td></tr>
+	<tr><td valign="top">login.php</td><td valign="top">Prompts user to log in.</td></tr>
+	<tr><td valign="top">index.html</td><td valign="top">Your very basic home page (just in case you don't have one), with links to all the pages in this section. Please make it better!!</td></tr>
+	<tr><td valign="top">reports.php</td><td valign="top">Displays a list of all active reports.</td></tr>
+	<tr><td valign="top">searchform.php</td><td valign="top">Search page to locate individuals.</td></tr>
+	<tr><td valign="top">showlog.php</td><td valign="top">Shows most recently logged actions.</td></tr>
+	<tr><td valign="top">surnames.php</td><td valign="top">Shows all surnames in the database (first letters only), plus some other interesting stats.</td></tr>
+	<tr><td valign="top">whatsnew.php</td><td valign="top">Report of new individuals, families, photos, histories and headstones.</td></tr>
+	<tr>
+		<td valign="top" colspan="2">&nbsp;</td>
+	</tr>
+	<tr><td valign="top" colspan="2"><b>Public Pages That Take Care of Themselves<br>(they do plenty of work, but you don't need to link to them)</b></td></tr>
+	<tr><td valign="top">begin.php</td><td valign="top">Wrapper for including config.php.</td></tr>
+	<tr><td valign="top">browserinfo.php</td><td valign="top">Determines the client's browser (used with the pedigree chart).</td></tr>
+	<tr><td valign="top">changelanguage.php</td><td valign="top">Displays a list of all languages you've set up and allows visitors to select their preference.</td></tr>
+	<tr><td valign="top">checklogin.php</td><td valign="top">Behind-the-scenes check done on every page to see if user has logged in or not.</td></tr>
+	<tr><td valign="top">descend.php</td><td valign="top">Displays descendancy chart for <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">desctracker.php</td><td valign="top">Displays a graphical descendancy chart for a line of descent defined in descend.php.</td></tr>
+	<tr><td valign="top">end.php</td><td valign="top">Includes code to end each page.</td></tr>
+	<tr><td valign="top">extrastree.php</td><td valign="top">Displays a list of all ancestors (where <i>person=###</i>) who have associated photos or histories.</td></tr>
+	<tr><td valign="top">familygroup.php</td><td valign="top">Displays a family group sheet, where <em>familyID=###</em>.</td></tr>
+	<tr><td valign="top">functions.php</td><td valign="top">Miscellaneous functions.</td></tr>
+	<tr><td valign="top">gedcom.php</td><td valign="top">Creates GEDCOM for download.</td></tr>
+	<tr><td valign="top">gedform.php</td><td valign="top">Form to request a GEDCOM file to download.</td></tr>
+	<tr><td valign="top">getextras.php</td><td valign="top">Displays individual information, photos & histories first, where <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">genlib.php</td><td valign="top">Contains database, header, footer and menu functions.</td></tr>
+	<tr><td valign="top">getlang.php</td><td valign="top">Contains language preference functions.</td></tr>
+	<tr><td valign="top">getperson.php</td><td valign="top">Displays individual information, data first, where <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">log.php</td><td valign="top">Logs actions to the log file (<em>genlog.txt</em>).</td></tr>
+	<tr><td valign="top">pedigree.php</td><td valign="top">Displays a graphical pedigree chart for an individual, where <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">pedigreetext.php</td><td valign="top">Displays a text-only pedigree chart for an individual, where <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">processlogin.php</td><td valign="top">Processes username and password entered by a user, performs login.</td></tr>
+	<tr><td valign="top">register.php</td><td valign="top">Displays a modified register descendancy report for an individual, where <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">savelanguage.php</td><td valign="top">Saves the visitor's language preference.</td></tr>
+	<tr><td valign="top">savelanguage2.php</td><td valign="top">Saves the visitor's language preference and returns them to the previous page.</td></tr>
+	<tr><td valign="top">search.php</td><td valign="top">Searches for and displays summaries for individuals who match the criteria entered in <em>searchform.php</em>.</td></tr>
+	<tr><td valign="top">showheadstone.php</td><td valign="top">Shows a headstone and/or map (if available), where <em>personID=###</em>.</td></tr>
+	<tr><td valign="top">showmap.php</td><td valign="top">Shows map of a cemetery, where <em>cemeteryID=###</em>.</td></tr>
+	<tr><td valign="top">showphoto.php</td><td valign="top">Shows a photo, where <em>(personID=###</em> AND ordernum=###) OR photoID=###.</td></tr>
+	<tr><td valign="top">showreport.php</td><td valign="top">Shows a report, where <em>reportID=###</em>.</td></tr>
+	<tr><td valign="top">showtree.php</td><td valign="top">Shows detail for a tree, where <em>treeID=###</em>.</td></tr>
+	<tr><td valign="top">surnames100.php</td><td valign="top">Shows the top # surnames (ordered by occurence), where <em>topnum=#</em>.</td></tr>
+	<tr><td valign="top">surnames-all.php</td><td valign="top">Shows all surnames in the database.</td></tr>
+	<tr><td valign="top">surnames-oneletter.php</td><td valign="top">Shows all surnames beginning with a given character (passed from surnames.php).</td></tr>
+	<tr><td valign="top">version.php</td><td valign="top">Contains current version information.</td></tr>
+	<tr>
+		<td valign="top" colspan="2">&nbsp;</td>
+	</tr>
+	<tr><td valign="top" colspan="2"><b>Administration Pages<br>(must go in the 'admin' folder)</b></td></tr>
+	<tr><td valign="top">addcemetery.php</td><td valign="top">Adds new cemetery record to the database.</td></tr>
+	<tr><td valign="top">addcitation.php</td><td valign="top">Adds new citation record to the database.</td></tr>
+	<tr><td valign="top">addentity.php</td><td valign="top">Adds new state or country (for cemetery locations) to the database.</td></tr>
+	<tr><td valign="top">addevent.php</td><td valign="top">Adds new event record to the database.</td></tr>
+	<tr><td valign="top">addeventtype.php</td><td valign="top">Adds new event type record to the database.</td></tr>
+	<tr><td valign="top">addfamily.php</td><td valign="top">Adds new family record to the database.</td></tr>
+	<tr><td valign="top">addheadstone.php</td><td valign="top">Adds new headstone record to the database.</td></tr>
+	<tr><td valign="top">addhistory.php</td><td valign="top">Adds new history record to the database, links it to individual(s).</td></tr>
+	<tr><td valign="top">addlanguage.php</td><td valign="top">Adds new language record to the database.</td></tr>
+	<tr><td valign="top">addnote.php</td><td valign="top">Adds new note record to the database.</td></tr>
+	<tr><td valign="top">addperson.php</td><td valign="top">Adds new individual record to the database.</td></tr>
+	<tr><td valign="top">addperson2.php</td><td valign="top">Adds new individual record to the database (short form).</td></tr>
+	<tr><td valign="top">addphoto.php</td><td valign="top">Adds new photo record to the database, links it to individual(s).</td></tr>
+	<tr><td valign="top">addreport.php</td><td valign="top">Adds new report record to the database.</td></tr>
+	<tr><td valign="top">addsource.php</td><td valign="top">Adds new source record to the database.</td></tr>
+	<tr><td valign="top">addtree.php</td><td valign="top">Adds new tree record to the database.</td></tr>
+	<tr><td valign="top">adduser.php</td><td valign="top">Adds new user record to the database.</td></tr>
+	<tr><td valign="top">adminlib.php</td><td valign="top">Contains database, header functions.</td></tr>
+	<tr><td valign="top">backup.php</td><td valign="top">Creates a backup file of a database table.</td></tr>
+	<tr><td valign="top">backuprestore.php</td><td valign="top">Select a table to back up or restore.</td></tr>
+	<tr><td valign="top">cemeteries.php</td><td valign="top">Cemetery administration page.</td></tr>
+	<tr><td valign="top">checkID.php</td><td valign="top">Utility that checks to see if an ID is unique.</td></tr>
+	<tr><td valign="top">checklogin.php</td><td valign="top">Behind-the-scenes check done on every page to see if user has logged in or not.</td></tr>
+	<tr><td valign="top">citations.php</td><td valign="top">Displays citations for a selected event.</td></tr>
+	<tr><td valign="top">dataimport.php</td><td valign="top">Begins a GEDCOM import.</td></tr>
+	<tr><td valign="top">datelib.php</td><td valign="top">Text date-to-true date conversion functions.</td></tr>
+	<tr><td valign="top">deletecemetery.php</td><td valign="top">Deletes a cemetery record.</td></tr>
+	<tr><td valign="top">deletecitation.php</td><td valign="top">Deletes a citation record.</td></tr>
+	<tr><td valign="top">deleteentity.php</td><td valign="top">Deletes a state or country (cemetery locations).</td></tr>
+	<tr><td valign="top">deleteevent.php</td><td valign="top">Deletes an event record.</td></tr>
+	<tr><td valign="top">deleteeventtype.php</td><td valign="top">Deletes an event type record.</td></tr>
+	<tr><td valign="top">deletefamily.php</td><td valign="top">Deletes a family record.</td></tr>
+	<tr><td valign="top">deleteheadstone.php</td><td valign="top">Deletes a headstone record.</td></tr>
+	<tr><td valign="top">deletehistory.php</td><td valign="top">Deletes a history record.</td></tr>
+	<tr><td valign="top">deletelanguage.php</td><td valign="top">Deletes a language record.</td></tr>
+	<tr><td valign="top">deletenote.php</td><td valign="top">Deletes a note record.</td></tr>
+	<tr><td valign="top">deleteperson.php</td><td valign="top">Deletes a person record.</td></tr>
+	<tr><td valign="top">deletephoto.php</td><td valign="top">Deletes a photo record.</td></tr>
+	<tr><td valign="top">deletereport.php</td><td valign="top">Deletes a report record.</td></tr>
+	<tr><td valign="top">deletesource.php</td><td valign="top">Deletes a source record.</td></tr>
+	<tr><td valign="top">deletetree.php</td><td valign="top">Deletes a tree record.</td></tr>
+	<tr><td valign="top">deleteuser.php</td><td valign="top">Deletes a user record.</td></tr>
+	<tr><td valign="top">editcemetery.php</td><td valign="top">Displays a cemetery record for editing.</td></tr>
+	<tr><td valign="top">editcitation.php</td><td valign="top">Displays a citation record for editing.</td></tr>
+	<tr><td valign="top">editconfig.php</td><td valign="top">Displays the values of your system variables for editing.</td></tr>
+	<tr><td valign="top">editevent.php</td><td valign="top">Displays an event record for editing.</td></tr>
+	<tr><td valign="top">editeventtype.php</td><td valign="top">Displays an event type record for editing.</td></tr>
+	<tr><td valign="top">editfamily.php</td><td valign="top">Displays a family record for editing.</td></tr>
+	<tr><td valign="top">editheadstone.php</td><td valign="top">Displays a headstone record for editing.</td></tr>
+	<tr><td valign="top">edithistory.php</td><td valign="top">Displays a history record for editing.</td></tr>
+	<tr><td valign="top">editlanguage.php</td><td valign="top">Displays a language record for editing.</td></tr>
+	<tr><td valign="top">editpedconfig.php</td><td valign="top">Displays the values of your pedigree variables for editing.</td></tr>
+	<tr><td valign="top">editperson.php</td><td valign="top">Displays a person record for editing.</td></tr>
+	<tr><td valign="top">editphoto.php</td><td valign="top">Displays a photo record for editing.</td></tr>
+	<tr><td valign="top">editreport.php</td><td valign="top">Displays a report record for editing.</td></tr>
+	<tr><td valign="top">editsource.php</td><td valign="top">Displays a source record for editing.</td></tr>
+	<tr><td valign="top">edittree.php</td><td valign="top">Displays a tree record for editing.</td></tr>
+	<tr><td valign="top">edituser.php</td><td valign="top">Displays a user record for editing.</td></tr>
+	<tr><td valign="top">eventtypes.php</td><td valign="top">Event types administration page.</td></tr>
+	<tr><td valign="top">families.php</td><td valign="top">Family administration page.</td></tr>
+	<tr><td valign="top">findcemetery.php</td><td valign="top">Displays summary of cemetery records that match search criteria.</td></tr>
+	<tr><td valign="top">findfamily.php</td><td valign="top">Displays summary of family records that match search criteria.</td></tr>
+	<tr><td valign="top">findheadstone.php</td><td valign="top">Displays summary of headstone records that match search criteria.</td></tr>
+	<tr><td valign="top">findhistory.php</td><td valign="top">Displays summary of history records that match search criteria.</td></tr>
+	<tr><td valign="top">findperson.php</td><td valign="top">Displays short summary of person records that match search criteria.</td></tr>
+	<tr><td valign="top">findperson2.php</td><td valign="top">Displays longer summary of person records that match search criteria.</td></tr>
+	<tr><td valign="top">findpersonform.php</td><td valign="top">Accepts search criteria to locate matching persons.</td></tr>
+	<tr><td valign="top">findphoto.php</td><td valign="top">Displays summary of photo records that match search criteria.</td></tr>
+	<tr><td valign="top">findsource.php</td><td valign="top">Displays summary of source records that match search criteria.</td></tr>
+	<tr><td valign="top">gedimport.php</td><td valign="top">Imports new genealogical data (individuals and marriages)</td></tr>
+	<tr><td valign="top">gedimport_families.php</td><td valign="top">Dependency of gedimport.php (handles family records).</td></tr>
+	<tr><td valign="top">gedimport_misc.php</td><td valign="top">Dependency of gedimport.php (miscellaneous functions).</td></tr>
+	<tr><td valign="top">gedimport_people.php</td><td valign="top">Dependency of gedimport.php (handles individual records).</td></tr>
+	<tr><td valign="top">gedimport_sources.php</td><td valign="top">Dependency of gedimport.php (handles source records).</td></tr>
+	<tr><td valign="top">gedimport_trees.php</td><td valign="top">Dependency of gedimport.php (handles tree-related functions).</td></tr>
+	<tr><td valign="top">generateID.php</td><td valign="top">Generates a unique person or family ID.</td></tr>
+	<tr><td valign="top">headstones.php</td><td valign="top">Headstone administration page.</td></tr>
+	<tr><td valign="top">histories.php</td><td valign="top">History administration page.</td></tr>
+	<tr><td valign="top">index.php</td><td valign="top">Main administration menu page (one of only two here you need to worry about).</td></tr>
+	<tr><td valign="top">languages.php</td><td valign="top">Language administration page.</td></tr>
+	<tr><td valign="top">login.php</td><td valign="top">Prompts a user to log in.</td></tr>
+	<tr><td valign="top">newcemetery.php</td><td valign="top">Accepts information for new cemetery record.</td></tr>
+	<tr><td valign="top">newcitation.php</td><td valign="top">Accepts information for new citation record.</td></tr>
+	<tr><td valign="top">newentity.php</td><td valign="top">Accepts information for new state or country record (cemetery locations).</td></tr>
+	<tr><td valign="top">newfamily.php</td><td valign="top">Accepts information for new family record.</td></tr>
+	<tr><td valign="top">newheadstone.php</td><td valign="top">Accepts information for new headstone record.</td></tr>
+	<tr><td valign="top">newhistory.php</td><td valign="top">Accepts information for new history record.</td></tr>
+	<tr><td valign="top">newlanguage.php</td><td valign="top">Accepts information for new language record.</td></tr>
+	<tr><td valign="top">newnote.php</td><td valign="top">Accepts information for new note record.</td></tr>
+	<tr><td valign="top">newperson.php</td><td valign="top">Accepts information for new person record.</td></tr>
+	<tr><td valign="top">newperson2.php</td><td valign="top">Accepts information for new person record (short form).</td></tr>
+	<tr><td valign="top">newphoto.php</td><td valign="top">Accepts information for new photo record.</td></tr>
+	<tr><td valign="top">newreport.php</td><td valign="top">Accepts information for new report record.</td></tr>
+	<tr><td valign="top">newsource.php</td><td valign="top">Accepts information for new source record.</td></tr>
+	<tr><td valign="top">newtree.php</td><td valign="top">Accepts information for new tree record.</td></tr>
+	<tr><td valign="top">newuser.php</td><td valign="top">Accepts information for new user record.</td></tr>
+	<tr><td valign="top">optimize.php</td><td valign="top">Optimizes a database table.</td></tr>
+	<tr><td valign="top">orderhistories.php</td><td valign="top">Displays summaries of all photo records linked to an individual for sorting.</td></tr>
+	<tr><td valign="top">orderphotos.php</td><td valign="top">Displays summaries of all history records linked to an individual for sorting.</td></tr>
+	<tr><td valign="top">orderphotos.js</td><td valign="top">Miscellaneous Javascript functions for orderphotos.php.</td></tr>
+	<tr><td valign="top">people.php</td><td valign="top">Person administration page.</td></tr>
+	<tr><td valign="top">photos.php</td><td valign="top">Photo administration page.</td></tr>
+	<tr><td valign="top">processlogin.php</td><td valign="top">Processes username and password entered by a user, performs login.</td></tr>
+	<tr><td valign="top">reports.js</td><td valign="top">Javascript routines common to new/edit report screens.</td></tr>
+	<tr><td valign="top">reports.php</td><td valign="top">Reports administration page.</td></tr>
+	<tr><td valign="top">restore.php</td><td valign="top">Restores a backed-up table.</td></tr>
+	<tr><td valign="top">secondary.php</td><td valign="top">Indicates progress of secondary data maintenance processes (GENDEX creation, tracking lines of descent)</td></tr>
+	<tr><td valign="top">second_menu.php</td><td valign="top">Menu of secondary data processes.</td></tr>
+	<tr><td valign="top">selectutils.js</td><td valign="top">Javascript routines common to several admin screens.</td></tr>
+	<tr><td valign="top">setup.php</td><td valign="top">Configuration Setup page (the other one you need to worry about).</td></tr>
+	<tr><td valign="top">sources.php</td><td valign="top">Sources administration page.</td></tr>
+	<tr><td valign="top">trees.php</td><td valign="top">Trees administration page.</td></tr>
+	<tr><td valign="top">updatecemetery.php</td><td valign="top">Saves changes to a cemetery record.</td></tr>
+	<tr><td valign="top">updatecitation.php</td><td valign="top">Saves changes to a citation record.</td></tr>
+	<tr><td valign="top">updateconfig.php</td><td valign="top">Saves changes to system variables.</td></tr>
+	<tr><td valign="top">updateevent.php</td><td valign="top">Saves changes to an event record.</td></tr>
+	<tr><td valign="top">updateeventtype.php</td><td valign="top">Saves changes to an event type record.</td></tr>
+	<tr><td valign="top">updatefamily.php</td><td valign="top">Saves changes to a family record.</td></tr>
+	<tr><td valign="top">updateheadstone.php</td><td valign="top">Saves changes to a headstone record.</td></tr>
+	<tr><td valign="top">updatehistory.php</td><td valign="top">Saves changes to a history record.</td></tr>
+	<tr><td valign="top">updatelanguage.php</td><td valign="top">Saves changes to a language record.</td></tr>
+	<tr><td valign="top">updatenote.php</td><td valign="top">Saves changes to a note record.</td></tr>
+	<tr><td valign="top">updatepedconfig.php</td><td valign="top">Saves changes to pedigree variables.</td></tr>
+	<tr><td valign="top">updateperson.php</td><td valign="top">Saves changes to a person record.</td></tr>
+	<tr><td valign="top">updatephoto.php</td><td valign="top">Saves changes to a photo record.</td></tr>
+	<tr><td valign="top">updatereport.php</td><td valign="top">Saves changes to a report record.</td></tr>
+	<tr><td valign="top">updatesource.php</td><td valign="top">Saves changes to a source record.</td></tr>
+	<tr><td valign="top">updatetree.php</td><td valign="top">Saves changes to a tree record.</td></tr>
+	<tr><td valign="top">updateuser.php</td><td valign="top">Saves changes to a user record.</td></tr>
+	<tr><td valign="top">users.php</td><td valign="top">Users administration page.</td></tr>
+	<tr><td valign="top">tablecreate.php</td><td valign="top">Create all tables needed for application (WARNING: ALL PRE-EXISTING DATA WILL BE LOST!!)</td></tr>
+	<tr>
+		<td valign="top" colspan="2">&nbsp;</td>
+	</tr>
+	<tr><td valign="top" colspan="2"><b>Text Pages<br>(must go in the 'English' folder)</b></td></tr>
+	<tr><td valign="top">admintext.php</td><td valign="top">Text messages for all administration pages.</td></tr>
+	<tr><td valign="top">backuprestore_help.html</td><td valign="top">Help for all backup/restore administration pages.</td></tr>
+	<tr><td valign="top">cemeteries_help.html</td><td valign="top">Help for all cemetery administration pages.</td></tr>
+	<tr><td valign="top">citations_help.html</td><td valign="top">Help for all citation administration pages.</td></tr>
+	<tr><td valign="top">config_help.html</td><td valign="top">Help for general configuration settings.</td></tr>
+	<tr><td valign="top">data_help.html</td><td valign="top">Help for all data import administration pages.</td></tr>
+	<tr><td valign="top">events_help.html</td><td valign="top">Help for all events administration pages.</td></tr>
+	<tr><td valign="top">eventtypes_help.html</td><td valign="top">Help for all event types administration pages.</td></tr>
+	<tr><td valign="top">families_help.html</td><td valign="top">Help for all family administration pages.</td></tr>
+	<tr><td valign="top">headstones_help.html</td><td valign="top">Help for all headstone administration pages.</td></tr>
+	<tr><td valign="top">histories_help.html</td><td valign="top">Help for all history administration pages.</td></tr>
+	<tr><td valign="top">index_help.html</td><td valign="top">Help for main administration menu page.</td></tr>
+	<tr><td valign="top">notes_help.html</td><td valign="top">Help for all notes administration pages.</td></tr>
+	<tr><td valign="top">pedconfig_help.html</td><td valign="top">Help for pedigree configuration settings.</td></tr>
+	<tr><td valign="top">people_help.html</td><td valign="top">Help for all person administration pages.</td></tr>
+	<tr><td valign="top">photos_help.html</td><td valign="top">Help for all photo administration pages.</td></tr>
+	<tr><td valign="top">reports_help.html</td><td valign="top">Help for all report administration pages.</td></tr>
+	<tr><td valign="top">second_help.html</td><td valign="top">Help for all secondary processes pages.</td></tr>
+	<tr><td valign="top">setup_help.html</td><td valign="top">Help for configuration setup menu page.</td></tr>
+	<tr><td valign="top">sources_help.html</td><td valign="top">Help for all sources administration pages.</td></tr>
+	<tr><td valign="top">trees_help.html</td><td valign="top">Help for all trees administration pages.</td></tr>
+	<tr><td valign="top">text.php</td><td valign="top">Text messages for all public pages.</td></tr>
+	<tr><td valign="top">users_help.html</td><td valign="top">Help for all users administration pages.</td></tr>
+	<tr>
+		<td valign="top" colspan="2">&nbsp;</td>
+	</tr>
+	<tr><td valign="top" colspan="2"><b>Images</b></td></tr>
+	<tr><td valign="top">ArrowDown.gif</td><td valign="top">Downward pointing arrow for pedigree chart. Indicates more individual information is present.</td></tr>
+	<tr><td valign="top">ArrowRight.gif</td><td valign="top">Right facing arrow for pedigree chart. Indicates additional pedigree information is present.</td></tr>
+	<tr><td valign="top">background.gif</td><td valign="top">Background pattern for admin pages.</td></tr>
+	<tr><td valign="top">black.gif</td><td valign="top">Black one-pixel image used to create pedigree lines with text-only option.</td></tr>
+	<tr><td valign="top">Chart.gif</td><td valign="top">Small pedigree image used to indicate a link to another pedigree chart.</td></tr>
+	<tr><td valign="top">dchart.gif</td><td valign="top">Small descendancy image used to indicate a link to a graphical representation of the descendancy report to that point.</td></tr>
+	<tr><td valign="top">spacer.gif</td><td valign="top">Blank one-pixel image used as filler.</td></tr>
+	<tr><td valign="top">admin/ArrowUp.gif</td><td valign="top">Upward pointing arrow for sorting photos.</td></tr>
+	<tr><td valign="top">admin/ArrowDown.gif</td><td valign="top">Downward pointing arrow for sorting photos.</td></tr>
+	<tr><td valign="top">admin/backuprestore_icon.gif</td><td valign="top">Icon for Backup/Restore/Optimize Table Data.</td></tr>
+	<tr><td valign="top">admin/cemeteries_icon.gif</td><td valign="top">Icon for Cemeteries.</td></tr>
+	<tr><td valign="top">admin/customeventtypes_icon.gif</td><td valign="top">Icon for Event Types.</td></tr>
+	<tr><td valign="top">admin/data_icon.gif</td><td valign="top">Icon for Data Import.</td></tr>
+	<tr><td valign="top">admin/families_icon.gif</td><td valign="top">Icon for Families.</td></tr>
+	<tr><td valign="top">admin/headstones_icon.gif</td><td valign="top">Icon for Headstones.</td></tr>
+	<tr><td valign="top">admin/histories_icon.gif</td><td valign="top">Icon for Histories.</td></tr>
+	<tr><td valign="top">admin/languages_icon.gif</td><td valign="top">Icon for Languages.</td></tr>
+	<tr><td valign="top">admin/people_icon.gif</td><td valign="top">Icon for People.</td></tr>
+	<tr><td valign="top">admin/photos_icon.gif</td><td valign="top">Icon for Photos.</td></tr>
+	<tr><td valign="top">admin/reports_icon.gif</td><td valign="top">Icon for Reports.</td></tr>
+	<tr><td valign="top">admin/second_icon.gif</td><td valign="top">Icon for Secondary Processes.</td></tr>
+	<tr><td valign="top">admin/setup_icon.gif</td><td valign="top">Icon for Setup & Configuration.</td></tr>
+	<tr><td valign="top">admin/sources_icon.gif</td><td valign="top">Icon for Sources.</td></tr>
+	<tr><td valign="top">admin/trees_icon.gif</td><td valign="top">Icon for Trees.</td></tr>
+	<tr><td valign="top">admin/users_icon.gif</td><td valign="top">Icon for Users.</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+----------------------------------
+----- BTN Maintaince program -----
+----------------------------------
+== GENERAL ISSUES
+?? no easy was to delete BTS's from the database when a customer drops that service
+
+----------------------------------
+----- WWW.ONLINE-CSR.COM ---------
+----------------------------------
+========= general Issues==================================
+* actually send "reminders" when AMC requests ask (extra program to check each morning)
+-----
+*in Order Services: make form work really send mail TO: admin@online-csr.com
+*in Login: actually send Mail to requested people (except in demo mode) to
+	the people on the "Notify About Logins" list
+*in Login: increment the login count of the user (in demo mode increment "guest" count)
+	(note: in demo mode, the login screen can be by passed, so no increment will be done)
+*in Agent Application: make form work really send mail TO: agentmgr@online-csr.com
+*in Feedback: make form work really send mail TO: agentmgr@online-csr.com
+**in Line Inventory: display stops early at 50 records (if between 50 & 100)
+*in Line Inventory: add [add] to the AMC column & go directly to Add Request and have that BTN selected
+*in Line Inventory:if click on the AMC "red dot" from the Line Inventory Manager go to the AMC, and list ONLY the AMC's
+	for that BTN.
+*? in AMC manager, do you really want to waste display space displaying "Sent to:" 
+    (this could be multi-lines) when they will all usually all be the same & it was 
+    done on the edit screen.
+*in New/Edit Request: fix remind date when not NEW Request (always says 3 days from now)
+*in New/Edit Request: actually send Mail to requested people (except in demo mode) when Request is Added/Modified to
+	the people on the "Notify About Changes" list
+*in New/Edit Request:  set up a "special" was for the employees at carrier sales to modify the Inventroy Managers
+	"Review" state of a BTN, without sending an email each and every time the "Review" state is changed?
+*in Logoff: does not work.  BUT, do we really need a log off, because shutting down the browser will log off?
+*in Archive: make a bogus screen that says, "NO Archive records available", and return to the previous screen
+
+===============================
+===== Future Enhancements =====
+===============================
+*Make Archive Work
+  What should be archived ?
+  Detail/summary/deleted AMC records/Deleted BTN's/???
+      THIS SHOULD BE DECIDED ASAP, so any deleted records are not discarded (like they
+	  currently are), but can be stored in a "Archive" area.

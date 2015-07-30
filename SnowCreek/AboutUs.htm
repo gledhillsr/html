@@ -1,0 +1,183 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>About Us</title>
+<base target="_self">
+<meta name="Microsoft Theme" content="copy-of-industrial 011">
+</head>
+
+<body topmargin="6" background="_themes/copy-of-industrial/hintergrund.gif" bgcolor="#FFFFFF" text="#000000" link="#3366CC" vlink="#666666" alink="#996600"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<!-- ********** snow *************** -->
+ <script language="JavaScript1.2">
+
+/*
+Snow Effect Script
+Submitted by Altan d.o.o. (snow@altan.hr, http://www.altan.hr/snow/index.html)
+Permission granted to Dynamicdrive.com to feature script in archive
+For full source code to this script, visit http://dynamicdrive.com
+*/
+  
+
+  //Configure below to change URL path to the snow image
+  var snowsrc="snow.gif"
+  // Configure below to change number of snow to render
+  var no = 10;
+
+  var ns4up = (document.layers) ? 1 : 0;  // browser sniffer
+  var ie4up = (document.all) ? 1 : 0;
+  var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+
+  var dx, xp, yp;    // coordinate and position variables
+  var am, stx, sty;  // amplitude and step variables
+  var i, doc_width = 800, doc_height = 600;
+  
+  if (ns4up||ns6up) {
+    doc_width = self.innerWidth;
+    doc_height = self.innerHeight;
+  } else if (ie4up) {
+    doc_width = document.body.clientWidth;
+    doc_height = document.body.clientHeight;
+  }
+
+  dx = new Array();
+  xp = new Array();
+  yp = new Array();
+  am = new Array();
+  stx = new Array();
+  sty = new Array();
+  
+  for (i = 0; i < no; ++ i) {  
+    dx[i] = 0;                        // set coordinate variables
+    xp[i] = Math.random()*(doc_width-50);  // set position variables
+    yp[i] = Math.random()*doc_height;
+    am[i] = Math.random()*20;         // set amplitude variables
+    stx[i] = 0.02 + Math.random()/10; // set step variables
+    sty[i] = 0.7 + Math.random();     // set step variables
+    if (ns4up) {                      // set layers
+      if (i == 0) {
+        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><a href=\"http://dynamicdrive.com/\"><img src='"+snowsrc+"' border=\"0\"></a></layer>");
+      } else {
+        document.write("<layer name=\"dot"+ i +"\" left=\"15\" top=\"15\" visibility=\"show\"><img src='"+snowsrc+"' border=\"0\"></layer>");
+      }
+    } else if (ie4up||ns6up) {
+      if (i == 0) {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"></a></div>");
+      } else {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"></div>");
+      }
+    }
+  }
+  
+  function snowNS() {  // Netscape main animation function
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+        doc_width = self.innerWidth;
+        doc_height = self.innerHeight;
+      }
+      dx[i] += stx[i];
+      document.layers["dot"+i].top = yp[i];
+      document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+    }
+    setTimeout("snowNS()", 10);
+  }
+
+  function snowIE_NS6() {  // IE and NS6 main animation function
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+        doc_width = ns6up?window.innerWidth : document.body.clientWidth;
+        doc_height = ns6up?window.innerHeight : document.body.clientHeight;
+      }
+      dx[i] += stx[i];
+      if (ie4up){
+      document.all["dot"+i].style.pixelTop = yp[i];
+      document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+      }
+      else if (ns6up){
+      document.getElementById("dot"+i).style.top=yp[i];
+      document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i]);
+      }   
+    }
+    setTimeout("snowIE_NS6()", 10);
+  }
+
+  if (ns4up) {
+    snowNS();
+  } else if (ie4up||ns6up) {
+    snowIE_NS6();
+  }
+
+</script>
+<!-- ********** end snow *************** -->
+
+<div align="center">
+  <center>
+  <!--mstheme--></font><table border="0" width="100%" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%" valign="middle" align="center"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">A proud part of the <a href="http://www.skibrighton.com">Brighton
+        Ski Resort</a> in Brighton Utah<!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+  </center>
+</div>
+
+<p align="center">Table of Contents</p>
+
+<!--mstheme--></font><!--msthemelist--><table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="_themes/copy-of-industrial/indbul1a.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><a href="#Mission Statement">Mission Statement</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="_themes/copy-of-industrial/indbul1a.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><a href="#Our History">Our History</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="_themes/copy-of-industrial/indbul1a.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><a href="#Awards">Awards</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="_themes/copy-of-industrial/indbul1a.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><a href="#Fund Raisers">Fund Raisers</a><!--mstheme--></font><!--msthemelist--></td></tr>
+  <!--msthemelist--><tr><td valign="baseline" width="42"><img src="_themes/copy-of-industrial/indbul1a.gif" width="15" height="15" hspace="13"></td><td valign="top" width="100%"><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica"><a href="#Contact Us">Contact Us</a><!--mstheme--></font><!--msthemelist--></td></tr>
+<!--msthemelist--></table><!--mstheme--><font face="Trebuchet MS, Arial, Helvetica">
+<h2 align="center"><!--mstheme--><font color="#333399"><img border="0" src="images/nspbutt.jpg" width="25" height="26">&nbsp; <a name="Mission Statement">Mission
+Statement </a> <img border="0" src="images/cadeuc4.gif" width="32" height="33"><!--mstheme--></font></h2>
+<p align="left">Mission Statement</p>
+<h2 align="center"><!--mstheme--><font color="#333399"><img border="0" src="images/nspbutt.jpg" width="25" height="26">&nbsp; <a name="Our History">Our
+History </a> <img border="0" src="images/cadeuc4.gif" width="32" height="33"><!--mstheme--></font></h2>
+<p align="left">history...</p>
+<h2 align="center"><!--mstheme--><font color="#333399"><img border="0" src="images/nspbutt.jpg" width="25" height="26">&nbsp; <a name="Awards">Awards</a>&nbsp;
+<img border="0" src="images/cadeuc4.gif" width="32" height="33"><!--mstheme--></font></h2>
+<p align="left"><br>
+Awards...</p>
+<h2 align="center"><!--mstheme--><font color="#333399"><img border="0" src="images/nspbutt.jpg" width="25" height="26">&nbsp; <a name="Fund Raisers">Fund
+Raisers</a>&nbsp; <img border="0" src="images/cadeuc4.gif" width="32" height="33"><!--mstheme--></font></h2>
+<p align="center">We will be having our <font size="3" face="Arial Black">Patrol
+Day</font> Fund raiser on March 24, 2001 at Brighton Ski Resort.&nbsp; There
+will be events (like avalanche dog rescues, etc), food, and drawings for
+prizes.&nbsp;&nbsp;<br>
+Contact <a href="mailto:wbsimms@micron.com">Bill Simms</a> if you have any
+questions</p>
+<p align="center">Fund raisers ...<br>
+special thanks to <a href="http://www.rxabbott.com/">Abbot Laboratories</a> </p>
+<h2 align="center"><!--mstheme--><font color="#333399"><img border="0" src="images/nspbutt.jpg" width="25" height="26">&nbsp; <a name="Contact Us">Contact
+Us</a>&nbsp; <img border="0" src="images/cadeuc4.gif" width="32" height="33"><!--mstheme--></font></h2>
+<p align="center">Pro Director<br>
+Patrick Eibs<br>
+e-mail</p>
+<p align="center">Volunteer Director<br>
+Curt Griffin<br>
+(801) 567-9079<br>
+<a href="curt_griffin@yahoo.com">
+e-mail</a></p>
+<p align="center">Webmaster<br>
+Steve Gledhill<br>
+(801) 571-7716<br>
+<a href="mailto:sgledhill@novell.com">e-mail</a></p>
+<p align="center">&nbsp;</p>
+<!--mstheme--></font></body>
+
+</html>

@@ -1,0 +1,33 @@
+.mstheme     { navbutton-background-color: rgb(255,255,255); top-bar-button: url(indglob.gif) }
+.mstheme-topbar-font { color: rgb(204,204,204); font-size: 8pt; font-family: Arial, Helvetica }
+body         { background-image: url('hintergrund.gif'); font-family: 
+               'Trebuchet MS', Arial, Helvetica }
+button       { font-size: 8pt; font-style: normal; font-family: Arial, Helvetica; 
+               border-style: solid; border-width: 1pt }
+caption      { font-size: 14pt; font-family: 'Trebuchet MS', Arial, Helvetica; font-style: 
+               normal }
+fieldset     { font-family: Arial, Helvetica; font-size: 8pt; font-style: normal; 
+               border-style: solid; border-width: 1pt }
+h1           { font-weight: normal; font-style: normal; font-size: 24pt; font-family: 
+               'Trebuchet MS', Arial, Helvetica }
+h2           { font-family: 'Trebuchet MS', Arial, Helvetica; font-style: normal; font-size: 
+               18pt; font-weight: normal }
+h3           { font-family: 'Trebuchet MS', Arial, Helvetica; font-size: 14pt; font-weight: 
+               normal; font-style: normal }
+h4           { font-weight: normal; font-size: 12pt; font-style: normal; font-family: 
+               'Trebuchet MS', Arial, Helvetica }
+h5           { font-size: 10pt; font-style: normal; font-weight: normal; font-family: 
+               'Trebuchet MS', Arial, Helvetica }
+h6           { font-family: 'Trebuchet MS', Arial, Helvetica; font-size: 8pt; font-style: 
+               normal; font-weight: normal }
+label        { font-style: normal; font-family: Arial, Helvetica; font-size: 8pt }
+label, .mstheme-label { font-size: 8pt; font-family: Arial, Helvetica; font-style: normal }
+legend       { font-style: normal; font-size: 8pt; font-family: 
+               'Trebuchet MS', Arial, Helvetica }
+marquee      { font-family: 'Trebuchet MS', Arial, Helvetica; font-size: 14pt }
+select       { font-style: normal; font-family: Arial, Helvetica; font-size: 8pt; 
+               border-style: solid; border-width: 1pt }
+table        { font-family: 'Trebuchet MS', Arial, Helvetica; font-style: normal }
+textarea     { font-style: normal; font-size: 8pt; font-family: Arial, Helvetica; 
+               border-style: solid; border-width: 1pt }
+th           { font-family: 'Trebuchet MS', Arial, Helvetica; font-style: normal }

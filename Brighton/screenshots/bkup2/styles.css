@@ -1,0 +1,32 @@
+body {
+    background-color: #fff;
+    color: #000;
+}
+a, a:visited {
+    color: #000;
+}
+.max_results {
+    background-color: #f0f0f0;
+}
+.header {
+    color: #000;
+    background-color: #c8c8c8;
+}
+a:hover, a:active {
+    color: #f00;
+}
+.dvd_results {
+    color: #000;
+}
+.dvd_results table {
+    background-color: #fff;
+}
+.total {
+    color: #0ff;
+}
+.row0 {
+    background-color: #f7f7ef;
+}
+.row1 {
+    background-color: #f0f0e8;
+}

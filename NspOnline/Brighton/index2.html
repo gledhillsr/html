@@ -1,0 +1,42 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Brighton NSP</title>
+
+<SCRIPT LANGUAGE ="JavaScript">
+<!--
+function isIE() 
+{
+   // get browser info. 
+   appName= navigator.appName;
+   appLongVer = navigator.appVersion;
+   appVer = appLongVer.substring(0, 1); 
+
+   // check for IE ver 4+. 
+   if ((appName == "Microsoft Internet Explorer") && (appVer >= 4)) return true;
+   return false;
+}
+
+function getTopWin()
+{
+	if(isIE())
+		return "brighton_ski_patrol_buttons.htm";
+	else
+		return "brighton_ski_patrol.htm";
+}
+//-->
+</SCRIPT>
+</head>
+<frameset rows="128,*">
+  <frame name="banner" scrolling="no" noresize target="contents" src="brighton_ski_patrol_buttons.htm"> 
+<!--  <frame name="banner" scrolling="no" noresize target="contents" src="getTopWin()"> -->
+  <frame name="main" src="volunteer2002.htm" target="_self" scrolling="auto">
+<noframes>
+<body>
+
+  <p>This page uses frames, but your browser doesn't support them.
+</body>
+</noframes>
+</frameset>
+</html>

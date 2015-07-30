@@ -1,0 +1,17 @@
+COMMERCIAL LICENSE: 
+The Next Generation of Genealogy Sitebuilding
+by Darrin Lythgoe
+10 April 2003
+
+- The Next Generation of Genealogy Sitebuilding ("the software") may be installed on one public-facing web site only. If the software is 
+installed on two different sites (ie, www.thissite.com and www.thatsite.com) then an extra license is required. The software may be 
+installed multiple times on the same site (ie, www.mysite.com/this and www.mysite.com/that) without requiring an extra licence. The software may
+also be installed on the user's private computer without requiring an extra license if that computer is not connected to the Internet.
+
+- You (the software owner) may make changes to the code as desired, but you may not redistribute any part of the software under any name for any price.
+
+- You may set up "user" accounts (as defined in the TNG Admin section) for various other users, and you may charge a fee for 
+usage if desired. If the software is installed multiple times on the same site so that each additional user may have exclusive access, then an additional license is
+required for each additional user (despite conditions set forth in first point above). 
+
+I'm no legal eagle, but that's it in a nutshell.

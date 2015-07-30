@@ -1,0 +1,761 @@
+/* Document Stylesheet for http://alazanto.org */
+/* Theme: Brooke */
+/* Type: Formatting for Structure & Text */
+
+/* By Kevin Davis */
+
+/* Please note that this code is free to use
+   for your own projects, except where otherwise noted. */
+
+/*************************************************************************************************************/
+
+body         { background-color: left; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/maintile.gif'); 
+               background-repeat: repeat; background-attachment: scroll; 
+               text-align: center; margin: 0; padding: 0; 
+               background-position: top }
+#container1 {
+	margin: 20px 0 0 0;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+div[id="container1"] { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/mainback.png'); 
+               background-color: left; background-repeat: repeat-x; 
+               background-attachment: scroll; background-position: 
+               transparent top }
+div[id="container2"] { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/backexp.png'); 
+               background-color: left; background-repeat: repeat; 
+               background-attachment: scroll; width: 790px; text-align: center; 
+               margin: auto; padding: 0; background-position: transparent top }
+#container3  { background-color: left; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/body-tile1.gif'); 
+               background-repeat: repeat-y; background-attachment: scroll; 
+               width: 750px; border-bottom: 5px solid #662C1C; margin: auto; 
+               padding: 0; background-position: top }
+/*************************************************************************************************************/
+
+#left-side-title h1 {
+	margin: 0;
+	padding: 0;
+}
+
+	#left-side-title h1 span {
+		display: none;
+	}
+
+#topnav {
+	position: absolute;
+	top: 140px;
+	left: 25px;
+
+	width: 362px;
+	height: 73px;
+	overflow: hidden;
+}
+
+#topnav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#topnav li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+	#topnav li span {
+		display: none;
+	}
+
+	#topnav li a {
+		border: 0;
+		text-decoration: none;
+	}
+
+	#topnav li#permacont a { display: block; float: left; width: 132px; height: 73px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/topnav-permacont.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; background-position: top }
+#topnav li#permacont a:hover {
+			background-position: 0px -73px;
+		}
+
+	#topnav li#weblog a { display: block; float: left; width: 86px; height: 73px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/topnav-weblog.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; background-position: top }
+#topnav li#weblog a:hover {
+			background-position: 0px -73px;
+		}
+
+	#topnav li#contact a { display: block; float: left; width: 91px; height: 73px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/topnav-contact.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; background-position: top }
+#topnav li#contact a:hover {
+			background-position: 0px -73px;
+		}
+
+	#topnav li#text-large a { display: block; float: left; width: 31px; height: 73px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/topnav-text-large.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; background-position: top }
+#topnav li#text-large a:hover {
+			background-position: 0px -73px;
+		}
+
+	#topnav li#text-small a { display: block; float: left; width: 22px; height: 73px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/topnav-text-small.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; background-position: top }
+#topnav li#text-small a:hover {
+			background-position: 0px -73px;
+		}
+
+/*************************************************************************************************************/
+
+#left-container {
+	margin: 0;
+	padding: 0;
+
+	float: left;
+	
+	text-align: left;
+
+	width: 421px;
+	}
+
+	#left-side-title { position: relative; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/left-side-title.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; width: 421px; height: 384px; 
+               margin: 0; padding: 0; background-position: transparent top }
+#left-side-content {
+		margin: 0;
+		padding: 0;
+		width: 421px;
+		
+		overflow: hidden;
+		}
+		
+		html[xmlns] #left-side-content { /* an ugly hack to work around a rendering issue in firefox */
+			overflow: visible;
+		}
+
+#right-container {
+	margin: 0;
+	padding: 0;
+
+	float: left;
+	
+	text-align: left;
+
+	width: 297px;
+	}
+
+	#right-side-title { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/right-side-title.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; width: 297px; height: 57px; 
+               margin: 0; padding: 0; background-position: transparent top }
+#right-side-content1 {
+		margin: 0;
+		padding: 0;
+		width: 297px;
+		}
+
+	#right-side-divider { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/right-divide.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; width: 297px; height: 183px; 
+               margin: 0; padding: 0; background-position: transparent top }
+#right-side-content2 {
+		margin: 0;
+		padding: 0;
+		width: 298px;
+		}
+
+#right-margin {
+	margin: 0;
+	padding: 0;
+
+	float: left;
+
+	width: 31px;
+	}
+
+	#right-side-margin { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/right-side-margin.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; width: 31px; height: 518px; 
+               margin: 0; padding: 0; background-position: transparent top }
+#copyright   { clear: both; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/copyright.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; width: 750px; height: 135px; 
+               margin: 0; padding: 0; background-position: transparent top }
+#bottom-tile { clear: both; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/bottom-tile.gif'); 
+               background-color: left; background-repeat: repeat-y; 
+               background-attachment: scroll; width: 750px; height: 25px; 
+               margin: 0; padding: 0; background-position: transparent top }
+/*************************************************************************************************************/
+
+a:link, a:visited, a:active { color: #A05E3A; text-decoration: none; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/dots-bottom.gif'); 
+               background-color: left; background-repeat: repeat-x; 
+               background-attachment: scroll; padding-bottom: 0px; 
+               background-position: transparent bottom }
+a:hover {
+	color: #000;
+	text-decoration: none;
+	padding-bottom: 0px;
+}
+
+ul {
+	margin: 5px 25px 5px 15px;
+	padding: 0px;
+}
+
+hr,
+#copyright p { display:none; }
+
+img {
+	margin: 2px;
+	}
+
+img.archive {
+	background-color: #ffEEdd;
+	border: 1px dotted #B9AA91;
+	padding: 5px;
+}
+
+hr.decorated-end { display: block; width: 267px; height: 36px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/decorated-end.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; border-style: none; 
+               border-width: 0; margin-left: 15px; margin-right: 15px; 
+               background-position: transparent top }
+/*************************************************************************************************************/
+
+p.rpic-p {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+a.rpic-a     { display: block; width: 340px; height: 175px; text-decoration: none; 
+               text-indent: -1000em; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/granted-services.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; border-style: none; 
+               border-width: 0; margin-left: 20px; margin-right: 15px; 
+               background-position: transparent top }
+/*************************************************************************************************************/
+
+#left-side-content h1 {
+	font-family: "Georgia";
+	font-size: 1.3em;
+	font-weight: normal;
+
+	line-height: 100%;
+	letter-spacing: -0.04em;
+
+	text-align: left;
+
+	margin-left: 25px;
+	margin-right: 10px;
+
+	padding-bottom: 4px;
+
+	border-bottom: double #C2A28A;
+
+	color: #893A1A;
+}
+
+#left-side-content h2 { font-family: Georgia; font-size: 1.0em; font-weight: normal; line-height: 30px; 
+               letter-spacing: 0.05em; text-align: left; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/h2back.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; color: #9F765F; 
+               border-bottom: 1px solid #C2A28A; margin-left: 25px; 
+               margin-right: 10px; margin-top: 15px; margin-bottom: 0; 
+               padding-left: 45px; padding-right: 0; padding-top: 0; 
+               padding-bottom: 0; background-position: transparent bottom }
+#left-side-content h3 {
+	font-family: "Georgia";
+	font-size: 0.95em;
+	font-weight: normal;
+	font-style: italic;
+
+	line-height: 125%;
+	letter-spacing: -0.04em;
+
+	text-align: left;
+
+	margin-left: 25px;
+	margin-right: 10px;
+
+	padding-bottom: 1px;
+	border-bottom: 1px solid #C2A28A;
+
+	color: #9F765F;
+}
+
+#left-side-content dl {
+	margin: 10px 0 10px 0;
+	padding: 0;
+}
+
+#left-side-content dd {
+	font-family: "Georgia";
+	font-size: 0.8em;
+	line-height: 155%;
+
+	text-align: left;
+
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+	border-left: 1px solid #C2A28A;
+
+	padding: 0;
+	padding-left: 10px;
+
+	color: #767065;
+}
+
+	#left-side-content dd.timestamp {
+		border-left: 0;
+		padding: 0;
+	}
+
+#left-side-content dt {
+	font-family: "Georgia";
+	font-size: 0.8em;
+	line-height: 155%;
+
+	text-align: left;
+
+	margin-top: 10px;
+	margin-left: 25px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+	padding: 0;
+
+	color: #767065;
+}
+
+	#left-side-content .bullets dt { display: block; font-style: italic; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/dots-bottom.gif'); 
+               background-color: left; background-repeat: repeat-x; 
+               background-attachment: scroll; background-position: 
+               transparent bottom }
+#left-side-content .folders { height: 32px; vertical-align: middle; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/icon-folder.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; border-bottom: 1px solid #C2A28A; 
+               margin-top: 20px; margin-bottom: -10px; padding-left: 32px; 
+               padding-bottom: 3px; background-position: transparent top }
+#left-side-content .image { height: 32px; vertical-align: middle; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/icon-image.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; padding-left: 28px; 
+               background-position: transparent top }
+#left-side-content .text { height: 32px; vertical-align: middle; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/icon-text.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; padding-left: 28px; 
+               background-position: transparent top }
+#left-side-content p,
+#left-side-content li {
+	font-family: "Georgia";
+	font-size: 0.8em;
+	line-height: 155%;
+
+	text-align: left;
+
+	margin-left: 25px;
+	margin-right: 10px;
+
+	color: #767065;
+}
+
+#left-side-content ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#left-side-content li { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/bullet-heart.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; padding-left: 16px; 
+               background-position: transparent top }
+#left-side-content li span.block { display: block; }
+
+	#left-side-content .timestamp {
+		font-family: "Verdana";
+		font-size: 0.7em;
+		line-height: 155%;
+
+		text-align: center;
+
+		margin-left: 25px;
+		margin-bottom: 22px;
+		margin-right: 10px;
+
+		padding: 0;
+		padding-bottom: 8px;
+
+		color: #767065;
+	}
+
+	#left-side-content span.comment { background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/commenticon.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; height: 18px; padding-left: 13px; 
+               background-position: transparent top }
+#left-side-content blockquote {
+	font-family: "Georgia";
+	font-size: 0.8em;
+	line-height: 155%;
+
+	text-align: left;
+
+	margin-left: 25px;
+	margin-right: 10px;
+
+	border-left: double #C2A28A;
+	padding-left: 10px;
+
+	color: #767065;
+}
+
+#left-side-content pre,
+#left-side-content code {
+	font-family: "verdana";
+	font-size: 0.7em;
+	
+	overflow: auto;
+	
+	text-align: left;
+
+	margin-left: 25px;
+	margin-right: 10px;
+
+	border: 1px solid #C2A28A;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+	color: #767065;
+}
+
+/*************************************************************************************************************/
+
+#right-side-content1 h1,
+#right-side-content2 h1  {
+	font-family: "Georgia";
+	font-size: 1.1em;
+	font-weight: normal;
+
+	line-height: 100%;
+	letter-spacing: -0.04em;
+
+	text-align: center;
+
+	margin-top: 10px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+
+	color: #9F765F;
+}
+
+#right-side-content1 h2, #right-side-content2 h2 { font-family: Georgia; font-size: 0.95em; font-weight: normal; font-style: 
+               italic; line-height: 125%; letter-spacing: -0.04em; 
+               text-align: left; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/dots-bottom-light.gif'); 
+               background-color: left; background-repeat: repeat-x; 
+               background-attachment: scroll; color: #9F765F; margin-left: 
+               15px; margin-right: 15px; padding-bottom: 1px; 
+               background-position: transparent bottom }
+#right-side-content1 ul,
+#right-side-content2 ul  {
+	list-style: none;
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+
+#right-side-content1 p,
+#right-side-content1 blockquote,
+#right-side-content2 p,
+#right-side-content2 blockquote {
+	font-family: "Georgia";
+	font-size: 0.78em;
+	line-height: 155%;
+
+	text-align: left;
+
+	margin-left: 25px;
+	margin-right: 15px;
+
+	border-left: 1px solid #E4C1A6;
+	padding-left: 10px;
+
+	color: #767065;
+}
+
+#right-side-content1 li,
+#right-side-content2 li {
+	font-family: "Georgia";
+	font-size: 0.78em;
+	line-height: 125%;
+
+	text-align: left;
+
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	margin-left: 25px;
+	margin-right: 15px;
+
+	border-left: 1px solid #E4C1A6;
+	padding-left: 10px;
+
+	color: #767065;
+}
+
+/*************************************************************************************************************/
+
+#right-side-content1 div.pop-up h3.month { width: 204px; height: 24px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/left-h2-month.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; text-indent: -1000em; 
+               margin-left: 25px; margin-right: 0; margin-top: 0; 
+               margin-bottom: 0; padding: 0; background-position: 
+               transparent top }
+#right-side-content1 div.pop-up h3.month:hover {
+		background-position: 0px -24px;
+	}
+
+#right-side-content1 div.pop-up h3.category { width: 204px; height: 24px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/left-h2-category.gif'); 
+               background-color: left; background-repeat: no-repeat; 
+               background-attachment: scroll; text-indent: -1000em; 
+               margin-left: 25px; margin-right: 0; margin-top: 0; 
+               margin-bottom: 0; padding: 0; background-position: 
+               transparent top }
+#right-side-content1 div.pop-up h3.category:hover {
+		background-position: 0px -24px;
+	}
+
+#right-side-content1 div[class="pop-up"] {
+	display:block;
+	position: relative;
+}
+
+#right-side-content1 div[class="pop-up"]:hover > ul {
+	display: block;
+}
+
+#right-side-content1 div[class="pop-up"] ul { display: none; position: absolute; z-index: 100; top: 2px; left: -158px; 
+               list-style-type: none; width: 180px; background-image: 
+               url('../../Documents%20and%20Settings/steve/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/OT6FSL6B/images/back-whitetrans.png'); 
+               background-color: left; background-repeat: repeat; 
+               background-attachment: scroll; border: 1px solid #C5B192; 
+               margin: 0; padding: 10px; background-position: transparent top }
+#right-side-content1 div[class="pop-up"] li {
+		display: inline;
+		margin: 0; padding: 0; border: 0;
+	}
+	
+		#right-side-content1 div[class="pop-up"] li a {
+			display: block;
+			margin: 0; padding: 0; border: 0;
+			margin-bottom: 8px;
+		}
+
+/*************************************************************************************************************/
+form {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+}
+
+input, radio, checkbox, textarea {
+	vertical-align: middle;
+}
+
+.comment1 {
+	margin-left: 0px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*************************************************************************************************************/
+
+input.styled { /* probably applies to the search box */
+	font-family: "Verdana", "Helvetica Neue", "Geneva", sans-serif;
+	font-size: 11px;
+	
+	padding: 3px;
+	
+	margin-top: 0;
+	margin-bottom: 6px;
+	margin-left: 25px;
+	margin-right: 0;
+	
+	color: #767065;
+	
+	border: double #C9B89D;
+	
+	background: #FFF9F0;
+}
+
+	select.styled { /* probably applies to the front page nav */
+		font-family: "Verdana", "Helvetica Neue", "Geneva", sans-serif;
+		font-size: 11px;
+		line-height: 135%;
+	
+		text-align: left;
+		width: 175px;
+	
+		background-color: #FFF7EA;
+		color: #767065;
+		border-top: 1px solid #B9AA91;
+		border-left: double #E4C1A6;
+		border-bottom: 1px solid #B9AA91;
+		border-right: 1px solid #B9AA91;
+	
+		margin-top: 0;
+		margin-bottom: 6px;
+		margin-left: 25px;
+		margin-right: 0;
+	
+		padding: 0;
+	}
+
+input.styled3 { /* probably applies to the search button */
+	vertical-align: middle;
+
+	margin-top: 0;
+	margin-bottom: 6px;
+	margin-left: 0;
+	margin-right: 0;
+	
+	padding: 0;
+	border: 0px solid #F5EEE2; /* ugly hack to make the border dissapear in opera 6/7 */
+	}
+
+/*************************************************************************************************************/
+
+.comment1 p { 
+	margin-top: 5px; margin-bottom: 5px; 
+	
+	padding-top: 1px; padding-bottom: 1px;
+	
+	border-top: 1px solid #DECDB3; 
+	border-bottom: 1px solid #DECDB3; 
+	}
+	
+.comment2 {
+	margin-left: 25px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px; 
+	
+	padding: 5px;
+	
+	border: 1px solid #DECDB3;
+	}
+	
+	#left-side-content div.comment2 p,
+	#left-side-content div.comment2 h3 {
+		margin: 5px;
+		padding: 0;
+	}
+	
+.comment1 input.styled2b, .comment1 radio.styled2b, .comment1 checkbox.styled2b {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+
+	padding: 2px;
+
+	font-family: "Verdana", "Helvetica Neue", "Geneva", sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.03em;
+	line-height: 135%;
+}
+
+.comment1 input.styled2c, textarea.styled2c {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+
+	padding: 2px;
+
+	font-family: "Verdana", "Helvetica Neue", "Geneva", sans-serif;
+	font-size: 12px;
+	letter-spacing: 0.03em;
+	line-height: 135%;
+
+	background-color: #FDEFD9;
+	color: #767065;
+	
+	border: double #C9B89D;
+}
+
+	input.styled2c:hover, textarea.styled2c:hover {
+		background-color: #FFFAF3;
+	}
+
+.comment1 label {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0;
+	margin-right: 0;
+
+	padding: 2px;
+
+	font-family: "Verdana", "Helvetica Neue", "Geneva", sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+
+	text-align: left;
+	line-height: 135%;
+}
+
+.comment1 label.left {
+	display: block;
+	float: left;
+
+	width: 110px;
+}
+
+#right-side-content1 label {
+	display: none;
+}

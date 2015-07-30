@@ -1,0 +1,2 @@
+Main-Class: test1
+Class-Path: AbsoluteLayout.jar mysql-connector-java-2.0.14-bin.jar

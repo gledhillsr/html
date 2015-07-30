@@ -1,0 +1,12 @@
+Sun 21Oct07 17:52:01 - Windows Explorers v6.0 - (6.0.0.0) - Copyright (c) 1995-2005 Cat Soft, All Rights Reserved - by Rob Beckers
+Sun 21Oct07 17:52:01 - Cat Soft is an affiliate of Rhino Software, Inc.
+Sun 21Oct07 17:52:03 - PROBLEM: Cannot find/load DLL irc.dll (can also happen if the DLL uses other DLLs which are not available)
+Sun 21Oct07 17:52:03 - PROBLEM: Cannot find/load DLL JAcheck.dll (can also happen if the DLL uses other DLLs which are not available)
+Sun 21Oct07 17:52:03 - PROBLEM: Cannot find/load DLL JAstat.dll (can also happen if the DLL uses other DLLs which are not available)
+Sun 21Oct07 17:52:03 - PROBLEM: Cannot find/load DLL filter.dll (can also happen if the DLL uses other DLLs which are not available)
+Sun 21Oct07 17:52:03 - Using WinSock 2.0 - max. 32767 sockets
+Sun 21Oct07 17:52:03 - PROBLEM: Unable to load the SSL/TLS libraries (SSLEAY32.DLL and LIBEAY32.DLL) - No SSL support
+Sun 21Oct07 17:52:06 - FTP Server listening for PASV connections on port number 20
+Sun 21Oct07 17:52:06 - FTP Server listening on port number 47, IP 192.168.1.96, 127.0.0.1
+Sun 21Oct07 17:52:07 - SERVER IS NOT LISTENING ON IP 127.0.0.1: Port number 43958 already in use!
+Sun 21Oct07 17:52:07 - Valid registration key found
