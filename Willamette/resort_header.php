@@ -21,7 +21,8 @@ require("config.php");
 <table border="0"  cellspacing="0" cellpadding="0" width="932" >
   <tr>
     <td>
-    <a href="<?php echo resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" width="261" height="60"></a>
+    <a href="<?php echo $resortURL; ?>">
+        <img border="0" src=http://nspOnline.org/"<?php echo $resortImg; ?>" width=" <?php echo $imgWidth; ?> " height=" <?php echo $imgHeight; ?> "></a>
     </td>
     <td align="center">
       <h1><?php echo $resortFull; ?> Ski Patrol&nbsp;
