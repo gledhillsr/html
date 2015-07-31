@@ -2,10 +2,11 @@
 /*****************************************************************************
  * resort specific variables                                                 *
  ****************************************************************************/
-$resort="Sample";
-$resortFull = "Sample Resort";
-$resortURL  = "www.nspOnline.org";
-$resortImg  = "/images/Brighton.gif";
+$resort     = "Willamette";
+$resortFull = "Willamette Backcountry";
+$resortURL  = "http://www.deetour.net/wbsp";
+$resortImg  = "Willamette.jpeg";
+$imgWidth   = 120;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
