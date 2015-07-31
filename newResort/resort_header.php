@@ -22,7 +22,7 @@ require("config.php");
   <tr>
     <td>
     <a href="<?php echo $resortURL; ?>">
-        <img border="0" src="/images/<?php echo $resortImg; ?>" width="<?php echo $imgWidth;?> " height="<?php echo $imgHeight;?> "></a>
+        <img border="0" src="/images/<?php echo $resortImg;?>" width="<?php echo $imgWidth;?> " height="<?php echo $imgHeight;?> "></a>
     </td>
     <td align="center">
       <h1><?php echo $resortFull; ?> Ski Patrol&nbsp;
