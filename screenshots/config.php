@@ -1,4 +1,5 @@
 <?php
+require_once 'environment.ini';
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
