@@ -1,9 +1,6 @@
 <?php
-echo "starting config.php";
 
 require_once 'environment.ini';
-
-echo "mysql_host ($mysql_host)";
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
