@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
@@ -24,7 +24,7 @@ function printWindow(){
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:printWindow()">Print This Page</a><br>
 <br>
-<? for($i=0; $i < 2; $i++) {
+<?php for($i=0; $i < 2; $i++) {
 	if($i == 0)
 		$loc="Aid Room 1";
 	else

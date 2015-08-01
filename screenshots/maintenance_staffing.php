@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
@@ -41,7 +41,7 @@ require("config.php");
 <br>
 <input type="submit" value="Continue">
 </form>
-<?
+<?php
 //        echo "SatCrestBasic = $SatCrestBasic<br>\n";
 //        echo "SatCrestAux = $SatCrestAux<br>\n";
 //        echo "Western = $Western<br>\n";
@@ -151,7 +151,7 @@ function areaStatus(area) {
   <font size="2">  Saturday</font></td>
       <td width="452" align="center" colspan="3" bgcolor="#FFFFFF"><font size="2">Sunday</font></td>
     </tr>
-<?
+<?php
     $query_string = "SELECT * FROM areadefinitions WHERE open < \"2\"";
 //echo "$query_string<br>";
 //    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
@@ -162,7 +162,7 @@ function areaStatus(area) {
 ?>
     <tr>
       <td width="103" bgcolor="#FFFFFF"><font size="2">
-<?
+<?php
       $SatBas = $row[saturdaybasic];
       $SatAux = $row[saturdayaux];
       $SunBas = $row[sundaybasic];
@@ -221,9 +221,9 @@ function areaStatus(area) {
       <td width="103" bgcolor="#FFFFFF">
         <p align="center"><font size="2">Totals</font></td>
       <td width="412" align="center" colspan="3" bgcolor="#FFFFFF"><font size="2">
-      <input type="text" name="SaturdayTotals" readonly size="4" value="<? echo $SaturdayTotal; ?>"></font></td>
+      <input type="text" name="SaturdayTotals" readonly size="4" value="<?php echo $SaturdayTotal; ?>"></font></td>
       <td width="457" align="center" colspan="3" bgcolor="#FFFFFF"><font size="2">
-      <input type="text" name="SundayTotals" readonly size="4" value="<? echo $SundayTotal; ?>"></font></td>
+      <input type="text" name="SundayTotals" readonly size="4" value="<?php echo $SundayTotal; ?>"></font></td>
     </tr>
   </table>
   <p>

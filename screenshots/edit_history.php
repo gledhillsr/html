@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 if($delete) {
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
@@ -160,7 +160,7 @@ function verifyDelete(user_id,history_id) {
 
 <body background="images/ncmnthbk.jpg">
 <h2>
-<?
+<?php
     if($add)
         echo "Add NEW Individual Ski History Entry for $name";
     else
@@ -172,17 +172,17 @@ function verifyDelete(user_id,history_id) {
     <tr>
       <td align="right" width="158">Date</td>
       <td width="222">
-      <input type="text" name="date" size="11" value="<? echo $date; ?> "></td>
+      <input type="text" name="date" size="11" value="<?php echo $date; ?> "></td>
     </tr>
     <tr>
       <td align="right" width="158">Check-in Time</td>
-      <td width="222"><input type="text" name="checkinTime" size="11" value="<? echo $time; ?>"></td>
+      <td width="222"><input type="text" name="checkinTime" size="11" value="<?php echo $time; ?>"></td>
     </tr>
     <tr>
       <td align="right" width="158">Area Assignment</td>
       <td width="222">
       <select size="1" name="area">
-<?
+<?php
         for($i = -1; $i < $areaCount; $i++ ) {
           $sel = ($i == $areaID) ? " SELECTED " : "";
           echo "<option $sel value=\"$i\">" . $getArea[$i] . "</option>\n";
@@ -194,7 +194,7 @@ function verifyDelete(user_id,history_id) {
       <td align="right" width="158">Shift</td>
       <td width="222">
       <select size="1" name="shiftSel" onchange="updateTotal()">
-<?
+<?php
     for($i = 0; $i < $shiftCount; $i++) {
       $sel = ($i == $shift) ? "SELECTED" : "";
       echo "<option value=\"$i\" $sel>" . $getShifts[$i] . "</option>\n";
@@ -206,7 +206,7 @@ function verifyDelete(user_id,history_id) {
       <td align="right" width="158">Leadership</td>
       <td width="222">
       <select size="1" name="teamLead">
-<?
+<?php
     for($i = 0; $i < 4; $i++) {
       $sel = ($i == $teamLead) ? "SELECTED" : "";
       echo "<option value=\"$i\" $sel>" . $getTeamLead[$i] . "</option>\n";
@@ -216,13 +216,13 @@ function verifyDelete(user_id,history_id) {
     </tr>
     <tr>
       <td align="right" width="158">Value</td>
-<?    echo "<td width=\"222\"><input type=\"text\" name=\"creditValue\" readonly size=\"4\" value=\"$timeValue\"> (Computed)</td>\n"; ?>
+<?php    echo "<td width=\"222\"><input type=\"text\" name=\"creditValue\" readonly size=\"4\" value=\"$timeValue\"> (Computed)</td>\n"; ?>
     </tr>
     <tr>
       <td align="right" width="158">Multiplier</td>
       <td width="222">
       <select size="1" name="multiplier"  onchange="updateTotal(2)">
-<?
+<?php
 //$mult  0,1,2 = 0,1,1.333
 
       echo "<option value=\"0\" " . (($mult == 0) ? "SELECTED" : "" ). ">0.0</option>\n";
@@ -234,7 +234,7 @@ function verifyDelete(user_id,history_id) {
     </tr>
     <tr>
       <td align="right" width="158">Credit Value</td>
-<?
+<?php
 if($mult == 0)      $val = 0;
 else if($mult == 2) $val = $timeValue * 1.33334;
 else if($mult == 3) $val = $timeValue * 0.33334;
@@ -244,7 +244,7 @@ else /* $mult==1 */ $val = $timeValue;
     </tr>
   </table>
   <p>
-<?
+<?php
   echo "<input type=\"HIDDEN\" name=\"ID\" VALUE=\"$ID\">";
 
   if($add)

@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 include("runningFromWeb.php");
 
@@ -50,7 +50,7 @@ include("runningFromWeb.php");
 
 
 <form name="myForm" method="POST" action="sync.php">
-<?
+<?php
     if($runningFromWeb) {
         $strEnable = " Disabled ";
     }

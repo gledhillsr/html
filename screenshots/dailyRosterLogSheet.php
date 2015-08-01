@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
     $arrDate = getdate();
     $today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
@@ -54,7 +54,7 @@ function printWindow(){
 <p align=center>
 <font size=5>
 Brighton Ski Patrol:
-<?
+<?php
   echo "<b>$strToday</b>\n"; 
 ?>
 
@@ -82,7 +82,7 @@ Volunteer Patrol Daily Log Sheet
     <td width=50 align=center>Multiplier</td>
     <td width=50 align=center>Final Credit Value</td>
   </tr>
-<?
+<?php
 
 //debug     $query_string = "SELECT * FROM skihistory WHERE true ORDER BY name, date, checkin";
     $query_string = "SELECT * FROM skihistory WHERE date=\"$today\" ORDER BY name, date, checkin";
@@ -174,7 +174,8 @@ Volunteer Patrol Daily Log Sheet
 	  echo "  <td align=\"center\">$baseValue</td>\n";    //credits without Sr 
 	  echo "  <td align=\"center\">$multiplierString</td>\n";
 	  echo "  <td align=\"center\">" . number_format($credit, 2, '.', ',') . "</td>\n";
-	  echo "</tr>\n";    } //end "while" loop for each patroller in query
+	  echo "</tr>\n";
+    } //end "while" loop for each patroller in query
 ?>
         </tr>
       </table>
@@ -190,7 +191,7 @@ Signed:_________________________________________
 </body>
 </html>
 
-<?
+<?php
     @mysql_close($connect_string);
     if($result)
         @mysql_free_result($result);

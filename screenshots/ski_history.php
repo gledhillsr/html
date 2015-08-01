@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 
 //================
@@ -176,16 +176,16 @@ global $chg,$srtLastPrinted,$strToday;
 <title>Brighton Ski History Report</title>
 
 <script language="JavaScript">
-var changesMade = <? echo $chg; ?>;
+var changesMade = <?php echo $chg; ?>;
 
 //--------------------------
 // resetDate (in javascript)
 //--------------------------
   function resetDate(start) {
     if(start == 1)
-        document.myForm.StartTime.value="<? echo $srtLastPrinted; ?>";
+        document.myForm.StartTime.value="<?php echo $srtLastPrinted; ?>";
     else
-        document.myForm.EndTime.value="<? echo $strToday; ?>";
+        document.myForm.EndTime.value="<?php echo $strToday; ?>";
   }
 
 </script>
@@ -216,7 +216,7 @@ function printWindow(){
    if (bV >= 4) window.print()
 }
 </script>
-<? }	//---- end of printPageTop
+<?php }	//---- end of printPageTop
 
 
 //====================
@@ -239,7 +239,7 @@ global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday
         <font size="2">Beginning: </font>
     </td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" width="250">
-    <input type=text size=45 name=StartTime value="<? echo $strBeginning; ?>"></td>
+    <input type=text size=45 name=StartTime value="<?php echo $strBeginning; ?>"></td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" width="250">
         <input style="font-size: 8pt" type="button" value="Reset"  onclick="resetDate(1)"name="reset1">
         &nbsp;&nbsp;(Start of Season)
@@ -248,7 +248,7 @@ global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday
   <tr>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" ><font size="2">Ending:</font></td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" ><font size="2">
-    <input type=text size=45 name=EndTime value="<? echo $strEnding; ?>"></font></td>
+    <input type=text size=45 name=EndTime value="<?php echo $strEnding; ?>"></font></td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" >
         <input style="font-size: 8pt" type="button" value="Reset" onclick="resetDate(0)" name="reset2">
         &nbsp;&nbsp;(now)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -263,37 +263,37 @@ global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday
       &nbsp;&nbsp; <!--	  <font size="2" color="#FF0000">(Make sure reports looks OK, before doing this)</font> -->
     </td>
     <td  style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0">
-        Display:&nbsp; <input type="checkbox" name="showDay" value="ON" <? if($showDay) echo "checked"; ?> >Day Shifts&nbsp;&nbsp; 
-        			   <input type="checkbox" name="showSwing" value="ON" <? if($showSwing) echo "checked"; ?> >Swing Shifts&nbsp; 
-        			   <input type="checkbox" name="showNight" value="OFF" <? if($showNight) echo "checked"; ?> >Night Shifts<br>
-        Display:&nbsp; <input type="checkbox" name="showDetails" value="ON" <? if($showDetails) echo "checked"; ?> >Detail of Shifts
-        			   <input type="checkbox" name="showWeekday" value="OFF" <? if($showWeekday) echo "checked"; ?> >Show Weekdays in Bold&nbsp; 
-        			   <input type="checkbox" name="showDouble" value="OFF" <? if($showDouble) echo "checked"; ?> >Show Double Days in bold (Christmas and New Years weekends)&nbsp; 
+        Display:&nbsp; <input type="checkbox" name="showDay" value="ON" <?php if($showDay) echo "checked"; ?> >Day Shifts&nbsp;&nbsp;
+        			   <input type="checkbox" name="showSwing" value="ON" <?php if($showSwing) echo "checked"; ?> >Swing Shifts&nbsp;
+        			   <input type="checkbox" name="showNight" value="OFF" <?php if($showNight) echo "checked"; ?> >Night Shifts<br>
+        Display:&nbsp; <input type="checkbox" name="showDetails" value="ON" <?php if($showDetails) echo "checked"; ?> >Detail of Shifts
+        			   <input type="checkbox" name="showWeekday" value="OFF" <?php if($showWeekday) echo "checked"; ?> >Show Weekdays in Bold&nbsp;
+        			   <input type="checkbox" name="showDouble" value="OFF" <?php if($showDouble) echo "checked"; ?> >Show Double Days in bold (Christmas and New Years weekends)&nbsp;
         				<br>
-        Display:&nbsp; <input type="checkbox" name="showCommitment" value="ON" <? if($showCommitment) echo "checked"; ?> >Commitment (Part Time/Candidate/Inactive/etc.)<br>
+        Display:&nbsp; <input type="checkbox" name="showCommitment" value="ON" <?php if($showCommitment) echo "checked"; ?> >Commitment (Part Time/Candidate/Inactive/etc.)<br>
         <br>
         Sort By:&nbsp; 
-<?
+<?php
 /* 
-          <input type="radio" value="first"  name="sortBy" <? if($sortBy == "first") echo "checked"; ?> >First Name&nbsp;&nbsp;&nbsp; 
+          <input type="radio" value="first"  name="sortBy" <?php if($sortBy == "first") echo "checked"; ?> >First Name&nbsp;&nbsp;&nbsp;
 */
 ?>
 
-        			   <input type="radio" value="last"   name="sortBy" <? if($sortBy == "last")  echo "checked"; ?> >Last Name&nbsp;&nbsp;&nbsp; 
-        			   <input type="radio" value="shifts" name="sortBy" <? if($sortBy == "shifts")echo "checked"; ?> >Shifts <b>Skied</b> (
-						<input type="checkbox" name="showZero" value="ON" <? if($showZero) echo "checked"; ?> >
+        			   <input type="radio" value="last"   name="sortBy" <?php if($sortBy == "last")  echo "checked"; ?> >Last Name&nbsp;&nbsp;&nbsp;
+        			   <input type="radio" value="shifts" name="sortBy" <?php if($sortBy == "shifts")echo "checked"; ?> >Shifts <b>Skied</b> (
+						<input type="checkbox" name="showZero" value="ON" <?php if($showZero) echo "checked"; ?> >
 						Include patrollers with 0 days)
         <br>
-  Use Data From:&nbsp; <input type="radio" value="locker" name="dataFrom" <? if($dataFrom == "locker") echo "checked"; ?> >Locker&nbsp;&nbsp;&nbsp; 
-        			   <input type="radio" value="web"    name="dataFrom" <? if($dataFrom == "web")    echo "checked"; ?> >Web&nbsp;&nbsp;&nbsp; 
-        			   <input type="radio" value="sum"    name="dataFrom" <? if($dataFrom == "sum")    echo "checked"; ?> >Both&nbsp;&nbsp;&nbsp; 
-        			   <input type="radio" value="diff"   name="dataFrom" <? if($dataFrom == "diff")   echo "checked"; ?> >Display Merged&nbsp;&nbsp;&nbsp; 
-        			   <input type="radio" value="merge"  disabled name="dataFrom" <? if($dataFrom == "merge")  echo "checked"; ?> >Merge Locker to Web
+  Use Data From:&nbsp; <input type="radio" value="locker" name="dataFrom" <?php if($dataFrom == "locker") echo "checked"; ?> >Locker&nbsp;&nbsp;&nbsp;
+        			   <input type="radio" value="web"    name="dataFrom" <?php if($dataFrom == "web")    echo "checked"; ?> >Web&nbsp;&nbsp;&nbsp;
+        			   <input type="radio" value="sum"    name="dataFrom" <?php if($dataFrom == "sum")    echo "checked"; ?> >Both&nbsp;&nbsp;&nbsp;
+        			   <input type="radio" value="diff"   name="dataFrom" <?php if($dataFrom == "diff")   echo "checked"; ?> >Display Merged&nbsp;&nbsp;&nbsp;
+        			   <input type="radio" value="merge"  disabled name="dataFrom" <?php if($dataFrom == "merge")  echo "checked"; ?> >Merge Locker to Web
     </td>
   </tr>
 </table>
 <br>
-<?
+<?php
 } //-- end of printInputFieldArea
 
 //====================
@@ -304,13 +304,13 @@ function printEnding() {
 global $strToday;
 ?>
 </table><br>
-<font size="2">This report was printed on <b><? echo $strToday; ?></b></font><br>
+<font size="2">This report was printed on <b><?php echo $strToday; ?></b></font><br>
 <br>
 </form>
 <p>&nbsp;</p>
 </body>
 </html>
-<?
+<?php
 }
 
 //====================

@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
 $totalDays=0;
@@ -88,31 +88,31 @@ function displayTop() {
 <title>Brighton Ski Credit Report</title>
 
 <script language="JavaScript">
-var changesMade = <? echo $chg; ?>;
+var changesMade = <?php echo $chg; ?>;
 
   function resetDate(start) {
     if(start == 1) {
-        document.myForm.StartTime.value="<? echo $srtLastPrinted; ?>";
+        document.myForm.StartTime.value="<?php echo $srtLastPrinted; ?>";
     } else {
-        document.myForm.EndTime.value="<? echo $strToday; ?>";
+        document.myForm.EndTime.value="<?php echo $strToday; ?>";
     }
   }
 
     function checkForChanges() {
-<? if(!$viewOnlyID) {
+<?php if(!$viewOnlyID) {
         ?>
       if(changesMade) {
         if(window.confirm("Save -new- ENDING time?")) {
            saveChanges();
         }
       }
-<?
+<?php
     } ?>
     }
 
   function saveChanges() {
     changesMade = false;
-    param = "ski_credits.php?saveTimeBtn=1&EndTime=<? echo $strEnding; ?>";
+    param = "ski_credits.php?saveTimeBtn=1&EndTime=<?php echo $strEnding; ?>";
 //alteveert(param);
     window.location.href=param;
   }
@@ -149,7 +149,7 @@ function printWindow(){
 
 <form method="POST" name=myForm action="ski_credits.php">
 <b>
-<? if($viewOnlyID && isset($millis))
+<?php if($viewOnlyID && isset($millis))
         echo "<font size=3>(from LOCKER ROOM COMPUTER, NOT SPORTS DESK)";
     else
     echo "<font size=4>Detail of Volunteer Ski Credits earned this season.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -158,7 +158,7 @@ function printWindow(){
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="javascript:printWindow()">Print This Page</a><br><br>
 
-<? if(!$viewOnlyID) {
+<?php if(!$viewOnlyID) {
         ?>
         <table  style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" border="0" cellpadding="2"  width=580 >
   <tr>
@@ -166,7 +166,7 @@ function printWindow(){
         <font size="2">Beginning: </font>
     </td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" width="250">
-    <input type=text size=45 name=StartTime value="<? echo $strBeginning; ?>"></td>
+    <input type=text size=45 name=StartTime value="<?php echo $strBeginning; ?>"></td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" width="250">
         <input style="font-size: 8pt" type="button" value="Reset"  onclick="resetDate(1)"name="reset1">
         &nbsp;&nbsp;(Time of last report)
@@ -175,7 +175,7 @@ function printWindow(){
   <tr>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" ><font size="2">Ending:</font></td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" ><font size="2">
-    <input type=text size=45 name=EndTime value="<? echo $strEnding; ?>"></font></td>
+    <input type=text size=45 name=EndTime value="<?php echo $strEnding; ?>"></font></td>
     <td style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0" >
         <input style="font-size: 8pt" type="button" value="Reset" onclick="resetDate(0)" name="reset2">
         &nbsp;&nbsp;(now)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -191,14 +191,14 @@ function printWindow(){
 <!--	  <font size="2" color="#FF0000">(Make sure reports looks OK, before doing this)</font> -->
     </td>
     <td  style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0">
-        <input type="checkbox" name="detailed" value="ON" <? if($detailed)echo "checked"; ?>>show detailed report
+        <input type="checkbox" name="detailed" value="ON" <?php if($detailed)echo "checked"; ?>>show detailed report
     </td>
   </tr>
 </table>
-<?
+<?php
     } ?>
 <br>
-<?
+<?php
     $siz = 500;
     if($detailed)
         $siz += 150;
@@ -212,13 +212,13 @@ function printWindow(){
     <td width="50"><p align=center><b>Credit</b></p></td>
     <td width="120"><p align=center><b>Multplier</b></p></td>
     <td width="50"><p align=center><b>Final<br>Credit<br>value</b></p></td>
-<?
+<?php
     if($detailed) {
         echo "    <td width=75><p align=center><b>Totals</b></p></td>\n";
     }
     ?>
       </tr>
-<?
+<?php
     $memberWasDisplayed = false;
 }
 

@@ -1,5 +1,5 @@
 function showTimeConflict() {
-    alert("<? echo $szTimeConflict; ?>");
+    alert("<?php echo $szTimeConflict; ?>");
 }
 
 function insertBtn(patrollerID, areaID) {

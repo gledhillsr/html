@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 
 
@@ -187,7 +187,7 @@ function checkTime(selObject,which) {
 
 <body background="images/ncmnthbk.jpg">
 
-<h2><? echo $title; ?></h2>
+<h2><?php echo $title; ?></h2>
 <form method="POST" name=myForm action="edit_assignment.php">
 <table>
     <tr>
@@ -195,7 +195,7 @@ function checkTime(selObject,which) {
       </td>
       <td>&nbsp;
       <select size="1" name="area" onChange="updateAreas(this)">
-<?
+<?php
 //this is bogus, but this definition comes from config.php
     displayOption($area,$getAreaShort[0]);
     displayOption($area,$getAreaShort[1]);
@@ -209,7 +209,7 @@ function checkTime(selObject,which) {
     <tr>
       <td align="right">Minimum Ski Level:</td>
       <td >&nbsp; <select size="1" name="minLevel">
-<?
+<?php
     displayOption($minLevel,"Team Leader");
     displayOption($minLevel,"Asst Team Leader");
     displayOption($minLevel,"Basic");
@@ -220,13 +220,13 @@ function checkTime(selObject,which) {
     <tr>
       <td  align="right">Morning Sweep:</td>
       <td>&nbsp; <textarea rows="12" name="description" cols="80">
-<?    echo $description;  ?>
+<?php    echo $description;  ?>
       </textarea></td>
     </tr>
     <tr>
       <td align="right">Top Shack/Aid Room:</td>
       <td>&nbsp; <select size="1" name="topShack"  onChange="checkTime(this,1)">
-<?
+<?php
     displayOption($topShack,"Crest Top Shack");
 //    displayOption($topShack,"Majestic Top");
     displayOption($topShack,"Snake Creek Top");
@@ -238,17 +238,17 @@ function checkTime(selObject,which) {
 ?>
       </select>
       &nbsp;&nbsp; Time: &nbsp; 
-      <input type="text" name="startTime" size="6" value="<? echo $startTime; ?>">
+      <input type="text" name="startTime" size="6" value="<?php echo $startTime; ?>">
       &nbsp;to&nbsp; 
-      <input type="text" name="endTime" size="6" value="<? echo $endTime; ?>">
+      <input type="text" name="endTime" size="6" value="<?php echo $endTime; ?>">
       &nbsp; (must use 24 hour clock)</td>
     </tr>
     <tr>
     </tr>
 
-      <td align="right">2nd Top Shack (<? echo $topShack2; ?>)</td>
+      <td align="right">2nd Top Shack (<?php echo $topShack2; ?>)</td>
       <td>&nbsp; <select size="1" name="topShack2" onChange="checkTime(this,2)">
-<?
+<?php
     displayOption($topShack2,"Crest Top Shack");
     displayOption($topShack2,"Majestic Top");
     displayOption($topShack2,"Snake Creek Top");
@@ -260,14 +260,14 @@ function checkTime(selObject,which) {
 ?>
       </select>
       &nbsp;&nbsp; Time: &nbsp; 
-      <input type="text" name="startTime2" size="6" value="<? echo $startTime2; ?>">
+      <input type="text" name="startTime2" size="6" value="<?php echo $startTime2; ?>">
       &nbsp;to&nbsp; 
-      <input type="text" name="endTime2" size="6" value="<? echo $endTime2; ?>">
+      <input type="text" name="endTime2" size="6" value="<?php echo $endTime2; ?>">
       </td>
     <tr>
       <td align="right">Evening Sweep:</td>
       <td>&nbsp; <select size="1" name="lateSweep">
-<?
+<?php
     displayOption($lateSweep,"Crest");
     displayOption($lateSweep,"Snake Creek");
     displayOption($lateSweep,"Western");
@@ -278,7 +278,7 @@ function checkTime(selObject,which) {
     </tr>
   </table>
   <p>
-<?
+<?php
     if($delete) {
         echo "<input type=\"HIDDEN\" name=\"id\" VALUE=\"$id\">";
         echo "<input type=\"submit\" value=\"Delete\" name=\"deleteBtn\">&nbsp;";

@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 include("runningFromWeb.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
@@ -30,7 +30,7 @@ include("runningFromWeb.php");
 
 <form name="myForm" method="POST" action="purge.php">
 <br><br><br>
-<?
+<?php
     if($runningFromWeb) {
         $strEnable = " Disabled ";
     }

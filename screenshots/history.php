@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
     $name="NOBODY";
     $arrDate = getdate();
@@ -77,12 +77,12 @@ function printWindow(){
 }
 </script>
 
-<?
+<?php
     if($admin) {
 ?>
 <form method="POST" name="myForm">
 Select patroller to view:&nbsp;&nbsp;&nbsp;
-<?
+<?php
     $query_string = "SELECT LastName, FirstName, IDNumber FROM roster ORDER BY LastName, FirstName";
 //    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result)");
@@ -101,13 +101,13 @@ Select patroller to view:&nbsp;&nbsp;&nbsp;
 
 </form>
 <hr>
-<?
+<?php
     }
 if(!$audit)
 	echo "<p align=center><font size=5>Individual History for </font>";
 ?>
 <font size="5">
-<?
+<?php
 if($audit) {
     echo "Brighton Ski Patrol <b>Audit Trail</b> as of $strToday<br></font>\n";
 	echo "<font size=2> <a href=\"javascript:printWindow()\">Print This Page</a></font>\n";
@@ -131,7 +131,7 @@ echo "  <tr>\n";
   <td width="50"  align="center">Check-in Time</td>
   <td width="100" align="center">&nbsp;&nbsp;Area&nbsp;Assignment</td>
   <td width="50"  align="center">Shift</td>
-<? 
+<?php
     echo "  <td width=50 align=center>Team<br>Lead</td>";
 
     echo "  <td width=50 align=center>Credit<br>Value</td>\n";
@@ -270,7 +270,7 @@ while ($row = @mysql_fetch_array($result)) {
     </center>
   </div>
 <br>
-<?
+<?php
 	if($millis) {
 	    echo "<input type=\"button\" value=\"Back\" onclick=history.back()>&nbsp;\n";
 	}

@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
@@ -33,9 +33,9 @@ function printWindow(){
 </script>
 
 
-<font size="5">&nbsp;&nbsp;Brighton Staffing Report for <? echo date("l, F d, Y"); ?></font>
+<font size="5">&nbsp;&nbsp;Brighton Staffing Report for <?php echo date("l, F d, Y"); ?></font>
 &nbsp;&nbsp;<a href="javascript:printWindow()">Print This Page</a><br>
-<?
+<?php
 
   echo "<table width=\"670\" >\n";
   echo "<tr>\n";
@@ -262,7 +262,7 @@ echo "of which, $trainingCount are training ($candidateCount are candidates).<br
 Note: 3rd column is # of Top Shack <br>
 and/or Aid Room assignments<br><br>
 -->
-Report as of: <?  echo date("H:m - F d, Y"); ?>
+Report as of: <?php  echo date("H:m - F d, Y"); ?>
 </td></tr></table>
 </body>
 

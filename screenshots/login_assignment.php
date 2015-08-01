@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
 //define("TEAM_LEAD", 1);
@@ -233,11 +233,11 @@ function checkForChanges() {
     if(changesMade) {
     var pos = "login_assignment.php";
         if(window.confirm("Save your changes?")) {
-            pos += "?ID=<? echo $ID; ?>"
+            pos += "?ID=<?php echo $ID; ?>"
             + "&teamLead=0"
-            + "&shiftValue=<? echo $shiftValue; ?>"
-            + "&shift=<? echo $currShift; ?>";
-<?        if($history_id)
+            + "&shiftValue=<?php echo $shiftValue; ?>"
+            + "&shift=<?php echo $currShift; ?>";
+<?php        if($history_id)
               echo "pos += \"&history_id=$history_id\";\n";
 ?>
             pos += "&saveBtn=1&stayHere=1";
@@ -270,7 +270,7 @@ function myButton(btn,hist_id) {
 //      exit;
         //reset
     }else if(btn == 1) {	//SAVE BUTTON
-<?    if($canBeTeamLead && $isWeekendMorning) { ?>
+<?php    if($canBeTeamLead && $isWeekendMorning) { ?>
         var i;
         for(i=0; i <= 3; ++i) {	//loop to see which area is checked
 		//now
@@ -304,7 +304,7 @@ function myButton(btn,hist_id) {
 //				}
             }
         }
-<?    }   ?>
+<?php    }   ?>
 //        if(teamLeader == 1) alert("Team Leader of "+i);
 //        if(teamLeader == 2) alert("Assistant Team Leader of "+i);
         changesMade = false;
@@ -316,9 +316,9 @@ function myButton(btn,hist_id) {
 </head>
 
 <body onunload="checkForChanges();" background="ncmnthbk.jpg">
-<p align="center"><font size="5">Select Assignment for <b><? echo "$name</b>, on $strToday"?></font></p>
+<p align="center"><font size="5">Select Assignment for <b><?php echo "$name</b>, on $strToday"?></font></p>
 
-<?
+<?php
     $now = time();
     $query_string = "SELECT signinLockout FROM directorsettings WHERE 1";
     $result3 = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query 9");
@@ -358,9 +358,9 @@ function myButton(btn,hist_id) {
       <td align="center">Select Mountain Area</td>
       <td align="center">Available</td>
       <td align="center">Days patrolled</td>
-<? /*      <td align="center">Nights patrolled</td> */ ?>
+<?php /*      <td align="center">Nights patrolled</td> */ ?>
     </tr>
-<?
+<?php
     $totalDays = 0;
     $query_string = "SELECT * FROM areadefinitions WHERE open > 0 ORDER BY areaID ";
 //echo "$query_string<br>";
@@ -533,7 +533,7 @@ echo "</script>\n";
     </center>
   </div>
   <p align="center">
-<?
+<?php
       if($history_id)
           echo "<input type=\"HIDDEN\" name=\"history_id\" VALUE=\"$history_id\">\n";
       echo "<input type=\"HIDDEN\" name=\"shift\" VALUE=\"$currShift\">\n";
