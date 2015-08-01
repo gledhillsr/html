@@ -25,13 +25,13 @@ else if($shiftOverride && $shiftOverride == 0){
 
 <p>Brighton Ski Patrol Onsite Software</p>
 <form method="POST" action="index.php">
-<?
+<?php
   if($shiftOverride && $shiftOverride > 0)
     echo "Testing time has been set.<br>";
 ?>
   <p>( Testing only - enter shift override time
   <select size="1" name="shiftOverride">
-<?
+<?php
 for($i=0; $i <= 8; $i++){
   $sel = (($shiftOverride == $i) ? "selected='selected' " : "");
   echo "<option value='$i' $sel>" . $shiftsOvr[$i] . "</option>\n";

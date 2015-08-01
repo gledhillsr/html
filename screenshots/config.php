@@ -29,12 +29,6 @@ $edit_password  = "";   // Password required to edit the database.
  * Database settings                                                         *
  *****************************************************************************/
 
-$mysql_username = "root";           // MySQL user name
-$mysql_password = "AekdbKazs3990";    // MySQL password (leave empty if no password is required.)
-$mysql_web_username = "sgled57";           // MySQL user name
-$mysql_web_password = "XXXXXXX";    // MySQL password (leave empty if no password is required.)
-$mysql_db       = "Brighton";        // MySQL database name
-$mysql_host     = "localhost";      // MySQL server host name
                                     // ("localhost" should be fine on
                                     // most systems)
 $gledhills_host = "52.3.5.75";      // MySQL server host name

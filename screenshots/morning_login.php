@@ -1,4 +1,4 @@
-<?
+<?php
 require("config.php");
 if($delID || $newID) {
 //echo "shiftOverride -($shiftOverride)-";	//was testing override enabled?
