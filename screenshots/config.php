@@ -2,6 +2,8 @@
 
 require_once 'environment.ini';
 
+echo "mysql_host ($mysql_host)";
+
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
  *****************************************************************************/
@@ -13,16 +15,6 @@ extract($_COOKIE);
 extract($_POST);
 extract($_GET);
 
-/*****************************************************************************
- * email stuff                                                               *
- *****************************************************************************/
-
-$email_to ="steve@Gledhills.com";
-$email_headers = "From: steve@gledhills.com";
-
-/*****************************************************************************
- * Edit password                                                             *
- *****************************************************************************/
 
 $edit_password  = "";   // Password required to edit the database.
                         //  (This is not the same as the MySQL password)
@@ -33,7 +25,6 @@ $edit_password  = "";   // Password required to edit the database.
 
                                     // ("localhost" should be fine on
                                     // most systems)
-$gledhills_host = "52.3.5.75";      // MySQL server host name
 
 require_once 'DB.php';
 
