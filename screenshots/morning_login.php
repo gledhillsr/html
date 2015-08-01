@@ -1,5 +1,7 @@
 <?php
-require("config.php");
+
+require_once 'config.php';
+echo "starting morning_login ($delID) ($newID)";
 if($delID || $newID) {
 //echo "shiftOverride -($shiftOverride)-";	//was testing override enabled?
 	$id = ($newID) ? $newID : $delID;
