@@ -27,7 +27,7 @@ if($delID || $newID) {
 </head>
 <body onload="document.myForm.pname.focus();" background="images/ncmnthbk.jpg">
 
-<?
+<?php
 echo "<h1 align=center>$name</h1><br><br><font size=6><p align=center>";
 if($newID) echo "Login Successful";
 else	   echo "Removal Successful";
@@ -78,18 +78,6 @@ var id = 0;
 <body onload="document.myForm.pname.focus();" background="images/ncmnthbk.jpg">
 
 <form method="POST" name="myForm">
-<?
-//  <p>( Testing only - enter shift override time
-//  <select size="1" name="shiftOverride">
-//for($i=0; $i <= 8; $i++){
-//  if($shiftOverride == $i) $sel = "Selected ";
-//  else                     $sel = "";
-//  echo "<option value=$i $sel>" . $shiftsOvr[$i] . "</option>\n";
-//
-//}
-//  </select> )</p>
-//echo "shiftOverride -($shiftOverride)-";	//was testing override enabled?
-?>
 <!--  <p>&nbsp;</p> -->
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -101,7 +89,7 @@ var id = 0;
         <h2 align="center">Brighton Ski Patrol</h2>
         <p align="center">Morning Login </p>
         <p align="center">
-<?
+<?php
         $query_string = "SELECT LastName, FirstName, IDNumber FROM roster ORDER BY LastName, FirstName";
         $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
         $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result)");
