@@ -5,7 +5,7 @@
 $resortFull = "Utah Olympic Park";
 $resort     = "UOP";
 $resortURL  = "http://www.imd.org/uop.html";
-$resortImg  = "images/uop.jpg";
+$resortImg  = "uop.jpg";
 $imgHeight  = 60;
 
 /*****************************************************************************

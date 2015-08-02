@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Three Rivers";
+$resort     = "ThreeRivers";
+$resortURL  = "http://www.threeriverspark.org/";
+$resortImg  = "ThreeRivers.jpg";
+$imgHeight  = 60;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
