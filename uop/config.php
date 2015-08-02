@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Utah Olympic Park";
+$resort     = "UOP";
+$resortURL  = "http://www.imd.org/uop.html";
+$resortImg  = "images/uop.jpg";
+$imgHeight  = 60;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
