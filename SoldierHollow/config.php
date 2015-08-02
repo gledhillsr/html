@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Soldier Hollow";
+$resort     = "SoldierHollow";
+$resortURL  = "http://www.soldierhollow.com";
+$resortImg  = "SoldierHollow.jpg";
+$imgHeight  = 60;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
