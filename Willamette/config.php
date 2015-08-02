@@ -6,7 +6,7 @@ $resort     = "Willamette";
 $resortFull = "Willamette Backcountry";
 $resortURL  = "http://www.deetour.net/wbsp";
 $resortImg  = "Willamette.jpeg";   //in directory "html/images"
-$imgHeight  = 60;
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

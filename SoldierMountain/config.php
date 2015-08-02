@@ -6,7 +6,7 @@ $resortFull = "Soldier Mountain";
 $resort     = "SoldierMountain";
 $resortURL  = "http://www.soldiermountain.com/";
 $resortImg  = "SoldierMountain.gif";
-$imgHeight  = 60;
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

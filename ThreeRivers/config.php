@@ -6,7 +6,7 @@ $resortFull = "Three Rivers";
 $resort     = "ThreeRivers";
 $resortURL  = "http://www.threeriverspark.org/";
 $resortImg  = "ThreeRivers.jpg";
-$imgHeight  = 60;
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

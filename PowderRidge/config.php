@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Powder Ridge";
+$resort     = "PowderRidge";
+$resortURL  = "http://www.powderridgeskipatrol.com";
+$resortImg  = "PowderRidge.png";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Ragged Mountain";
+$resort     = "RMSP";
+$resortURL  = "http://www.rmskipatrol.org";
+$resortImg  = "RMSP_logo.JPG";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Pomerelle";
+$resort     = "Pomerelle";
+$resortURL  = "http://www.pomerelle-mtn.com";
+$resortImg  = "PomerelleLogo.gif";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

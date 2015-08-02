@@ -6,7 +6,7 @@ $resort     = "WhitePine";
 $resortFull = "White Pine";
 $resortURL  = "http://www.WhitePineSki.com";
 $resortImg  = "WhitePine.jpg";
-$imgHeight  = 60;
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
