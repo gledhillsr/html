@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Kelly Canyon";
+$resort     = "KellyCanyon";
+$resortURL  = "http://www.SkiKelly.com";
+$resortImg  = "KellyCanyon.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

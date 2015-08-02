@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Pebble Creek";
+$resort     = "PebbleCreek";
+$resortURL  = "http://www.pebblecreekskiarea.com";
+$resortImg  = "PebbleCreek.gif";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

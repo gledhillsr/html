@@ -1,9 +1,0 @@
-$Id: README,v 1.1 2003/03/11 18:14:00 garvinhicking Exp $
-
-phpMyAdmin - docSQL
-===================
-
-  This directory is empty by default. You can put your docSQL files
-  here, if you want them to be imported via phpMyAdmin.
-  
-  If you do not know, what docSQL is, just leave this directory empty.

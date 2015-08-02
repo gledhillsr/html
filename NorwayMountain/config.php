@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Norway Mountain";
+$resort     = "NorwayMountain";
+$resortURL  = "http://www.NorwayMountain.com";
+$resortImg  = "NorwayMountain.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

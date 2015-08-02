@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Lonesome Pine Trails";
+$resort     = "LonesomePine";
+$resortURL  = "http://www.lonesomepines.org";
+$resortImg  = "lonesomepines.gif";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

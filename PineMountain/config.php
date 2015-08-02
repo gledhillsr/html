@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Pine Mountain";
+$resort     = "PineMountain";
+$resortURL  = "http://www.PineMountainResort.com";
+$resortImg  = "PineMtnLogo.png";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

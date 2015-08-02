@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Mount Kato";
+$resort     = "MountKato";
+$resortURL  = "http://www.mtkatoskipatrol.com";
+$resortImg  = "images/MountKato.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
