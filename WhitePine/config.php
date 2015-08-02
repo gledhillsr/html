@@ -1,4 +1,12 @@
 <?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resort     = "WhitePine";
+$resortFull = "White Pine";
+$resortURL  = "http://www.WhitePineSki.com";
+$resortImg  = "WhitePine.jpg";
+$imgHeight  = 60;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
@@ -6,18 +14,18 @@
 
 //if(!ini_get('register_globals'))
 {
-	$__am = array('COOKIE','POST','GET');
-	while(list(,$__m) = each($__am)){
+    $__am = array('COOKIE','POST','GET');
+    while(list(,$__m) = each($__am)){
 //var_dump($__m);
 //echo "---" . ${"HTTP_".$__m."_VARS"} . "---<br>";
-		$__ah = &${"HTTP_".$__m."_VARS"};
+        $__ah = &${"HTTP_".$__m."_VARS"};
 //var_dump($__ah);
-		if(!is_array($__ah)) continue;
-		while(list($__n, $__v) = each ($__ah)) {
+        if(!is_array($__ah)) continue;
+        while(list($__n, $__v) = each ($__ah)) {
 //echo "yyy(".$__n."--".$__v.")<br>";
-			$$__n = $__v;
-		}
-	}
+            $$__n = $__v;
+        }
+    }
 }
 
 /*****************************************************************************
@@ -32,7 +40,7 @@ $email_headers = "From: brian@gledhills.com";
  *****************************************************************************/
 
 $edit_password  = "";   // Password required to edit the database.
-                     	//  (This is not the same as the MySQL password)
+//  (This is not the same as the MySQL password)
 
 /*****************************************************************************
  * Database settings                                                         *
@@ -43,8 +51,8 @@ $mysql_password = "my_password";    // MySQL password (leave empty if no passwor
 $mysql_db       = "brighton";        // MySQL database name
 
 $mysql_host     = "localhost";      // MySQL server host name
-                                    // ("localhost" should be fine on 
-                                    // most systems)
+// ("localhost" should be fine on
+// most systems)
 $subagent_table = "subagent";      // MySQL table name
 $masterAgent_table = "masteragent";      // MySQL table name
 
@@ -74,7 +82,7 @@ $review_y     = "Needs Review";
  *****************************************************************************/
 
 $max_results_default = "50";    // Default Maximum results per page
-									
+
 /*****************************************************************************
  * Colors and misc. settings                                                 *
  *****************************************************************************/
@@ -184,12 +192,12 @@ function timeToSeconds($strTime) {
     if(!$strTime || $strTime == 0)
         return 0;
 //echo " original Time=$strTime";
-  $startPos = strpos($strTime, ":");
-  if($startPos > 0) {
-    $hour = substr($strTime,0,$startPos);
-    $min = substr($strTime,$startPos+1);
-    if($hour > 0 && hour < 25 && $min >= 0 && $min < 60)
-        $seconds= $hour * 3600 + $min * 60;
+    $startPos = strpos($strTime, ":");
+    if($startPos > 0) {
+        $hour = substr($strTime,0,$startPos);
+        $min = substr($strTime,$startPos+1);
+        if($hour > 0 && hour < 25 && $min >= 0 && $min < 60)
+            $seconds= $hour * 3600 + $min * 60;
     }
 //echo "hour = ($hour), min = ($min)<br>\n";
     return $seconds;
@@ -206,14 +214,14 @@ $shiftValue=array(0 => 1  , 1 => 1, 2 => 1, 3=> 0.75, 4 => 0.5);
 $getTeamLead=array(0 => "No", 1 => "Team Lead", 2 =>"Asst Team Lead", 3=> "Extra");
 
 $shiftsOvr=array(
-0 => "Use actual time"  ,
-1 => "Saturday 7:45",
-2 => "Saturday 13:45",
-3 => "Sunday 7:45",
-4 => "Monday 7:45",
-5 => "Monday 2:45 pm",
-6 => "Monday 5:45 pm",
-7 => "Monday 6:45pm",
-8 => "Monday 11:45pm");
+    0 => "Use actual time"  ,
+    1 => "Saturday 7:45",
+    2 => "Saturday 13:45",
+    3 => "Sunday 7:45",
+    4 => "Monday 7:45",
+    5 => "Monday 2:45 pm",
+    6 => "Monday 5:45 pm",
+    7 => "Monday 6:45pm",
+    8 => "Monday 11:45pm");
 
 ?>
