@@ -13,7 +13,6 @@
   else
     $firstPage="MonthCalendar";
 
-    $resort="JacksonHole";
 ?>
 <html>
 
@@ -31,9 +30,9 @@ if (self != top)
 
 </head>
 
-<frameset rows="125,*">
+<frameset rows="113,*">
 <?php
-  echo "<frame name=\"banner\" scrolling=\"no\" target=\"contents\" src=\"resort_header.php$szID1\">";
+  echo "<frame name=\"banner\" scrolling=\"no\" noresize target=\"contents\" src=\"resort_header.php$szID1\">";
   echo "<frame name=\"main\" src=\"/calendar-1/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
 ?>
   <noframes>

@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Grand Targhee";
+$resort     = "GrandTarghee";
+$resortURL  = "http://www.GrandTarghee.com";
+$resortImg  = "snow.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

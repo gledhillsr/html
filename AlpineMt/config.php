@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Alpine Mt";
+$resort     = "AlpineMt";
+$resortURL  = "http://www.alpinemtskipatrol.org/";
+$resortImg  = "AlpineMt.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

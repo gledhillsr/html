@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Andes Tower Hills";
+$resort     = "Andes";
+$resortURL  = "http://www.andestowerhills.com";
+$resortImg  = "andes_logo.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

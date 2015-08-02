@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Afton Alps";
+$resort     = "Afton";
+$resortURL  = "http://www.aftonskipatrol.org";
+$resortImg  = "AftonLogo.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

@@ -5,7 +5,7 @@
 $resortFull = "Mount Kato";
 $resort     = "MountKato";
 $resortURL  = "http://www.mtkatoskipatrol.com";
-$resortImg  = "images/MountKato.jpg";
+$resortImg  = "MountKato.jpg";
 $imgHeight  = 80;
 
 /*****************************************************************************

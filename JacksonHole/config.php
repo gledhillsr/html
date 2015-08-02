@@ -1,4 +1,12 @@
 <?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Jackson Hole Fire/EMS";
+$resort     = "JacksonHole";
+$resortURL  = "http://tetonwyo.org/AgencyHome.asp?dept_id=fire";
+$resortImg  = "JacksonHole.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *

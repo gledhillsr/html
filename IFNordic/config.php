@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Idaho Falls Nordic";
+$resort     = "IFNordic";
+$resortURL  = "";
+$resortImg  = "xcskier.gif";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
