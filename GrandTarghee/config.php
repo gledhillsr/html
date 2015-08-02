@@ -5,7 +5,7 @@
 $resortFull = "Grand Targhee";
 $resort     = "GrandTarghee";
 $resortURL  = "http://www.GrandTarghee.com";
-$resortImg  = "snow.jpg";
+$resortImg  = "GrandTarghee.jpg";
 $imgHeight  = 80;
 
 /*****************************************************************************

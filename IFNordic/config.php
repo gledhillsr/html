@@ -5,7 +5,7 @@
 $resortFull = "Idaho Falls Nordic";
 $resort     = "IFNordic";
 $resortURL  = "";
-$resortImg  = "xcskier.gif";
+$resortImg  = "IFNordic.gif";
 $imgHeight  = 80;
 
 /*****************************************************************************
