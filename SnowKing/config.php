@@ -1,4 +1,12 @@
-<?
+<?php
+/*****************************************************************************
+ * resort specific variables                                                 *
+ ****************************************************************************/
+$resortFull = "Snow King";
+$resort     = "SnowKing";
+$resortURL  = "http://www.SnowKing.com";
+$resortImg  = "SnowKing.jpg";
+$imgHeight  = 80;
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
