@@ -10,9 +10,7 @@
 *.war
 *.ear
 *.ini
-*.iml
 .DS_Store
-.idea/
 phpMyAdmin/
 ScoutDocuments/
 apps/
