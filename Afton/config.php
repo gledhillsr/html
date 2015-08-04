@@ -4,7 +4,7 @@
  ****************************************************************************/
 $resortFull = "Afton Alps";
 $resort     = "Afton";
-$resortURL  = "http://www.aftonskipatrol.org";
+$resortURL  = "http://www.aftonalpsskipatrol.org";
 $resortImg  = "AftonLogo.jpg";
 $imgHeight  = 80;
 
