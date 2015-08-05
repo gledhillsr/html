@@ -33,7 +33,7 @@ if (self != top)
 <frameset rows="113,*">
 <?php
   echo "<frame name=\"banner\" scrolling=\"no\" noresize target=\"contents\" src=\"resort_header.php$szID1\">";
-  echo "<frame name=\"main\" src=\"/calendar-1/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
+  echo "<frame name=\"main\" src=\"http://nsponline.org:8080/calendar-1/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
 ?>
   <noframes>
   <body>
