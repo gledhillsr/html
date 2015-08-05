@@ -14,6 +14,11 @@ require("config.php");
 <META HTTP-EQUIV="Expires" CONTENT="-1">
 <title><?php echo $resortFull; ?> Ski Patrol</title>
 <base target="contents">
+  <SCRIPT LANGUAGE = "JavaScript">
+    function goCalendar() {
+      window.location="MemberLogin?resort=Afton"
+    }
+  </SCRIPT>
 
 </head>
 

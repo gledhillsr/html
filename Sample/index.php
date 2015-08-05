@@ -30,17 +30,24 @@ if (isset($NSPgoto)) {
   <title><?php echo $resort; ?> NSP</title>
 
 </head>
-
-<frameset rows="113,*">
-  <?php
-  echo "<frame name=\"banner\" scrolling=\"no\" noresize target=\"contents\" src=\"resort_header.php$szID1\">";
-  echo "<frame name=\"main\" src=\"http://nsponline.org:8080/calendar-1/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
-  ?>
-  <noframes>
-    <body>
-
-    <p>This page uses frames, but your browser doesn't support them.
-    </body>
-  </noframes>
-</frameset>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+  $(function() {
+    $("#banner").load("resort_header.php");
+  });
+</script>
+<div id="banner"></div>
+<h1>Test test test</h1>
+<!--<frameset rows="113,*">-->
+<!--  --><?php
+//  echo "<frame name=\"banner\" scrolling=\"no\" noresize target=\"contents\" src=\"resort_header.php$szID1\">";
+//  echo "<frame name=\"main\" src=\"http://nsponline.org:8080/calendar-1/$firstPage?resort=$resort{$szID2}&noLogin=1\" target=\"_self\" scrolling=\"auto\">";
+//  ?>
+<!--  <noframes>-->
+<!--    <body>-->
+<!---->
+<!--    <p>This page uses frames, but your browser doesn't support them.-->
+<!--    </body>-->
+<!--  </noframes>-->
+<!--</frameset>-->
 </html>
