@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Brighton/Brighton.iml" filepath="$PROJECT_DIR$/Brighton/Brighton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jars/Mail/Mail.iml" filepath="$PROJECT_DIR$/jars/Mail/Mail.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html.iml" filepath="$PROJECT_DIR$/html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Brighton/jsp/plugin/plugin1.iml" filepath="$PROJECT_DIR$/Brighton/jsp/plugin/plugin1.iml" />
+    </modules>
+  </component>
+</project>
