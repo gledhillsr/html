@@ -4,8 +4,6 @@
     <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample/config.php" afterPath="$PROJECT_DIR$/Sample/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample/index.php" afterPath="$PROJECT_DIR$/Sample/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample/resort_header.php" afterPath="$PROJECT_DIR$/Sample/resort_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,8 +29,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sample/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20481928">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.43674698">
+              <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -52,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/Sample/config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-8.576271">
-              <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+              <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -126,8 +124,8 @@
         <option value="$PROJECT_DIR$/Sample/calendar.html" />
         <option value="$PROJECT_DIR$/Sample/SubList.html" />
         <option value="$PROJECT_DIR$/Sample/SubList2.html" />
-        <option value="$PROJECT_DIR$/Sample/config.php" />
         <option value="$PROJECT_DIR$/Sample/resort_header.php" />
+        <option value="$PROJECT_DIR$/Sample/config.php" />
         <option value="$PROJECT_DIR$/Sample/index.php" />
       </list>
     </option>
@@ -144,8 +142,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="438" />
-    <option name="y" value="292" />
+    <option name="x" value="437" />
+    <option name="y" value="273" />
     <option name="width" value="1337" />
     <option name="height" value="842" />
   </component>
@@ -608,15 +606,15 @@
       <workItem from="1438797509269" duration="3696000" />
       <workItem from="1438804617534" duration="2424000" />
       <workItem from="1438878959617" duration="2952000" />
-      <workItem from="1438893922286" duration="6448000" />
+      <workItem from="1438893922286" duration="6838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36515000" />
+    <option name="totallyTimeSpent" value="36905000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="438" y="292" width="1337" height="842" extended-state="0" />
+    <frame x="437" y="273" width="1337" height="842" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1040,14 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sample/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.576271">
-          <caret line="34" column="15" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sample/resort_header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.8474574">
@@ -1056,10 +1046,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Sample/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.576271">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Sample/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20481928">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.43674698">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding />
         </state>
       </provider>

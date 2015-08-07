@@ -20,14 +20,14 @@ require("config.php");
   #banner {
     padding:0;
     /*line-height:3px;*/
-    background-color:#F8F8F8;
+    /*background-color:#F8F8F8;*/
     height:110px;
     /*color:red;*/
     /*border-bottom: thick;*/
   }
   #main {
     padding:0;
-    /*background-color:yellow;*/
+    background-color: #fffe97;
     height:100%;
   }
 </style>

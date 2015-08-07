@@ -6,7 +6,6 @@ $resort="Sample";
 $resortFull = "Sample Resort";
 $resortURL  = "www.nspOnline.org";
 $resortImg  = "/images/Brighton.gif";
-$firstPage = "MonthCalendar";
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
