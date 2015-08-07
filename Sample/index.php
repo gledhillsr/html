@@ -1,29 +1,15 @@
 <?php
 require("config.php");
-if (isset($ID)) {
-  $szID1 = "?ID=$ID";
-  $szID2 = "&ID=$ID";
-} else {
-  $szID1 = "";
-  $szID2 = "";
-}
-
-if (isset($NSPgoto)) {
-  $firstPage = $NSPgoto;
-} else {
-  $firstPage = "MonthCalendar";
-}
-
 ?>
 <html>
 
 <head>
-  <SCRIPT Language="JavaScript">
+  <script Language="JavaScript">
     <!--
     if (self != top)
       top.location = self.location;
     //-->
-  </SCRIPT>
+  </script>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
   <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
   <META HTTP-EQUIV="Expires" CONTENT="-1">
@@ -31,30 +17,18 @@ if (isset($NSPgoto)) {
 
 </head>
 <style>
-  #header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:0px;
-  }
   #banner {
-    line-height:3px;
-    background-color:#eeeeee;
+    padding:0;
+    /*line-height:3px;*/
+    background-color:#F8F8F8;
     height:110px;
-    color:red;
-    border-bottom: thick;
+    /*color:red;*/
+    /*border-bottom: thick;*/
   }
   #main {
-    padding:0px;
-    background-color:yellow;
+    padding:0;
+    /*background-color:yellow;*/
     height:100%;
-  }
-  #footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:5px;
   }
 </style>
 <!--suppress JSUnresolvedLibraryURL -->
@@ -62,7 +36,7 @@ if (isset($NSPgoto)) {
 <script>
   $(function() {
     $("#banner").load("resort_header.php");
-    $("#main").load("calendar.html");
+    $("#main").load("/calendar-1/MonthCalendar?resort=" + "<?php echo $resort; ?>");
   });
 </script>
 <div id="banner" name="banner"></div>

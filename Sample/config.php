@@ -6,6 +6,7 @@ $resort="Sample";
 $resortFull = "Sample Resort";
 $resortURL  = "www.nspOnline.org";
 $resortImg  = "/images/Brighton.gif";
+$firstPage = "MonthCalendar";
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
@@ -32,7 +33,7 @@ $resortImg  = "/images/Brighton.gif";
  *****************************************************************************/
 
 $email_to ="steve@Gledhills.com";
-$email_headers = "From: brian@gledhills.com";
+$email_headers = "From: steve@gledhills.com";
 
 /*****************************************************************************
  * Edit password                                                             *
@@ -45,9 +46,9 @@ $edit_password  = "";   // Password required to edit the database.
  * Database settings                                                         *
  *****************************************************************************/
 
-$mysql_username = "root";           // MySQL user name
-$mysql_password = "my_password";    // MySQL password (leave empty if no password is required.)
-$mysql_db       = "brighton";        // MySQL database name
+$mysql_username = "zzz";           // MySQL user name
+$mysql_password = "zzz";    // MySQL password (leave empty if no password is required.)
+$mysql_db       = "zzz";        // MySQL database name
 
 $mysql_host     = "localhost";      // MySQL server host name
                                     // ("localhost" should be fine on 
@@ -81,7 +82,7 @@ $review_y     = "Needs Review";
  *****************************************************************************/
 
 $max_results_default = "50";    // Default Maximum results per page
-									
+
 /*****************************************************************************
  * Colors and misc. settings                                                 *
  *****************************************************************************/

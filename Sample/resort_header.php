@@ -10,26 +10,22 @@ require("config.php");
   <META HTTP-EQUIV="Expires" CONTENT="-1">
   <title><?php echo $resortFull; ?> Ski Patrol</title>
   <base target="contents">
-<!--  <script src="http://code.jquery.com/jquery-1.9.1.js"/>-->
   <script>
-    function goCalendar() {
-      window.location = "MemberLogin?resort=Afton"
-    }
-    function changeMainWindow(evt) {
+    function changeMainWindow(destination) {
 //      evt.preventDefault();
-      $("#main").load("/calendar-1/SubList?resort=" + "<?php echo $resort; ?>");
+      $("#main").load("/calendar-1/" + destination + "?resort=" + "<?php echo $resort; ?>");
     }
   </script>
 </head>
 
-<body topmargin="0" leftmargin="0">
+<body>
 <table border="0" cellspacing="0" cellpadding="0" width="932">
   <tr>
     <td>
-      <a href="<?php echo resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" width="261" height="60"></a>
+      <a href="<?php echo $resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" width="261" height="60"></a>
     </td>
     <td align="center">
-      <h1><?php echo $resortFull; ?> Ski Patrol&nbsp;
+      <h1><?php echo $resortFull; ?> Ski Patrol&nbsp;&nbsp;&nbsp;
         <img border="0" src="/images/cadeuc4.gif" width="32" height="33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </h1>
     </td>
@@ -39,31 +35,18 @@ require("config.php");
   </tr>
 
   <tr>
-    <td colspan="3" bgcolor="#EEEEEE">
-      <b><font size="2">
-        </font></b>
-    </td>
-  </tr>
-
-  <tr>
     <td colspan="3">
-
       <p align="center">
-
         <font size="4">
-          <a class="button" target="main" href="/calendar-1/MonthCalendar?resort=<?php echo $resort; ?><?php echo $userID; ?>">Online Schedule</a>
-          <a class="button" target="main" href="/calendar-1/ListAssignments?resort=<?php echo $resort; ?><?php echo $userID; ?>">My Assignments</a>
-          <a class="button" target="main" href="SubList.html">Sub List</a>
-          <a href=# onclick="changeMainWindow();return false;">NEW SubList</a>
-          <a class="button" target="main" href="/calendar-1/MemberList?resort=<?php echo $resort; ?><?php echo $userID; ?>">Patrollers</a>
-          <a class="button" target="main" href="/calendar-1/Directors?resort=<?php echo $resort; ?><?php echo $userID; ?>">Directors</a>
+          <a href=# onclick="changeMainWindow('MonthCalendar');return false;">Online Schedule</a>
+          <a href=# onclick="changeMainWindow('ListAssignments');return false;">My Assignments</a>
+          <a href=# onclick="changeMainWindow('SubList');return false;">SubList</a>
+          <a href=# onclick="changeMainWindow('MemberList');return false;">Patrollers</a>
+          <a href=# onclick="changeMainWindow('Directors');return false;">Directors</a>
         </font></p>
 
     </td>
   </tr>
 </table>
-<h2>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; </h2>
-
 </body>
-
 </html>
