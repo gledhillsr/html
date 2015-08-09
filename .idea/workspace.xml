@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample/index.php" afterPath="$PROJECT_DIR$/Sample/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="" />
     <ignored path="html.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,8 +26,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sample/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5450517">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            <state vertical-scroll-proportion="-1.267356">
+              <caret line="19" column="92" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="92" />
               <folding />
             </state>
           </provider>
@@ -212,8 +209,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="315" />
-    <option name="y" value="454" />
+    <option name="x" value="296" />
+    <option name="y" value="131" />
     <option name="width" value="1478" />
     <option name="height" value="854" />
   </component>
@@ -681,15 +678,15 @@
       <workItem from="1438878959617" duration="2952000" />
       <workItem from="1438893922286" duration="6905000" />
       <workItem from="1438984970049" duration="2224000" />
-      <workItem from="1439089222778" duration="503000" />
+      <workItem from="1439089222778" duration="1137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39699000" />
+    <option name="totallyTimeSpent" value="40333000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="315" y="454" width="1478" height="854" extended-state="0" />
+    <frame x="296" y="131" width="1478" height="854" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1158,8 +1155,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Sample/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5450517">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        <state vertical-scroll-proportion="-1.267356">
+          <caret line="19" column="92" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="92" />
           <folding />
         </state>
       </provider>
