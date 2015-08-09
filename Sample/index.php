@@ -17,29 +17,37 @@ require("config.php");
   <base target="contents">
   <script>
     function changeMainWindow(destination) {
-//      evt.preventDefault();
       $("#main").load("/calendar-1/" + destination + "?resort=" + "<?php echo $resort; ?>");
+//      evt.preventDefault();
     }
+  </script>
+  <script>
+    $("#memberLogin").submit(function (event) {
+      alert("Handler for memberLogin.submit() called.");
+      changeMainWindow("MonthCalendar");  //todo hack title
+//      event.preventDefault();
+    });
   </script>
   <style>
     #banner {
-      padding:0;
+      padding: 0;
       /*line-height:3px;*/
       /*background-color:#F8F8F8;*/
-      height:110px;
+      height: 110px;
       /*color:red;*/
       /*border-bottom: thick;*/
     }
+
     #main {
-      padding:0;
+      padding: 0;
       background-color: #fffe97;
-      height:100%;
+      height: 100%;
     }
   </style>
   <!--suppress JSUnresolvedLibraryURL -->
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
-    $(function() {
+    $(function () {
 //      $("#banner").load("resort_header.php");
       $("#main").load("/calendar-1/MonthCalendar?resort=" + "<?php echo $resort; ?>");
     });
