@@ -65,7 +65,7 @@ require("config.php");
   <table border="0" cellspacing="0" cellpadding="0" width="932">
     <tr>
       <td>
-        <a href="<?php echo $resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" height="60"></a>
+        <a href="<?php echo $resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" height='80' width="<?php echo $ImgWidth; ?>"></a>
       </td>
       <td align="center">
         <h1><?php echo $resortFull; ?> Ski Patrol&nbsp;&nbsp;&nbsp;
