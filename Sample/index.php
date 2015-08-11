@@ -21,13 +21,13 @@ require("config.php");
 //      evt.preventDefault();
     }
   </script>
-  <script>
-    $("#memberLogin").submit(function (event) {
-      alert("Handler for memberLogin.submit() called.");
-      changeMainWindow("MonthCalendar");  //todo hack title
-//      event.preventDefault();
-    });
-  </script>
+<!--  <script>-->
+<!--    $("#memberLogin").submit(function (event) {-->
+<!--      alert("Handler for memberLogin.submit() called.");-->
+<!--      changeMainWindow("MonthCalendar");  //todo hack title-->
+<!--//      event.preventDefault();-->
+<!--    });-->
+<!--  </script>-->
   <style>
     #banner {
       padding: 0;
