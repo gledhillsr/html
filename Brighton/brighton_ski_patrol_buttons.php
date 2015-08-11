@@ -49,7 +49,7 @@ function writeEx(id,text) {
 <body topmargin="0" leftmargin="0">
 <table border="0" width="900" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="20%"><a href="http://www.brightonresort.com/"><img border="0" src="images/Brighton.gif" width="261" height="60"></a></td>
+    <td width="20%"><a href="http://www.brightonresort.com/"><img border="0" src="images/Brighton.gif"  height="60"></a></td>
     <td width="60%">
       <h1>&nbsp;&nbsp;&nbsp;&nbsp;Brighton Ski Patrol&nbsp; <font size="2"><img border="0" src="images/cadeuc4.gif" width="32" height="33">
 </font>

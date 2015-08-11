@@ -1,20 +1,5 @@
 <?php
-require("config.php");
-//if(!ini_get('register_globals'))
-{
-  $__am = array('COOKIE','POST','GET');
-  while(list(,$__m) = each($__am)){
-//var_dump($__m);
-//echo "---" . ${"HTTP_".$__m."_VARS"} . "---<br>";
-    $__ah = &${"HTTP_".$__m."_VARS"};
-//var_dump($__ah);
-    if(!is_array($__ah)) continue;
-    while(list($__n, $__v) = each ($__ah)) {
-//echo "yyy(".$__n."--".$__v.")<br>";
-      $$__n = $__v;
-    }
-  }
-}
+//require("config.php");
 ?>
 <html>
 
@@ -26,35 +11,41 @@ require("config.php");
     //-->
   </script>
   <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-  <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
-  <META HTTP-EQUIV="Expires" CONTENT="-1">
   <title><?php echo $resortFull; ?> Ski Patrol</title>
   <base target="contents">
   <script>
     function changeMainWindow(destination) {
-//      evt.preventDefault();
       $("#main").load("/calendar-1/" + destination + "?resort=" + "<?php echo $resort; ?>");
+//      evt.preventDefault();
     }
+  </script>
+  <script>
+    $("#memberLogin").submit(function (event) {
+      alert("Handler for memberLogin.submit() called.");
+      changeMainWindow("MonthCalendar");  //todo hack title
+//      event.preventDefault();
+    });
   </script>
   <style>
     #banner {
-      padding:0;
+      padding: 0;
       /*line-height:3px;*/
       /*background-color:#F8F8F8;*/
-      height:110px;
+      height: 110px;
       /*color:red;*/
       /*border-bottom: thick;*/
     }
+
     #main {
-      padding:0;
+      padding: 0;
       background-color: #fffe97;
-      height:100%;
+      height: 100%;
     }
   </style>
   <!--suppress JSUnresolvedLibraryURL -->
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script>
-    $(function() {
+    $(function () {
 //      $("#banner").load("resort_header.php");
       $("#main").load("/calendar-1/MonthCalendar?resort=" + "<?php echo $resort; ?>");
     });
@@ -65,7 +56,7 @@ require("config.php");
   <table border="0" cellspacing="0" cellpadding="0" width="932">
     <tr>
       <td>
-        <a href="<?php echo $resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" height="60"></a>
+        <a href="<?php echo $resortURL; ?>"><img border="0" src="<?php echo $resortImg; ?>" width="<?php echo $ImgWidth; ?>" height="60"></a>
       </td>
       <td align="center">
         <h1><?php echo $resortFull; ?> Ski Patrol&nbsp;&nbsp;&nbsp;

@@ -6,6 +6,7 @@ $resort="Sample";
 $resortFull = "Sample Resort";
 $resortURL  = "www.nspOnline.org";
 $resortImg  = "/images/Brighton.gif";
+$ImgWidth  = "80";
 
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
