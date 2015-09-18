@@ -27,13 +27,13 @@ global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysql_db, $data
 global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday, $showDouble;
 global $StartTime,$EndTime;
 $mysql_username = "root";           // MySQL user name
-$mysql_password = "XXXXXXX";    // MySQL password (leave empty if no password is required.)
+$mysql_password = "AekdbKazs3990";    // MySQL password (leave empty if no password is required.)
 $mysql_db       = "Brighton";        // MySQL database name
 $mysql_host     = "localhost";      // MySQL server host name
 //echo "connect_string=$mysql_host<br>";
 //echo "connect_string=$mysql_username<br>";
 //echo "connect_string=$mysql_password<br>";
-    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
+    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database ($mysql_host, $mysql_username, $mysql_password)).");
 //echo "connect_string=$connect_string<br>";
 //        $query_string = "SELECT * FROM `roster` WHERE 1";
 //echo "query_string=$query_string<br>";
