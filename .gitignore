@@ -11,15 +11,17 @@
 *.ear
 *.ini
 .DS_Store
+.idea/
 phpMyAdmin/
 ScoutDocuments/
 apps/
 apps_project/
 documents/
-jars/
 gif/
+gledhills/
+jars/
+out/
 nspImages/
-.idea/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
