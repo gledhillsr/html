@@ -2,62 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PaidSnowCreek/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PaidSnowCreek/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PebbleCreek/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PebbleCreek/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PineCreek/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PineCreek/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PineMountain/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PineMountain/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pomerelle/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pomerelle/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PowderRidge/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PowderRidge/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RMSP/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RMSP/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowCreek/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowCreek/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowKing/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowKing/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierHollow/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierHollow/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierMountain/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierMountain/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ThreeRivers/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ThreeRivers/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WhitePine/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/WhitePine/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Willamette/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Willamette/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uop/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uop/resort_header.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HermonMountain/index.php" afterPath="$PROJECT_DIR$/HermonMountain/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IFNordic/index.php" afterPath="$PROJECT_DIR$/IFNordic/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JacksonHole/index.php" afterPath="$PROJECT_DIR$/JacksonHole/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JacksonSpecialEvents/index.php" afterPath="$PROJECT_DIR$/JacksonSpecialEvents/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KellyCanyon/index.php" afterPath="$PROJECT_DIR$/KellyCanyon/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LonesomePine/index.php" afterPath="$PROJECT_DIR$/LonesomePine/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MountKato/index.php" afterPath="$PROJECT_DIR$/MountKato/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NorwayMountain/index.php" afterPath="$PROJECT_DIR$/NorwayMountain/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaidSnowCreek/index.php" afterPath="$PROJECT_DIR$/PaidSnowCreek/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PebbleCreek/index.php" afterPath="$PROJECT_DIR$/PebbleCreek/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PineCreek/index.php" afterPath="$PROJECT_DIR$/PineCreek/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PineMountain/index.php" afterPath="$PROJECT_DIR$/PineMountain/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pomerelle/index.php" afterPath="$PROJECT_DIR$/Pomerelle/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowderRidge/index.php" afterPath="$PROJECT_DIR$/PowderRidge/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RMSP/index.php" afterPath="$PROJECT_DIR$/RMSP/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample/index.php" afterPath="$PROJECT_DIR$/Sample/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SnowCreek/index.php" afterPath="$PROJECT_DIR$/SnowCreek/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SnowKing/index.php" afterPath="$PROJECT_DIR$/SnowKing/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoldierHollow/index.php" afterPath="$PROJECT_DIR$/SoldierHollow/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoldierMountain/index.php" afterPath="$PROJECT_DIR$/SoldierMountain/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreeRivers/index.php" afterPath="$PROJECT_DIR$/ThreeRivers/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WhitePine/index.php" afterPath="$PROJECT_DIR$/WhitePine/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Willamette/index.php" afterPath="$PROJECT_DIR$/Willamette/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newResort/index.php" afterPath="$PROJECT_DIR$/newResort/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uop/index.php" afterPath="$PROJECT_DIR$/uop/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,11 +76,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Willamette/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.022110553">
+            <state vertical-scroll-proportion="-0.7096774">
               <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SnowCreek/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.7096774">
+              <caret line="1" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PaidSnowCreek/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.4838705">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8231156">
+              <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,7 +152,6 @@
         <option value="$PROJECT_DIR$/Afton/config.php" />
         <option value="$PROJECT_DIR$/AlpineMt/config.php" />
         <option value="$PROJECT_DIR$/screenshots/environment.ini" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Brighton/config.php" />
         <option value="$PROJECT_DIR$/Brighton/resort_header.php" />
         <option value="$PROJECT_DIR$/config.php" />
@@ -195,7 +170,6 @@
         <option value="$PROJECT_DIR$/MountKato/index.php" />
         <option value="$PROJECT_DIR$/newResort/index.php" />
         <option value="$PROJECT_DIR$/NorwayMountain/index.php" />
-        <option value="$PROJECT_DIR$/PaidSnowCreek/index.php" />
         <option value="$PROJECT_DIR$/PebbleCreek/index.php" />
         <option value="$PROJECT_DIR$/PineCreek/index.php" />
         <option value="$PROJECT_DIR$/PineMountain/index.php" />
@@ -211,6 +185,8 @@
         <option value="$PROJECT_DIR$/uop/index.php" />
         <option value="$PROJECT_DIR$/WhitePine/index.php" />
         <option value="$PROJECT_DIR$/Willamette/index.php" />
+        <option value="$PROJECT_DIR$/PaidSnowCreek/index.php" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -233,8 +209,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1288" />
+    <option name="x" value="765" />
+    <option name="y" value="56" />
+    <option name="width" value="1130" />
     <option name="height" value="1173" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -286,188 +263,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Willamette" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WhitePine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThreeRivers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SoldierMountain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SoldierHollow" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SnowKing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SnowCreek" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RMSP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PowderRidge" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Pomerelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PineMountain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -888,15 +683,15 @@
       <workItem from="1442193311221" duration="984000" />
       <workItem from="1442266303404" duration="55000" />
       <workItem from="1442546661078" duration="525000" />
-      <workItem from="1442593313522" duration="2814000" />
+      <workItem from="1442593313522" duration="3519000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57909000" />
+    <option name="totallyTimeSpent" value="58614000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1288" height="1173" extended-state="0" />
+    <frame x="765" y="56" width="1130" height="1173" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -914,7 +709,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22829582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26151013" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1021,13 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="35" column="93" selection-start-line="35" selection-start-column="93" selection-end-line="35" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -1164,14 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PaidSnowCreek/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.064516">
-          <caret line="17" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PebbleCreek/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.064516">
@@ -1228,14 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SnowCreek/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7096774">
-          <caret line="1" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SnowKing/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.7096774">
@@ -1286,8 +1058,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Willamette/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.022110553">
+        <state vertical-scroll-proportion="-0.7096774">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SnowCreek/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PaidSnowCreek/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8231156">
+          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
           <folding />
         </state>
       </provider>
