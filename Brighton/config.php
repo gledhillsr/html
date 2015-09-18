@@ -38,8 +38,8 @@ $edit_password  = "";   // Password required to edit the database.
  * Database settings                                                         *
  *****************************************************************************/
 
-$mysql_username = "root";           // MySQL user name
-$mysql_password = "AkedbKazs3990";    // MySQL password (leave empty if no password is required.)
+$mysql_username = "ZZZ";           // MySQL user name
+$mysql_password = "ZZZ";    // MySQL password (leave empty if no password is required.)
 $mysql_db       = "brighton";        // MySQL database name
 
 $mysql_host     = "localhost";      // MySQL server host name
