@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/2010OECSchedule.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/2010OECSyllabus.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/AmericanRedCrossAsthma.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/CPRChangesJuly2011.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/CPRO_HB_Pages.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/CPR_AnswerSheet.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/KnotsAndTerms.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/NightTeam20141001.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/brighton_asl.ppt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/2014_refresher_letter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/OEC_2004_course_cand.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/Volunteer.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/home.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/pro_form_reps.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/training.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/training_frame.htm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Brighton/weatherFrame.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/fphover.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/fphoverx.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Brighton/Volunteer.htm" afterPath="$PROJECT_DIR$/Brighton/Volunteer.htm" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Brighton/training.htm" afterPath="$PROJECT_DIR$/Brighton/training.htm" />
     </list>
     <ignored path="html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,8 +79,18 @@
       <file leaf-file-name="training.htm" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Brighton/training.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53125">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.625">
+              <caret line="32" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Volunteer.htm" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Brighton/Volunteer.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.4838705">
+              <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Sample/resort_header.php" />
         <option value="$PROJECT_DIR$/GrandTarghee/config.php" />
         <option value="$PROJECT_DIR$/Andes/config.php" />
         <option value="$PROJECT_DIR$/HermonMountain/config.php" />
@@ -174,6 +165,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Brighton/training_frame.htm" />
+        <option value="$PROJECT_DIR$/Brighton/Volunteer.htm" />
         <option value="$PROJECT_DIR$/Brighton/training.htm" />
       </list>
     </option>
@@ -685,16 +677,16 @@
       <workItem from="1442193311221" duration="984000" />
       <workItem from="1442266303404" duration="55000" />
       <workItem from="1442546661078" duration="525000" />
-      <workItem from="1442593313522" duration="4920000" />
+      <workItem from="1442593313522" duration="5345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60015000" />
+    <option name="totallyTimeSpent" value="60440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="37" y="62" width="1855" height="882" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -711,7 +703,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19712865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19712865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1122,6 +1114,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Brighton/Volunteer.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Brighton/training_frame.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.548387">
@@ -1132,8 +1132,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Brighton/training.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53125">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.625">
+          <caret line="32" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
