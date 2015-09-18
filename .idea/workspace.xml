@@ -2,624 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2012/AmericanRedCrossAsthma.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2012/CPRChangesJuly2011.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2012/CPRO_HB_Pages.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2012/CPR_AED_AnswerSheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2012/CPR_AED_ExamB.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2012_refresher_letter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2013_refresher_letter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/2014_refresher_letter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/AboutUs.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Assignment History.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/Spring_marys_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/_vti_cnf/Spring_marys_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/_vti_cnf/nc042001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/_vti_cnf/nc052001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/_vti_cnf/nc082001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/_vti_cnf/nc122000s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc012002.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc012002s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc022002.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc022002s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc032002.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc032002s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04032001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04072001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04102001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04172001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc042001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc042002.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc042002s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04222001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04242001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04272001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc04282001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05012001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05042001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05052001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05062001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05082001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05152001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc052001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc052001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05222001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc05292001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc06052001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc06092001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc06122001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc06192001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc062001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc062001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc06262001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc07032001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc07072001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc07102001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc07172001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc072001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc072001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc07242001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc07312001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08032001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08042001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08052001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08072001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08092001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08112001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08142001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08162001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc082001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc082001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08212001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08232001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08282001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc08302001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09042001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09062001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09112001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09132001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09182001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc092001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc092001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09202001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09252001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc09272001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10022001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10042001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10062001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10072001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10092001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10112001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10162001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10182001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc102001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc102001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10232001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10252001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10302001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc10312001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc112001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc112001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc11222001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc122000s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc122001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc122001s.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/CalendarOfEvents/nc12252001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/EditShifts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/ForSale/BSPClassifiedAds.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/ForSale/logo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/ForSale/pe01981_.wmf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/NightSchedule10_1_13.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/NightSchedule10_1_2012.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/NightTeam20141001.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Night_team_10_4_2011.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Night_team_schedules_12-1-2010.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/OEC 2004 course_cand.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/OEC 2004 course_cand.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/PassLogo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/PhotoGallery.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/2002Poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/_vti_cnf/2002Poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/_vti_cnf/filelist.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/_vti_cnf/image001.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/_vti_cnf/image002.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/filelist.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/image001.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Poster_files/image002.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Preferences.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Regence Blue Cross Blue Shield.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Roster.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/SPassword.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer/BIFFwriter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer/Format.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer/Parser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer/Validator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer/Workbook.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Spreadsheet/Excel/Writer/Worksheet.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Volunteer.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Volunteer2.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Volunteer2012.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/Volunteer2012.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/VolunteerSubmit.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/VoucherHistory.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_derived/_vti_cnf/nortbots.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_derived/nortbots.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_private/form_results.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/color0.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/color1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/copy-of-industrial.inf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/copy-of-industrial.utf8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/custom.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/graph0.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/graph1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/hintergrund.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbanna.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbannd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbul1a.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbul1d.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbul2a.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbul2d.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbul3a.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indbul3d.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indglob.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhbuda.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhbudd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhbuha.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhbusa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhbusd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhombd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhomda.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhomha.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhomsa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhorsa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indhorsd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indnexbd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indnexda.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indnexha.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indnexsa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indprebd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indpreda.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indpreha.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indpresa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indtextb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indupbd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indupda.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indupha.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indupsa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indvbuda.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indvbudd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indvbuha.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indvbusa.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/indvbusd.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/copy-of-industrial/theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/_themes/themes.inf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/ablueback.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/ani_ncal.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/Agent.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/Agent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/DBAccess.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/DBAccess.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/MailMan.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/MailMan.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/MailManException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/MailManException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/MessageDialog.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/Npanxx.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/Npanxx.java_old" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/Order.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/Order.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/reminder.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/reminder.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/apps/reminder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/atomic.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/bolle.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/brighton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/brighton_asl.ppt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/brighton_ski_patrol.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/brighton_ski_patrol_buttons.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/brighton_ski_patrol_buttons.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/brighton_ski_patrol_buttons2.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/calendar.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/calendar_april2001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/calendar_may2001.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/calendar_of_events.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/convert2sql.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/css/menubar.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/css/menubar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/customized_patrol_list.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/debug.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2004_CPR_AED_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2004_CPR_Answer_sheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2004_IDC_Test .pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2004_Night_team.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2004_refresher.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2004_scenario.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005YouAreTheRescuerCycleA.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_Accident_Scenario.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_CPR_AED_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_CPR_Answer_Sheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_IDC_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_IncidentReport.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_TransportationScenario.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_oec_rsg.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_refresher.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2005_scenario.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006 refresher doc part two revised 9.22.06 (2).pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_CPR_AED_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_CPR_AnswerSheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_IDC_test.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_IDC_test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_InstructorRefresher.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_cpr_guidelines.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_refresher_overview.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_refresher_overview1.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_refresher_overview2.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_refresher_overview2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2006_refresher_overview_old.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_Brighton_Outline_Letter_7.18.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_CPR_AED_Answer_Sheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_CPR_AED_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_CPR_AnswerSheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_CPR_Reference_Sheets.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_Station_A_B.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_Station_C.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_Station_D.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_Station_E_F.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2007_Station_G_H.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2008_Brighton_Refresher.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2008_CPR_AED_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2008_CPR_AnswerSheet.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2008_Check_list.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2009_CPR_AED_Test.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2009_NightTeamSchedules1.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2009_NightTeamSchedules2.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2009_NightTeamSchedules2.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/2009_OEC_Schedule.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/BSPVolunteer2007.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/Elections.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/Elections2008.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/IDC Test 2001.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/IDCTest2.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/Night ski team schedules revised 9-28-06.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/PatrolChristmasInvite.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/TradingCardBrandy.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/TradingCardJake.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/TradingCardLady.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/TradingCardSophie.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/Volunteer2005.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/Volunteer_outline_2010_rev_A.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/Volunteer_outline_2010_rev_A.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/documents/refresher2002.doc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/download_roster.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/exceldate.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/excelfont.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/excelparser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/fall_refresher.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/fileupload-class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/foo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/foo.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/get_adobe_reader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/history.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/holiday.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/home.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/home1.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/home_hover.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/home_member.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/hphover.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Brad How to Ski Suicide.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Brad_Powder_Flagstaff001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Brighton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Brighton_011301AG001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1Directors.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1Directors.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1EmergencyCall.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1FallRefresher.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1ForSale.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1MyAssignments.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1NewPolicies.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1OnlineSchedule.bmp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1OnlineSchedule.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1PalmPilot.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1PatrolDays.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1Patrollers.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1PersonalInfo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1PhotoGallery.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1ProFormReps.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1SubList.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1Volunteer.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Btn1Weather.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Doug_Patsy_Marley_Summit001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/EvilSmile.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/FRONTPAG.GIF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/GrandView_Ridge_Scott001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/How to ski Suicide by Marc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Jeep_back1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Jeep_dash1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Jeep_front.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Jenny_Larry_Brad_Suicide_Chute001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Look out below.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Marc_elevator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/MembersOnly.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/MembersOnly.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/MembershipCard.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Mt  Raymond.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/NSP_logo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/OECCard.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/P1010047001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Right_6.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/SUMBUL1D.GIF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/SUNSET.GIF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Small_left_arrow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/So What is below.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Spring_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Spring_doug.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Spring_elevator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Spring_marys.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/SteveGledhill_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/SteveGledhill_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/SteveGledhill_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/SteveGledhill_4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Brad How to Ski Suicide.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Brighton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/EvilSmile.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/FRONTPAG.GIF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/How to ski Suicide by Marc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Jeep_back1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Jeep_dash1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Jeep_front.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Look out below.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Marc_elevator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/MembershipCard.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Mt  Raymond.JPG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/NSP_logo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/OECCard.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/SUMBUL1D.GIF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/SUNSET.GIF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/So What is below.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Spring_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Spring_doug.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Spring_elevator.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/Spring_marys.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/SteveGledhill_1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/SteveGledhill_2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/SteveGledhill_3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/SteveGledhill_4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/antball.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/cadeuc4.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/city.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/code.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/doug_10420.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/execute.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/getacro.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/grayButton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/grn_pulse_md_wht.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/hintergrund.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/imd2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/indbul1a.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/jeep_engine1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/label.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/marker.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncclear.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncdaybk.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncgohome.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncgotop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncgray.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncmnthbk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncmnthsc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/nctoday.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/nctodayx.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncvwcal.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncvwnext.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncvwprev.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ncvwscrl.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/nspbutt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ppbullet.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/redButton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/return.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/salomon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/ski_accident_md_wht.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/smith.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/_vti_cnf/smith.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/antball.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/argentamorning001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/brighton2001_0224_104311AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/bullet.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/cadeuc4.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/circall2002_0206_064851AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/circall2002_0226_073451AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/circall2002_0226_075448AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/city.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/code.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/doug1_copy001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/doug20030406A001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/doug_10420.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/execute.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/flagstaff_011801AC001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/flagstaff_011801AE001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/flagstaff_011801AH001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/getacro.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/giro_logo.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/girologo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/grayButton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/grn_pulse_md_wht.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/group_summit001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/hike1001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/hintergrund.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/imd2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/indbul1a.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/jeep_engine1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/jenny_lackowaxin001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/jennycrash001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/kristen20030406B001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/label.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/lazy001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/marc20030406A001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/marczoom20030406001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/marker.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncclear.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncdaybk.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncgohome.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncgotop.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncgray.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncmnthbk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncmnthsc.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/nctoday.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/nctodayx.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncvwcal.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncvwnext.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncvwprev.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ncvwscrl.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/new_005.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/new_021.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/nsp_shield.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/nspbutt.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/patsymar2001_0308_064637AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ppbullet.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/redButton.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/red_line.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/return.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/salomon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/ski_accident_md_wht.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/smith.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/smith.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/suicide2002_0110_074526AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/superior2001_0425_061946AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/superior2001_0425_074931AA001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/undercon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/images/wolf001_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/Entries.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/Entry.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/JspCalendar.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/TableBean.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/cal1.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/cal1.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/cal2.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/cal2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/calendar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/cal/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/checkbox/CheckTest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/checkbox/check.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/checkbox/checkresult.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/checkbox/checkresult.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/checkbox/cresult.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/colors/ColorGameBean.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/colors/clr.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/colors/colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/colors/colors.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/colors/colrs.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/dates/date.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/dates/date.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/dates/date.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/error/er.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/error/err.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/error/err.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/error/error.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/error/errorpge.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/forward/forward.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/forward/forward.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/forward/fwd.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/forward/one.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/forward/two.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/include/foo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/include/foo.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/include/inc.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/include/include.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/include/include.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/jsptoserv/hello.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/jsptoserv/jsptoservlet.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/jsptoserv/jts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/jsptoserv/jts.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/jsptoserv/stj.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/num/numguess.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/num/numguess.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/num/numguess.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/plugin/applet/Clock2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/plugin/applet/Clock2.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/plugin/plugin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/plugin/plugin.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/plugin/plugin.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/error.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/index.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/login.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/login/error.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/login/login.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/protected/index.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/security/security.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/sessions/DummyCart.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/sessions/carts.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/sessions/carts.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/sessions/carts.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/sessions/crt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/simpletag/foo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/simpletag/foo.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/simpletag/foo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/snp/snoop.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/snp/snoop.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/snp/snoop.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/jsp/source.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/meta-inf/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/new_policies.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/package.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/pro_fo1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/pro_fo2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/pro_form_reps.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/question.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/refresher2002.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/resort_header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/rob1_small.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/sample.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/scripts/ee.1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/sendmail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/cookies.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/helloworld.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/reqheaders.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/reqinfo.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/reqparams.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/servlets/sessions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/ski_credits.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/smith.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/snow.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/snowman_skiing.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/to_become_a_volunteer.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/to_become_a_volunteer.xyz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/training.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/training_frame.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/training_general.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/config.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/convert2sql.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/debug.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/exceldate.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/excelfont.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/excelparser.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/fileupload-class.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/footer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/header.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/nsp_32404_credits.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/nsp_totals_21404.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/nsp_totals_thru_020605.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/nsp_vouchers_42004_with_adjustments.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/nspandy_with_extensions.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/upload.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/upload.ipr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/upload.iws" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/upload/voucherhistory.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/visitingPatroller.htm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Brighton/weatherFrame.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Afton/index.php" afterPath="$PROJECT_DIR$/Afton/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlpineMt/index.php" afterPath="$PROJECT_DIR$/AlpineMt/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Andes/index.php" afterPath="$PROJECT_DIR$/Andes/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Brighton/index.php" afterPath="$PROJECT_DIR$/Brighton/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GrandTarghee/index.php" afterPath="$PROJECT_DIR$/GrandTarghee/index.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PaidSnowCreek/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PaidSnowCreek/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PebbleCreek/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PebbleCreek/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PineCreek/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PineCreek/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PineMountain/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PineMountain/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pomerelle/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Pomerelle/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PowderRidge/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/PowderRidge/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RMSP/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/RMSP/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowCreek/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowCreek/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowKing/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SnowKing/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierHollow/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierHollow/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierMountain/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SoldierMountain/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ThreeRivers/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ThreeRivers/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WhitePine/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/WhitePine/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Willamette/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Willamette/resort_header.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uop/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/uop/resort_header.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HermonMountain/index.php" afterPath="$PROJECT_DIR$/HermonMountain/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IFNordic/index.php" afterPath="$PROJECT_DIR$/IFNordic/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JacksonHole/index.php" afterPath="$PROJECT_DIR$/JacksonHole/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JacksonSpecialEvents/index.php" afterPath="$PROJECT_DIR$/JacksonSpecialEvents/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KellyCanyon/index.php" afterPath="$PROJECT_DIR$/KellyCanyon/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LonesomePine/index.php" afterPath="$PROJECT_DIR$/LonesomePine/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MountKato/index.php" afterPath="$PROJECT_DIR$/MountKato/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NorwayMountain/index.php" afterPath="$PROJECT_DIR$/NorwayMountain/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PaidSnowCreek/index.php" afterPath="$PROJECT_DIR$/PaidSnowCreek/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PebbleCreek/index.php" afterPath="$PROJECT_DIR$/PebbleCreek/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PineCreek/index.php" afterPath="$PROJECT_DIR$/PineCreek/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PineMountain/index.php" afterPath="$PROJECT_DIR$/PineMountain/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pomerelle/index.php" afterPath="$PROJECT_DIR$/Pomerelle/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PowderRidge/index.php" afterPath="$PROJECT_DIR$/PowderRidge/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RMSP/index.php" afterPath="$PROJECT_DIR$/RMSP/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sample/index.php" afterPath="$PROJECT_DIR$/Sample/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SnowCreek/index.php" afterPath="$PROJECT_DIR$/SnowCreek/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SnowKing/index.php" afterPath="$PROJECT_DIR$/SnowKing/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoldierHollow/index.php" afterPath="$PROJECT_DIR$/SoldierHollow/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SoldierMountain/index.php" afterPath="$PROJECT_DIR$/SoldierMountain/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ThreeRivers/index.php" afterPath="$PROJECT_DIR$/ThreeRivers/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WhitePine/index.php" afterPath="$PROJECT_DIR$/WhitePine/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Willamette/index.php" afterPath="$PROJECT_DIR$/Willamette/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/newResort/index.php" afterPath="$PROJECT_DIR$/newResort/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uop/index.php" afterPath="$PROJECT_DIR$/uop/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -643,70 +81,60 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Andes/index.php">
+        <entry file="file://$PROJECT_DIR$/SoldierHollow/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.7096774">
+              <caret line="1" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Brighton/index.php">
+        <entry file="file://$PROJECT_DIR$/SoldierMountain/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.806452">
+              <caret line="11" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ThreeRivers/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.064516">
+              <caret line="17" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uop/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.354838">
+              <caret line="16" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WhitePine/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.935484">
+              <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GrandTarghee/index.php">
+        <entry file="file://$PROJECT_DIR$/Willamette/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Afton/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AlpineMt/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/NorwayMountain/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PineCreek/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.6774194">
-              <caret line="3" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.022110553">
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -732,21 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PaidSnowCreek/index.php" />
-        <option value="$PROJECT_DIR$/PineCreek/index.php" />
-        <option value="$PROJECT_DIR$/Pomerelle/index.php" />
-        <option value="$PROJECT_DIR$/PowderRidge/index.php" />
-        <option value="$PROJECT_DIR$/RMSP/index.php" />
-        <option value="$PROJECT_DIR$/SnowCreek/index.php" />
-        <option value="$PROJECT_DIR$/SnowKing/index.php" />
-        <option value="$PROJECT_DIR$/SoldierHollow/index.php" />
-        <option value="$PROJECT_DIR$/SoldierMountain/index.php" />
-        <option value="$PROJECT_DIR$/ThreeRivers/index.php" />
-        <option value="$PROJECT_DIR$/uop/index.php" />
-        <option value="$PROJECT_DIR$/WhitePine/index.php" />
-        <option value="$PROJECT_DIR$/Willamette/index.php" />
-        <option value="$PROJECT_DIR$/PineMountain/index.php" />
-        <option value="$PROJECT_DIR$/PebbleCreek/index.php" />
         <option value="$PROJECT_DIR$/Sample/calendar.html" />
         <option value="$PROJECT_DIR$/Sample/SubList.html" />
         <option value="$PROJECT_DIR$/Sample/SubList2.html" />
@@ -762,12 +175,17 @@
         <option value="$PROJECT_DIR$/Sample/config.php" />
         <option value="$PROJECT_DIR$/Afton/config.php" />
         <option value="$PROJECT_DIR$/AlpineMt/config.php" />
-        <option value="$PROJECT_DIR$/Sample/index.php" />
         <option value="$PROJECT_DIR$/screenshots/environment.ini" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Brighton/config.php" />
         <option value="$PROJECT_DIR$/Brighton/resort_header.php" />
         <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/Afton/index.php" />
+        <option value="$PROJECT_DIR$/AlpineMt/index.php" />
+        <option value="$PROJECT_DIR$/Andes/index.php" />
+        <option value="$PROJECT_DIR$/Brighton/index.php" />
+        <option value="$PROJECT_DIR$/Brighton/index.html" />
+        <option value="$PROJECT_DIR$/GrandTarghee/index.php" />
         <option value="$PROJECT_DIR$/HermonMountain/index.php" />
         <option value="$PROJECT_DIR$/IFNordic/index.php" />
         <option value="$PROJECT_DIR$/JacksonHole/index.php" />
@@ -777,12 +195,22 @@
         <option value="$PROJECT_DIR$/MountKato/index.php" />
         <option value="$PROJECT_DIR$/newResort/index.php" />
         <option value="$PROJECT_DIR$/NorwayMountain/index.php" />
-        <option value="$PROJECT_DIR$/Afton/index.php" />
-        <option value="$PROJECT_DIR$/AlpineMt/index.php" />
-        <option value="$PROJECT_DIR$/Andes/index.php" />
-        <option value="$PROJECT_DIR$/Brighton/index.php" />
-        <option value="$PROJECT_DIR$/Brighton/index.html" />
-        <option value="$PROJECT_DIR$/GrandTarghee/index.php" />
+        <option value="$PROJECT_DIR$/PaidSnowCreek/index.php" />
+        <option value="$PROJECT_DIR$/PebbleCreek/index.php" />
+        <option value="$PROJECT_DIR$/PineCreek/index.php" />
+        <option value="$PROJECT_DIR$/PineMountain/index.php" />
+        <option value="$PROJECT_DIR$/Pomerelle/index.php" />
+        <option value="$PROJECT_DIR$/PowderRidge/index.php" />
+        <option value="$PROJECT_DIR$/RMSP/index.php" />
+        <option value="$PROJECT_DIR$/Sample/index.php" />
+        <option value="$PROJECT_DIR$/SnowCreek/index.php" />
+        <option value="$PROJECT_DIR$/SnowKing/index.php" />
+        <option value="$PROJECT_DIR$/SoldierHollow/index.php" />
+        <option value="$PROJECT_DIR$/SoldierMountain/index.php" />
+        <option value="$PROJECT_DIR$/ThreeRivers/index.php" />
+        <option value="$PROJECT_DIR$/uop/index.php" />
+        <option value="$PROJECT_DIR$/WhitePine/index.php" />
+        <option value="$PROJECT_DIR$/Willamette/index.php" />
       </list>
     </option>
   </component>
@@ -806,7 +234,7 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1535" />
+    <option name="width" value="1288" />
     <option name="height" value="1173" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -871,7 +299,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="PineCreek" />
+              <option name="myItemId" value="Willamette" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -885,7 +313,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="NorwayMountain" />
+              <option name="myItemId" value="WhitePine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -899,7 +327,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="GrandTarghee" />
+              <option name="myItemId" value="uop" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -913,7 +341,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Andes" />
+              <option name="myItemId" value="ThreeRivers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -927,7 +355,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AlpineMt" />
+              <option name="myItemId" value="SoldierMountain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -941,7 +369,105 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Afton" />
+              <option name="myItemId" value="SoldierHollow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowKing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SnowCreek" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RMSP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowderRidge" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pomerelle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PineMountain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1362,15 +888,15 @@
       <workItem from="1442193311221" duration="984000" />
       <workItem from="1442266303404" duration="55000" />
       <workItem from="1442546661078" duration="525000" />
-      <workItem from="1442593313522" duration="1838000" />
+      <workItem from="1442593313522" duration="2814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56933000" />
+    <option name="totallyTimeSpent" value="57909000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1535" height="1173" extended-state="0" />
+    <frame x="0" y="23" width="1288" height="1173" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1388,7 +914,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1904762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22829582" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1505,111 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PebbleCreek/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PineCreek/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PineMountain/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pomerelle/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PowderRidge/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RMSP/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sample/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.096774">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SnowCreek/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SnowKing/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoldierHollow/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SoldierMountain/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ThreeRivers/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uop/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WhitePine/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.967742">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Willamette/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8387096">
-          <caret line="7" column="25" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1631,86 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HermonMountain/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26532662">
-          <caret line="12" column="108" selection-start-line="12" selection-start-column="108" selection-end-line="12" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IFNordic/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26532662">
-          <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JacksonHole/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.088442214">
-          <caret line="4" column="88" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JacksonSpecialEvents/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13266331">
-          <caret line="6" column="81" selection-start-line="6" selection-start-column="81" selection-end-line="6" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/KellyCanyon/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26532662">
-          <caret line="12" column="105" selection-start-line="12" selection-start-column="105" selection-end-line="12" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/newResort/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26532662">
-          <caret line="12" column="109" selection-start-line="12" selection-start-column="109" selection-end-line="12" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MountKato/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26532662">
-          <caret line="12" column="103" selection-start-line="12" selection-start-column="103" selection-end-line="12" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LonesomePine/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26532662">
-          <caret line="12" column="128" selection-start-line="12" selection-start-column="128" selection-end-line="12" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PineCreek/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.6774194">
-          <caret line="3" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/NorwayMountain/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Afton/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -1719,7 +1060,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AlpineMt/index.php">
+    <entry file="file://$PROJECT_DIR$/HermonMountain/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GrandTarghee/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17688443">
+          <caret line="8" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Brighton/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -1735,7 +1092,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Brighton/index.php">
+    <entry file="file://$PROJECT_DIR$/AlpineMt/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
@@ -1743,10 +1100,194 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GrandTarghee/index.php">
+    <entry file="file://$PROJECT_DIR$/IFNordic/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.935484">
+          <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JacksonHole/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="12" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JacksonSpecialEvents/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KellyCanyon/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.935484">
+          <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LonesomePine/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="12" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MountKato/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.935484">
+          <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/newResort/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.774194">
+          <caret line="18" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NorwayMountain/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.4838705">
+          <caret line="19" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PaidSnowCreek/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="17" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PebbleCreek/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="17" column="7" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PineCreek/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PineMountain/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.354838">
+          <caret line="16" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pomerelle/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PowderRidge/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="12" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RMSP/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sample/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.935484">
+          <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SnowCreek/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SnowKing/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoldierHollow/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7096774">
+          <caret line="1" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SoldierMountain/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.806452">
+          <caret line="11" column="11" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ThreeRivers/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.064516">
+          <caret line="17" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/uop/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.354838">
+          <caret line="16" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WhitePine/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.935484">
+          <caret line="14" column="6" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Willamette/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.022110553">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
           <folding />
         </state>
       </provider>
