@@ -1,5 +1,5 @@
 <?php
-$thisResort = "UOP";
+$thisResort = "uop";
 ?>
 
 <!DOCTYPE HTML>

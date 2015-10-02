@@ -11,8 +11,8 @@
 *.ear
 *.ini
 .DS_Store
+.idea/workspace.xml
 .idea/
-phpMyAdmin/
 ScoutDocuments/
 apps/
 apps_project/
