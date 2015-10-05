@@ -1,5 +1,5 @@
 <?php
-$thisResort = "BeunaVista";
+$thisResort = "BuenaVista";
 ?>
 
 <!DOCTYPE HTML>
