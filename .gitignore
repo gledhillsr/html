@@ -11,7 +11,6 @@
 *.ear
 *.ini
 .DS_Store
-.idea/workspace.xml
 .idea/
 ScoutDocuments/
 apps/
