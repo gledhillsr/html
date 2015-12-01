@@ -1,5 +1,6 @@
 <?php
 require("config.php");
+require("environment.ini");
 
 //================
 // init
@@ -26,8 +27,7 @@ global $chg,$srtLastPrinted,$strToday, $sortBy, $connect_string, $lastPrintedTic
 global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysql_db, $dataFrom;
 global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday, $showDouble;
 global $StartTime,$EndTime;
-$mysql_username = "zzz";           // MySQL user name
-$mysql_password = "zzzzzzz";    // MySQL password (leave empty if no password is required.)
+global $mysql_username, $mysql_password;
 $mysql_db       = "Brighton";        // MySQL database name
 $mysql_host     = "localhost";      // MySQL server host name
 //echo "connect_string=$mysql_host<br>";
