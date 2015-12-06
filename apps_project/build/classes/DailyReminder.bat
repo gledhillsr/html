@@ -1,1 +1,0 @@
-java -cp c:\web\jars\mysql-connector-java-2.0.14-bin.jar;c:\web\jars\Mail\mail.jar;c:\web\jars\Mail\activation.jar;. reminder
