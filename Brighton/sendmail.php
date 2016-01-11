@@ -23,19 +23,19 @@ $message = "Name: $firstName $lastName\n" .
     "Ski Experience: $skiExperience";
 
 
-mail( "steve@gledhills.com", "Ski Patrol volunteer from web site", $message, "From: $email" );
+mail( "steve@gledhills.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: $email" );
+mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: $email" );
+mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-mail( "mrblackburn13@hotmail.com", "Ski Patrol volunteer from web site", $message, "From: $email" );
+mail( "mrblackburn13@hotmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: $email" );
+mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: $email" );
+mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //
-//mail( "jennfernelius@aol.com", "Ski Patrol volunteer from web site", $message, "From: $email" );
+//mail( "jennfernelius@aol.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //
 header( "Location: VolunteerSubmit.php?firstName=$firstName&lastName=$lastName" );
 
