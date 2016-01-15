@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `WelchVillage`
 --
-CREATE DATABASE IF NOT EXISTS `WelchVillage` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `WelchVillage`;
+CREATE DATABASE IF NOT EXISTS `ParkCity` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `ParkCity`;
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `directorsettings` (
 --
 
 INSERT INTO `directorsettings` (`PatrolName`, `emailReminder`, `reminderDays`, `emailOnChanges`, `useTeams`, `directorsOnlyChange`, `emailAll`, `nameFormat`, `startDate`, `endDate`, `useBlackOut`, `startBlackOut`, `endBlackOut`, `lastSkiHistoryUpdate`, `lastVoucherHistoryUpdate`, `signinLockout`, `removeAccess`) VALUES
-('Welch Village', '0', 3, '0', '0', '0', '1', 0, '13-11', '29-03', 0, '01-01-14', '01-01-14', 0, '0000-00-00', 0, 127);
+('Park City Mountain', '0', 3, '0', '0', '0', '1', 0, '13-11', '29-03', 0, '01-01-15', '01-01-15', 0, '0000-00-00', 0, 127);
 
 -- --------------------------------------------------------
 
