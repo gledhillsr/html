@@ -68,7 +68,7 @@
       </td>
     </tr>
     <tr>
-      <td colspan="3">
+      <td colspan="2">
         <p align="center">
           <font size="4">
             <a href=# onclick="changeMainWindow('MonthCalendar');return false;">Online Schedule</a>
@@ -77,6 +77,9 @@
             <a href=# onclick="changeMainWindow('MemberList');return false;">Patrollers</a>
             <a href=# onclick="changeMainWindow('Directors');return false;">Directors</a>
           </font></p>
+      </td>
+      <td>
+        <a href=# onclick="changeMainWindow('Logout');return false;">Logout</a>
       </td>
     </tr>
   </table>
