@@ -552,8 +552,8 @@ if (document.all || document.getElementById) {
     	@mysql_free_result($result);
 
 		//open web connection
-		$mysql_host = "www.gledhills.com";
-		$connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to web database.");
+//		$mysql_host = "www.gledhills.com";
+		$connect_string = @mysql_connect($gledhills_host, $mysql_username, $mysql_password) or die ("Could not connect to web database.");
 		//build date string
 		  $tdate  = $arrDate[year] . "-";
 		  if($arrDate[mon] < 10) $tdate .= "0";
