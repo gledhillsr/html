@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4bf553a-2650-410f-8b5f-97f69f54a1f9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Brighton/Volunteer.htm" afterPath="$PROJECT_DIR$/Brighton/Volunteer.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Brighton/sendmail.php" afterPath="$PROJECT_DIR$/Brighton/sendmail.php" />
     </list>
     <ignored path="html.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,20 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="area_staffing.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screenshots/area_staffing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.129032">
+            <state vertical-scroll-proportion="-0.7096774">
               <caret line="554" column="2" selection-start-line="554" selection-start-column="2" selection-end-line="554" selection-end-column="2" />
               <folding>
                 <marker date="1455800469000" expanded="true" signature="2959:3031" placeholder="SELECT * FRO... skihistory" />
@@ -63,7 +51,7 @@
       <file leaf-file-name="training.htm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Brighton/training.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.806452">
+            <state vertical-scroll-proportion="0.0">
               <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
               <folding />
             </state>
@@ -73,18 +61,18 @@
       <file leaf-file-name="training_frame.htm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Brighton/training_frame.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.548387">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Volunteer.htm" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Volunteer.htm" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Brighton/Volunteer.htm">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8448277">
-              <caret line="230" column="5" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.30044842">
+              <caret line="162" column="275" selection-start-line="162" selection-start-column="275" selection-end-line="162" selection-end-column="275" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -135,10 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendmail.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sendmail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Brighton/sendmail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8233533">
+            <state vertical-scroll-proportion="-13.935484">
               <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
@@ -254,8 +242,8 @@
         <option value="$PROJECT_DIR$/index_common.php" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/screenshots/area_staffing.php" />
-        <option value="$PROJECT_DIR$/Brighton/Volunteer.htm" />
         <option value="$PROJECT_DIR$/Brighton/sendmail.php" />
+        <option value="$PROJECT_DIR$/Brighton/Volunteer.htm" />
       </list>
     </option>
   </component>
@@ -276,8 +264,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="86" />
-    <option name="y" value="165" />
+    <option name="x" value="207" />
+    <option name="y" value="444" />
     <option name="width" value="1693" />
     <option name="height" value="873" />
   </component>
@@ -328,6 +316,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -362,7 +351,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -978,14 +966,15 @@
       <workItem from="1454281709033" duration="602000" />
       <workItem from="1455799977737" duration="663000" />
       <workItem from="1455849936893" duration="624000" />
+      <workItem from="1455852033044" duration="215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82419000" />
+    <option name="totallyTimeSpent" value="82634000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="86" y="165" width="1693" height="873" extended-state="0" />
+    <frame x="207" y="444" width="1693" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1296,7 +1285,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,7 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1317,7 +1304,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1345,14 +1331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screenshots/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1361,9 +1339,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Brighton/training.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Brighton/training_frame.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Brighton/sendmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.935484">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3856503">
+          <caret line="86" column="22" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/screenshots/area_staffing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.129032">
+        <state vertical-scroll-proportion="-0.7096774">
           <caret line="554" column="2" selection-start-line="554" selection-start-column="2" selection-end-line="554" selection-end-column="2" />
           <folding>
             <marker date="1455800469000" expanded="true" signature="2959:3031" placeholder="SELECT * FRO... skihistory" />
@@ -1382,26 +1392,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Brighton/training.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.806452">
-          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Brighton/training_frame.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.548387">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Brighton/Volunteer.htm">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8448277">
-          <caret line="230" column="5" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.30044842">
+          <caret line="162" column="275" selection-start-line="162" selection-start-column="275" selection-end-line="162" selection-end-column="275" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#div#0;n#body#0;n#!!top" expanded="true" />
@@ -1448,14 +1442,6 @@
             <element signature="n#style#0;n#i#0;n#b#0;n#p#19;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#i#0;n#b#0;n#p#19;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Brighton/sendmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8233533">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
