@@ -22,21 +22,20 @@ $message = "Name: $firstName $lastName\n" .
     "Years Skied: $yearsSkied\n" .
     "Ski Experience: $skiExperience";
 
-
+//Steve Gledhill
 mail( "steve@gledhills.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-
+//dedicated mailbox
 mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
+//Andy Peterson
 mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-
-mail( "mrblackburn13@hotmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-
+//Chad D'Alessandro
+mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//Roger Rains
 mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-
+//Chad Smith
 mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//
-//mail( "jennfernelius@aol.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//
+
 header( "Location: VolunteerSubmit.php?firstName=$firstName&lastName=$lastName" );
 
 
