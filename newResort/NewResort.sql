@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `WelchVillage`
+-- Database: `ZZZZZZ`
 --
-CREATE DATABASE IF NOT EXISTS `ParkCity` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `ParkCity`;
+CREATE DATABASE IF NOT EXISTS `ZZZZZZZZ` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `ZZZZZZ`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +28,7 @@ USE `ParkCity`;
 -- Table structure for table `assignments`
 --
 
-DROP TABLE IF EXISTS `assignments`;
+/* DROP TABLE IF EXISTS `assignments`; */
 CREATE TABLE IF NOT EXISTS `assignments` (
   `Date` varchar(14) NOT NULL DEFAULT '',
   `StartTime` varchar(12) DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `assignments` (
 -- Table structure for table `directorsettings`
 --
 
-DROP TABLE IF EXISTS `directorsettings`;
+/* DROP TABLE IF EXISTS `directorsettings`; */
 CREATE TABLE IF NOT EXISTS `directorsettings` (
   `PatrolName` varchar(32) NOT NULL DEFAULT '',
   `emailReminder` char(1) NOT NULL DEFAULT '0',
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `directorsettings` (
 --
 
 INSERT INTO `directorsettings` (`PatrolName`, `emailReminder`, `reminderDays`, `emailOnChanges`, `useTeams`, `directorsOnlyChange`, `emailAll`, `nameFormat`, `startDate`, `endDate`, `useBlackOut`, `startBlackOut`, `endBlackOut`, `lastSkiHistoryUpdate`, `lastVoucherHistoryUpdate`, `signinLockout`, `removeAccess`) VALUES
-('Park City Mountain', '0', 3, '0', '0', '0', '1', 0, '13-11', '29-03', 0, '01-01-15', '01-01-15', 0, '0000-00-00', 0, 127);
+('ZZZZZ Mountain', '0', 3, '0', '0', '0', '1', 0, '13-11', '29-03', 0, '01-01-15', '01-01-15', 0, '0000-00-00', 0, 127);
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ INSERT INTO `directorsettings` (`PatrolName`, `emailReminder`, `reminderDays`, `
 -- Table structure for table `newindividualassignment`
 --
 
-DROP TABLE IF EXISTS `newindividualassignment`;
+/* DROP TABLE IF EXISTS `newindividualassignment`; */
 CREATE TABLE IF NOT EXISTS `newindividualassignment` (
   `date_shift_pos` varchar(18) DEFAULT NULL,
   `scheduledate` date DEFAULT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `newindividualassignment` (
 -- Table structure for table `roster`
 --
 
-DROP TABLE IF EXISTS `roster`;
+/* DROP TABLE IF EXISTS `roster`; */
 CREATE TABLE IF NOT EXISTS `roster` (
   `IDNumber` varchar(6) NOT NULL DEFAULT '',
   `ClassificationCode` varchar(4) DEFAULT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `roster` (
 -- Table structure for table `shiftdefinitions`
 --
 
-DROP TABLE IF EXISTS `shiftdefinitions`;
+/* DROP TABLE IF EXISTS `shiftdefinitions`; */
 CREATE TABLE IF NOT EXISTS `shiftdefinitions` (
   `EventName` varchar(128) NOT NULL DEFAULT '',
   `StartTime` varchar(16) NOT NULL DEFAULT '',
