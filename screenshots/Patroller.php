@@ -148,7 +148,7 @@
  	" `mentoring` tinyint(4) NOT NULL default '0'," .
  	" `comments` text NOT NULL default ''," .
  	" PRIMARY KEY  (`IDNumber`)" .
- 	" ) TYPE=MyISAM;";
+ 	" );";
  }
 
 //-------------------
