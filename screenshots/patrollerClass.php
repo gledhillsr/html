@@ -1,6 +1,6 @@
 <?php
 //
-//  patrollerClass  (really "roster" class)
+//  patrollerClass
 //
 
  class Patroller {
@@ -39,38 +39,38 @@
 //-------------------
      function init_from_row_query($row) {
      
-        foreach ($row as $key => $value){
-            $this->$key = $value;
-        }
-//        $this->IDNumber = $row[IDNumber];
-//        $this->ClassificationCode = $row[ClassificationCode];
-//        $this->LastName = $row[LastName];
-//        $this->FirstName = $row[FirstName];
-//        $this->Spouse = $row[Spouse];
-//        $this->Address = $row[Address];
-//        $this->City = $row[City];
-//        $this->State = $row[State];
-//        $this->ZipCode = $row[ZipCode];
-//        $this->HomePhone = $row[HomePhone];
-//        $this->WorkPhone = $row[WorkPhone];
-//        $this->CellPhone = $row[CellPhone];
-//        $this->Pager = $row[Pager];
-//        $this->email = $row[email];
-//        $this->EmergencyCallUp = $row[EmergencyCallUp];
-//        $this->Password = $row[Password];
-//        $this->NightSubsitute = $row[NightSubsitute];
-//        $this->Commitment = $row[Commitment];
-//        $this->Instructor = $row[Instructor];
-//        $this->Director = $row[Director];
-//        $this->lastUpdated = $row[lastUpdated];
-//        $this->carryOverCredits = $row[carryOverCredits];
-//        $this->lastCreditUpdate = $row[lastCreditUpdate];
-//        $this->canEarnCredits = $row[canEarnCredits];
-//        $this->creditsEarned = $row[creditsEarned];
-//        $this->creditsUsed = $row[creditsUsed];
-//        $this->teamLead = $row[teamLead];
-//        $this->mentoring = $row[mentoring];
-//        $this->comments = $row[comments];
+        //foreach ($row as $key => $value){
+        //    $this->$key = $value;
+        //}
+        $this->IDNumber = $row[IDNumber];
+        $this->ClassificationCode = $row[ClassificationCode];
+        $this->LastName = $row[LastName];
+        $this->FirstName = $row[FirstName];
+        $this->Spouse = $row[Spouse];
+        $this->Address = $row[Address];
+        $this->City = $row[City];
+        $this->State = $row[State];
+        $this->ZipCode = $row[ZipCode];
+        $this->HomePhone = $row[HomePhone];
+        $this->WorkPhone = $row[WorkPhone];
+        $this->CellPhone = $row[CellPhone];
+        $this->Pager = $row[Pager];
+        $this->email = $row[email];
+        $this->EmergencyCallUp = $row[EmergencyCallUp];
+        $this->Password = $row[Password];
+        $this->NightSubsitute = $row[NightSubsitute];
+        $this->Commitment = $row[Commitment];
+        $this->Instructor = $row[Instructor];
+        $this->Director = $row[Director];
+        $this->lastUpdated = $row[lastUpdated];
+        $this->carryOverCredits = $row[carryOverCredits];
+        $this->lastCreditUpdate = $row[lastCreditUpdate];
+        $this->canEarnCredits = $row[canEarnCredits];
+        $this->creditsEarned = $row[creditsEarned];
+        $this->creditsUsed = $row[creditsUsed];
+        $this->teamLead = $row[teamLead];
+        $this->mentoring = $row[mentoring];
+        $this->comments = $row[comments];
      }
 
 //-------------------
@@ -154,9 +154,11 @@
 //-------------------
 // display
 //-------------------
- function display() {
-  	echo serialize($this) . "<br>";
-  }
+     function display() {
+ //	echo $this->FirstName . " " . $this->LastName . ": " ;
+ //	echo $this->FirstName . " " . $this->LastName . ": ". $this->IDNumber . "<br>";
+ 	echo serialize($this) . "<br>";
+     }
 
  } //end class Patroller
 ?>

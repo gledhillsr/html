@@ -1,18 +1,15 @@
 <?php
-require("config.php");
-
-$shiftOverride =& $_REQUEST['shiftOverride'];
+require_once 'config.php';
 
 if($shiftOverride && $shiftOverride > 0)
 {
-    //part of my time overide HACK
-    setcookie("shiftOverride",$shiftOverride);
-
-    echo "set cookie shiftOverride=($shiftOverride)<br>";
+  //part of my time overide HACK
+  setcookie("shiftOverride",$shiftOverride);
+echo "set cookie shiftOverride=({$shiftOverride})<br>";
 }
 else if($shiftOverride && $shiftOverride == 0){
-    setcookie("shiftOverride","");
-    //echo "del shiftoverride cookie";
+  setcookie("shiftOverride","");
+//echo "del shiftoverride cookie";
 }
 ?>
 
@@ -28,17 +25,17 @@ else if($shiftOverride && $shiftOverride == 0){
 
 <p>Brighton Ski Patrol Onsite Software</p>
 <form method="POST" action="index.php">
-<?php
+<?php 
   if($shiftOverride && $shiftOverride > 0)
     echo "Testing time has been set.<br>";
 ?>
   <p>( Testing only - enter shift override time
   <select size="1" name="shiftOverride">
-<?php
+<?php 
 for($i=0; $i <= 8; $i++){
   $sel = (($shiftOverride == $i) ? "selected='selected' " : "");
   echo "<option value='$i' $sel>" . $shiftsOvr[$i] . "</option>\n";
-//
+
 }
 ?>
   </select> &nbsp;&nbsp;&nbsp;&nbsp;

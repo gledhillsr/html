@@ -1,5 +1,5 @@
-<?php
-require("config.php");
+<?php 
+require_once 'config.php';
 ?>
 <html>
 
@@ -13,7 +13,6 @@ Assignment History&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Personal Info</title>
 <base target="main">
 </head>
-
 <body>
 <a href="login_assignment.php?ID=<?php echo $ID; ?>">Select Assignment</a>&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="history.php?ID=<?php echo $ID; ?>">Assignment History&nbsp;</a>&nbsp;&nbsp;&nbsp;&nbsp;

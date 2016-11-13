@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
@@ -552,8 +552,8 @@ if (document.all || document.getElementById) {
     	@mysql_free_result($result);
 
 		//open web connection
-//		$mysql_host = "www.gledhills.com";
-		$connect_string = @mysql_connect($gledhills_host, $mysql_username, $mysql_password) or die ("Could not connect to web database.");
+		$mysql_host = "54.173.17.203";  //IP of nspOnline.org
+		$connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to web database.");
 		//build date string
 		  $tdate  = $arrDate[year] . "-";
 		  if($arrDate[mon] < 10) $tdate .= "0";
@@ -627,7 +627,7 @@ if (document.all || document.getElementById) {
   <input type="button" value="Cancel Changes" onclick="cancelChanges()">
   &nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="button" value="Display Web Staffing (slow)" onclick="webStaffing()">
+  <input type="button" value="Display Staffing from Web!" onclick="webStaffing()">
 
 </form>
 <HR>

@@ -1,10 +1,19 @@
-<?php
+<?php 
 require("config.php");
+//    $arrDate =  date_default_timezone_set("America/Denver");
     $arrDate = getdate();
     $today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
     $strToday = date("l F-d-Y", $today);
 	$simpleCredits = 0;
-    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
+//    echo("xyzzy<br/>");
+//    echo("$mysql_host<br/>");
+//    echo("$mysql_username<br/>");
+//    echo("$mysql_password<br/>");
+     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password);
+     if (!$connect_string) {
+        die ("Could not connect to the database. (" . mysql_error() . ")");
+     }
+ //    echo("Connected successfully");
 	$getClassification = array("SR" => "Senior", "BAS" => "Basic", "AUX" => "Auxilary", "SRA" => "Sr. Aux.",  "CAN" => "Candidate",  "PRO" => "Pro", "TRA" => "Transfer", "OTH" => "Other", "" => "&nbsp;");
 
 ?>
@@ -54,13 +63,17 @@ function printWindow(){
 <p align=center>
 <font size=5>
 Brighton Ski Patrol:
-<?php
+<?php 
   echo "<b>$strToday</b>\n"; 
 ?>
 
 <font size=1>
 &nbsp;&nbsp;<a href="javascript:printWindow()">Print This Page</a><br>
 </font>
+<!-- <br><br><br> -->
+<form action="morning_login.php" method="get">
+  <input type="submit" value="Go back to: Morning Login screen" />
+</form>
 
 </p>
 <br>
@@ -82,7 +95,7 @@ Volunteer Patrol Daily Log Sheet
     <td width=50 align=center>Multiplier</td>
     <td width=50 align=center>Final Credit Value</td>
   </tr>
-<?php
+<?php 
 
 //debug     $query_string = "SELECT * FROM skihistory WHERE true ORDER BY name, date, checkin";
     $query_string = "SELECT * FROM skihistory WHERE date=\"$today\" ORDER BY name, date, checkin";
@@ -184,14 +197,10 @@ Volunteer Patrol Daily Log Sheet
 <br><br><br>
 Signed:_________________________________________
 
-<br><br><br>
-<form action="morning_login.php" method="get">
-  <input type="submit" value="Go back to: Morning Login screen" />
-</form>
 </body>
 </html>
 
-<?php
+<?php 
     @mysql_close($connect_string);
     if($result)
         @mysql_free_result($result);

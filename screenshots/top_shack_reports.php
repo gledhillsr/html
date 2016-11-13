@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
@@ -182,7 +182,7 @@ Top Shack Reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 <a href="javascript:printWindow()">Print This Page</a><br>
 &nbsp;<br>
 -->
-<?php
+<?php 
 //
 // loop for each area
 //
@@ -236,7 +236,7 @@ for($areaId=0; $areaId < 4; $areaId++) {
 }
 ?>
 </body>
-<?php
+<?php 
     @mysql_close($connect_string);
     if($result)
         @mysql_free_result($result);

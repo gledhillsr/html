@@ -29,16 +29,16 @@ $edit_password  = "";   // Password required to edit the database.
  * Database settings                                                         *
  *****************************************************************************/
 
-$mysql_username = "root";           // MySQL user name
-$mysql_password = "AekdbKazs3990";    // MySQL password (leave empty if no password is required.)
-$mysql_web_username = "sgled57";           // MySQL user name
-$mysql_web_password = "gandalf";    // MySQL password (leave empty if no password is required.)
-$mysql_db       = "Brighton";        // MySQL database name
+$mysql_username = "zzzzz";           // MySQL user name
+$mysql_password = "zzzzzz";    // MySQL password (leave empty if no password is required.)
+$mysql_web_username = "zzzz";           // MySQL user name
+$mysql_web_password = "zzzz";    // MySQL password (leave empty if no password is required.)
+$mysql_db       = "zzzz";        // MySQL database name
 $mysql_host     = "localhost";      // MySQL server host name
                                     // ("localhost" should be fine on
                                     // most systems)
-$gledhills_host = "54.173.17.203";      // MySQL server host name
-$gledhills_mysql_password = "AekdbKazs3990";
+$gledhills_host = "zzzz";      // MySQL server host name
+$gledhills_mysql_password = "zzzzz";
 #require_once 'DB.php';
 
 //Localhost database connection

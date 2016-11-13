@@ -6,12 +6,15 @@
 
 require("config.php");
 require("Patroller.php");
-include("runningFromWeb.php");
+if (file_exists ( "runningFromWeb.php" )) {
+    include("runningFromWeb.php");
+}
 
- $roster = array();
+
+$roster = array();
 
  //Contants
-$SHOW_DEBUG = false;
+$SHOW_DEBUG = true;
 
  //==========================
  //  showProgressIndicator
@@ -99,7 +102,7 @@ $suffix = "old";
 $blockSize = 1000;
 
      if ($SHOW_DEBUG) echo "connect to remote machine<br>";
-     $connect_string = @mysql_connect($gledhills_host, $mysql_username, $mysql_password) or die ("Could not connect to the database at $gledhills_host.");
+     $connect_string = @mysql_connect($gledhills_host, $mysql_username, $gledhills_mysql_password) or die ("Could not connect to the database at $gledhills_host.");
 
 showProgressIndicator();
 

@@ -1,8 +1,9 @@
 <?php
 require("config.php");
     $name="NOBODY";
-    $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
+ //   $arrDate = getdate();
+   $arrDate =  date_default_timezone_set("America/Denver");
+   $today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
     $strToday = date("l F-d-Y", $today);
 	$simpleCredits = 0;
 	if($audit) {

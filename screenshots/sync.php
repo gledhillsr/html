@@ -1,18 +1,23 @@
 <?php
 require("config.php");
-include("runningFromWeb.php");
+
+if (file_exists ( "runningFromWeb.php" )) {
+    include("runningFromWeb.php");  # should have $runningFromWeb = "true"; 
+}
 
 	if($syncLoginBtn) {
 //    header("Location: syncSkiHistory.php?startPos=0"); /* Redirect browser process records in blocks */
     header("Location: syncSkiHistory.php"); /* Redirect browser all records in one pass */
+    exit;
 
  }
 	if($syncRosterBtn) {
     header("Location: syncRoster.php?startPatroller=0"); /* Redirect browser */
+    exit;
  }
 
     //setup local DB connection
-    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
+//    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
 //-------------------------------------------------------------------------------------------------------
 // I NO LONGER CHECK THE DATABASE TO SEE IF SYNCING IS ENABLED, I LOOK FOR A FILE runningFromWeb.php
 //-------------------------------------------------------------------------------------------------------
@@ -35,6 +40,7 @@ include("runningFromWeb.php");
 //
 //		}
 //	}
+//    mysql_close($connect_string);
 ?>
 <html>
 
@@ -50,7 +56,7 @@ include("runningFromWeb.php");
 
 
 <form name="myForm" method="POST" action="sync.php">
-<?php
+<?php 
     if($runningFromWeb) {
         $strEnable = " Disabled ";
     }
@@ -61,7 +67,6 @@ include("runningFromWeb.php");
     if($runningFromWeb) {
         echo "<font color='red' size=4>Synchronization is <b>Disabled</b> while viewing from web</font><br>";
     }
-    mysql_close($connect_string);
 ?>
 </form>
 

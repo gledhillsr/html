@@ -5,14 +5,15 @@
 
 
 require("config.php");
+include("runningFromWeb.php");
 
 //IP address database connection
+//$dsn2 = "mysql://{$mysql_username}:{$mysql_password}@{$gledhills_host}/{$mysql_db}";
+//$db2 =& DB::connect($dsn2);
+//if (DB::isError ($db2))
+//    die ("Could not connect to the database at {$gledhills_host}.");
 
-$dsn2 = "mysql://{$mysql_username}:{$mysql_password}@{$gledhills_host}/{$mysql_db}";
-$db2 =& DB::connect($dsn2);
-if (DB::isError ($db2))
-    die ("Could not connect to the database at {$gledhills_host}.");
-
+//$connect_string = @mysql_connect($gledhills_host, $mysql_username, $mysql_password) or die ("Could not connect to the database at $gledhills_host.");
 
 $arrDate = getdate();
 $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
@@ -25,9 +26,9 @@ $remoteSkihistory = array();
 //Contants
 $SHOW_DEBUG = false;
 
-/**********************/
-/*  class SklHistory  */
-/**********************/
+// **********************
+// *  class SklHistory  *
+// **********************
 class SkiHistory {
     var $date;
     var $checkin;
@@ -104,9 +105,9 @@ class SkiHistory {
 //---------------------------------------------------------------
 
 
-/***********************/
-/*  class Assignments  */
-/***********************/
+// ***********************
+// *  class Assignments  *
+// ***********************
 class Assignments {
     var	$Date;
     var	$StartTime;
@@ -195,9 +196,9 @@ class Assignments {
 
 $suffix = "old";
 $totalHistories=1;
-/******************************************************************/
-/* Synchronize the SKI HISTORY from local machine to gledhills.com*/
-/******************************************************************/
+// ******************************************************************
+// * Synchronize the SKI HISTORY from local machine to gledhills.com*
+// ******************************************************************
 
 
 //connect to the local database
@@ -208,21 +209,24 @@ $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) 
 if ($SHOW_DEBUG) echo "Reading ski histroy from $mysql_host<br>";
 //--------------------------------------------------------------------
 
-/*******************************************/
-/** progress indicator stuff             ***/
-/*******************************************/
+// *******************************************
+// ** progress indicator stuff             ***
+// *******************************************
 $query_string = "SELECT COUNT(history_id) AS count  FROM skihistory WHERE 1";
-//echo $query_string . "<br>";
+echo $query_string . "<br>";
+
 $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result l skiHistory)");
-if ($row = @mysql_fetch_array($result)) {
-$totalHistories=$row[count];
+if ($row = @mysql_fetch_array($result)) 
+{
+  $totalHistories=$row[count];
 }
 $historiesProcessed = 0;
 
 //get patrollers processed
 $query_string = "SELECT COUNT(history_id) AS count  FROM skihistory WHERE 1";
 $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 2 history)");
-if ($row = @mysql_fetch_array($result)) {
+if ($row = @mysql_fetch_array($result)) 
+{
   $historiesProcessed=$row[count];
 }
 echo "YTD -local- total ski histories=$historiesProcessed<br>";
@@ -235,9 +239,9 @@ $right = 500 - $left;
 
 $historiesProcessed = 0;
 
-/*******************************************/
-/** get SKI HISTORIES processed   ***/
-/*******************************************/
+// *******************************************
+// ** get SKI HISTORIES processed   ***
+// *******************************************
 //    $query_string = "SELECT COUNT(history_id) AS count  FROM skihistory WHERE 1";
 ////
 ////    echo "****** query_string=" . $query_string . "<br>\n";
@@ -270,9 +274,12 @@ $historiesProcessed = 0;
 
     @mysql_close($connect_string);
     @mysql_free_result($result);
-//===== OPEN REMOTE SKIHISTORY ======
+
+// ===================================
+// ===== OPEN REMOTE SKIHISTORY ======
+// ===================================
     if ($SHOW_DEBUG) echo "open remote connection ($gledhills_host)<br>\n";
-    $connect_string = @mysql_connect($gledhills_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
+    $connect_string = @mysql_connect($gledhills_host, $mysql_username, $gledhills_mysql_password) or die ("Could not connect to the database.");
     $remote_history_table = "skihistory";
     $query_string = "SELECT COUNT(history_id) AS count  FROM $remote_history_table WHERE 1";
 //
@@ -285,10 +292,8 @@ echo "YTD -gledhills.com- ski histories to compare=$historiesProcessed<br>";
     }
 
     $query_string = "SELECT * FROM $remote_history_table WHERE 1";
-//echo "remote time=" .date("h:i:s ") ."<br>";
     if ($SHOW_DEBUG) echo "$query_string<br>\n";
     $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 22 skiHistory)");
-//echo "remote time=" .date("h:i:s ") ."<br>" ;
     while ($row = @mysql_fetch_array($result)) {
         $tmp = new SkiHistory();
         $lastID = $row[history_id];
@@ -296,13 +301,11 @@ echo "YTD -gledhills.com- ski histories to compare=$historiesProcessed<br>";
         $tmp->read_info($row);
         $k = $tmp->getHistoryID();
         $remoteSkiHistory[$k] = $tmp;
-//        $remoteSkiHistory[$tmp->getHistoryID()] = $tmp; //
     }
-//echo "remote time=" .date("h:i:s ") ."<br>" ;
 
-    /********************************************************************/
-    /* remove non-duplicate from gledhills.com  (may have used same "history_id" key */
-    /********************************************************************/
+    // ********************************************************************
+    // remove non-duplicate from gledhills.com  (may have used same "history_id" key 
+    // ********************************************************************
 echo "remove non-duplicate from gledhills.com<br>";
     reset($localSkiHistory);
     reset($remoteSkiHistory);
@@ -352,45 +355,13 @@ echo $count . " exact duplicates between the data bases<br>";
 //loop through gledhills, and remove mismatched values
 echo "remove mis-matches on gledhills.com<br>";
 echo "Note to Steve:  This still needs to be cleaned up<br>";
-/*
-    while (list($historyID, $sh) = each($localSkiHistory)) {
-        $id = $sh->getPatrollerID();
-        $date1 = $sh->getDate();
-        $time0 = $sh->getTime();
-        $loginTime = secondsToTime($time0);
-        $loginDate = date("Y-m-d", $date1);
-        echo "key=" . $historyID . ", id=".$id.", date: " . $loginDate . " " . $loginTime . "<br>";
-echo "Warning, this record was not removed (small bug for now...)<br>";
-        $query_string = "SELECT * from 'assignments' WHERE `Date` >= " . $loginDate . "_0 AND  `Date` <= " . $loginDate . "_99";
-        $query_string = "SELECT * FROM `assignments` WHERE `Date` >= '" . $loginDate . "_0'  AND `Date` <= '" . $loginDate . "_99'";
-        $result = @mysql_db_query($mysql_db, $query_string) or die ("  - $remoteSkiHistory select Failed on " . $query_string . " MYSQL error:" . mysql_error());
-        while ($row = @mysql_fetch_array($result)) {
-            $tmp = new Assignments();
-            $tmp->read_info($row);
-//            echo $tmp->toString() . "<br>";
-            //get shift thpe (0=day, 1=swing, 2=night)
-            //get array of patroller ID for the calendar assignments
-            //is this patroller on this list
-            //                              ...
-        }
-        echo "done <br>";
-//echo "remote time=" .date("h:i:s ") ."<br>" ;
-//echo "bye bye <br>";
-    }
-//    exit;
-*/
 echo "<br><br>Done.<br>";
 //close last connection
 @mysql_close($connect_string);
 @mysql_free_result($result);
 
+
 ?>
 <br>
-<!--
-Skipping download of assignments, directorsettings, and shiftdefinitions.<br>
-Skipping upload of areadefinitions and sweepdefinitions.<br>
-
-<br>PLEASE test this on <b>another</b> browser.  If the Synchronization failed, click here to <b>restore</b><br>
--->
 </body>
 </html>

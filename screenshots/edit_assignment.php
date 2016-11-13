@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("config.php");
 
 
@@ -195,7 +195,7 @@ function checkTime(selObject,which) {
       </td>
       <td>&nbsp;
       <select size="1" name="area" onChange="updateAreas(this)">
-<?php
+<?php 
 //this is bogus, but this definition comes from config.php
     displayOption($area,$getAreaShort[0]);
     displayOption($area,$getAreaShort[1]);
@@ -209,7 +209,7 @@ function checkTime(selObject,which) {
     <tr>
       <td align="right">Minimum Ski Level:</td>
       <td >&nbsp; <select size="1" name="minLevel">
-<?php
+<?php 
     displayOption($minLevel,"Team Leader");
     displayOption($minLevel,"Asst Team Leader");
     displayOption($minLevel,"Basic");
@@ -226,7 +226,7 @@ function checkTime(selObject,which) {
     <tr>
       <td align="right">Top Shack/Aid Room:</td>
       <td>&nbsp; <select size="1" name="topShack"  onChange="checkTime(this,1)">
-<?php
+<?php 
     displayOption($topShack,"Crest Top Shack");
 //    displayOption($topShack,"Majestic Top");
     displayOption($topShack,"Snake Creek Top");
@@ -248,7 +248,7 @@ function checkTime(selObject,which) {
 
       <td align="right">2nd Top Shack (<?php echo $topShack2; ?>)</td>
       <td>&nbsp; <select size="1" name="topShack2" onChange="checkTime(this,2)">
-<?php
+<?php 
     displayOption($topShack2,"Crest Top Shack");
     displayOption($topShack2,"Majestic Top");
     displayOption($topShack2,"Snake Creek Top");
@@ -267,7 +267,7 @@ function checkTime(selObject,which) {
     <tr>
       <td align="right">Evening Sweep:</td>
       <td>&nbsp; <select size="1" name="lateSweep">
-<?php
+<?php 
     displayOption($lateSweep,"Crest");
     displayOption($lateSweep,"Snake Creek");
     displayOption($lateSweep,"Western");
@@ -278,7 +278,7 @@ function checkTime(selObject,which) {
     </tr>
   </table>
   <p>
-<?php
+<?php 
     if($delete) {
         echo "<input type=\"HIDDEN\" name=\"id\" VALUE=\"$id\">";
         echo "<input type=\"submit\" value=\"Delete\" name=\"deleteBtn\">&nbsp;";

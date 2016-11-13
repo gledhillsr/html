@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("config.php");
     $arrDate = getdate();
     $today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
@@ -54,7 +54,7 @@ function printWindow(){
 <p align=center>
 <font size=5>
 Brighton Ski Patrol:
-<?php
+<?php 
   echo "<b>$strToday</b>\n"; 
 ?>
 
@@ -82,7 +82,7 @@ Volunteer Patrol Daily Log Sheet
     <td width=50 align=center>Multiplier</td>
     <td width=50 align=center>Final Credit Value</td>
   </tr>
-<?php
+<?php 
 
      $query_string = "SELECT * FROM skihistory WHERE true ORDER BY name, date, checkin"; //entire season
 //daily    $query_string = "SELECT * FROM skihistory WHERE date=\"$today\" ORDER BY name, date, checkin"; //just today
@@ -191,7 +191,7 @@ Signed:_________________________________________
 </body>
 </html>
 
-<?php
+<?php 
     @mysql_close($connect_string);
     if($result)
         @mysql_free_result($result);

@@ -1,6 +1,5 @@
 <?php
 require("config.php");
-require("environment.ini");
 
 //================
 // init
@@ -27,13 +26,14 @@ global $chg,$srtLastPrinted,$strToday, $sortBy, $connect_string, $lastPrintedTic
 global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysql_db, $dataFrom;
 global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday, $showDouble;
 global $StartTime,$EndTime;
-global $mysql_username, $mysql_password;
-$mysql_db       = "Brighton";        // MySQL database name
-$mysql_host     = "localhost";      // MySQL server host name
+//$mysql_username = "root";           // MySQL user name
+//$mysql_password = "Gandalf2";    // MySQL password (leave empty if no password is required.)
+//$mysql_db       = "Brighton";        // MySQL database name
+//$mysql_host     = "localhost";      // MySQL server host name
 //echo "connect_string=$mysql_host<br>";
 //echo "connect_string=$mysql_username<br>";
 //echo "connect_string=$mysql_password<br>";
-    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database ($mysql_host, $mysql_username, $mysql_password)).");
+    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
 //echo "connect_string=$connect_string<br>";
 //        $query_string = "SELECT * FROM `roster` WHERE 1";
 //echo "query_string=$query_string<br>";
@@ -263,37 +263,37 @@ global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday
       &nbsp;&nbsp; <!--	  <font size="2" color="#FF0000">(Make sure reports looks OK, before doing this)</font> -->
     </td>
     <td  style="{background-color:#FFFFFF; border-width:1px; border-color:#FFFFFF; border-collapse:collapse; border-spacing:0">
-        Display:&nbsp; <input type="checkbox" name="showDay" value="ON" <?php if($showDay) echo "checked"; ?> >Day Shifts&nbsp;&nbsp;
-        			   <input type="checkbox" name="showSwing" value="ON" <?php if($showSwing) echo "checked"; ?> >Swing Shifts&nbsp;
+        Display:&nbsp; <input type="checkbox" name="showDay" value="ON" <?php if($showDay) echo "checked"; ?> >Day Shifts&nbsp;&nbsp; 
+        			   <input type="checkbox" name="showSwing" value="ON" <?php if($showSwing) echo "checked"; ?> >Swing Shifts&nbsp; 
         			   <input type="checkbox" name="showNight" value="OFF" <?php if($showNight) echo "checked"; ?> >Night Shifts<br>
         Display:&nbsp; <input type="checkbox" name="showDetails" value="ON" <?php if($showDetails) echo "checked"; ?> >Detail of Shifts
-        			   <input type="checkbox" name="showWeekday" value="OFF" <?php if($showWeekday) echo "checked"; ?> >Show Weekdays in Bold&nbsp;
-        			   <input type="checkbox" name="showDouble" value="OFF" <?php if($showDouble) echo "checked"; ?> >Show Double Days in bold (Christmas and New Years weekends)&nbsp;
+        			   <input type="checkbox" name="showWeekday" value="OFF" <?php if($showWeekday) echo "checked"; ?> >Show Weekdays in Bold&nbsp; 
+        			   <input type="checkbox" name="showDouble" value="OFF" <?php if($showDouble) echo "checked"; ?> >Show Double Days in bold (Christmas and New Years weekends)&nbsp; 
         				<br>
         Display:&nbsp; <input type="checkbox" name="showCommitment" value="ON" <?php if($showCommitment) echo "checked"; ?> >Commitment (Part Time/Candidate/Inactive/etc.)<br>
         <br>
         Sort By:&nbsp; 
-<?php
+<?php 
 /* 
-          <input type="radio" value="first"  name="sortBy" <?php if($sortBy == "first") echo "checked"; ?> >First Name&nbsp;&nbsp;&nbsp;
+          <input type="radio" value="first"  name="sortBy" <?php if($sortBy == "first") echo "checked"; ?> >First Name&nbsp;&nbsp;&nbsp; 
 */
 ?>
 
-        			   <input type="radio" value="last"   name="sortBy" <?php if($sortBy == "last")  echo "checked"; ?> >Last Name&nbsp;&nbsp;&nbsp;
+        			   <input type="radio" value="last"   name="sortBy" <?php if($sortBy == "last")  echo "checked"; ?> >Last Name&nbsp;&nbsp;&nbsp; 
         			   <input type="radio" value="shifts" name="sortBy" <?php if($sortBy == "shifts")echo "checked"; ?> >Shifts <b>Skied</b> (
 						<input type="checkbox" name="showZero" value="ON" <?php if($showZero) echo "checked"; ?> >
 						Include patrollers with 0 days)
         <br>
-  Use Data From:&nbsp; <input type="radio" value="locker" name="dataFrom" <?php if($dataFrom == "locker") echo "checked"; ?> >Locker&nbsp;&nbsp;&nbsp;
-        			   <input type="radio" value="web"    name="dataFrom" <?php if($dataFrom == "web")    echo "checked"; ?> >Web&nbsp;&nbsp;&nbsp;
-        			   <input type="radio" value="sum"    name="dataFrom" <?php if($dataFrom == "sum")    echo "checked"; ?> >Both&nbsp;&nbsp;&nbsp;
-        			   <input type="radio" value="diff"   name="dataFrom" <?php if($dataFrom == "diff")   echo "checked"; ?> >Display Merged&nbsp;&nbsp;&nbsp;
+  Use Data From:&nbsp; <input type="radio" value="locker" name="dataFrom" <?php if($dataFrom == "locker") echo "checked"; ?> >Locker&nbsp;&nbsp;&nbsp; 
+        			   <input type="radio" value="web"    name="dataFrom" <?php if($dataFrom == "web")    echo "checked"; ?> >Web&nbsp;&nbsp;&nbsp; 
+        			   <input type="radio" value="sum"    name="dataFrom" <?php if($dataFrom == "sum")    echo "checked"; ?> >Both&nbsp;&nbsp;&nbsp; 
+        			   <input type="radio" value="diff"   name="dataFrom" <?php if($dataFrom == "diff")   echo "checked"; ?> >Display Merged&nbsp;&nbsp;&nbsp; 
         			   <input type="radio" value="merge"  disabled name="dataFrom" <?php if($dataFrom == "merge")  echo "checked"; ?> >Merge Locker to Web
     </td>
   </tr>
 </table>
 <br>
-<?php
+<?php 
 } //-- end of printInputFieldArea
 
 //====================
@@ -310,7 +310,7 @@ global $strToday;
 <p>&nbsp;</p>
 </body>
 </html>
-<?php
+<?php 
 }
 
 //====================
@@ -325,7 +325,7 @@ global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $siz;
 	if($showCommitment)
 		$siz += 70;
     if($showDetails)
-        $siz = "100%";
+        $siz = "100%"; //was 100%
 
 	if($sortBy == "shifts" ) {
 	    $query_string1 = "SELECT * FROM skihistory WHERE (date + checkin) > \"$startingTicks\" AND (date + checkin) < \"$endingTicks\" ORDER BY name";
@@ -373,12 +373,12 @@ if($dataFrom == "locker") return;
 //why does this not work????????????????
 		    if(substr_count($loginDetail,$date2) == 0) {
 //echo " not found<br>";
-				$date1 .= $date2 . "&nbsp;";
+				$date1 .= $date2 . " "; //"&nbsp;";
 				++$cnt;
 			}
 //else echo " FOUND!<br>";
 		} else {
-			$date1 .= $date2 . "&nbsp;";
+			$date1 .= $date2 . " "; //"&nbsp;";
 			++$cnt;
 		}
 //		echo "date1=$date1<br>";
@@ -519,7 +519,7 @@ global $classification, $isMentoring;
 //display table contents
 	//loop through ski history ordered by name, date, checkin time
 	if($sortBy == "last") {
-		 $query_string = "SELECT * FROM roster WHERE 1 ORDER BY LastName, FirstName";
+		 $query_string = "SELECT * FROM `roster` WHERE 1 ORDER BY LastName, FirstName";
 //echo "query_string = $query_string<br>";
 //echo "mysql_db=$mysql_db<br>";
 	    $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query3 ($query_string)");

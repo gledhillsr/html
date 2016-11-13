@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
@@ -14,7 +14,7 @@ require("config.php");
 <title>Aid Room Summary</title>
 <style type="text/css">
 <!--
-body  {font-size:12px; color:#000000; background-color:#ffffff}
+body  {font-size:12px; color:#000000; background-color:#ffffff; marginheight:0; margin-top:0px; margin-bottom:0px}
 table.t1 {border-width:1px; border-color:#000000; border-style:solid; border-collapse:collapse; border-spacing:0}
 th.t1    {font-size:14px; font-weight: bold; color:#000000; background-color:#E1E1E1; border-width:1px; border-color:#000000; border-style:solid; padding:2px}
 td.t1    {font-size:12px; color:#000000; background-color:#EBEBEB; border-width:1px; border-color:#000000; border-style:solid; padding:1px}
@@ -35,7 +35,7 @@ function printWindow(){
 
 <font size="5">&nbsp;&nbsp;Brighton Staffing Report for <?php echo date("l, F d, Y"); ?></font>
 &nbsp;&nbsp;<a href="javascript:printWindow()">Print This Page</a><br>
-<?php
+<?php 
 
   echo "<table width=\"670\" >\n";
   echo "<tr>\n";

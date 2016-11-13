@@ -1,4 +1,4 @@
-<?php
+<?php 
 //echo "AuroFilling area $areaID (" . $getAreaShort[$areaID] . ")<br>";
 $TLsweeps=array();
 $ATLsweeps=array();

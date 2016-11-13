@@ -1,4 +1,4 @@
-<?php
+<?php 
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
 ?>
@@ -34,7 +34,7 @@ require("config.php");
       <a href="edit_assignment.php?new=1">
       <img border="0" src="images/btnNew.jpg" width="33" height="17"></a></td>
     </tr>
-<?php
+<?php 
 //    $query_string = "SELECT * FROM sweepdefinitions WHERE 1 ORDER BY areaID , start_time";
     $query_string = "SELECT * FROM sweepdefinitions WHERE 1 ORDER BY areaID, location , start_time";
 //echo "$query_string<br>";
@@ -78,7 +78,7 @@ require("config.php");
     }
 ?>
   </table>
-<?php
+<?php 
     @mysql_close($connect_string);
     @mysql_free_result($result);
 ?>

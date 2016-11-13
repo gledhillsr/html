@@ -75,7 +75,7 @@ function checkPassword() {
           <td width="40" align="center">Can</td>
           <td width="40" align="center">Total</td>
         </tr>
-<?php
+<?php 
 //    $query_string = "SELECT COUNT (areaID) as cnt FROM areadefinitions WHERE 1";
 //echo "$query_string<br>";
 //    $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query 6.5");
@@ -148,7 +148,7 @@ function checkPassword() {
     </td>
     <td width="455">
       <select size="10" name="D2">
-<?php
+<?php 
     $sel="SELECTED";
     $query_string = "SELECT * FROM sweepdefinitions WHERE 1 ORDER BY location, start_time";
 //echo "$query_string<br>";
@@ -195,7 +195,7 @@ function checkPassword() {
   </tr>
 </table>
 <form name="myForm" method="POST" action="summary.php" onSubmit="return checkPassword()">
-<?php
+<?php 
 //$now //current seconds
     $query_string = "SELECT signinLockout FROM directorsettings WHERE 1";
     $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query 9");

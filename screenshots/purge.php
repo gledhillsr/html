@@ -30,7 +30,7 @@ include("runningFromWeb.php");
 
 <form name="myForm" method="POST" action="purge.php">
 <br><br><br>
-<?php
+<?php 
     if($runningFromWeb) {
         $strEnable = " Disabled ";
     }

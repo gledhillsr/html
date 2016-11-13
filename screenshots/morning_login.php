@@ -1,7 +1,5 @@
-<?php
-
-require_once 'config.php';
-
+<?php 
+require("config.php");
 if($delID || $newID) {
 //echo "shiftOverride -($shiftOverride)-";	//was testing override enabled?
 	$id = ($newID) ? $newID : $delID;
@@ -27,7 +25,7 @@ if($delID || $newID) {
 </head>
 <body onload="document.myForm.pname.focus();" background="images/ncmnthbk.jpg">
 
-<?php
+<?php 
 echo "<h1 align=center>$name</h1><br><br><font size=6><p align=center>";
 if($newID) echo "Login Successful";
 else	   echo "Removal Successful";
@@ -76,8 +74,23 @@ var id = 0;
 </head>
 
 <body onload="document.myForm.pname.focus();" background="images/ncmnthbk.jpg">
+<form action="dailyRosterLogSheet.php" method="get">
+  <input type="submit" value="Daily Log Sheet" />
+</form>
 
 <form method="POST" name="myForm">
+<?php 
+//  <p>( Testing only - enter shift override time
+//  <select size="1" name="shiftOverride">
+//for($i=0; $i <= 8; $i++){
+//  if($shiftOverride == $i) $sel = "Selected ";
+//  else                     $sel = "";
+//  echo "<option value=$i $sel>" . $shiftsOvr[$i] . "</option>\n";
+//
+//}
+//  </select> )</p>
+//echo "shiftOverride -($shiftOverride)-";	//was testing override enabled?
+?>
 <!--  <p>&nbsp;</p> -->
   <p>&nbsp;</p>
   <p>&nbsp;</p>
@@ -89,7 +102,7 @@ var id = 0;
         <h2 align="center">Brighton Ski Patrol</h2>
         <p align="center">Morning Login </p>
         <p align="center">
-<?php
+<?php 
         $query_string = "SELECT LastName, FirstName, IDNumber FROM roster ORDER BY LastName, FirstName";
         $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
         $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result)");
@@ -112,12 +125,6 @@ var id = 0;
     </center>
   </div>
 </form>
-<br><br><br>
-
-<form action="dailyRosterLogSheet.php" method="get">
-  <input type="submit" value="Daily Log Sheet" />
-</form>
-
 </body>
 
 </html>
