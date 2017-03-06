@@ -28,7 +28,7 @@ USE `ZZZZZZ`;
 -- Table structure for table `assignments`
 --
 
-/* DROP TABLE IF EXISTS `assignments`; */
+DROP TABLE IF EXISTS `assignments`;
 CREATE TABLE IF NOT EXISTS `assignments` (
   `Date` varchar(14) NOT NULL DEFAULT '',
   `StartTime` varchar(12) DEFAULT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `assignments` (
 -- Table structure for table `directorsettings`
 --
 
-/* DROP TABLE IF EXISTS `directorsettings`; */
+DROP TABLE IF EXISTS `directorsettings`;
 CREATE TABLE IF NOT EXISTS `directorsettings` (
   `PatrolName` varchar(32) NOT NULL DEFAULT '',
   `emailReminder` char(1) NOT NULL DEFAULT '0',
@@ -89,7 +89,7 @@ INSERT INTO `directorsettings` (`PatrolName`, `emailReminder`, `reminderDays`, `
 -- Table structure for table `newindividualassignment`
 --
 
-/* DROP TABLE IF EXISTS `newindividualassignment`; */
+DROP TABLE IF EXISTS `newindividualassignment`;
 CREATE TABLE IF NOT EXISTS `newindividualassignment` (
   `date_shift_pos` varchar(18) DEFAULT NULL,
   `scheduledate` date DEFAULT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `newindividualassignment` (
 -- Table structure for table `roster`
 --
 
-/* DROP TABLE IF EXISTS `roster`; */
+DROP TABLE IF EXISTS `roster`;
 CREATE TABLE IF NOT EXISTS `roster` (
   `IDNumber` varchar(6) NOT NULL DEFAULT '',
   `ClassificationCode` varchar(4) DEFAULT NULL,
@@ -143,10 +143,28 @@ CREATE TABLE IF NOT EXISTS `roster` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `session`
+--
+
+DROP TABLE IF EXISTS `session`;
+CREATE TABLE IF NOT EXISTS `session` (
+  `sessionId` text NOT NULL,
+  `authenticatedUserId` varchar(6) NOT NULL,
+  `resort` varchar(36) NOT NULL,
+  `sessionCreateTime` date NOT NULL,
+  `sessionLastAccessTime` date NOT NULL,
+  `sessionIpAddress` varchar(64) NOT NULL,
+  `isDirector` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `shiftdefinitions`
 --
 
-/* DROP TABLE IF EXISTS `shiftdefinitions`; */
+DROP TABLE IF EXISTS `shiftdefinitions`;
 CREATE TABLE IF NOT EXISTS `shiftdefinitions` (
   `EventName` varchar(128) NOT NULL DEFAULT '',
   `StartTime` varchar(16) NOT NULL DEFAULT '',

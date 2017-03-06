@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Plattekill`
+-- Database: `GreatDivide`
 --
-CREATE DATABASE IF NOT EXISTS `Plattekill` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `Plattekill`;
+CREATE DATABASE IF NOT EXISTS `GreatDivide` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `GreatDivide`;
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `directorsettings` (
 --
 
 INSERT INTO `directorsettings` (`PatrolName`, `emailReminder`, `reminderDays`, `emailOnChanges`, `useTeams`, `directorsOnlyChange`, `emailAll`, `nameFormat`, `startDate`, `endDate`, `useBlackOut`, `startBlackOut`, `endBlackOut`, `lastSkiHistoryUpdate`, `lastVoucherHistoryUpdate`, `signinLockout`, `removeAccess`) VALUES
-('Plattekill Mountain', '0', 3, '0', '0', '0', '1', 0, '13-11', '29-03', 0, '01-01-15', '01-01-15', 0, '0000-00-00', 0, 127);
+('Great Divide', '0', 3, '0', '0', '0', '1', 0, '13-11', '29-03', 0, '01-01-15', '01-01-15', 0, '0000-00-00', 0, 127);
 
 -- --------------------------------------------------------
 
@@ -139,6 +139,23 @@ CREATE TABLE IF NOT EXISTS `roster` (
   `mentoring` tinyint(4) NOT NULL DEFAULT '0',
   `comments` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `session`
+--
+
+CREATE TABLE IF NOT EXISTS `session` (
+  `sessionId` text NOT NULL,
+  `authenticatedUserId` varchar(6) NOT NULL,
+  `resort` varchar(36) NOT NULL,
+  `sessionCreateTime` date NOT NULL,
+  `sessionLastAccessTime` date NOT NULL,
+  `sessionIpAddress` varchar(64) NOT NULL,
+  `isDirector` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
