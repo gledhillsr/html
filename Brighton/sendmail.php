@@ -36,7 +36,7 @@ mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, 
 //Chad Smith
 mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-header( "Location: VolunteerSubmit.php?firstName=$firstName&lastName=$lastName" );
+header( "Location: /Brighton/VolunteerSubmit.php?firstName=$firstName&lastName=$lastName" );
 
 
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $cur_page="upload_order";
 $page_title = "Upload spreadsheet";  // Page title
 require_once("config.php");
