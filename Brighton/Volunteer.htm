@@ -40,7 +40,17 @@
 	return (true);  // If text_name is not null continue processing
   }
 
-//    function checkForChanges() {
+  function sendForm() { //todo WIP
+    if (validateFields()) {
+      var data = $('[name="myForm"').serialize();
+      changeMainWindow(this, '/Brighton/sendmail.php?'+data);
+    }
+    else {
+      return false;
+    }
+  }
+
+  //    function checkForChanges() {
 //        if(changesMade) {
 //            if(window.confirm("Save -new- ENDING time?")) {
 //                saveChanges();
@@ -160,12 +170,15 @@ If your skiing or boarding level meets the expectation, you will be asked to com
 
 <p class=MsoNormal style='margin-right:0.0pt'></p>
 <B>Outdoor Emergency Care Training</B><br>
-The next step in the process is to complete the Outdoor Emergency Care (OEC) first aid course, which includes professional CPR, written first aid test, and a practical first aid test. Classroom and computer time covers approximately 12 weeks, which breaks down to two nights per week, 3-4 hours each class. The OEC class starts in August and runs through the middle of November. The course also includes professional CPR, written tests, midterm practical, comprehensive written final and practical skills test. The class concludes with three on-the-hill working classes at the beginning of the ski season.
-
+  The next step in the process is to complete the Outdoor Emergency Care (OEC) first aid course, which includes
+  professional CPR, written first aid test, and a practical first aid test. We use a hybrid course structure that is
+  split into two sections, Online and Hands On.  The Online section will run Jun through Aug which concentrates on the
+  book and concludes with a written exam.  The Hands On section will run Sep through Oct, meeting twice a week for 3+
+  hours a class, finishing with a practical skills exam.
+  Additionally there will be three on-the-hill working classes at the beginning of the ski season.
 <p class=MsoNormal style='margin-right:0.0pt'></p>
 <B>Ski and Toboggan Training</B><br>
-Following OEC, you enter Ski and Toboggan training (S&T). This training happens at Brighton over the course of approximately 10 weeks, on Sundays only. At the conclusion of S&T, you will have a ski and toboggan practical evaluation.
-
+  Following OEC, you enter Ski and Toboggan training (S&T). This training happens at Brighton over the course of approximately 6 weeks, on Weekends.  At the conclusion of S&T training, you will have a practical evaluation of your Skiing and Toboggan Handling Skills.
 <p class=MsoNormal style='margin-right:0.0pt'></p>
 <B>Mentoring and Sign-Off</B><br>
 At this point, you sign up for patrol days of your choice, and once you've signed off certain mentoring milestones you are considered a full patroller!  At the start of the following season you will be eligible for full benefits (see Perks and Requirements below). 
@@ -228,7 +241,7 @@ style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
 style='font-size:14.0pt;color:black'>Request for application</span></i></b></p>
 
 <font color="red">*</font> Indicates required fields.<br><br>
-<form action="/Brighton/sendmail.php" name="myForm" onsubmit="return validateFields()" method="POST">&nbsp;&nbsp;
+<form action="/Brighton/sendmail.php" target="main" name="myForm" onsubmit="return validateFields()" method="POST">&nbsp;&nbsp;
 <font color="red">*</font>First Name:&nbsp;<input name="firstName" type="text" size="14">&nbsp;&nbsp;&nbsp;
 Last Name:&nbsp;<input name="lastName" type="text" size="14"><br><br>&nbsp;&nbsp;
 Address:&nbsp;<input name="address" type="text" size="32"><br><br>&nbsp;&nbsp;
