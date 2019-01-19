@@ -37,7 +37,7 @@ $mysql_db       = "Brighton";        // MySQL database name
 $mysql_host     = "localhost";      // MySQL server host name
                                     // ("localhost" should be fine on
                                     // most systems)
-$gledhills_host = "54.173.17.203";      // MySQL server host name
+$gledhills_host = "gledhills.com";      // MySQL server host name
 $gledhills_mysql_password = "AekdbKazs3990";
 #require_once 'DB.php';
 
