@@ -30,13 +30,13 @@ mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "
 //Andy Peterson
 mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //Chad D'Alessandro
-mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+mail( "daless67@icloud.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //Roger Rains
-mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //Chad Smith
 mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
 header( "Location: /Brighton/VolunteerSubmit.php?firstName=$firstName&lastName=$lastName" );
-
 
 ?>
