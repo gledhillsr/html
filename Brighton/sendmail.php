@@ -1,4 +1,6 @@
 <?php
+require("config.php");
+
 $firstName = $_REQUEST['firstName'] ;
 $lastName = $_REQUEST['lastName'] ;
 $address = $_REQUEST['address'] ;
@@ -23,20 +25,33 @@ $message = "Name: $firstName $lastName\n" .
     "Ski Experience: $skiExperience";
 
 //Steve Gledhill
-mail( "steve@gledhills.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//dedicated mailbox
-mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+$successfullySent1 = mail( "steve@gledhills.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+////dedicated mailbox
+//$successfullySent2 = mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//
+////Andy Peterson
+//$successfullySent3 = mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+////Chad D'Alessandro
+////mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//$successfullySent4 = mail( "daless67@icloud.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+////Roger Rains
+////mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+////Chad Smith
+//$successfullySent5 = mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
-//Andy Peterson
-mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//Chad D'Alessandro
-//mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-mail( "daless67@icloud.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//Roger Rains
-//mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//Chad Smith
-mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+$date = date("Y-m-d h:m:s");
+$file = __FILE__;
+$level = "info";
 
-header( "Location: /Brighton/VolunteerSubmit.php?firstName=$firstName&lastName=$lastName" );
+$message = "[{$date}] [{$file}] [{$level}] message= [{$message}]".PHP_EOL;
+// log to our default location
+error_log($message);
+
+if (!$successfullySent1) {
+    echo("ERROR, email notification failed, please send your information to 'steve@gledhills.com' (webmaster for this site)");
+    return;
+}
+
+header("Location: /Brighton/VolunteerSubmit.php?firstName=$firstName&lastName=$lastName");
 
 ?>
