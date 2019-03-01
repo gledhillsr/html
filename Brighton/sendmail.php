@@ -37,7 +37,7 @@ $successfullySent4 = mail( "daless67@icloud.com", "Ski Patrol volunteer from web
 //Roger Rains
 //mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //Chad Smith
-$successfullySent5 = mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//$successfullySent5 = mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
 $date = date("Y-m-d h:m:s");
 $file = __FILE__;
