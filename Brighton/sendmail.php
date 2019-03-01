@@ -26,18 +26,18 @@ $message = "Name: $firstName $lastName\n" .
 
 //Steve Gledhill
 $successfullySent1 = mail( "steve@gledhills.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-////dedicated mailbox
-//$successfullySent2 = mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//
-////Andy Peterson
-//$successfullySent3 = mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-////Chad D'Alessandro
-////mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-//$successfullySent4 = mail( "daless67@icloud.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-////Roger Rains
-////mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
-////Chad Smith
-//$successfullySent5 = mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//dedicated mailbox
+$successfullySent2 = mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+
+//Andy Peterson
+$successfullySent3 = mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//Chad D'Alessandro
+//mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+$successfullySent4 = mail( "daless67@icloud.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//Roger Rains
+//mail( "rogerrains@comcast.net", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//Chad Smith
+$successfullySent5 = mail( "ChadHyrumSmith@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
 $date = date("Y-m-d h:m:s");
 $file = __FILE__;
@@ -48,6 +48,7 @@ $message = "[{$date}] [{$file}] [{$level}] message= [{$message}]".PHP_EOL;
 error_log($message);
 
 if (!$successfullySent1) {
+    error_log("ERROR, email notification failed, please send your information to 'steve@gledhills.com' (webmaster for this site)");
     echo("ERROR, email notification failed, please send your information to 'steve@gledhills.com' (webmaster for this site)");
     return;
 }
