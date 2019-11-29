@@ -147,8 +147,8 @@ function timeToSeconds($strTime) {
     return $seconds;
 }
 
-$getAreaShort = array(-1 => "Unassigned", 0 => "Crest", 1 => "Snake", 2 => "Western", 3 => "Millicent",  4 => "Training", 5 => "Staff", 6 => "Any Area");
-$getArea      = array(-1 => "Unassigned", 0 => "Crest", 1 => "Snake Creek", 2 => "Great Western",   3 => "Millicent",  4 => "Training", 5 => "Staff");
+$getAreaShort = array(-1 => "Unassigned", 0 => "Crest", 1 => "Snake", 2 => "Western", 3 => "Millicent",  4 => "Training", 5 => "Flex", 6 => "Any Area");
+$getArea      = array(-1 => "Unassigned", 0 => "Crest", 1 => "Snake Creek", 2 => "Great Western",   3 => "Millicent",  4 => "Training", 5 => "Flex");
 // $getTopShack  = array(-1 => "Unassigned",0 => "Crest Top Shack",   1 => "Snake Creek Top", 2 => "Western Top", 3 => 
 
 $getTopShack  = array(-1 => "Unassigned",0 => "Crest Top Shack",   1 => "Snake Creek Top", 2 => "Western Top", 3 =>
