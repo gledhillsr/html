@@ -471,7 +471,7 @@ if (document.all || document.getElementById) {
     <td align="center" width="133">Great Western</td>
     <td align="center" width="133">Millicent</td>
     <td align="center" width="133">Training</td>
-    <td align="center" width="133">Staff</td>
+    <td align="center" width="133">Flex</td>
 <?php
 	if($showWeb)
 		echo "    <td align=center width=133>Web Assignments</td>\n";
