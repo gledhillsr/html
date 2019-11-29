@@ -269,6 +269,7 @@ for ($areaID = 0; $areaID <= 6; $areaID++) {
         $name = "";
         if ($row2 = @mysql_fetch_array($result2)) {
             $class = $row2[ClassificationCode];
+            $cellNumber = $row2[CellPhone];
             $mentoring = $row2[mentoring];
             if ($mentoring == "1")
                 $name = "* ";
@@ -286,7 +287,7 @@ for ($areaID = 0; $areaID <= 6; $areaID++) {
         echo "<tr>";
         echo "  <td class=t1 width=\"70\"  align=center>$class$tl</td>\n";
         echo "  <td class=t1 width=\"110\">$name</td>\n";
-        echo "  <td class=t1 align=center width=\"25\">$nAssignments</td>\n";
+        echo "  <td class=t1 align=center width=\"125\">$cellNumber</td>\n";
         echo "  <td class=t1 width=\"50\" align=center>$checkin</td>\n";
         echo "</tr>";
     }

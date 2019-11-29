@@ -36,7 +36,7 @@ require("config.php");
         $hr =$arrDate[hours];
     }
     $today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
-    $getLBName = array(-1 => "Unassigned", 0 => "Crest", 1 => "Snake", 2 => "Western",   3 => "Millicent",  4 => "Training", 5 => "Staff");
+    $getLBName = array(-1 => "Unassigned", 0 => "Crest", 1 => "Snake", 2 => "Western",   3 => "Millicent",  4 => "Training", 5 => "Flex");
     $strToday = date("F-d-Y", $today);
     if($saveBtn) {
         if($area0)  updateHistory($area0,-1);  //unassigned
@@ -45,7 +45,7 @@ require("config.php");
         if($area3)  updateHistory($area3,2);  //Western
         if($area4)  updateHistory($area4,3);  //Milli
         if($area5)  updateHistory($area5,4);  //Training
-        if($area6)  updateHistory($area6,5);  //Staff
+        if($area6)  updateHistory($area6,5);  //Flex
     }
 
     $totalPatrollers = 0;
