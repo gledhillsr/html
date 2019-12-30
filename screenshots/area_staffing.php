@@ -225,7 +225,7 @@ function bldParam(listbox, area) {
 
     for (var i = 0; i < count; i++) {
         id = listbox.options[i].value;
-        if (area == 0)
+        if (area === 0)
             txt = "Un";
         else
             txt = listbox.options[i].text.substr(0, 2);
@@ -233,7 +233,7 @@ function bldParam(listbox, area) {
 
         //alert("i="+i+", id=("+id+"), txt="+txt);
         id = parseFloat(id);
-        if (id != NaN && id > 0) {
+        if (id !== NaN && id > 0) {
             if (first) {
                 param += "&area" + area + "=" + id + "-" + txt;
                 first = false;
@@ -254,7 +254,7 @@ function saveChanges() {
     bldParam(document.form1.WesternLB, 3);
     bldParam(document.form1.MillicentLB, 4);
     bldParam(document.form1.TrainingLB, 5);
-    bldParam(document.form1.StaffLB, 6);
+    bldParam(document.form1.FlexLB, 6);
     //alert(param);
     //alert("data=" + param);
     window.location.href = param;
@@ -272,7 +272,7 @@ function webStaffing() {
     bldParam(document.form1.WesternLB, 3);
     bldParam(document.form1.MillicentLB, 4);
     bldParam(document.form1.TrainingLB, 5);
-    bldParam(document.form1.StaffLB, 6);
+    bldParam(document.form1.FlexLB, 6);
     //alert(param.substr(0,20));
     window.location.href = param;
     //    alert("now don't you wish SAVE worked :-)");
@@ -280,25 +280,25 @@ function webStaffing() {
 
 function do_add(pos) {
     var listbox;
-    //the 'add' only button is only available for column 4 (training) and 5 (staff)
-    if (pos == 4)
-        listbox = document.form1.TrainingLB
+    //the 'add' only button is only available for column 4 (training) and 5 (Flex)
+    if (pos === 4)
+        listbox = document.form1.TrainingLB;
     else
-        listbox = document.form1.StaffLB
+        listbox = document.form1.FlexLB;
 
     var lastPos = listbox.options.length;
-    var myNewOption = new Option(".....");
-    listbox.options[lastPos] = myNewOption;
+
+    listbox.options[lastPos] = new Option(".....");
     listbox.options.selectedIndex = -1;
 }
 
 function del_xtra(pos) {
     var listbox;
-    if (pos == 0)
+    if (pos === 0)
         listbox = document.form1.CrestLB
-    else if (pos == 1)
+    else if (pos === 1)
         listbox = document.form1.SnakeLB
-    else if (pos == 2)
+    else if (pos === 2)
             listbox = document.form1.WesternLB
         else //3
             listbox = document.form1.MillicentLB
@@ -308,23 +308,23 @@ function del_xtra(pos) {
     var found = false;
     for (var $i = 2; $i < lastPos; $i++) {
         var txt = listbox.options[$i].text;
-        if (txt == "Xtra.") {
+        if (txt === "Xtra.") {
             found = true;
             listbox.options[$i] = null;
             break;
         }
     }
-    if (found == false)
+    if (found === false)
         alert("Oops, no EMPTY 'Xtra.' positions found");
 }
 
 function add_xtra(pos) {
     var listbox;
-    if (pos == 0)
+    if (pos === 0)
         listbox = document.form1.CrestLB
-    else if (pos == 1)
+    else if (pos === 1)
         listbox = document.form1.SnakeLB
-    else if (pos == 2)
+    else if (pos === 2)
             listbox = document.form1.WesternLB
         else // 3
             listbox = document.form1.MillicentLB
@@ -342,19 +342,19 @@ function move_name(mountain, listbox) {
     var currName = listbox.options[currIndex].text;
     var currTitle = currName.substr(0, 5);
     currName = currName.substr(5);
-    var messageStr
+    var messageStr;
     var unAssigned = document.form1.UnassignedLB;
     //  var txtDisplay   = document.form1.lastCommand;
-    var unIndex = unAssigned.selectedIndex
-    var unID
-    var unName
-    if (unIndex != -1) {
+    var unIndex = unAssigned.selectedIndex;
+    var unID;
+    var unName;
+    if (unIndex !== -1) {
         unID = unAssigned.options[unIndex].value;
         unName = unAssigned.options[unIndex].text;
 
         //currTitle ->"bas..", "TL...", "ATL..", etc
         var newLevel = unName.substr(0, 1);	//1 (sr),2(bas),3(aux),4(can...)
-        if (newLevel >= 3 && (currTitle == "bas.." || currTitle == "TL..." || currTitle == "ATl..")) {
+        if (newLevel >= 3 && (currTitle === "bas.." || currTitle === "TL..." || currTitle === "ATl..")) {
             alert("Error, invalid assignment.  Must have SR or BAS ski level");
             unAssigned.selectedIndex = -1;	//unselect everything
             listbox.selectedIndex = -1;
@@ -364,7 +364,7 @@ function move_name(mountain, listbox) {
 
     //  alert("currindex=("+currIndex+")\n unindex=("+unIndex+")\n currID=("+currID+")\n currTitle=("+currTitle+")");
     //alert("(" +currTitle+", " + newLevel + ")");
-    if (unIndex == -1 && (currID == null || currID == 0)) {
+    if (unIndex === -1 && (currID == null || currID === 0)) {
         messageStr = "Oops, no one is selected as Unassigned";
         listbox.selectedIndex = -1;
     } else {
