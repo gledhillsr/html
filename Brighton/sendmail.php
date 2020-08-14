@@ -30,7 +30,7 @@ $successfullySent1 = mail( "steve@gledhills.com", "Ski Patrol volunteer from web
 $successfullySent2 = mail( "BrightonNsp@gmail.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 
 //Andy Peterson
-$successfullySent3 = mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
+//$successfullySent3 = mail( "andy@nationalequipmentcorp.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 //Chad D'Alessandro
 //mail( "chad.dalessandro@sfdc.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
 $successfullySent4 = mail( "daless67@icloud.com", "Ski Patrol volunteer from web site", $message, "From: steve@gledhills.com" );
