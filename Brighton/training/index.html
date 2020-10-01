@@ -24,7 +24,6 @@
 <td width="100%" background="img/left1bg.jpg"><img src="img/left1bg.jpg" width="20" height="42" border="0" alt=""></td>
 	</tr>
 </table>
-<iframe id="myFrame" width="1" heigth="1"></iframe>
 <table width="764" cellpadding="0" cellspacing="0" border="0">
 	<tr valign="top">
 
@@ -67,6 +66,7 @@ Patrollers will be refreshing online this year during October, general dates are
    * October 1-15th - everyone will work on their refresher workbook and online module<br>
    * October 15-31st - will include online lift evac PowerPoint review and online courses for new COVID 19 protocols we will be following this year.</p>
 	</div>
+<iframe id="myFrame" width="1" heigth="1"></iframe>
 	<script>
       function showPPE() {
         document.getElementById('panel').innerHTML="<h2><center>PPE Stuff goes here</center></h2>";
@@ -77,7 +77,7 @@ Patrollers will be refreshing online this year during October, general dates are
       function showCPR() {
         document.getElementById('panel').innerHTML="<h2><center>CPR Stuff goes here</center></h2>";
       }
-	  document.getElementById("panel").onload = function() {showPPE()};
+	  document.getElementById("myFrame").onload = function() {showPPE()};
     </script>
 	
 <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
