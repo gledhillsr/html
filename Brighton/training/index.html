@@ -30,7 +30,7 @@
 <td width="150">
 <!-- menu below, copy and paste the menudivider.jpg code as necessary -->
 <!-- the &nbsp; is code for a one letter space -->
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Overview</a><BR>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showOverview()'>Overview</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showPPE()'>PPE</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showLiftEvac()'>Lift Evac</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showCPR()'>CPR</a><BR>
@@ -70,6 +70,9 @@ Patrollers will be refreshing online this year during October, general dates are
 <iframe id="myFrame" width="1" heigth="1"></iframe>
 -->
 	<script>
+      function showOverview() {
+        document.getElementById('panel').load("Overview.html");
+      }
       function showPPE() {
         document.getElementById('panel').innerHTML="<h2><center>PPE Stuff goes here</center></h2>Under construction";
       }
