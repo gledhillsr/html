@@ -53,28 +53,14 @@
 <td width="744">
 
 <!-- add your content below -->
-<div id="panel">
+	<iframe id="panel" width="100%" height="1000" style="border:none;" src="Overview.html"></iframe>
 	
-	<h2><center>Overview Brighton Ski Patrol 2020/2021 Training</center></h2>
-    <p>With the COVID 19 pandemic still impacting the world we realize not everyone will be able to patrol this year.  Please let David Koenig know if you will be taking the year off so he can get a count on the number of patrollers we will have this year.<br><br>
-
-CPR will require everyone to take the written test.  A few patrollers will need to demonstrate their CPR skills and will be notified by Nancy and Jeff.   A date will be set when the COVID 19 numbers look better.<br><br>
-
-This 2020/2021 refresher will be based on OEC6.  See https://www.nsp.org/NSPMember/For_Members/NSP_Member_Home/OEC_edition_6.aspx for instructions on how to order.  Unfortunately there is no additional discount for ordering in bulk so everyone will need to order their own manual which is 25% off plus free shipping.  You can also choose an e-book at half the cost of the printed version.<br><br>
-
-Patrollers will be refreshing online this year during October, general dates are below and specifics will follow.<br>
-   * October 1-15th - everyone will work on their refresher workbook and online module<br>
-   * October 15-31st - will include online lift evac PowerPoint review and online courses for new COVID 19 protocols we will be following this year.</p>
-	</div>
-<!--	
-<iframe id="myFrame" width="1" heigth="1"></iframe>
--->
 	<script>
       function showOverview() {
-        document.getElementById('panel').innerHTML=<?php include("Overview.html"); ?>
+        document.getElementById("panel").src="Overview.html";
       }
       function showPPE() {
-        document.getElementById('panel').innerHTML="<h2><center>PPE Stuff goes here</center></h2>Under construction";
+        document.getElementById("panel").src="PPE.html";
       }
       function showLiftEvac() {
         document.getElementById('panel').innerHTML="<h2><center>Lift Evac Stuff goes here</center></h2>Under construction";
