@@ -31,7 +31,7 @@
 <!-- menu below, copy and paste the menudivider.jpg code as necessary -->
 <!-- the &nbsp; is code for a one letter space -->
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com/Brighton">Overview</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com/Brighton">PPE</a><BR>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showPPE()'>PPE</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">Lift Evac</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">CPR</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">Naloxone</a><BR>
@@ -53,8 +53,13 @@
 <td width="744">
 
 <!-- add your content below -->
-
-	<P><center><font size="4">Overview Brighton Ski Patrol 2020/2021 Training</font></center></P>
+<div id="panel">
+	<script>
+      function showPPE() {
+        document.getElementById('test').innerHTML="<h2><center>PPE Stuff goes here</center></h2>";
+      }
+    </script>
+	<h2><center>Overview Brighton Ski Patrol 2020/2021 Training</center></h2>
     <p>With the COVID 19 pandemic still impacting the world we realize not everyone will be able to patrol this year.  Please let David Koenig know if you will be taking the year off so he can get a count on the number of patrollers we will have this year.<br><br>
 
 CPR will require everyone to take the written test.  A few patrollers will need to demonstrate their CPR skills and will be notified by Nancy and Jeff.   A date will be set when the COVID 19 numbers look better.<br><br>
@@ -64,6 +69,7 @@ This 2020/2021 refresher will be based on OEC6.  See https://www.nsp.org/NSPMemb
 Patrollers will be refreshing online this year during October, general dates are below and specifics will follow.<br>
    * October 1-15th - everyone will work on their refresher workbook and online module<br>
    * October 15-31st - will include online lift evac PowerPoint review and online courses for new COVID 19 protocols we will be following this year.</p>
+	</div>
 <BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
 <center>Web site and all contents © Copyright Brighton Ski Patrol, All rights reserved.</center>
 <!-- end content area -->
