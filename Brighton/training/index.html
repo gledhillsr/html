@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Brighton Ski Patrol Training</title>
-	<link rel=stylesheet type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body background="img/background.jpg" bottommargin="0" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
@@ -30,23 +30,23 @@
 <td width="150">
 <!-- menu below, copy and paste the menudivider.jpg code as necessary -->
 <!-- the &nbsp; is code for a one letter space -->
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showOverview()'>Overview</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showPPE()'>PPE</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showLiftEvac()'>Lift Evac</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showCPR()'>CPR</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Naloxone</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Air Room Ops</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Avalance Safety</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Brighton Ski Patrol</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>National Ski Patrol</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Cleaning Plans</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Transportation</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Covid-19</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Screen Area</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Knots and Terms</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Proficiency Tests</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showWIP()'>Contact Info</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showOverview()">Overview</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPPE()">PPE</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showLiftEvac()">Lift Evac</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">CPR</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Naloxone</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Air Room Ops</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Avalance Safety</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Brighton Ski Patrol</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">National Ski Patrol</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Cleaning Plans</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Transportation</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Covid-19</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Screen Area</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Knots and Terms</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Proficiency Tests</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Contact Info</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 <!-- end menu -->
 </td>
 <td width="10">&nbsp;</td>
@@ -71,7 +71,7 @@ Patrollers will be refreshing online this year during October, general dates are
 -->
 	<script>
       function showOverview() {
-        document.getElementById('panel').href="Overview.html";
+        document.getElementById('panel').innerHTML=<?php include("Overview.html"); ?>
       }
       function showPPE() {
         document.getElementById('panel').innerHTML="<h2><center>PPE Stuff goes here</center></h2>Under construction";
@@ -88,7 +88,7 @@ Patrollers will be refreshing online this year during October, general dates are
 //	  <document.getElementById("myFrame").onload = function() {showPPE()};
     </script>
 	
-<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <center>Web site and all contents © Copyright Brighton Ski Patrol, All rights reserved.</center>
 <!-- end content area -->
 
