@@ -33,8 +33,8 @@
 <!-- the &nbsp; is code for a one letter space -->
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com/Brighton">Overview</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showPPE()'>PPE</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">Lift Evac</a><BR>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">CPR</a><BR>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showLiftEvac()'>Lift Evac</a><BR>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a onclick='showCPR()'>CPR</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">Naloxone</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">Air Room Ops</a><BR>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><BR>&nbsp; <a href="http://www.gledhills.com">Avalance Safety</a><BR>
@@ -70,6 +70,12 @@ Patrollers will be refreshing online this year during October, general dates are
 	<script>
       function showPPE() {
         document.getElementById('panel').innerHTML="<h2><center>PPE Stuff goes here</center></h2>";
+      }
+      function showLiftEvac() {
+        document.getElementById('panel').innerHTML="<h2><center>Lift Evac Stuff goes here</center></h2>";
+      }
+      function showCPR() {
+        document.getElementById('panel').innerHTML="<h2><center>CPR Stuff goes here</center></h2>";
       }
     </script>
 	

@@ -22,6 +22,7 @@ a {
 A:Hover  {
 	color : #596F80;
 	text-decoration : underline;
+	cursor: pointer;
 }
 
 H1 {
