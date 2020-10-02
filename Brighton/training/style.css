@@ -35,6 +35,14 @@ ul {
 	color:black;
 }
 
+li {
+	font-family:Arial;
+	font-size:12px;
+	text-decoration: none;
+	font-weight: bold;
+	color:black;
+}
+
 A:Hover  {
 	color : #596F80;
 	text-decoration : underline;
