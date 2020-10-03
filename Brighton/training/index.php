@@ -3,6 +3,12 @@ require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
 	$today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
+    $strToday = date("F-d-Y", $today);
+    $query_string = "SELECT * FROM roster WHERE IDNumber=$ID";
+        $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 1)");
+        if ($row = @mysql_fetch_array($result)) {
+			$firstName = $row["FirstName"];
+		}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
