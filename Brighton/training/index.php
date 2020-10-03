@@ -61,7 +61,7 @@ require("config.php");
 &nbsp;&nbsp;dash=Under construction
 
 <?php
-    $query_string = "SELECT * FROM roster WHERE IDNumber=$ID";
+    $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
 	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 1)");
 	if ($row = @mysql_fetch_array($result)) {
 		$firstName = $row["FirstName"];
