@@ -4,9 +4,9 @@ require("config.php");
     $arrDate = getdate();
 	$today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
     $strToday = date("F-d-Y", $today);
-$firstName="fred";
-$id="123456";
-    $id = $_GET('ID');
+    $firstName="fred";
+    $id="123456";
+//    $id = $_GET('ID');
 //    $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
 //        $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 1)");
 //        if ($row = @mysql_fetch_array($result)) {
