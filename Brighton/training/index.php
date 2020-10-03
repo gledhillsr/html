@@ -57,7 +57,7 @@ require("config.php");
 <!--<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Proficiency Tests</a><br>-->
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showASL()">ASL</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
-&nbsp;&nbsp;dash=Under construction
+&nbsp;&nbsp;
 
 <?php
     $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
@@ -68,7 +68,7 @@ require("config.php");
 	}
     $strToday = date("m/d/Y g:i a", $today);
 
-	echo "<br><br><br>Welcome<br><b>$firstName $lastName</b><br><br>$strToday";
+	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
 ?>
 	
 <!-- end menu -->
