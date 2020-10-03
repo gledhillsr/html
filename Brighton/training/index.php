@@ -2,7 +2,7 @@
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
-	$today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
+	$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
