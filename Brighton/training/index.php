@@ -3,7 +3,6 @@ require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
 	$today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
-    $strToday = date("F/d/Y", $today);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -67,6 +66,7 @@ require("config.php");
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
+    $strToday = date("m/d/Y g:i a", $today);
 
 	echo "<br><br><br>Welcome back<br><b>$firstName $lastName</b><br><br>$strToday";
 ?>
