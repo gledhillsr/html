@@ -2,6 +2,7 @@
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
     $arrDate = getdate();
+	$today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -59,7 +60,7 @@ require("config.php");
 &nbsp;&nbsp;dash=Under construction
 
 <?php
-	echo "<br>pid=zzz, name=zzz";
+	echo "<br><br>Welcome name=$firstName<br>$today";
 ?>
 	
 <!-- end menu -->
