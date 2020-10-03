@@ -69,7 +69,7 @@ require("config.php");
 &nbsp;&nbsp;dash=Under construction
 
 <?php
-	echo "<br><br><br>.%ID..$id.<br>Welcome name=$firstName<br>$today";
+	echo "<br><br><br>.$ID..$id.<br>Welcome name=$firstName<br>$today";
 ?>
 	
 <!-- end menu -->
