@@ -1,10 +1,16 @@
+<?php 
+require("config.php");
+    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
+    $arrDate = getdate();
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
 <html>
 <head>
 	<title>Brighton Ski Patrol Training</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
+<!--suppress JSUnresolvedLibraryURL -->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script></head>
 
 <body background="img/background.jpg" bottommargin="0" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
 
@@ -51,6 +57,11 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showASL()">ASL</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 &nbsp;&nbsp;dash=Under construction
+
+<?php
+	echo "<br>pid=zzz, name=zzz";
+?>
+	
 <!-- end menu -->
 </td>
 <td width="10">&nbsp;</td>
