@@ -5,13 +5,7 @@ require("config.php");
 	$today=mktime(0, 0, 0, $arrDate[mon], $arrDate[mday], $arrDate[year]);
     $strToday = date("F-d-Y", $today);
     $firstName="fred";
-    $id="123456";
-//    $id = $_GET('ID');
-//    $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
-//        $result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 1)");
-//        if ($row = @mysql_fetch_array($result)) {
-//			$firstName = $row["FirstName"];
-//		}
+    $query_string = "SELECT * FROM roster WHERE IDNumber=$ID";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -69,7 +63,13 @@ require("config.php");
 &nbsp;&nbsp;dash=Under construction
 
 <?php
-	echo "<br><br><br>.$ID..$id.<br>Welcome name=$firstName<br>$today";
+	echo "<br><br>.$ID.<br>$mysql_db<br>$query_string";
+	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 1)");
+	if ($row = @mysql_fetch_array($result)) {
+		$firstName = $row["FirstName"];
+	}
+
+	echo "<br><br><br><br>Welcome name=$firstName<br>$strToday";
 ?>
 	
 <!-- end menu -->
