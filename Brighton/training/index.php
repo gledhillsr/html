@@ -60,7 +60,7 @@ require("config.php");
 
 <?php
     $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
-	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query (result 1)");
+	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query member id [$id] not recognized");
 	if ($row = @mysql_fetch_array($result)) {
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
