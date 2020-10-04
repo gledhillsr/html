@@ -44,8 +44,11 @@
 &nbsp;&nbsp;
 
 <?php
+	$arrDate = getdate();
+	$today=mktime($arrDate['hours'], $arrDate['minutes'], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
+	$strToday = date("m/d/Y g:i a", $today);
 	function mylog($menuItem) {
-//		global $firstName, $lastName, $strToday, $id;  
+		global $firstName, $lastName, $strToday, $id;  
 		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
 	}			
 
@@ -55,9 +58,6 @@
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
-	$arrDate = getdate();
-	$today=mktime($arrDate['hours'], $arrDate['minutes'], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
-	$strToday = date("m/d/Y g:i a", $today);
 	mylog("main");
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
 ?>
