@@ -1,7 +1,7 @@
 <?php 
 require("config.php");
-    $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
-    
+ $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
+ $strToday = "xyz";   
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -65,12 +65,8 @@ require("config.php");
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
-	$arrDate = getdate();
-	$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
-    $strToday = date("m/d/Y g:i a", $today);
-
+	log("main");
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
-	error_log("** main page ($strToday) ~ $firstName $lastName");
 ?>
 	
 <!-- end menu -->
@@ -86,21 +82,33 @@ require("config.php");
         document.getElementById("panel").src="Overview.html";
       }
       function showPPE() {
+		log("PPE");  
         document.getElementById("panel").src="PPE.html";
       }
+	  finction log($menuItem) {
+		global $firstName, $lastName, $strToday, $id;  
+		  	$arrDate = getdate();
+			$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
+			$strToday = date("m/d/Y g:i a", $today);
+			error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
+	  }			
       function showLiftEvac() {
+		log("LiftEvac");  
         document.getElementById("panel").src="LiftEvac.html";
       }
       function showCPR() {
+		log("CPR");  
         document.getElementById("panel").src="CPR.html";
       }
       function showWIP() {
         document.getElementById("panel").src="UnderConstruction.html";
       }
       function showKnots() {
+		log("Knots");  
         document.getElementById("panel").src="KnotsAndTerms.pdf";
       }
       function showASL() {
+		log("ASL");  
         document.getElementById("panel").src="brighton_asl.pdf";
       }
 		
