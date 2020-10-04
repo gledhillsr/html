@@ -44,6 +44,11 @@
 &nbsp;&nbsp;
 
 <?php
+	function mylog($menuItem) {
+//		global $firstName, $lastName, $strToday, $id;  
+		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
+	}			
+
     $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
 	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query member id [$id] not recognized");
 	if ($row = @mysql_fetch_array($result)) {
@@ -51,7 +56,7 @@
 		$lastName = $row["LastName"];
 	}
 	$arrDate = getdate();
-	$today=mktime($arrDate[hours], $arrDate[minutes], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
+	$today=mktime($arrDate['hours'], $arrDate['minutes'], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 	$strToday = date("m/d/Y g:i a", $today);
 	mylog("main");
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
@@ -71,10 +76,6 @@
 		log("PPE");  
 		document.getElementById("panel").src="PPE.html";
 	}
-	function mylog($menuItem) {
-//		global $firstName, $lastName, $strToday, $id;  
-		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
-	}			
 	function showLiftEvac() {
 //		mylog("LiftEvac");  
 		document.getElementById("panel").src="LiftEvac.html";
