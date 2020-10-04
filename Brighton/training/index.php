@@ -1,8 +1,7 @@
 <?php 
 require("config.php");
     $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
-    $arrDate = getdate();
-	$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
+    
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -66,9 +65,12 @@ require("config.php");
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
+	$arrDate = getdate();
+	$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
     $strToday = date("m/d/Y g:i a", $today);
 
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
+	error_log("** main page ($strToday) ~ $firstName $lastName");
 ?>
 	
 <!-- end menu -->
@@ -106,7 +108,7 @@ require("config.php");
     </script>
 	
 <br>
-<center>Web site and all contents © Copyright Brighton Ski Patrol, All rights reserved.</center>
+<center>Web site and all contents (C) Copyright Brighton Ski Patrol, All rights reserved.</center>
 <!-- end content area -->
 
 
