@@ -65,6 +65,9 @@ require("config.php");
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
+	$arrDate = getdate();
+	$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
+	$strToday = date("m/d/Y g:i a", $today);
 	log("main");
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
 ?>
@@ -85,12 +88,9 @@ require("config.php");
 		log("PPE");  
         document.getElementById("panel").src="PPE.html";
       }
-	  finction log($menuItem) {
+	  function log($menuItem) {
 		global $firstName, $lastName, $strToday, $id;  
-		  	$arrDate = getdate();
-			$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
-			$strToday = date("m/d/Y g:i a", $today);
-			error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
+		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
 	  }			
       function showLiftEvac() {
 		log("LiftEvac");  
