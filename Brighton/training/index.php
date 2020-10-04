@@ -68,13 +68,13 @@
 		document.getElementById("panel").src="Overview.html";
 	}
 	function showPPE() {
-//		log("PPE");  
+		log("PPE");  
 		document.getElementById("panel").src="PPE.html";
 	}
-//	function log($menuItem) {
+	function log($menuItem) {
 //		global $firstName, $lastName, $strToday, $id;  
-//		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
-//	}			
+		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
+	}			
 	function showLiftEvac() {
 //		log("LiftEvac");  
 		document.getElementById("panel").src="LiftEvac.html";
