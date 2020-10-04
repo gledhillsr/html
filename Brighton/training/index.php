@@ -48,7 +48,6 @@
 	$today=mktime($arrDate['hours'], $arrDate['minutes'], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 	$strToday = date("m/d/Y g:i a", $today);
     $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
-	error_log("query_string=$query_string");
 	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query member id [$id] not recognized");
 	if ($row = @mysql_fetch_array($result)) {
 		$firstName = $row["FirstName"];
@@ -75,19 +74,19 @@
 		document.getElementById("panel").src="Overview.html";
 	}
 	function showPPE() {
-		log("PPE");  
+		<?php mylog("PPE"); ?>  
 		document.getElementById("panel").src="PPE.html";
 	}
 	function showLiftEvac() {
-		mylog("LiftEvac");  
+		<?php mylog("LiftEvac");   ?>
 		document.getElementById("panel").src="LiftEvac.html";
 	}
 	function showCPR() {
-		mylog("CPR");  
+		<?php mylog("CPR"); ?>  
 		document.getElementById("panel").src="CPR.html";
 	}
 	function showKnots() {
-		mylog("Knots");  
+		<?php mylog("Knots"); ?>  
 		document.getElementById("panel").src="KnotsAndTerms.pdf";
 	}
 		
@@ -95,7 +94,7 @@
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
 	function showASL() {
-		mylog("ASL");  
+		<?php mylog("ASL"); ?>  
 		document.getElementById("panel").src="brighton_asl.pdf";
 	}		
     </script>
