@@ -74,19 +74,19 @@
 		document.getElementById("panel").src="Overview.html";
 	}
 	function showPPE() {
-		document.write(' <?php mylog("PPE"); ?> '); 
+//		document.write(' <?php mylog("PPE"); ?> '); 
 		document.getElementById("panel").src="PPE.html";
 	}
 	function showLiftEvac() {
-		document.write(' <?php mylog("LiftEvac");   ?>');
+//		document.write(' <?php mylog("LiftEvac");   ?>');
 		document.getElementById("panel").src="LiftEvac.html";
 	}
 	function showCPR() {
-		document.write('<?php mylog("CPR"); ?> ');
+//		document.write('<?php mylog("CPR"); ?> ');
 		document.getElementById("panel").src="CPR.html";
 	}
 	function showKnots() {
-		document.write('<?php mylog("Knots"); ?>');  
+//		document.write('<?php mylog("Knots"); ?>');  
 		document.getElementById("panel").src="KnotsAndTerms.pdf";
 	}
 		
@@ -94,7 +94,7 @@
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
 	function showASL() {
-		document.write('<?php mylog("ASL"); ?> '); 
+//		document.write('<?php mylog("ASL"); ?> '); 
 		document.getElementById("panel").src="brighton_asl.pdf";
 	}		
     </script>
