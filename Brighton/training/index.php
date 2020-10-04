@@ -51,9 +51,9 @@
 		$lastName = $row["LastName"];
 	}
 	$arrDate = getdate();
-	$today=mktime($arrDate[hours], $arrDate[minutes], $arrDate[secons], $arrDate[mon], $arrDate[mday], $arrDate[year]);
+	$today=mktime($arrDate[hours], $arrDate[minutes], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 	$strToday = date("m/d/Y g:i a", $today);
-	log("main");
+	mylog("main");
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
 ?>
 	
@@ -71,27 +71,27 @@
 		log("PPE");  
 		document.getElementById("panel").src="PPE.html";
 	}
-	function log($menuItem) {
+	function mylog($menuItem) {
 //		global $firstName, $lastName, $strToday, $id;  
 		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
 	}			
 	function showLiftEvac() {
-//		log("LiftEvac");  
+//		mylog("LiftEvac");  
 		document.getElementById("panel").src="LiftEvac.html";
 	}
 	function showCPR() {
-//		log("CPR");  
+//		mylog("CPR");  
 		document.getElementById("panel").src="CPR.html";
 	}
 	function showWIP() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
 	function showKnots() {
-//		log("Knots");  
+//		mylog("Knots");  
 		document.getElementById("panel").src="KnotsAndTerms.pdf";
 	}
 	function showASL() {
-//		log("ASL");  
+//		mylog("ASL");  
 		document.getElementById("panel").src="brighton_asl.pdf";
 	}		
     </script>
