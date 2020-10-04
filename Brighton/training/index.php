@@ -47,17 +47,19 @@
 	$arrDate = getdate();
 	$today=mktime($arrDate['hours'], $arrDate['minutes'], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 	$strToday = date("m/d/Y g:i a", $today);
-	function mylog($menuItem) {
-		global $firstName, $lastName, $strToday, $id;  
-		error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
-	}			
-
     $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
+	error_log("query_string=$query_string");
 	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query member id [$id] not recognized");
 	if ($row = @mysql_fetch_array($result)) {
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
+
+	function mylog($menuItem) {
+	global $firstName, $lastName, $strToday, $id;  
+	error_log("zz $menuItem page ($strToday) ~ $id $firstName $lastName");
+	}			
+
 	mylog("main");
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
 ?>
@@ -77,31 +79,29 @@
 		document.getElementById("panel").src="PPE.html";
 	}
 	function showLiftEvac() {
-//		mylog("LiftEvac");  
+		mylog("LiftEvac");  
 		document.getElementById("panel").src="LiftEvac.html";
 	}
 	function showCPR() {
-//		mylog("CPR");  
+		mylog("CPR");  
 		document.getElementById("panel").src="CPR.html";
 	}
+	function showKnots() {
+		mylog("Knots");  
+		document.getElementById("panel").src="KnotsAndTerms.pdf";
+	}
+		
 	function showWIP() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
-	function showKnots() {
-//		mylog("Knots");  
-		document.getElementById("panel").src="KnotsAndTerms.pdf";
-	}
 	function showASL() {
-//		mylog("ASL");  
+		mylog("ASL");  
 		document.getElementById("panel").src="brighton_asl.pdf";
 	}		
     </script>
 	
 <br>
 <center>Web site and all contents (C) Copyright Brighton Ski Patrol, All rights reserved.</center>
-<!-- end content area -->
-
-
 <center><a href="http://www.steves-templates.com">Free website templates</a></center>
 </td>
 <td width="10">&nbsp;</td>
