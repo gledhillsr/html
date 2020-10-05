@@ -115,7 +115,7 @@
 	function showAssessment() {
 		document.getElementById("panel").src="Assessment.html";
 	}
-	function showQuestionsEvaluations() {
+	function showEvaluations() {
 		document.getElementById("panel").src="Evaluations.html";
 	}
 		
