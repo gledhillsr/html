@@ -45,7 +45,7 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-C-19 Response plan</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showStress()">Signs of Stress</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Snow Safety</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Naloxone</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNaloxone()">Naloxone</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-BSP Documentation</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Triage</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Lift Evac</a><br>
@@ -124,6 +124,10 @@
 	function showQuestionsEvaluations() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
+		
+	function showNaloxone() {
+		document.getElementById("panel").src="19-Naloxone.pdf";
+	}
 
 	
 	
@@ -140,7 +144,6 @@
 	function showKnots() {
 		document.getElementById("panel").src="KnotsAndTerms.pdf";
 	}
-		
 	function showWIP() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
