@@ -33,13 +33,13 @@
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">2020 Introduction</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Pandemic Response</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPandemicResponse()">Pandemic Response</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">PPE</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">IDC Prodecures</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Early Transport</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showEarlyTransport()">Early Transport</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Screen Area Guide</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Symptoms of Covid-19</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19()">Symptoms of Covid-19</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">NSAA Webinar</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">CPR</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">C-19 Response plan</a><br>
@@ -77,23 +77,24 @@
 </td>
 <td width="10">&nbsp;</td>
 <td width="744"><iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>  <script>
-	function showOverview() {
+	function showIntro() {
 		document.getElementById("panel").src="Overview.html";
+//		document.getElementById("panel").src="Overview.html";
 	}
 	function showPandemicResponse() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="2-BSP-Pandemic_Response_FINAL-07_09-jc.pdf";
 	}
 	function showIDCProcedures() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
 	function showEarlyTransport() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="9-Early_Transport_Decisions-jc.pdf";
 	}
 	function showScreeningArea() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
 	function showSymptomsC19() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="11-COVID19-symptoms.pdf";
 	}
 	function showSnowSafety() {
 		document.getElementById("panel").src="UnderConstruction.html";
