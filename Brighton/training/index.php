@@ -84,19 +84,15 @@
 	function showPandemicResponse() {
 		document.getElementById("panel").src="2-BSP-Pandemic_Response_FINAL-07_09-jc.pdf";
 	}
+	function showPPE() {
+		document.getElementById("panel").src="PPE.html";
+	}
 	function showIDCProcedures() {
 		document.getElementById("panel").src="IDC.html";
 	}
 	function showEarlyTransport() {
 		document.getElementById("panel").src="9-Early_Transport_Decisions-jc.pdf";
 	}
-	function showNSAA() {
-		document.getElementById("panel").src="12-NSAA_Webinar-Ski_Patrol_Challenges_in_the_Age_of_COVID-jc.pdf";
-	}
-	function showStress() {
-		document.getElementById("panel").src="15-Signs-and-Symptoms-of-Stress-jc.pdf";
-	}
-	
 	function showScreeningArea() {
 		document.getElementById("panel").src="screening.html";
 	}
@@ -106,12 +102,23 @@
 	function showSymptomsC19a() {
 		document.getElementById("panel").src="11-SymptomsofCoronavirus.pdf";
 	}
+	function showNSAA() {
+		document.getElementById("panel").src="12-NSAA_Webinar-Ski_Patrol_Challenges_in_the_Age_of_COVID-jc.pdf";
+	}
+	function showCPR() {
+		document.getElementById("panel").src="CPR.html";
+	}
 	function showC19ResponsePlan() {
 		document.getElementById("panel").src="4-COVID-19_PPE_illustrations-p-jc.pdf";
+	}	
+	function showStress() {
+		document.getElementById("panel").src="15-Signs-and-Symptoms-of-Stress-jc.pdf";
 	}
-
 	function showSnowSafety() {
 		document.getElementById("panel").src="SnowSafety.html";
+	}
+	function showNaloxone() {
+		document.getElementById("panel").src="19-Naloxone.pdf";
 	}
 	function showBSPDocumentation() {
 		document.getElementById("panel").src="BspDocumentation.html";
@@ -119,29 +126,16 @@
 	function showTriage() {
 		document.getElementById("panel").src="Triage.html";
 	}
+	function showLiftEvac() {
+		document.getElementById("panel").src="LiftEvac.html";
+	}
 	function showAssessment() {
 		document.getElementById("panel").src="Assessment.html";
 	}
 	function showEvaluations() {
 		document.getElementById("panel").src="Evaluations.html";
-	}
-		
-	function showNaloxone() {
-		document.getElementById("panel").src="19-Naloxone.pdf";
-	}
-
-	
-	
-	
-	function showPPE() {
-		document.getElementById("panel").src="PPE.html";
-	}
-	function showLiftEvac() {
-		document.getElementById("panel").src="LiftEvac.html";
-	}
-	function showCPR() {
-		document.getElementById("panel").src="CPR.html";
-	}
+	}	
+	<!-- old links -->
 	function showKnots() {
 		document.getElementById("panel").src="KnotsAndTerms.pdf";
 	}
