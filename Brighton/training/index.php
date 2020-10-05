@@ -45,7 +45,7 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">CPR</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showC19ResponsePlan()">C-19 Response plan</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showStress()">Signs of Stress</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Snow Safety</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSnowSafety()">-Snow Safety</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNaloxone()">Naloxone</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showBSPDocumentation()">BSP Documentation</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showTriage()">Triage</a><br>
@@ -80,7 +80,6 @@
 <td width="744"><iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>  <script>
 	function showIntro() {
 		document.getElementById("panel").src="Overview.html";
-//		document.getElementById("panel").src="Overview.html";
 	}
 	function showPandemicResponse() {
 		document.getElementById("panel").src="2-BSP-Pandemic_Response_FINAL-07_09-jc.pdf";
@@ -112,7 +111,7 @@
 	}
 
 	function showSnowSafety() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="SnowSafety.html";
 	}
 	function showBSPDocumentation() {
 		document.getElementById("panel").src="BspDocumentation.html";
