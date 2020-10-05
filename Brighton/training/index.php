@@ -40,6 +40,7 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showEarlyTransport()">Early Transport</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Screen Area Guide</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19()">Symptoms of Covid-19</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19a()">Symptoms of C19 dup</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNSAA()">NSAA Webinar</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">--CPR</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-C-19 Response plan</a><br>
@@ -102,6 +103,9 @@
 	}
 	function showSymptomsC19() {
 		document.getElementById("panel").src="11-COVID19-symptoms.pdf";
+	}
+	function showSymptomsC19a() {
+		document.getElementById("panel").src="11-SymptomsofCoronavirus.pdf";
 	}
 	function showSnowSafety() {
 		document.getElementById("panel").src="UnderConstruction.html";
