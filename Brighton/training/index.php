@@ -35,13 +35,13 @@
 <td width="150">
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">2020 Introduction</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPandemicResponse()">Pandemic Response</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">PPE</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">IDC Prodecures</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">PPE</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIDC()">IDC Prodecures</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showEarlyTransport()">Early Transport</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Screen Area Guide</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19()">Symptoms of Covid-19</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">NSAA Webinar</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">CPR</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">CPR</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">C-19 Response plan</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Signs of Stress</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Snow Safety</a><br>
@@ -85,7 +85,7 @@
 		document.getElementById("panel").src="2-BSP-Pandemic_Response_FINAL-07_09-jc.pdf";
 	}
 	function showIDCProcedures() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="IDC.html";
 	}
 	function showEarlyTransport() {
 		document.getElementById("panel").src="9-Early_Transport_Decisions-jc.pdf";
