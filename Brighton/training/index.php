@@ -33,7 +33,7 @@
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">-2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">2020 Introduction</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPandemicResponse()">Pandemic Response</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-PPE</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIDCProcedures()">IDC Prodecures</a><br>
