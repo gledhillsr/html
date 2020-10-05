@@ -33,13 +33,24 @@
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showOverview()">Overview</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showLiftEvac()">Lift Evac</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">CPR</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Thing 1</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Thing 2</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Thing 3</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showKnots()">Knots and Terms</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Pandemic Response</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">PPE</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">IDC Prodecures</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Early Transport</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Screen Area Guide</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Symptoms of Covid-19</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">NSAA Webinar</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">CPR</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">C-19 Response plan</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Signs of Stress</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Snow Safety</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Naloxone</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">BSP Documentation</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Triage</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Lift Evac</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Patient Assessment</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Questions/Evaluations</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 &nbsp;&nbsp;
 
@@ -65,14 +76,50 @@
 	
 </td>
 <td width="10">&nbsp;</td>
-<td width="744">
-
-	<iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>
-	
-	<script>
+<td width="744"><iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>  <script>
 	function showOverview() {
 		document.getElementById("panel").src="Overview.html";
 	}
+	function showPandemicResponse() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showIDCProcedures() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showEarlyTransport() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showScreeningArea() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showSymptomsC19() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showSnowSafety() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showNaloxone() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showBSPDocumentation() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showTriage() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showLiftEvac() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showPatientAssessment() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+	function showQuestionsEvaluations() {
+		document.getElementById("panel").src="UnderConstruction.html";
+	}
+
+	
+	
+	
 	function showPPE() {
 		document.getElementById("panel").src="PPE.html";
 	}
