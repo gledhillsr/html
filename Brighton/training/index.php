@@ -145,7 +145,7 @@
 		document.getElementById("panel").src="brighton_asl.pdf";
 	}		
     </script>
-	
+
 <br>
 <center>Web site and all contents (C) Copyright Brighton Ski Patrol, All rights reserved.</center>
 <center><a href="http://www.steves-templates.com">Free website templates</a></center>
