@@ -50,7 +50,7 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showTriage()">Triage</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showLiftEvac()">Lift Evac</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showAssessment()">Patient Assessment</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Questions/Evaluations</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showEvaluations()">Evaluations</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 &nbsp;&nbsp;
 
@@ -116,7 +116,7 @@
 		document.getElementById("panel").src="Assessment.html";
 	}
 	function showQuestionsEvaluations() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="Evaluations.html";
 	}
 		
 	function showNaloxone() {
