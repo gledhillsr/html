@@ -33,7 +33,7 @@
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="-showIntro()">2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">-2020 Introduction</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPandemicResponse()">Pandemic Response</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-PPE</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIDCProcedures()">IDC Prodecures</a><br>
@@ -47,9 +47,9 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Snow Safety</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNaloxone()">Naloxone</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-BSP Documentation</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Triage</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Lift Evac</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Patient Assessment</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showTriage()">Triage</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showLiftEvac()">Lift Evac</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">Patient Assessment</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showWIP()">-Questions/Evaluations</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 &nbsp;&nbsp;
@@ -106,20 +106,14 @@
 	function showSnowSafety() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
-	function showNaloxone() {
-		document.getElementById("panel").src="UnderConstruction.html";
-	}
 	function showBSPDocumentation() {
 		document.getElementById("panel").src="UnderConstruction.html";
 	}
 	function showTriage() {
-		document.getElementById("panel").src="UnderConstruction.html";
-	}
-	function showLiftEvac() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="Triage.html";
 	}
 	function showPatientAssessment() {
-		document.getElementById("panel").src="UnderConstruction.html";
+		document.getElementById("panel").src="Assessment.html";
 	}
 	function showQuestionsEvaluations() {
 		document.getElementById("panel").src="UnderConstruction.html";
