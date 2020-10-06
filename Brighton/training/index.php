@@ -81,7 +81,7 @@
 		document.getElementById("panel").src="Overview.html";
 	}
 	function showPandemicResponse() {
-		document.getElementById("panel").src="7-COVID-19_Guidelines_and_Recommendations.pdf";
+		document.getElementById("panel").src="PandemicResponse.html";
 	}
 	function showPPE() {
 		document.getElementById("panel").src="PPE.html";
@@ -102,7 +102,7 @@
 		document.getElementById("panel").src="11-SymptomsofCoronavirus.pdf";
 	}
 	function showNSAA() {
-		document.getElementById("panel").src="12-NSAA_Webinar-Ski_Patrol_Challenges_in_the_Age_of_COVID-jc.pdf";
+		document.getElementById("panel").src="NsaaWebinar.html";
 	}
 	function showCPR() {
 		document.getElementById("panel").src="CPR.html";
