@@ -33,7 +33,7 @@
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">-2020 Introduction</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPandemicResponse()">Pandemic Response</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPPE()">-PPE</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIDCProcedures()">IDC Prodecures</a><br>
@@ -42,11 +42,11 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19()">Symptoms of Covid-19</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19a()">Symptoms of C19 dup</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNSAA()">NSAA Webinar</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">CPR</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">-CPR</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showC19ResponsePlan()">C-19 Response plan</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showStress()">Signs of Stress</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSnowSafety()">-Snow Safety</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNaloxone()">-Naloxone</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNaloxone()">Naloxone</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showBSPDocumentation()">BSP Documentation</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showTriage()">Triage</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showLiftEvac()">Lift Evac</a><br>
@@ -118,7 +118,7 @@
 		document.getElementById("panel").src="SnowSafety.html";
 	}
 	function showNaloxone() {
-		document.getElementById("panel").src="19-Naloxone.pdf";
+		document.getElementById("panel").src="Naloxone.html";
 	}
 	function showBSPDocumentation() {
 		document.getElementById("panel").src="BspDocumentation.html";
