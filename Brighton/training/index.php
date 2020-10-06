@@ -75,7 +75,7 @@
 	echo "<br><br><br>&nbsp;Welcome<br><b>&nbsp;$firstName $lastName</b><br><br>&nbsp;$strToday";
 ?>
 	
-</td>
+</td> 
 <td width="10">&nbsp;</td>
 <td width="744"><iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>  <script>
 	function showIntro() {
