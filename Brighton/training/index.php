@@ -109,7 +109,7 @@
 		document.getElementById("panel").src="CPR.html";
 	}
 	function showC19ResponsePlan() {
-		document.getElementById("panel").src="4-COVID-19_PPE_illustrations-p-jc.pdf";
+		document.getElementById("panel").src="Brightonc19Response.html";
 	}	
 	function showStress() {
 		document.getElementById("panel").src="15-Signs-and-Symptoms-of-Stress-jc.pdf";
