@@ -81,7 +81,7 @@
 		document.getElementById("panel").src="Overview.html";
 	}
 	function showBSPResponsePlan() {
-		document.getElementById("panel").src="PandemicResponse.html";
+		document.getElementById("panel").src="BSPResponsePlan.html";
 	}
 	function showPPE() {
 		document.getElementById("panel").src="PPE.html";
@@ -108,7 +108,7 @@
 		document.getElementById("panel").src="CPR.html";
 	}
 	function showNSPResponsePlan() {
-		document.getElementById("panel").src="Brightonc19Response.html";
+		document.getElementById("panel").src="NSPResponsePlan.html";
 	}	
 	function showStress() {
 		document.getElementById("panel").src="15-Signs-and-Symptoms-of-Stress-jc.pdf";
