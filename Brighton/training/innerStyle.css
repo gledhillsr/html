@@ -69,6 +69,12 @@ H1 {
 	font-weight: bold;
 	font-size : 16px;
 }
+H2 {
+	color: black;
+	font-weight: bold;
+	font-size : 30px;
+    text-align: center;
+}
 
 #bg-image {
     height: 100%;
