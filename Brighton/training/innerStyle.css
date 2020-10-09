@@ -30,6 +30,15 @@ a:visited {
   color: green;
 }
 
+
+a.email {
+	font-family:Arial;
+	font-size:18px;
+	text-decoration: none;
+	font-weight: bold;
+    color: blue;
+}
+
 a:hover {	
   text-decoration: underline;
 }
