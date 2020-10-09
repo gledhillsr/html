@@ -65,9 +65,3 @@ H1 {
     background-size: cover;
     opacity: 0.9;
 }
-
-.active {
-background: yellow;
-text-decoration: underline;
-color: blue;
-}
