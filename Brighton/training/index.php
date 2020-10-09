@@ -13,75 +13,7 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script></head>
 
 <body background="img/background.jpg" bottommargin="0" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
-<script>
-	function showIntro() {
-		document.getElementById("panel").src="Overview.html";
-	}
-	function showBSPResponsePlan() {
-		document.getElementById("panel").src="BSPResponsePlan.html";
-	}
-	function showPPE() {
-		document.getElementById("panel").src="PPE.html";
-	}
-	function showIDCProcedures() {
-		document.getElementById("panel").src="IDC.html";
-	}
-	function showEarlyTransport() {
-		document.getElementById("panel").src="Transport.html";
-	}
-	function showScreeningArea() {
-		document.getElementById("panel").src="screening.html";
-	}
-	function showSymptomsC19() {
-		document.getElementById("panel").src="11-COVID19-symptoms.pdf";
-	}
-	function showSymptomsC19a() {
-		document.getElementById("panel").src="11-SymptomsofCoronavirus.pdf";
-	}
-	function showNSAA() {
-		document.getElementById("panel").src="NsaaWebinar.html";
-	}
-	function showCPR() {
-		document.getElementById("panel").src="CPR.html";
-	}
-	function showNSPResponsePlan() {
-		document.getElementById("panel").src="NSPResponsePlan.html";
-	}	
-	function showStress() {
-		document.getElementById("panel").src="15-Signs-and-Symptoms-of-Stress-jc.pdf";
-	}
-	function showSnowSafety() {
-		document.getElementById("panel").src="SnowSafety.html";
-	}
-	function showNaloxone() {
-		document.getElementById("panel").src="Naloxone.html";
-	}
-	function showBSPDocumentation() {
-		document.getElementById("panel").src="BspDocumentation.html";
-	}
-	function showTriage() {
-		document.getElementById("panel").src="Triage.html";
-	}
-	function showLiftEvac() {
-		document.getElementById("panel").src="LiftEvac.html";
-	}
-	function showAssessment() {
-		document.getElementById("panel").src="Assessment.html";
-	}
-	function showEvaluations() {
-		document.getElementById("panel").src="Evaluations.html";
-	}	
-	<!-- old links -->
-	function showKnots() {
-		document.getElementById("panel").src="KnotsAndTerms.pdf";
-	}
-	function showWIP() {
-		document.getElementById("panel").src="UnderConstruction.html";
-	}
-	function showASL() {
-		document.getElementById("panel").src="brighton_asl.pdf";
-	}		
-    </script>
+
 	
 <center><table width="765" height="100%" cellpadding="0" cellspacing="0" border="0" background="img/mainbackground.jpg"><tr valign="top"><td>
 
@@ -98,28 +30,37 @@
 	<td width="100%" background="img/left1bg.jpg"><img src="img/left1bg.jpg" width="20" height="42" border="0" alt=""></td>
 	</tr>
 </table>
+<script>
+	var previousId = "intro";
+	function showPanel(id, contents) {
+		document.getElementById("panel").src=contents;
+        document.getElementById(previousId).removeAttribute("style");
+        document.getElementById(id).style.background = "yellow";
+		previousId = id;
+	}
+</script>	
 <table width="764" cellpadding="0" cellspacing="0" border="0">
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIntro()">2020 Introduction</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showBSPResponsePlan()">BSP Response Plan</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showPPE()">PPE</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showIDCProcedures()">IDC Prodecures</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showEarlyTransport()">Transport Decisions</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showScreeningArea()">Screening Area Guide</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19()">Symptoms of Covid-19</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSymptomsC19a()">Symptoms from CDC</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNSAA()">NSAA Webinar</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showCPR()">CPR</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNSPResponsePlan()">NSP Response Plan</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showStress()">Signs of Stress</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showSnowSafety()">Snow Safety</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showNaloxone()">Naloxone</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showBSPDocumentation()">BSP Documentation</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showTriage()">Triage</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showLiftEvac()">Lift Evac</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a onclick="showAssessment()">Patient Assessment</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="intro"  onclick="showPanel(this.id, 'Overview.html')" style='background:yellow;'>2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="bsp"    onclick="showPanel(this.id, 'BSPResponsePlan.html')">BSP Response Plan</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="ppe"    onclick="showPanel(this.id, 'PPE.html')">PPE</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="idc"    onclick="showPanel(this.id, 'IDC.html')">IDC Prodecures</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="trans"  onclick="showPanel(this.id, 'Transport.html')">Transport Decisions</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="area"   onclick="showPanel(this.id, 'screening.html')">Screening Area Guide</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="c19"    onclick="showPanel(this.id, '11-COVID19-symptoms.pdf')">Symptoms of Covid-19</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="c19a"   onclick="showPanel(this.id, '11-SymptomsofCoronavirus.pdf')">Symptoms from CDC</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="nssa"   onclick="showPanel(this.id, 'NsaaWebinar.html')">NSAA Webinar</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="cpr"    onclick="showPanel(this.id, 'CPR.html')">CPR</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="nsp"    onclick="showPanel(this.id, 'NSPResponsePlan.html')">NSP Response Plan</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="stres"  onclick="showPanel(this.id, '15-Signs-and-Symptoms-of-Stress-jc.pdf')">Signs of Stress</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="snow"   onclick="showPanel(this.id, 'SnowSafety.html')">Snow Safety</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="nalox"  onclick="showPanel(this.id, 'Naloxone.html')">Naloxone</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="docs"   onclick="showPanel(this.id, 'BspDocumentation.html')">BSP Documentation</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="triag"  onclick="showPanel(this.id, 'Triage.html')">Triage</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="evac"   onclick="showPanel(this.id, 'LiftEvac.html')">Lift Evac</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="assmnt" onclick="showPanel(this.id, 'Assessment.html')">Patient Assessment</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 &nbsp;&nbsp;
 
