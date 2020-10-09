@@ -89,7 +89,7 @@
 <td width="744"><iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>  
 
 <br>
-<center>Web site and all contents (C) Copyright Brighton Ski Patrol, All rights reserved.</center>
+<center>Web site and all contents © Copyright Brighton Ski Patrol, All rights reserved.</center>
 <center><a href="http://www.steves-templates.com">Free website templates</a></center>
 </td>
 <td width="10">&nbsp;</td>
