@@ -89,7 +89,7 @@
 	
 </td> 
 <td width="10">&nbsp;</td>
-<td width="744"><iframe id="panel" width="100%" height="700" style="border:none;" src="Overview.html"></iframe>  
+<td width="744"><iframe id="panel" width="100%" height="750" style="border:none;" src="Overview.html"></iframe>  
 
 <br>
 <center>Web site and all contents © Copyright Brighton Ski Patrol, All rights reserved.</center>
