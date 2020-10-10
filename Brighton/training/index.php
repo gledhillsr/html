@@ -13,23 +13,6 @@
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script></head>
 
 <body background="img/background.jpg" bottommargin="0" leftmargin="0" marginheight="0" marginwidth="0" rightmargin="0" topmargin="0">
-
-	
-<center><table width="765" height="100%" cellpadding="0" cellspacing="0" border="0" background="img/mainbackground.jpg"><tr valign="top"><td>
-
-<table width="764" height="97" cellpadding="0" cellspacing="0" border="0">
-	<tr valign="top">
-	<td width="248"><!-- logo image --><img src="Brighton.gif" width="248" height="97" border="0" alt=""><!-- end logo image --></td>
-	<td width="100%" background="img/toplogobg.jpg">
-	<font size="6" color="black"><center>Brighton Ski Patrol Training 2020/2021</center></font></td>
-	</tr>
-</table>
-<table width="764" height="42" cellpadding="0" cellspacing="0" border="0">
-	<tr valign="top">
-	<td width="169"><img src="img/left1.jpg" width="169" height="42" border="0" alt=""></td>
-	<td width="100%" background="img/left1bg.jpg"><img src="img/left1bg.jpg" width="20" height="42" border="0" alt=""></td>
-	</tr>
-</table>
 <script>
 	var previousId = "intro";
 	function showPanel(id, contents) {
@@ -39,6 +22,26 @@
 		previousId = id;
 	}
 </script>	
+
+	
+<center><table width="765" height="100%" cellpadding="0" cellspacing="0" border="0" background="img/mainbackground.jpg"><tr valign="top"><td>
+
+<table width="764" height="97" cellpadding="0" cellspacing="0" border="0">
+	<tr valign="top">
+	<td width="248"><!-- logo image --><img src="Brighton.gif" width="248" height="97" border="0" alt=""><!-- end logo image --></td>
+	<td width="100%" background="img/toplogobg.jpg">
+	<center>
+	  <font size="6" color="black">Brighton Ski Patrol<br>
+		  Refresher 2020</font>
+	</center></td>
+	</tr>
+</table>
+<table width="764" height="42" cellpadding="0" cellspacing="0" border="0">
+	<tr valign="top">
+	<td width="169"><img src="img/left1.jpg" width="169" height="42" border="0" alt=""></td>
+	<td width="100%" background="img/left1bg.jpg"><img src="img/left1bg.jpg" width="20" height="42" border="0" alt=""></td>
+	</tr>
+</table>
 <table width="764" cellpadding="0" cellspacing="0" border="0">
 	<tr valign="top">
 
@@ -86,7 +89,7 @@
 	
 </td> 
 <td width="10">&nbsp;</td>
-<td width="744"><iframe id="panel" width="100%" height="600" style="border:none;" src="Overview.html"></iframe>  
+<td width="744"><iframe id="panel" width="100%" height="650" style="border:none;" src="Overview.html"></iframe>  
 
 <br>
 <center>Web site and all contents © Copyright Brighton Ski Patrol, All rights reserved.</center>
