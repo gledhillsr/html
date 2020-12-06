@@ -65,7 +65,7 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="evac"   onclick="showPanel(this.id, 'LiftEvac.html')">Lift Evac</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="assmnt" onclick="showPanel(this.id, 'Assessment.html')">Patient Assessment</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp;<a id="volDocs" onclick="showPanel(this.id, 'VolunteerDocuments.html')">Volunteer Documents</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp;<a id="volDocs" onclick="showPanel(this.id, 'PatrolMeetingInfo.html')">Patrol Meetings</a><br>
+<!--<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp;<a id="volDocs" onclick="showPanel(this.id, 'PatrolMeetingInfo.html')">Patrol Meetings</a><br>-->
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>
 &nbsp;&nbsp;
 
