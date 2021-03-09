@@ -17,7 +17,7 @@
 		return (false);// return false to stop further processing
 	}
     if (document.myForm.cellNumber.value == "") {
-		alert("Cell Phone Number must not be empty");
+		alert("Phone Number must not be empty");
 		document.myForm.cellNumber.focus(); // Place the cursor on the first name
 		return (false);// return false to stop further processing
 	}
@@ -40,15 +40,15 @@
 	return (true);  // If text_name is not null continue processing
   }
 
-  function sendForm() { //todo WIP
-    if (validateFields()) {
-      var data = $('[name="myForm"').serialize();
-      changeMainWindow(this, '/Brighton/sendmail.php?'+data);
-    }
-    else {
-      return false;
-    }
-  }
+  // function sendForm() { //todo WIP
+  //   if (validateFields()) {
+  //     var data = $('[name="myForm"').serialize();
+  //     changeMainWindow(this, '/Brighton/sendmail.php?'+data);
+  //   }
+  //   else {
+  //     return false;
+  //   }
+  // }
 
   //    function checkForChanges() {
 //        if(changesMade) {
@@ -143,8 +143,8 @@ ul
   9 a.m. in the &quot;A&quot; frame building, (next to Crest lift)<br>
   Meet on the main floor.&nbsp; Yes, there is a cost -- a $30 Day Pass</span> -->
 
-    <b>Ski Patrol Open House - Sunday March 22, 2020</b><br><br>
-
+<!--    <b>Ski Patrol Open House - Sunday March 22, 2020</b>-->
+    <br><br>
 <!--    <q>Due to the current number of retained members on the Brighton Volunteer Ski Patrol,<br>-->
 <!--      we will not be accepting candidates for the upcoming ski season.  <br>-->
 <!--      We appreciate your interest and look forward  to seeing you in 2020.</q>-->
@@ -166,7 +166,6 @@ Candidates must demonstrate the patroller mind-set consisting of such attitudes 
 <p class=MsoNormal style='margin-right:0.0pt'></p>
 If you fit this description, can emulate these behaviors, and want to take the steps and commitment necessary to become a Volunteer Patroller, please complete the form at the bottom of this page.  If you have any questions, please feel free to contact:
 <br>
-Chad D&#39;Alessandro @ (801) 550-4680.
 
 <p class=MsoNormal style='margin-right:0.0pt'></p>
 <B>Open House</B><br>
@@ -249,16 +248,17 @@ style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
 style='font-size:14.0pt;color:black'>Request for application</span></i></b></p>
 
 <font color="red">*</font> Indicates required fields.<br><br>
-<form action="/Brighton/sendmail.php" target="main" name="myForm" onsubmit="return validateFields()" method="POST">&nbsp;&nbsp;
+<form action="/calendar-1/VolunteerForm" target="main" name="myForm" onsubmit="return validateFields()" method="POST">&nbsp;&nbsp;
+  <INPUT TYPE='HIDDEN' NAME='resort' VALUE='Brighton'>
+  <INPUT TYPE='HIDDEN' NAME='ID' VALUE='192443'>
 <font color="red">*</font>First Name:&nbsp;<input name="firstName" type="text" size="14">&nbsp;&nbsp;&nbsp;
 Last Name:&nbsp;<input name="lastName" type="text" size="14"><br><br>&nbsp;&nbsp;
 Address:&nbsp;<input name="address" type="text" size="32"><br><br>&nbsp;&nbsp;
-City:&nbsp;<input name="city" type="text" size="22">&nbsp;&nbsp;
-State:&nbsp;<input name="state" type="text" size="6">&nbsp;&nbsp;
+City:&nbsp;<input name="city" type="text" size="32">&nbsp;&nbsp;
+State:&nbsp;<input name="state" type="text" size="12">&nbsp;&nbsp;
 Zip:&nbsp;<input name="zip" type="text" size="8"><br><br>&nbsp;&nbsp;
-Home telephone: (<input name="homeAreaCode" type="text" size="3">)&nbsp;<input name="homeNumber" type="text" size="10"><br><br>&nbsp;&nbsp;
-<font color="red">*</font>Cell number: (<input name="cellAreaCode" type="text" size="3">)&nbsp;<input name="cellNumber" type="text" size="10"><br><br>&nbsp;&nbsp;
-<font color="red">*</font>Email Address: </font><input name="email" type="text" size="30"><br><br>&nbsp;&nbsp;
+<font color="red">*</font>Phone number:&nbsp;<input name="cellNumber" type="text" size="14"><br><br>&nbsp;&nbsp;
+<font color="red">*</font>Email Address: <input name="email" type="text" size="30"><br><br>&nbsp;&nbsp;
 <font color="red">*</font>How many years have you skied or boarded? <input name="yearsSkied" type="text" size="3"><br><br>&nbsp;&nbsp;
 <font color="red">*</font>Tell us about you and your boarding or skiing experience:<br>
      <textarea name="skiExperience" cols="90" rows="6" title="experience"></textarea>
