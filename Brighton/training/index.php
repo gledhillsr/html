@@ -32,7 +32,7 @@
 	<td width="100%" background="img/toplogobg.jpg">
 	<center>
 	  <font size="6" color="black">Brighton Ski Patrol<br>
-		  Refresher 2020</font>
+		  Refresher 2021</font>
 	</center></td>
 	</tr>
 </table>
@@ -46,7 +46,7 @@
 	<tr valign="top">
 
 <td width="150">
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="intro"  onclick="showPanel(this.id, 'Overview.html')" style='background:yellow;'>2020 Introduction</a><br>
+<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="intro"  onclick="showPanel(this.id, 'Overview.html')" style='background:yellow;'>2021 Introduction</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="bsp"    onclick="showPanel(this.id, 'BSPResponsePlan.html')">BSP Response Plan</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="ppe"    onclick="showPanel(this.id, 'PPE.html')">PPE</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="idc"    onclick="showPanel(this.id, 'IDC.html')">IDC Prodecures</a><br>
