@@ -55,7 +55,8 @@
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="c19"    onclick="showPanel(this.id, '11-COVID19-symptoms.pdf')">Symptoms of Covid-19</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="c19a"   onclick="showPanel(this.id, '11-SymptomsofCoronavirus.pdf')">Symptoms from CDC</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="nssa"   onclick="showPanel(this.id, 'NsaaWebinar.html')">NSAA Webinar</a><br>
-<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="cpr"    onclick="showPanel(this.id, 'CPR.html')">CPR</a><br>
+<!-- The CPR link was removed, while the updated is in progress.  10/6/2021, per request from Nancy P.  -->
+<!--<img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="cpr"    onclick="showPanel(this.id, 'CPR.html')">CPR</a><br>-->
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="nsp"    onclick="showPanel(this.id, 'NSPResponsePlan.html')">NSP Response Plan</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="stres"  onclick="showPanel(this.id, '15-Signs-and-Symptoms-of-Stress-jc.pdf')">Signs of Stress</a><br>
 <img src="img/menudivider.jpg" width="150" height="6" border="0" alt=""><br>&nbsp; <a id="snow"   onclick="showPanel(this.id, 'SnowSafety.html')">Snow Safety</a><br>
