@@ -27,7 +27,7 @@ global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysql_db, $data
 global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday, $showDouble;
 global $StartTime,$EndTime;
 //$mysql_username = "root";           // MySQL user name
-//$mysql_password = "Gandalf2";    // MySQL password (leave empty if no password is required.)
+//$mysql_password = "password";    // MySQL password (leave empty if no password is required.)
 //$mysql_db       = "Brighton";        // MySQL database name
 //$mysql_host     = "localhost";      // MySQL server host name
 //echo "connect_string=$mysql_host<br>";

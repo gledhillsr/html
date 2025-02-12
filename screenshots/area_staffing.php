@@ -552,7 +552,7 @@ if (document.all || document.getElementById) {
     	@mysql_free_result($result);
 
 		//open web connection
-		$mysql_host = "gledhills.com";  //IP of nspOnline.org
+		$mysql_host = "gledhills.com";
 		$connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to web database.");
 		//build date string
 		  $tdate  = $arrDate[year] . "-";

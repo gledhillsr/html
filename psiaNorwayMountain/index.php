@@ -1,5 +1,5 @@
 <?php
-$thisResort = "psiaPineMountain";
+$thisResort = "psiaNorwayMountain";
 ?>
 
 <!DOCTYPE HTML>
