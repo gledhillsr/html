@@ -86,11 +86,11 @@ $patrols = [
 <div class="container py-4">
   <div class="alert alert-danger">
     <strong>This site is NOT affiliated with the National Ski Patrol.</strong><br>
-    Just a single ski patroller volunteering his time, efforts, and money to assist other ski patrols.
+    Just a single ski patroller volunteering his time, efforts to assist other ski patrols.
   </div>
   <div class="alert alert-custom">
     <strong>Important Notice:</strong><br>
-    If you're accessing this site using <code>nsponline.org</code>, please use <code>gledhills.com</code> instead.<br>
+    If you're accessing this site using <code>nsponline.org</code>, please use <b>gledhills.com</b> instead.<br>
     The old URL will be surrendered due to trademark issues. Gledhills.com will continue to support this service.<br>
     Thank you for your understanding — <strong>Steven Gledhill</strong>.
   </div>
