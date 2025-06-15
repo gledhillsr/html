@@ -24,7 +24,7 @@ $patrols = [
     ["name" => "Lee Canyon", "href" => "/LeeCanyon", "img" => "images/LeeCanyon.png"],
     ["name" => "Lonesome Pine Trails", "href" => "/LonesomePine", "img" => "images/lonesomepines.gif"],
     ["name" => "Magic Mountain", "href" => "/MagicMountain", "img" => "images/MagicMountain.jpg"],
-    ["name" => "Magic Mountain Snowsports School", "href" => "/psiaMagicMountain", "img" => "images/MagicMountain.jpg"],
+//    ["name" => "Magic Mountain Snowsports School", "href" => "/psiaMagicMountain", "img" => "images/MagicMountain.jpg"],
     ["name" => "Meadowlark", "href" => "/Meadowlark", "img" => "images/Meadowlark.png"],
     ["name" => "Mount Kato", "href" => "/MountKato", "img" => "images/MountKato.jpg"],
     ["name" => "Mount Pleasant", "href" => "/MountPleasant", "img" => "images/MountPleasant.png"],
