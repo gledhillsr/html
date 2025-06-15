@@ -70,7 +70,7 @@ $patrols = [
     }
     .station-card img {
       max-height: 50px;
-      width: 30%;
+      width: 40%;
       object-fit: contain;
       flex-shrink: 0;
     }
