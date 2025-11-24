@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afton Alps Ski Patrol Schedule</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+    .calendar-day {
+      min-height: 120px;
+      padding: 0.5rem;
+      background-color: #f9fafb;
+      border: 1px solid #d1d5db;
+    }
+    .day-header {
+      text-align: center;
+      font-weight: bold;
+      background-color: #1e40af;
+      color: white;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<!-- HEADER -->
+<header class="bg-blue-600 shadow p-4 text-white flex items-center justify-between">
+  <div class="flex items-center space-x-4">
+    <img src="https://www.aftonalpsskipatrol.org/images/AftonLogo.jpg" alt="Afton Logo" class="h-16">
+    <h1 class="text-2xl font-bold">Afton Alps Ski Patrol</h1>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="bg-blue-800 text-white text-sm">
+  <div class="max-w-7xl mx-auto px-4 py-2 flex flex-wrap justify-center gap-4">
+    <a href="#" class="hover:underline">Online Schedule</a>
+    <a href="#" class="hover:underline">My Assignments</a>
+    <a href="#" class="hover:underline">SubList</a>
+    <a href="#" class="hover:underline">My Info</a>
+    <a href="#" class="hover:underline">Patrollers</a>
+    <a href="#" class="hover:underline">Directors</a>
+    <a href="#" class="hover:underline">Logout</a>
+  </div>
+</nav>
+
+<!-- DISPLAY TOGGLE -->
+<div class="max-w-7xl mx-auto px-4 mt-4">
+  <label for="mode" class="font-medium mr-2">Shift Display Mode:</label>
+  <select id="mode" class="border px-2 py-1 rounded">
+    <option value="wrap">Wrap</option>
+    <option value="clip">Clip (no ellipsis)</option>
+    <option value="ellipsis">Ellipsis</option>
+  </select>
+</div>
+
+<!-- MAIN CALENDAR SECTION -->
+<main class="max-w-7xl mx-auto mt-6 px-4">
+  <h2 class="text-xl font-semibold mb-4">February 2025</h2>
+
+  <!-- Day Headers -->
+  <div class="calendar-grid bg-gray-300">
+    <div class="day-header">Sun</div>
+    <div class="day-header">Mon</div>
+    <div class="day-header">Tue</div>
+    <div class="day-header">Wed</div>
+    <div class="day-header">Thu</div>
+    <div class="day-header">Fri</div>
+    <div class="day-header">Sat</div>
+  </div>
+
+  <!-- Calendar Days -->
+  <div class="calendar-grid bg-white">
+    <!-- Padding before Feb 1 (Saturday) -->
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+
+    <!-- Feb 1 -->
+    <div class="calendar-day">
+      <div class="font-bold text-blue-600">1</div>
+      <ul class="text-sm mt-2 space-y-1">
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">0830 Joshua Henneforth</li>
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">0830 Artie Neumeister</li>
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">0930 Christa Swanson</li>
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">1600 Anna Starks</li>
+      </ul>
+    </div>
+
+    <!-- Feb 2 -->
+    <div class="calendar-day">
+      <div class="font-bold text-blue-600">2</div>
+      <ul class="text-sm mt-2 space-y-1">
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">0830 Kim Wellman</li>
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">0930 Bridget Tierney</li>
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">1200 Susan Vermeland</li>
+      </ul>
+    </div>
+
+    <!-- Feb 3 -->
+    <div class="calendar-day">
+      <div class="font-bold text-blue-600">3</div>
+      <ul class="text-sm mt-2 space-y-1">
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">0930 Suzanne Van Deusen</li>
+        <li class="shift-entry block w-full whitespace-nowrap overflow-hidden">1600 Bret Musselman</li>
+      </ul>
+    </div>
+
+    <!-- Fill rest of week -->
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+    <div class="calendar-day"></div>
+  </div>
+</main>
+
+<!-- TOGGLE SCRIPT -->
+<script>
+  const modeSelector = document.getElementById("mode");
+  const entries = document.querySelectorAll(".shift-entry");
+
+  const classMap = {
+    wrap: "whitespace-normal overflow-visible",
+    clip: "whitespace-nowrap overflow-hidden",
+    ellipsis: "whitespace-nowrap overflow-hidden text-ellipsis"
+  };
+
+  modeSelector.addEventListener("change", () => {
+    const mode = modeSelector.value;
+    entries.forEach((el) => {
+      el.className = "shift-entry block w-full";
+      el.classList.add(...classMap[mode].split(" "));
+    });
+  });
+</script>
+
+</body>
+</html>

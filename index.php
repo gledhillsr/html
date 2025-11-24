@@ -26,6 +26,7 @@ $patrols = [
     ["name" => "Magic Mountain", "href" => "/MagicMountain", "img" => "images/MagicMountain.jpg"],
 //    ["name" => "Magic Mountain Snowsports School", "href" => "/psiaMagicMountain", "img" => "images/MagicMountain.jpg"],
     ["name" => "Meadowlark", "href" => "/Meadowlark", "img" => "images/Meadowlark.png"],
+    ["name" => "Mount Baldy", "href" => "/MtBaldy", "img" => "images/MtBaldySkiPatrolLogo.jpg"],
     ["name" => "Mount Kato", "href" => "/MountKato", "img" => "images/MountKato.jpg"],
     ["name" => "Mount Pleasant", "href" => "/MountPleasant", "img" => "images/MountPleasant.png"],
     ["name" => "Norway Mountain", "href" => "/NorwayMountain", "img" => "images/NorwayMtnLogo.png"],
