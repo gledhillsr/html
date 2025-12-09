@@ -1,8 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 *.class
-dbconfig.php
-*/dbconfig.php
+screenshots8/dbconfig.php
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
