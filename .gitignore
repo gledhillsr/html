@@ -2,6 +2,7 @@
 ### Java template
 *.class
 dbconfig.php
+*/dbconfig.php
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
