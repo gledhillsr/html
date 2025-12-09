@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
@@ -12,8 +12,6 @@
     <option name="USE_PER_PROJECT_SETTINGS" value="false" />
   </component>
   <component name="CompilerConfiguration">
-    <option name="DEFAULT_COMPILER" value="Javac" />
-    <option name="DEPLOY_AFTER_MAKE" value="0" />
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -30,6 +28,7 @@
       <entry name="?*.tld" />
     </wildcardResourcePatterns>
   </component>
+  <component name="CopyrightManager" default="" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
@@ -55,16 +54,10 @@
   </component>
   <component name="IdProvider" IDEtalkID="80A6D5623D7E999CC2AC6F5DF3B163B3" />
   <component name="InspectionProjectProfileManager">
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
-    <scopes />
-    <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-      </profile>
-    </profiles>
-    <list size="0" />
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
+    <version value="1.0" />
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -219,11 +212,37 @@
       </item>
     </group>
   </component>
-  <component name="ProjectFileVersion" converted="true" />
-  <component name="ProjectModuleManager">
-    <modules />
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/phpmyadmin/shapefile" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/phpmyadmin/sql-parser" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/composer" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/phpmyadmin/motranslator" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/tecnickcom/tcpdf" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/google/recaptcha" />
+      <path value="$PROJECT_DIR$/phpMyAdmin/vendor/samyoul/u2f-php-server" />
+    </include_path>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/phpMyAdmin/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="ResourceManagerContainer">
@@ -240,9 +259,5 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
-  </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>
-
