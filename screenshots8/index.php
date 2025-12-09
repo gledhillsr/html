@@ -1,6 +1,11 @@
 <?php
 require_once 'config.php';
 
+// Initialize shiftOverride if not set
+if(!isset($shiftOverride)) {
+    $shiftOverride = 0;
+}
+
 if($shiftOverride && $shiftOverride > 0)
 {
   //part of my time overide HACK

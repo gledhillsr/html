@@ -105,16 +105,16 @@ var id = 0;
         <p align="center">
 <?php 
         $query_string = "SELECT LastName, FirstName, IDNumber FROM roster ORDER BY LastName, FirstName";
-        $link = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database");
+        $link = mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database");
         mysqli_select_db($link, $mysqli_db);
 
-        $result = @mysqli_query($link, $query_string) or die ("Invalid query (mysqli_error($link))");
+        $result = mysqli_query($link, $query_string) or die ("Invalid query (mysqli_error($link))");
  
 
        echo "<select size=\"1\" name=\"pname\" onkeypress=\"validateKeyPress(event)\">";
 		   echo "<option value=0>Please Select Your Name</option>";
 
-        while ($row = @mysqli_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $name = $row[ \LASTNAME ] . ", " . $row[ \FIRSTNAME ];
             echo "<option value=\"" . $row[\IDNUMBER] . "\">$name</option>";
         }
