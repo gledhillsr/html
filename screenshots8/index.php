@@ -6,6 +6,8 @@ if(!isset($shiftOverride)) {
     $shiftOverride = 0;
 }
 
+
+//@todo: fix the setting of this cookie, it is not working correctly
 if($shiftOverride && $shiftOverride > 0)
 {
   //part of my time overide HACK

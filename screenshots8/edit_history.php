@@ -8,7 +8,7 @@ if($delete) {
 //echo $query_string . "<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     @mysqli_close($connect_string);
-    @mysqli_free_result($result);
+    // Removed: @mysqli_free_result($result); - not needed for INSERT/UPDATE queries
 
      header("Location: history.php?admin=1&ID=" . $ID); /* Redirect browser */
 
@@ -65,7 +65,7 @@ switch($shiftSel) {
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     @mysqli_close($connect_string);
-    @mysqli_free_result($result);
+    // Removed: @mysqli_free_result($result); - not needed for INSERT/UPDATE queries
     header("Location: history.php?admin=1&ID=" . $ID); /* Redirect browser */
     exit;
 }

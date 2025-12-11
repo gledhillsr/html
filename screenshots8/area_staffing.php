@@ -492,12 +492,12 @@ if (document.all || document.getElementById) {
     if ($row = @mysqli_fetch_array($result)) {
 //echo "$currDayOfWeek<br>\n";
         if($currDayOfWeek == "Saturday") {
-            $todayBasic=$row[ \SATURDAYBASIC ];
+            $todayBasic=$row['saturdaybasic'];
 //echo "basic=$todayBasic<br>\n";
-            $todayAux=$row[ \SATURDAYAUX ];
+            $todayAux=$row['saturdayaux'];
         } else if ($currDayOfWeek == "Sunday") {
-            $todayBasic=$row[ \SUNDAYBASIC ];
-            $todayAux=$row[ \SUNDAYAUX ];
+            $todayBasic=$row['sundaybasic'];
+            $todayAux=$row['sundayaux'];
         } else {
             $todayBasic=0;
             $todayAux=0;

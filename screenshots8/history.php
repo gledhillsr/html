@@ -31,7 +31,7 @@ if($ID) {
             $strToday .= " (about $daysOld days old)";
         }
     }
-    else if (!\ADMIN) {
+    else if (!$admin) {
         echo "Error, ID not set<br>\n";
     }
 
