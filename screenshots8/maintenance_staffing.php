@@ -165,11 +165,11 @@ function areaStatus(area) {
     <tr>
       <td width="103" bgcolor="#FFFFFF"><font size="2">
 <?php 
-      $SatBas = $row[\SATURDAYBASIC];
-      $SatAux = $row[\SATURDAYAUX];
-      $SunBas = $row[\SUNDAYBASIC];
-      $SunAux = $row[\SUNDAYAUX];
-      if($row[\OPEN] == 1) {
+      $SatBas = $row['saturdaybasic'];
+      $SatAux = $row['saturdayaux'];
+      $SunBas = $row['sundaybasic'];
+      $SunAux = $row['sundayaux'];
+      if($row['open'] == 1) {
           $checked = "checked";
           $disabled = "";
           $SaturdayTotal += 2 + $SatBas + $SatAux;

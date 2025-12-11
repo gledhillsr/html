@@ -1,7 +1,7 @@
 <?php 
 require("config.php");
     $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
     $strToday = date("l F-d-Y", $today);
 	$simpleCredits = 0;
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
@@ -91,15 +91,15 @@ Volunteer Patrol Daily Log Sheet
 //echo $query_string . "<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     while ($row = @mysqli_fetch_array($result)) {
-    	$name     = $row[ \NAME ];
-        $patroller_id = $row[ \PATROLLER_ID ];
-    	$date     = $row[ \DATE ];
+    	$name     = $row['name'];
+        $patroller_id = $row['patroller_id'];
+    	$date     = $row['date'];
     	$date     = date("M-d-Y", $date);
-	$checkin  = $row[ \CHECKIN ];
+	$checkin  = $row['checkin'];
     	$time     = secondsToTime($checkin);
-	$areaID   = $row[ \AREAID ] + 0;
-    	$shift    = $row[ \SHIFT ];
-    	$value    = $row[ \VALUE ];  //day, swing and night before 4 pm = 4, night before 5:30=3, night=2
+	$areaID   = $row['areaID'] + 0;
+    	$shift    = $row['shift'];
+    	$value    = $row['value'];  //day, swing and night before 4 pm = 4, night before 5:30=3, night=2
     	switch ($shift) {
           case 0:
             $shift = "Day";
@@ -119,16 +119,16 @@ Volunteer Patrol Daily Log Sheet
     	} // end "switch" 
         $value  = $value / 2;  //day, swing and night before 4 pm = 4, night before 5:30=3, night=2
 	$simpleCredits += $value;
-        $multiplier  = $row[ \MULTIPLIER ];    //o=none, 1=basic, 2=senior
+        $multiplier  = $row['multiplier'];    //o=none, 1=basic, 2=senior
         $classification = "&nbsp;";
         $query_string = "SELECT ClassificationCode, Commitment FROM roster WHERE  IDNumber=\"$patroller_id\"";
 //echo $query_string . "<br>";
 	$result2 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
 	$ClassificationCode = "";
 	while ($row2 = @mysqli_fetch_array($result2)) {
-		$ClassificationCode = $row2[ \CLASSIFICATIONCODE ];
+		$ClassificationCode = $row2['ClassificationCode'];
 		$classification = $getClassification[ $ClassificationCode ];
-		$Commitment = $row2[ \COMMITMENT ];  //0=inactive, 1=part time, 2=Full Time
+		$Commitment = $row2['Commitment'];  //0=inactive, 1=part time, 2=Full Time
         }
 
     // multiplier 0 = no credits at all
@@ -164,7 +164,7 @@ Volunteer Patrol Daily Log Sheet
 	} 
  //$multiplierString = "$multiplierString($Commitment/$multiplier/$foo)";
 
-        $history_id  = $row[\HISTORY_ID ];
+        $history_id  = $row['history_id'];
         $credit = $value * $multiplier;
 
 	  echo "<tr>\n";

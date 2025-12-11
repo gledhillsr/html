@@ -4,7 +4,7 @@ require("config.php");
     mysqli_select_db($connect_string, $mysqli_db);
 
     $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 ?>
 <html>
 
@@ -43,9 +43,9 @@ function printWindow(){
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     while ($row = @mysqli_fetch_array($result)) {
-		$start = secondsToTime($row[\START_TIME]);
-		$end   = secondsToTime($row[\START_TIME]);
-		$currSweepID = $row[\ID];
+		$start = secondsToTime($row['start_time']);
+		$end   = secondsToTime($row['end_time']);
+		$currSweepID = $row['id'];
 //echo "looking for id=$currSweepID<br>";
 		//loop through ski history for today, and this find Aid Room
 		$query_string = "SELECT * FROM skihistory WHERE DATE=$today AND shift=0";
@@ -56,8 +56,8 @@ function printWindow(){
 		//
 		// loop thru each skihistory from today and this morning and find the current sweep id
     	while (!$found && $row2 = @mysqli_fetch_array($result2)) {
-			$patroller_id = $row2[\PATROLLER_ID];
-			$sweep_ids = $row2[\SWEEP_IDS];
+			$patroller_id = $row2['patroller_id'];
+			$sweep_ids = $row2['sweep_ids'];
 			$foo = trim($sweep_ids); //hack
 			if($foo != "") {
 			    $tok = strtok($foo, " ");
@@ -79,8 +79,8 @@ function printWindow(){
 			$name = "xx";
 			$area  = "Crest";
 		    if ($row2 = @mysqli_fetch_array($result2)) {
-				 $class = $row2[\CLASSIFICATIONCODE];
-				 $name = $row2[\FIRSTNAME] . " " . $row2[\LASTNAME];
+				 $class = $row2['ClassificationCode'];
+				 $name = $row2['FirstName'] . " " . $row2['LastName'];
 			}
 		} else {
 			$class = "&nbsp;";

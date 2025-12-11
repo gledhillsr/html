@@ -5,10 +5,10 @@ include("runningFromWeb.php");
 	mysqli_select_db($connect_string, $mysqli_db);
 
 	$today = getdate();
-	if($today[\MON] < 10)
-			$yr = $today[\YEAR] - 1;
+	if($today['mon'] < 10)
+			$yr = $today['year'] - 1;
 	 else
-			$yr = $today[\YEAR];    
+			$yr = $today['year'];    
     $endingTicks = strtotime("Oct 1, ". $yr);
     $endSeasonStr = date("l, F d, Y  H:i:s", $endingTicks);
 ?>
@@ -38,7 +38,7 @@ include("runningFromWeb.php");
 
     if($purgeYesBtn) {
         $arrDate = getdate();
-        $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+        $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
         $query_string = "DELETE FROM `skihistory` WHERE `date` <= $endingTicks";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 5");
         $count = 0;
@@ -49,7 +49,7 @@ include("runningFromWeb.php");
         }
     } else if($purgeHistoryBtn) {
         $arrDate = getdate();
-        $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+        $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
         $query_string = "SELECT COUNT(*) FROM `skihistory` WHERE `date` <= $endingTicks";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 5");
         $count = 0;

@@ -1,23 +1,64 @@
 <?php
+// Error reporting configuration
+// Suppress warnings for undefined variables and array keys (common in legacy code)
+// Keep fatal errors and parse errors visible
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+ini_set('display_errors', '1');
+
+// OR for development (show only errors and warnings, not notices)
+// error_reporting(E_ERROR | E_WARNING | E_PARSE);
+// ini_set('display_errors', '1');
+
 /*****************************************************************************
  * register cookies, POST's, & GET's                                         *
  *****************************************************************************/
-//echo "in config.php, register_globals= " . ini_get('register_globals') . "<br>";
-//if(!ini_get('register_globals'))
-//DAD - This is bad, but we can get to this later...
-//if(!ini_get('register_globals'))
-extract($_COOKIE);
-extract($_POST);
-extract($_GET);
+// Helper function to safely get request variables (replaces extract())
+function getRequestVar($name, $default = null) {
+    if (isset($_POST[$name])) {
+        return $_POST[$name];
+    }
+    if (isset($_GET[$name])) {
+        return $_GET[$name];
+    }
+    if (isset($_COOKIE[$name])) {
+        return $_COOKIE[$name];
+    }
+    return $default;
+}
+
+// Initialize common variables from request (replaces extract() but safer)
+// This maintains backward compatibility while being more explicit
+function initRequestVars() {
+    // Get all unique keys from POST, GET, and COOKIE
+    $allKeys = array_unique(array_merge(
+        array_keys($_POST),
+        array_keys($_GET),
+        array_keys($_COOKIE)
+    ));
+    
+    // Initialize variables in global scope
+    foreach ($allKeys as $key) {
+        if (!isset($GLOBALS[$key])) {
+            $GLOBALS[$key] = getRequestVar($key);
+        }
+    }
+}
+
+// Call initRequestVars to maintain backward compatibility
+initRequestVars();
 
 /*****************************************************************************
  * email stuff                                                               *
  *****************************************************************************/
+// Email configuration - moved to dbconfig.php for security
+// If not set in dbconfig.php, use placeholder
+if (!isset($email_to)) {
+    $email_to = "admin@example.com";  // Placeholder - set in dbconfig.php
+}
+if (!isset($email_headers)) {
+    $email_headers = "From: admin@example.com";  // Placeholder - set in dbconfig.php
+}
 
-$email_to ="steve@Gledhills.com";
-$email_headers = "From: steve@gledhills.com";
-
-date_default_timezone_set("America/Denver");
 /*****************************************************************************
  * Edit password                                                             *
  *****************************************************************************/
@@ -130,11 +171,94 @@ function timeToSeconds($strTime) {
   if($startPos > 0) {
     $hour = substr((string) $strTime,0,$startPos);
     $min = substr((string) $strTime,$startPos+1);
-    if($hour > 0 && \HOUR < 25 && $min >= 0 && $min < 60)
+    if($hour > 0 && $hour < 25 && $min >= 0 && $min < 60)
         $seconds= $hour * 3600 + $min * 60;
     }
 //echo "hour = ($hour), min = ($min)<br>\n";
     return $seconds;
+}
+
+/*****************************************************************************
+ * Helper Functions to eliminate redundant code                             *
+ *****************************************************************************/
+
+/**
+ * Get database connection (replaces repeated mysqli_connect + mysqli_select_db)
+ * @return mysqli|false Connection resource or false on failure
+ */
+function getDBConnection() {
+    global $mysqli_host, $mysqli_username, $mysqli_password, $mysqli_db;
+    $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password);
+    if ($connect_string) {
+        mysqli_select_db($connect_string, $mysqli_db);
+    }
+    return $connect_string;
+}
+
+/**
+ * Get today's timestamp (midnight) - replaces repeated getdate() + mktime pattern
+ * @return int Unix timestamp for today at midnight
+ */
+function getTodayTimestamp() {
+    $arrDate = getdate();
+    return mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
+}
+
+/**
+ * Get patroller's full name from roster by IDNumber
+ * @param mysqli $connect_string Database connection
+ * @param string $patrollerID Patroller ID number
+ * @return string Full name or empty string if not found
+ */
+function getPatrollerName($connect_string, $patrollerID) {
+    $query_string = "SELECT FirstName, LastName FROM roster WHERE IDNumber=\"" . mysqli_real_escape_string($connect_string, $patrollerID) . "\"";
+    $result = @mysqli_query($connect_string, $query_string);
+    if ($result && $row = @mysqli_fetch_array($result)) {
+        return $row['FirstName'] . " " . $row['LastName'];
+    }
+    return "";
+}
+
+/**
+ * Get patroller's full name formatted as "LastName, FirstName"
+ * @param mysqli $connect_string Database connection
+ * @param string $patrollerID Patroller ID number
+ * @return string Formatted name or empty string if not found
+ */
+function getPatrollerNameFormatted($connect_string, $patrollerID) {
+    $query_string = "SELECT FirstName, LastName FROM roster WHERE IDNumber=\"" . mysqli_real_escape_string($connect_string, $patrollerID) . "\"";
+    $result = @mysqli_query($connect_string, $query_string);
+    if ($result && $row = @mysqli_fetch_array($result)) {
+        return $row['LastName'] . ", " . $row['FirstName'];
+    }
+    return "";
+}
+
+/**
+ * Get patroller info from roster by IDNumber
+ * @param mysqli $connect_string Database connection
+ * @param string $patrollerID Patroller ID number
+ * @return array|false Array with patroller data or false if not found
+ */
+function getPatrollerInfo($connect_string, $patrollerID) {
+    $query_string = "SELECT * FROM roster WHERE IDNumber=\"" . mysqli_real_escape_string($connect_string, $patrollerID) . "\"";
+    $result = @mysqli_query($connect_string, $query_string);
+    if ($result && $row = @mysqli_fetch_array($result)) {
+        return $row;
+    }
+    return false;
+}
+
+/**
+ * Get classification prefix for display (1-, 2-, 3-, 4-)
+ * @param string $classificationCode Classification code (SR, BAS, AUX, SRA, etc.)
+ * @return string Prefix string
+ */
+function getClassificationPrefix($classificationCode) {
+    if ($classificationCode == "SR") return "1-";
+    if ($classificationCode == "BAS") return "2-";
+    if ($classificationCode == "AUX" || $classificationCode == "SRA") return "3-";
+    return "4-";
 }
 
 $getAreaShort = [-1 => "Unassigned", 0 => "Crest", 1 => "Snake", 2 => "Western", 3 => "Millicent",  4 => "Training", 5 => "Staff", 6 => "Any Area"];

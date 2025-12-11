@@ -5,7 +5,7 @@ require("config.php");
 
     $areaName = $getAreaShort[ $areaID ];
     $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 
     if($AutoFill) {
         require("AutoFill.php");    //this uses
@@ -35,9 +35,9 @@ if($clear) {
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 1.5");
     $newSweep="";
     if ($row = @mysqli_fetch_array($result)) {
-        $oldSweep = $row[\SWEEP_IDS];
+        $oldSweep = $row['sweep_ids'];
 //echo "oldSweep=($oldSweep)<br/>";
-        $checkin = $row[\CHECKIN];
+        $checkin = $row['checkin'];
         $tok = strtok($oldSweep, " ");
         while ($tok) {
            if($clear != $tok) {
@@ -72,7 +72,7 @@ if($insert) {   //$insert is the ID of the new sweep
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 2");
     $oldSweep="";
     if ($row = @mysqli_fetch_array($result)) {
-        $oldSweep = $row[\SWEEP_IDS];
+        $oldSweep = $row['sweep_ids'];
     }
     $newID = " " . $insert . " ";   //I want the ID with spaces so '2' wong be found in '21'.  Stored with space delimiter.
 //check for time conflicts
@@ -80,12 +80,12 @@ if($insert) {   //$insert is the ID of the new sweep
 //echo "$query_string<br/>";
    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 11");
     if ($result && $row = @mysqli_fetch_array($result)) {
-        $newT1  = $row[ \START_TIME ];   //time in seconds
-        $newT1e = $row[ \END_TIME ];
-        $newT2  = $row[ \START_TIME2 ];
-        $newT2e = $row[ \END_TIME2 ];
+        $newT1  = $row['start_time'];   //time in seconds
+        $newT1e = $row['end_time'];
+        $newT2  = $row['start_time2'];
+        $newT2e = $row['end_time2'];
 //      $desc   = $row[ description ];
-        $locNew = $row[\LOCATION];
+        $locNew = $row['location'];
     }
 //    $pos = strpos($desc,"\n");
 //    if($pos === false) $pos = 20;
@@ -100,12 +100,12 @@ if($insert) {   //$insert is the ID of the new sweep
 //echo "$query_string<br/>";
        $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 11");
         if ($result && $row = @mysqli_fetch_array($result)) {
-            $t1  = $row[ \START_TIME ]; //time in seconds
-            $t1e = $row[ \END_TIME ];
-            $t2  = $row[ \START_TIME2 ];
-            $t2e = $row[ \END_TIME2 ];
+            $t1  = $row['start_time']; //time in seconds
+            $t1e = $row['end_time'];
+            $t2  = $row['start_time2'];
+            $t2e = $row['end_time2'];
 //          $desc= $row[ description ];
-            $loc = $row[\LOCATION];
+            $loc = $row['location'];
         }
 //        $pos = strpos($desc,"\n");
 //        if($pos === false) $pos = 20;
@@ -188,22 +188,22 @@ function addRow($class,$ID,$name,$areaID,$sweeps){
             $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 4");
         }
         if ($result && $row = @mysqli_fetch_array($result)) {
-            $sweep = $row[ \CLOSING ];
-            $topShack =  $row[ \LOCATION ];
+            $sweep = $row['closing'];
+            $topShack =  $row['location'];
     //      if($area != $areaID && $area != 5) //must be THIS area, or "Any Area"
     //          continue;
-            $t1 = $row[ \START_TIME ];
-            $t2 = $row[ \END_TIME ];
+            $t1 = $row['start_time'];
+            $t2 = $row['end_time'];
 
-            $t3 = $row[ \START_TIME2 ];
-            $t4 = $row[ \END_TIME2 ];
+            $t3 = $row['start_time2'];
+            $t4 = $row['end_time2'];
 
             $time = secondsToTime($t1) . " - " . secondsToTime($t2);
             if($t3 > 0) {
                 $time .= "<br/>" . secondsToTime($t3) . " - " . secondsToTime($t4);
-                $topShack .=  "<br/>" . $row[ \LOCATION2 ];
+                $topShack .=  "<br/>" . $row['location2'];
             }
-            $desc = $row[ \DESCRIPTION ];
+            $desc = $row['description'];
             if(trim((string) $desc) == "")
                   $desc = "&nbsp;";
 
@@ -325,11 +325,11 @@ $sweepsAssigned=[];
 //	$rowColor = "\"#F7F7EF\"";
 //	$rowColor = "\"#F0F0E8\"";
     while ($row = @mysqli_fetch_array($result)) {
-        $oldSweep = $row[\SWEEP_IDS];
+        $oldSweep = $row['sweep_ids'];
         //loop through all sweep tokens in the list
         $tok = strtok($oldSweep, " ");
         while ($tok) {
-            $sweepsAssigned[$tok] = $row[\PATROLLER_ID];
+            $sweepsAssigned[$tok] = $row['patroller_id'];
 //echo "sweepsAssigned[" . $tok . "] = $row[patroller_id]<br/>";
            $tok = strtok(" ");
         }
@@ -352,9 +352,9 @@ $xtraSweeps=[];
 		//
 		// loop through all assignments for 1 specified area, on this day
 		//
-        $patrollerID = $row[ \PATROLLER_ID ];
-        $teamLead = $row[\TEAMLEAD];
-        $sweepIDs = $row[\SWEEP_IDS];
+        $patrollerID = $row['patroller_id'];
+        $teamLead = $row['teamLead'];
+        $sweepIDs = $row['sweep_ids'];
         //real ALL id's
         if($sweepIDs) {
             $sweepIDs = trim($sweepIDs);
@@ -374,8 +374,8 @@ $xtraSweeps=[];
 //echo "$query_string<br/>";
         $result1 = @mysqli_query($connect_string, $query_string) or die ("Invalid query 6");
         while ($row1 = @mysqli_fetch_array($result1)) {
-            $name = $row1[ \FIRSTNAME ] . " " . $row1[ \LASTNAME];
-            $class = $row1[\CLASSIFICATIONCODE];
+            $name = $row1['FirstName'] . " " . $row1['LastName'];
+            $class = $row1['ClassificationCode'];
             if($TL_ID == $patrollerID) {
                 $TL_Name = $name;
             } else if($ATL_ID == $patrollerID) {
@@ -452,25 +452,26 @@ $xtraSweeps=[];
 //echo "$query_string<br/>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 7");
     while ($row = @mysqli_fetch_array($result)) {
-        $area = $row[ \AREAID ];
-        $loc =  $row[ \LOCATION ];
+        $area = $row['areaID'];
+		$area = $getAreaShort[ $area ];
+        $loc =  $row['location'];
 		if($loc =="Aid Room 1") {
 		}
         else if($area != $areaID && $area != 5) //must be THIS area, or "Any Area"
             continue;
-        $time = $row[ \START_TIME ];
+        $time = $row['start_time'];
         $time = secondsToTime($time);
-        $t2 = $row[ \END_TIME ];
+        $t2 = $row['end_time'];
         $t2 = secondsToTime($t2);
  $secondTime = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-		$t3 = $row[ \START_TIME2 ];
-		$t4 = $row[ \END_TIME2 ];
+		$t3 = $row['start_time2'];
+		$t4 = $row['end_time2'];
 		if($t3 > 0)
 			$secondTime = "&nbsp;(" . secondsToTime($t3) . "" . secondsToTime($t4) . ")";
-        $id   = $row[ \ID ];
+        $id   = $row['id'];
         if($sweepsAssigned[$id])
             continue;
-        $desc = $row[ \DESCRIPTION ];
+        $desc = $row['description'];
         $pos = strpos((string) $desc,"\n");
         if(!$pos)
             $pos = 30;

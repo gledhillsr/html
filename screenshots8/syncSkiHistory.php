@@ -130,22 +130,22 @@ class Assignments {
 	//foreach ($row as $key => $value){
 	//    $this->$key = $value;
 	//}
-	$this->Date = $row[\DATE];
-	$this->StartTime = $row[\STARTTIME];
-	$this->EndTime = $row[\ENDTIME];
-	$this->EventName = $row[\EVENTNAME];
-	$this->ShiftType = $row[\SHIFTTYPE];
-	$this->Count = $row[\COUNT];
-	$this->P0 = $row[P0];
-    $this->P1 = $row[P1];
-    $this->P2 = $row[P2];
-    $this->P3 = $row[P3];
-    $this->P4 = $row[P4];
-    $this->P5 = $row[P5];
-    $this->P6 = $row[P6];
-    $this->P7 = $row[P7];
-    $this->P8 = $row[P8];
-    $this->P9 = $row[P9];
+	$this->Date = $row['Date'];
+	$this->StartTime = $row['StartTime'];
+	$this->EndTime = $row['EndTime'];
+	$this->EventName = $row['EventName'];
+	$this->ShiftType = $row['ShiftType'];
+	$this->Count = $row['Count'];
+	$this->P0 = $row['P0'];
+    $this->P1 = $row['P1'];
+    $this->P2 = $row['P2'];
+    $this->P3 = $row['P3'];
+    $this->P4 = $row['P4'];
+    $this->P5 = $row['P5'];
+    $this->P6 = $row['P6'];
+    $this->P7 = $row['P7'];
+    $this->P8 = $row['P8'];
+    $this->P9 = $row['P9'];
   }
 
   function getSQLAssignmentsInsert($table) {
@@ -219,7 +219,7 @@ echo $query_string . "<br>";
 $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result l skiHistory)");
 if ($row = @mysqli_fetch_array($result)) 
 {
-  $totalHistories=$row[\COUNT];
+  $totalHistories=$row['count'];
 }
 $historiesProcessed = 0;
 
@@ -228,7 +228,7 @@ $query_string = "SELECT COUNT(history_id) AS count  FROM skihistory WHERE 1";
 $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 2 history)");
 if ($row = @mysqli_fetch_array($result)) 
 {
-  $historiesProcessed=$row[\COUNT];
+  $historiesProcessed=$row['count'];
 }
 echo "YTD -local- total ski histories=$historiesProcessed<br>";
 
@@ -259,7 +259,7 @@ $historiesProcessed = 0;
 //echo "time=" .date("h:i:s ") ."<br>" ;
     while ($row = @mysqli_fetch_array($result)) {
     	$tmp = new SkiHistory();
-    	$lastID = $row[\HISTORY_ID];
+    	$lastID = $row['history_id'];
     //echo "id=" . $lastID . "<br>\n";
     	$tmp->read_info($row);
 //        echo "history id=" . $tmp->getHistoryID() . "<br>";
@@ -288,7 +288,7 @@ mysqli_select_db($connect_string, $mysqli_db);
 //    echo "****** query_string=" . $query_string . "<br>\n";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 2 skihistory)");
     if ($row = @mysqli_fetch_array($result)) {
-    $historiesProcessed=$row[\COUNT];
+    $historiesProcessed=$row['count'];
 //    echo "****** REMOTE ski histories=" . $historiesProcessed . "<br>\n";
 echo "YTD -gledhills.com- ski histories to compare=$historiesProcessed<br>";
     }
@@ -298,7 +298,7 @@ echo "YTD -gledhills.com- ski histories to compare=$historiesProcessed<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 22 skiHistory)");
     while ($row = @mysqli_fetch_array($result)) {
         $tmp = new SkiHistory();
-        $lastID = $row[\HISTORY_ID];
+        $lastID = $row['history_id'];
     //echo "id=" . $lastID . "<br>\n";
         $tmp->read_info($row);
         $k = $tmp->getHistoryID();
