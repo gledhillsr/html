@@ -43,27 +43,27 @@ require("config.php");
 //    $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     while ($row = @mysqli_fetch_array($result)) {
-        $area= $row[ \AREAID ];
+        $area= $row['areaID'];
 		$area = $getAreaShort[ $area ];
-        $level = $row[ \SKI_LEVEL ];
+        $level = $row['ski_level'];
         if($level == 0)      $level = "TL";
         else if($level == 1) $level = "ATL";
         else if($level == 2) $level = "bas";
         else                 $level = "aux";
-        $description = $row[\DESCRIPTION];
+        $description = $row['description'];
         $pos = strpos((string) $description,"\n");
         if(!$pos)
             $pos = 30;
         else
             $pos = min($pos,35);
         $description = substr((string) $description,0,$pos);
-        $top = $row[ \LOCATION ];
-        $time  = secondsToTime($row[ \START_TIME ]) . " - " . secondsToTime ($row[ \END_TIME ]);
-		if($row[ \START_TIME2 ] > 0) {
-	        $time .= "<br>" . secondsToTime($row[ \START_TIME2 ]) . " - " . secondsToTime ($row[ \END_TIME2 ]);
-       		$top  .= "<br>" . $row[ \LOCATION2 ];
+        $top = $row['location'];
+        $time  = secondsToTime($row['start_time']) . " - " . secondsToTime($row['end_time']);
+		if($row['start_time2'] > 0) {
+	        $time .= "<br>" . secondsToTime($row['start_time2']) . " - " . secondsToTime($row['end_time2']);
+       		$top  .= "<br>" . $row['location2'];
 		}
-        $closing  = $row[ \CLOSING ];
+        $closing  = $row['closing'];
         echo "<tr>\n";
         echo "  <td align=\"middle\" width=\"69\" bgColor=\"#FFFFFF\" bordercolor=\"#000000\"><font size=\"2\">$area</font></td>\n";
         echo "  <td align=\"middle\" width=\"32\" bgColor=\"#FFFFFF\" bordercolor=\"#000000\"><font size=\"2\">$level</font></td>\n";
@@ -72,9 +72,9 @@ require("config.php");
         echo "  <td align=\"middle\" width=\"94\" bgColor=\"#FFFFFF\" bordercolor=\"#000000\"><font size=\"2\">$time</font></td>\n";
         echo "  <td align=\"middle\" width=\"85\" bgColor=\"#FFFFFF\" bordercolor=\"#000000\"><font size=\"2\">$closing</font></td>\n";
         echo "  <td align=\"middle\" width=\"92\" bgColor=\"#FFFFFF\" bordercolor=\"#000000\"><font size=\"2\">\n";
-        echo "  <a href=\"edit_assignment.php?edit=1&id=" . $row[ \ID ] . "\">\n";
+        echo "  <a href=\"edit_assignment.php?edit=1&id=" . $row['id'] . "\">\n";
         echo "  <img border=\"0\" src=\"images/btnEdit.jpg\" width=\"27\" height=\"14\"></a>&nbsp;&nbsp;&nbsp;";
-        echo "  <a href=\"edit_assignment.php?delete=1&id=" . $row[ \ID ] . "\">\n";
+        echo "  <a href=\"edit_assignment.php?delete=1&id=" . $row['id'] . "\">\n";
         echo "    <img border=\"0\" src=\"images/btnDelete.jpg\" width=\"46\" height=\"14\"></a></font></td>\n";
         echo "</tr>\n";
     }

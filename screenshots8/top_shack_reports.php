@@ -3,7 +3,7 @@ require("config.php");
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
 mysqli_select_db($connect_string, $mysqli_db);
     $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
     $todayStr = date("l  F d, Y");
 /****************/
 /* displaySweep */
@@ -18,7 +18,7 @@ else {
 //echo $query_string;
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 1");
     if ($row = @mysqli_fetch_array($result)) {
-        $name = $row[\FIRSTNAME] . " " . $row[\LASTNAME];
+        $name = $row['FirstName'] . " " . $row['LastName'];
     }
 }
 $top1Name = " ";
@@ -30,13 +30,13 @@ $eveningSweep = "*** Report to Snack Creek Top ****";
 //    $query_string = "SELECT * FROM sweepdefinitions WHERE location=\"$topLoc\" ORDER BY start_time";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 2");
     if ($row = @mysqli_fetch_array($result)) {
-        $top1Name = $row[\LOCATION];
-        $top1Time = secondsToTime($row[\START_TIME]) . " - " . secondsToTime($row[\END_TIME]);
-        $top2Name = $row[\LOCATION2];
-        $top2Time = secondsToTime($row[\START_TIME2]) . " - " . secondsToTime($row[\END_TIME2]);
+        $top1Name = $row['location'];
+        $top1Time = secondsToTime($row['start_time']) . " - " . secondsToTime($row['end_time']);
+        $top2Name = $row['location2'];
+        $top2Time = secondsToTime($row['start_time2']) . " - " . secondsToTime($row['end_time2']);
 //..        $eveningSweep = "<br>*** Report to " . $row[closing]. " ****";
-        $eveningSweep = "*** Report to " . $row[\CLOSING]. " ****";
-        $description= trim((string) $row[\DESCRIPTION]);
+        $eveningSweep = "*** Report to " . $row['closing']. " ****";
+        $description= trim((string) $row['description']);
 		if(strlen($description) < 2)
 			$description = "";
     }
@@ -205,11 +205,11 @@ for($areaId=0; $areaId < 4; $areaId++) {
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 3");
     while ($row = @mysqli_fetch_array($result)) {
-        $oldSweep = $row[\SWEEP_IDS];
+        $oldSweep = $row['sweep_ids'];
         //loop through all tokens in the list
         $tok = strtok($oldSweep, " ");
         while ($tok) {
-            $sweepsAssigned[$tok] = $row[\PATROLLER_ID];
+            $sweepsAssigned[$tok] = $row['patroller_id'];
 //echo "sweepsAssigned[" . $tok . "] = $row[patroller_id]<br>";
            $tok = strtok(" ");
         }
@@ -221,8 +221,8 @@ for($areaId=0; $areaId < 4; $areaId++) {
 	$query_string = "SELECT * FROM sweepdefinitions WHERE areaID=$areaId ORDER BY description";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 4");
     while ($row = @mysqli_fetch_array($result)) {
-        $id = $row[\ID];
-	$location = $row[\LOCATION];
+        $id = $row['id'];
+	$location = $row['location'];
 
 	if( //$areaId == 0 &&
 		($location == $getTopShackDBName[5] ||		//skip aid room1

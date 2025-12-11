@@ -32,14 +32,14 @@ function showProgressIndicator() {
         $query_string = "SELECT COUNT(IDNumber) AS count  FROM roster WHERE 1";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result l Roster)");
         if ($row = @mysqli_fetch_array($result)) {
-            $totalPatrollers=$row[\COUNT];
+            $totalPatrollers=$row['count'];
         }
         echo "total patroller records on web to syncronize: $totalPatrollers<br>\n";
         //get patrollers processed
         $query_string = "SELECT COUNT(IDNumber) AS count  FROM roster WHERE IDNumber<=$startPatroller";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 2 Roster)");
         if ($row = @mysqli_fetch_array($result)) {
-            $recordsProcessed=$row[\COUNT];
+            $recordsProcessed=$row['count'];
         }
     } //end isset($startPatroller)
 
@@ -118,7 +118,7 @@ showProgressIndicator();
     $count = 0;
     while ($row = @mysqli_fetch_array($result)) {
         $patroller = new Patroller();
-        $lastPatrollerID = $row[\IDNUMBER];
+        $lastPatrollerID = $row['IDNumber'];
         $patroller->init_from_row_query($row);
         $count += 1;
         $tmp = $recordsProcessed + $count;

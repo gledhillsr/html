@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
-$connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
-mysqli_select_db($connect_string, $mysqli_db);
+$connect_string = getDBConnection() or die ("Could not connect to the database.");
+
 //define("TEAM_LEAD", 1);
 //define("ASST_TEAM_LEAD", 2);
 //define("DAY_SHIFT", 0);
@@ -28,7 +28,7 @@ $skiHistoryOK = true;
 //print_r($hosts);
 if (isset($deleteID)) {
     //echo "deleteID=$deleteID";
-    $query_string = "DELETE FROM skihistory WHERE history_id=\"$deleteID\"";
+    $query_string = "DELETE FROM skihistory WHERE history_id={$deleteID}";
     //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (delete)");
     //echo "delID=$deleteID";	//show skihistory ID
@@ -94,20 +94,20 @@ if (isset($shiftOverride) && $shiftOverride != 0) {
 
 }
 else {
-    $currDayOfWeek = $arrDate[\WEEKDAY];
-    $sec = $arrDate[\SECONDS];
-    $min = $arrDate[\MINUTES];
-    $hr = $arrDate[\HOURS];
+    $currDayOfWeek = $arrDate['wday'];
+    $sec = $arrDate['seconds'];
+    $min = $arrDate['minutes'];
+    $hr = $arrDate['hours'];
 }
 //echo "shiftOverride=" . $shiftOverride + "<br/>"
 //echo "arrDate=" . $arrDate[year] . "<br/>";
 //echo " currDauOfWeek = " . $currDayOfWeek . "<br/>";
-$today = mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+$today = getTodayTimestamp();
 //echo "today=" . $today . "<br/>";
 $seconds = ($hr * 3600) + ($min * 60) + $sec;
 $strToday = date("l F-d-Y", $today);
 //-------start hack-------
-if (isset($shiftOverride) && $shiftOverride > 0 && !$saveBtn) {
+if (isset($shiftOverride) && $shiftOverride > 0 && !isset($saveBtn)) {
     echo "HACK, Override: " . $shiftsOvr[$shiftOverride] . "<br>";
 }
 $isWeekend = ($currDayOfWeek == "Saturday" || $currDayOfWeek == "Sunday");
@@ -147,22 +147,15 @@ else {
 
 //-------end hack--------
 if ($ID) {
-    //
-    // get info from ROSTER
-    //
-    $query_string = "SELECT *  FROM roster WHERE IDNumber=\"" . $ID . "\"";
-    //echo $query_string . "<br>";
-    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query1 ($mysqli_db, $query_string)");
-    $inTraining = 1;
-    if ($row = @mysqli_fetch_array($result)) {
-        $name = $row[\FIRSTNAME] . " " . $row[\LASTNAME];
-        $EarnCredits = $row[\CANEARNCREDITS];
-        $canBeTeamLead = $row[\TEAMLEAD];
-        $ClassificationCode = $row[\CLASSIFICATIONCODE]; //looginf for "SR" or "SRA"
+    $row = getPatrollerInfo($connect_string, $ID);
+    if ($row) {
+        $name = $row['FirstName'] . " " . $row['LastName'];
+        $EarnCredits = $row['canEarnCredits'];
+        $canBeTeamLead = $row['teamLead'];
+        $ClassificationCode = $row['ClassificationCode']; //looginf for "SR" or "SRA"
         if ($ClassificationCode == "AUX" || $ClassificationCode == "SRA") {
             $isAux = 1;
-        }
-        else {
+        } else {
             $isAux = 0;
         }
         //isSenior no longer used, now use canBeTeamLoad
@@ -173,12 +166,13 @@ if ($ID) {
         if ($ClassificationCode == "BAS" || $ClassificationCode == "SR" ||
             $ClassificationCode == "SRA" || $ClassificationCode == "AUX") {
             $inTraining = 0;
+        } else {
+            $inTraining = 1;
         }
-        //echo "name=$name";
-        //        setCookie("NAME", $name);
+    } else {
+        $inTraining = 1;
     }
-}
-else {
+} else {
     echo "Error, ID not set<br>\n";
 }
 function checkForDoubleShift() {
@@ -280,8 +274,8 @@ else {
     //echo $query_string . "<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result la3)");
     if ($row = @mysqli_fetch_array($result)) {
-        $areaID = $row[\AREAID];
-        $history_id = $row[\HISTORY_ID];
+        $areaID = $row['areaID'];
+        $history_id = $row['history_id'];
         //echo "areaID=$areaID<br>";
         //echo "history_id=$history_id<br>";
     }
@@ -409,7 +403,7 @@ $query_string = "SELECT signinLockout FROM directorsettings WHERE 1";
 $result3 = @mysqli_query($connect_string, $query_string) or die ("Invalid query 9");
 $inLockout = 0;
 if ($row3 = @mysqli_fetch_array($result3)) {
-    $lockTime = $row3[\SIGNINLOCKOUT];
+    $lockTime = $row3['signinLockout'];
     if ($lockTime < $now) {
         //            echo "Lockout time has been cleared.<br><br>";
     }
@@ -452,8 +446,7 @@ else {
       $totalDays = 0;
       $query_string = "SELECT * FROM areadefinitions WHERE open > 0 ORDER BY areaID ";
       //echo "$query_string<br>";
-      $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
-      mysqli_select_db($connect_string, $mysqli_db);
+      $connect_string = getDBConnection() or die ("Could not connect to the database.");
       $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result la4)");
       //
       // loop for each area
@@ -464,7 +457,7 @@ else {
               //swing or night ski
               $maxBasic = 0;
               $maxAux = 0;
-              if ($row[\AREAID] == 0) {
+              if ($row['areaID'] == 0) {
                   //is this crest (on Swing or Night)
                   $isSwingOnCrest = true;
               }
@@ -472,14 +465,14 @@ else {
           else {
               if ($currDayOfWeek == "Saturday") {
                   //Saturday Morning
-                  $maxBasic = $row[\SATURDAYBASIC];
-                  $maxAux = $row[\SATURDAYAUX];
+                  $maxBasic = $row['saturdaybasic'];
+                  $maxAux = $row['saturdayaux'];
               }
               else {
                   if ($currDayOfWeek == "Sunday") {
                       //Sunday Morning
-                      $maxBasic = $row[\SUNDAYBASIC];
-                      $maxAux = $row[\SUNDAYAUX];
+                      $maxBasic = $row['sundaybasic'];
+                      $maxAux = $row['sundayaux'];
                   }
                   else {
                       //any other Morning
@@ -489,9 +482,9 @@ else {
               }
           }
 
-          $open = $row[\OPEN];
-          $areaName = $row[\AREAFULLTEXT];
-          $currID = $row[\AREAID];
+          $open = $row['open'];
+          $areaName = $row['areaFullText'];
+          $currID = $row['areaID'];
           //
           //get personal histories of this area
           //
@@ -501,7 +494,7 @@ else {
               $count = 0;
               $result1 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result la5)");
               if ($row1 = @mysqli_fetch_array($result1)) {
-                  $count = $row1[\COUNT];
+                  $count = $row1['count'];
                   $totalDays += $count;
               }
           }
@@ -526,7 +519,7 @@ else {
           //echo "$query_string<br>";
           $result1 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result la6)");
           while ($row1 = @mysqli_fetch_array($result1)) {
-              $tlead = $row1[\TEAMLEAD];
+              $tlead = $row1['teamLead'];
               if ($tlead == 1) {
                   $needs_TL = "false";
               }
@@ -534,13 +527,13 @@ else {
                   $needs_ATL = "false";
               }
               //get Patroller ID from ski History, so we can get their classification code
-              $pid = $row1[\PATROLLER_ID];
+              $pid = $row1['patroller_id'];
               $query_string = "SELECT *                    FROM roster WHERE IDNumber=\"" . $pid . "\"";
               //echo $query_string . "<br>";
               $result2 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result la7)");
               if ($row2 = @mysqli_fetch_array($result2)) {
                   //classification code from this skihistory record
-                  $cc = $row2[\CLASSIFICATIONCODE]; //looking for "SR" or "SRA"
+                  $cc = $row2['ClassificationCode']; //looking for "SR" or "SRA"
                   //echo "---" . $row2[ FirstName ] . " " . $row2[ LastName ] . " classification=$cc, tlead=$tlead<br>";
                   if ($cc == "AUX" || $cc == "SRA") {
                       $auxCount += 1;

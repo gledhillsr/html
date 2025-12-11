@@ -10,8 +10,8 @@ $nextAUXsweep=0;
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 1");
     while ($row = @mysqli_fetch_array($result)) {
-        $skiLevel=$row[\SKI_LEVEL];
-        $sweepID = $row[\ID];
+        $skiLevel=$row['ski_level'];
+        $sweepID = $row['id'];
         if($skiLevel == 0)       $TLsweeps[] = $sweepID;
         else if($skiLevel == 1) $ATLsweeps[] = $sweepID;
         else if($skiLevel == 2) $BASsweeps[] = $sweepID;
@@ -24,20 +24,20 @@ $nextAUXsweep=0;
 // loop for anyone assigned to this area
 //
     while ($row = @mysqli_fetch_array($result)) {
-        $patroller_id = $row[ \PATROLLER_ID ];
-        $history_id = $row[\HISTORY_ID ];
+        $patroller_id = $row['patroller_id'];
+        $history_id = $row['history_id'];
         //now lookup this patroller to get is classification code
         $query_string = "SELECT ClassificationCode, FirstName, LastName FROM roster WHERE IDNumber=$patroller_id";
         $result2 = @mysqli_query($connect_string, $query_string) or die ("Invalid query 1");
         $name="??";
         if ($row2 = @mysqli_fetch_array($result2)) {
-            $class = $row2[\CLASSIFICATIONCODE];
-            $name = $row2[\FIRSTNAME] . " " . $row2[\LASTNAME];
+            $class = $row2['ClassificationCode'];
+            $name = $row2['FirstName'] . " " . $row2['LastName'];
         } else {
             $class = "XXX";
         }
         $sweep_ids = "";
-        $leadership = $row[\TEAMLEAD]; //0=Normal, 1=TL, 2=ATL, 3=Extra
+        $leadership = $row['teamLead']; //0=Normal, 1=TL, 2=ATL, 3=Extra
 //echo "$name) class=$class, leader=$leadership<br>";
         if($leadership == 0) {          //normal patroller
             if($class == "BAS" || $class == "SR") {

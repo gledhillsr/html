@@ -59,7 +59,7 @@ require("config.php");
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     if ($row = @mysqli_fetch_array($result)) {
-        $areaCount = $row [\AREACOUNT];
+        $areaCount = $row['areaCount'];
     }
     $SaturdayTotal = 0;
     $SundayTotal = 0;
@@ -159,17 +159,17 @@ function areaStatus(area) {
 //    $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     while ($row = @mysqli_fetch_array($result)) {
-        $area=$row[ \AREA ];
+        $area=$row['area'];
 //        echo "$area<br>";
 ?>
     <tr>
       <td width="103" bgcolor="#FFFFFF"><font size="2">
 <?php 
-      $SatBas = $row[\SATURDAYBASIC];
-      $SatAux = $row[\SATURDAYAUX];
-      $SunBas = $row[\SUNDAYBASIC];
-      $SunAux = $row[\SUNDAYAUX];
-      if($row[\OPEN] == 1) {
+      $SatBas = $row['saturdaybasic'];
+      $SatAux = $row['saturdayaux'];
+      $SunBas = $row['sundaybasic'];
+      $SunAux = $row['sundayaux'];
+      if($row['open'] == 1) {
           $checked = "checked";
           $disabled = "";
           $SaturdayTotal += 2 + $SatBas + $SatAux;

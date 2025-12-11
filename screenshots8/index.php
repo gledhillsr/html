@@ -1,6 +1,13 @@
 <?php
 require_once 'config.php';
 
+// Initialize shiftOverride if not set
+if(!isset($shiftOverride)) {
+    $shiftOverride = 0;
+}
+
+
+//@todo: fix the setting of this cookie, it is not working correctly
 if($shiftOverride && $shiftOverride > 0)
 {
   //part of my time overide HACK

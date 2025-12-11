@@ -3,7 +3,8 @@ require("config.php");
     $name="NOBODY";
  //   $arrDate = getdate();
    $arrDate =  date_default_timezone_set("America/Denver");
-   $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+   $arrDate = getdate();
+   $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
     $strToday = date("l F-d-Y", $today);
 	$simpleCredits = 0;
 	if($audit) {
@@ -20,7 +21,7 @@ if($ID) {
     //echo $query_string . "<br>";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
         if ($row = @mysqli_fetch_array($result)) {
-            $name = $row[ \FIRSTNAME ] . " " . $row[ \LASTNAME ];
+            $name = $row['FirstName'] . " " . $row['LastName'];
     //echo "name=$name";
         }
         $endingTicks = time();
@@ -30,7 +31,7 @@ if($ID) {
             $strToday .= " (about $daysOld days old)";
         }
     }
-    else if (!\ADMIN) {
+    else if (!$admin) {
         echo "Error, ID not set<br>\n";
     }
 
@@ -91,9 +92,9 @@ Select patroller to view:&nbsp;&nbsp;&nbsp;
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     echo "<select size=\"1\" name=\"pname\" onkeypress=\"validateKeyPress(event)\">\n";
     while ($row = @mysqli_fetch_array($result)) {
-        $szName = $row[ \LASTNAME ] . ", " . $row[ \FIRSTNAME ];
-        $sel = ($row[\IDNUMBER] == $ID) ? " selected" : "";
-        echo "  <option value=\"" . $row[\IDNUMBER] . "\" $sel>$szName</option>\n";
+        $szName = $row['LastName'] . ", " . $row['FirstName'];
+        $sel = ($row['IDNumber'] == $ID) ? " selected" : "";
+        echo "  <option value=\"" . $row['IDNumber'] . "\" $sel>$szName</option>\n";
     }
     echo "</select>\n";
 //    @mysqli_close($connect_string);
@@ -156,15 +157,15 @@ echo "  <tr>\n";
 //echo $query_string . "<br>";
 $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
 while ($row = @mysqli_fetch_array($result)) {
-    $name    = $row[ \NAME ];
-    $date    = $row[ \DATE ];
+    $name    = $row['name'];
+    $date    = $row['date'];
     $date = date("M-d-Y", $date);
 
-    $checkin = $row[ \CHECKIN ];
+    $checkin = $row['checkin'];
     $time = secondsToTime($checkin);
-    $areaID  = $row[\AREAID]+0;
-    $shift  = $row[\SHIFT];
-    $value  = $row[\VALUE];  //day, swing and night before 4 pm = 4, night before 5:30=3, night=2
+    $areaID  = $row['areaID']+0;
+    $shift  = $row['shift'];
+    $value  = $row['value'];  //day, swing and night before 4 pm = 4, night before 5:30=3, night=2
     if($date == "Nov-19-2005") {
       $value = 4;	//major hack, our computers were off this day.  please remove or fix hack hack hack hack
     //echo "--value=$value<br>";
@@ -191,8 +192,8 @@ while ($row = @mysqli_fetch_array($result)) {
     }
     $value  = $value / 2;  //day, swing and night before 4 pm = 4, night before 5:30=3, night=2
 	$simpleCredits += $value;
-    $multiplier  = $row[\MULTIPLIER];    //o=none, 1=basic, 2=senior
-    $teamLead = $row[\TEAMLEAD];
+    $multiplier  = $row['multiplier'];    //o=none, 1=basic, 2=senior
+    $teamLead = $row['teamLead'];
     if($teamLead == 0)  $teamLead="-";
     else if($teamLead == 1) $teamLead="TL";
     else if($teamLead == 2) $teamLead="ATL";
@@ -213,7 +214,7 @@ while ($row = @mysqli_fetch_array($result)) {
         $multiplier = 1/3; // 0.33334;
         $multiplierString = "Sr&nbsp;Fam&nbsp;Plan";
 	}
-    $history_id  = $row[\HISTORY_ID ];
+    $history_id  = $row['history_id'];
     $credit = $value * $multiplier;
     $totalCredits += $credit;
 

@@ -4,7 +4,7 @@ require("config.php");
     mysqli_select_db($connect_string, $mysqli_db);
 
     $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 ?>
 <html>
 
@@ -61,14 +61,14 @@ function printWindow(){
 //echo "$query_string<br>";
   $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query ($query_string)");
   while ($row = @mysqli_fetch_array($result)) {
-        $start = secondsToTime($row[start_time]);
-        $end   = secondsToTime($row[end_time]);
-        $areaID  = $row[areaID];
-        $currSweepID = $row[id];
-        if($row[start_time2] > 0) {
+        $start = secondsToTime($row['start_time']);
+        $end   = secondsToTime($row['end_time']);
+        $areaID  = $row['areaID'];
+        $currSweepID = $row['id'];
+        if($row['start_time2'] > 0) {
         //hack, only works for 1 shift with 2 times
-            $start2 = secondsToTime($row[start_time2]);
-            $end2   = secondsToTime($row[end_time2]);
+            $start2 = secondsToTime($row['start_time2']);
+            $end2   = secondsToTime($row['end_time2']);
             $currSweepID2 = $currSweepID;
         }
 //-----------Find "current sweep ID" in the correct order--------------
@@ -86,15 +86,15 @@ function printWindow(){
         //
         // loop thru each skihistory from today and this morning and find the current sweep id
         while (!$found && $row2 = @mysqli_fetch_array($result2)) {
-            if($row2[teamLead] == 1)
+            if($row2['teamLead'] == 1)
                 $tl = " / TL";
-            else if($row2[teamLead] == 2)
+            else if($row2['teamLead'] == 2)
                 $tl = " / ATL";
             else
                 $tl = "";
 //$tl .= "-" . $row2[teamLead];
-            $patroller_id = $row2[patroller_id];
-            $sweep_ids = $row2[sweep_ids];
+            $patroller_id = $row2['patroller_id'];
+            $sweep_ids = $row2['sweep_ids'];
             $foo = trim($sweep_ids); //hack
             if($foo != "") {
                 $tok = strtok($foo, " ");
@@ -111,7 +111,7 @@ function printWindow(){
 
         //get patroller ID
         if($found) {
-            $areaID = $row2[areaID];
+            $areaID = $row2['areaID'];
             $area = $getAreaShort[$areaID]; //bad
 
             $query_string = "SELECT * FROM roster WHERE IDNumber=\"$patroller_id\"";
@@ -120,13 +120,13 @@ function printWindow(){
             $name = "xx";
             if ($row2 = @mysqli_fetch_array($result2)) {
                  // patroller query OK
-                 $class = $row2[ClassificationCode];
-                 $mentoring = $row2[mentoring];
+                 $class = $row2['ClassificationCode'];
+                 $mentoring = $row2['Mentoring'];
                  if($mentoring == "1")
                     $name = "* ";
                 else
                     $name = "";
-                 $name .= $row2[FirstName] . " " . $row2[LastName];
+                 $name .= $row2['FirstName'] . " " . $row2['LastName'];
                  if ($start2 > 0 && $name2 == "") {
                     $name2 = $name;
                     $status2 = $class . $tl;
@@ -181,17 +181,17 @@ function printWindow(){
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 2");
     $tl = "";
     while ($row = @mysqli_fetch_array($result)) {
-        $checkin = secondsToTime($row[\CHECKIN]);
-        $id = $row[\PATROLLER_ID];
-        if($row[\TEAMLEAD] == 1)
+        $checkin = secondsToTime($row['checkin']);
+        $id = $row['patroller_id'];
+        if($row['teamLead'] == 1)
             $tl = " / TL";
-        else if($row[\TEAMLEAD] == 2)
+        else if($row['teamLead'] == 2)
             $tl = " / ATL";
         else
             $tl = "";
 
         $nAssignments = 0;
-        $sweep_ids = $row[\SWEEP_IDS];
+        $sweep_ids = $row['sweep_ids'];
         $foo = trim($sweep_ids); //hack
         if($foo != "") {
             $tok = strtok($foo, " ");
@@ -204,9 +204,9 @@ function printWindow(){
                 if ($row2 = @mysqli_fetch_array($result2)) {
 //echo "id=$tok, start_time=(" . $row2[start_time] . "), start_time2=(" . $row2[start_time2] . ")<br>";
 //                  if($row2[location2] == "Majestic Top" && $row2[start_time2] > 0)
-                    if($row2[\START_TIME] > 0)
+                    if($row2['start_time'] > 0)
                         $nAssignments++; //yup, a 2nd shift exists
-                    if($row2[\START_TIME2] > 0)
+                    if($row2['start_time2'] > 0)
                         $nAssignments++; //yup, a 2nd shift exists
                 }
                 $tok = strtok(" ");
@@ -218,14 +218,14 @@ function printWindow(){
         $class = "xx";
         $name = "";
         if ($row2 = @mysqli_fetch_array($result2)) {
-             $class = $row2[\CLASSIFICATIONCODE];
-             $cellNumber = $row2[\CELLPHONE];
-             $mentoring = $row2[\MENTORING];
+             $class = $row2['ClassificationCode'];
+             $cellNumber = $row2['CellPhone'];
+             $mentoring = $row2['Mentoring'];
              if($mentoring == "1")
                 $name = "* ";
             else
                 $name = "";
-             $name .= $row2[\FIRSTNAME] . " " . $row2[\LASTNAME];
+             $name .= $row2['FirstName'] . " " . $row2['LastName'];
 		  $patrollerCount++;
 		  if($areaID == 3)
 		  	$trainingCount++;

@@ -19,7 +19,7 @@ require("config.php");
     $query_string = "SELECT lastSkiHistoryUpdate FROM directorsettings WHERE 1";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query");
     if ($row = @mysqli_fetch_array($result)) {
-        $lastPrintedTicks = $row[\LASTSKIHISTORYUPDATE];
+        $lastPrintedTicks = $row['lastSkiHistoryUpdate'];
     }
 
 	$chg = true;
@@ -338,9 +338,9 @@ global $millis;
 //echo "query_string0 = $query_string0<br>";
     $result0 = @mysqli_query($connect_string, $query_string0) or die ("Invalid query0 ($query_string0)");
     while ($row0 = @mysqli_fetch_array($result0)) {
-      $ID 	   = $row0[\IDNUMBER];
-		$firstName = $row0[\FIRSTNAME];
-		$lastName  = $row0[\LASTNAME];
+      $ID 	   = $row0['IDNumber'];
+		$firstName = $row0['FirstName'];
+		$lastName  = $row0['LastName'];
 		$name0 = $lastName . ", " .$firstName ;
 		$name = $firstName . " " . $lastName;
 //		echo "name=$name<br>";
@@ -353,7 +353,7 @@ global $millis;
 	//loop through ski history ordered by name, date, checkin time
     while ($row = @mysqli_fetch_array($result)) {
 		  $normalizedName = $name0; 
-        $ID = $row[\PATROLLER_ID];
+        $ID = $row['patroller_id'];
 		//allow to view only One patroller
 		if($viewOnlyID && $ID != $viewOnlyID) 
 			continue;
@@ -374,12 +374,12 @@ global $millis;
 		  if($namePrevious != $normalizedName) {
  		  	   $namePrevious=$normalizedName;
 		  }
-        $name =  $row[\NAME];
-        $date = $row[\DATE];
-        $checkin = $row[\CHECKIN];
-        $shift = $row[\SHIFT];
-        $value = $row[\VALUE];
-        $multiplier = $row[\MULTIPLIER];
+        $name =  $row['name'];
+        $date = $row['date'];
+        $checkin = $row['checkin'];
+        $shift = $row['shift'];
+        $value = $row['value'];
+        $multiplier = $row['multiplier'];
         $checkinTicks = $date + $checkin;
         if( $checkinTicks >= $endingTicks) {
 			//After time I am looking at

@@ -123,30 +123,30 @@ global $showZero, $classification, $isMentoring;
 	$loginDetail = "";
     while ($row1 = @mysqli_fetch_array($result1)) {
 //echo $row1[checkin] . "<br>\n";
-		$shift = $row1[\SHIFT];
+		$shift = $row1['shift'];
 		if(	($showDay   && $shift == 0) ||
 			($showSwing && $shift == 1) ||
 			($showNight && $shift == 2) ) 
 		{
 			$count += 1;
 			if($showDetails) {
-				$time1 = secondsToTime($row1[\CHECKIN]);
+				$time1 = secondsToTime($row1['checkin']);
 				$b1 = $b2 = "";
-				$dow = date("l", $row1[\DATE]);	//display date as only day of week, ie" "Saturday"
+				$dow = date("l", $row1['date']);	//display date as only day of week, ie" "Saturday"
 				$isWeekend = ($dow == "Sunday" || $dow == "Saturday");
 				if($showWeekday && !$isWeekend) {
 					$b1 = "<b>";
 					$b2 = "</b>";
 				}
 				if($showDouble && $isWeekend) {
-					$dow = date("n/j", $row1[\DATE]);	//display date mm/dd
+					$dow = date("n/j", $row1['date']);	//display date mm/dd
 					if($dow == "12/24" || $dow == "12/25" || $dow == "12/31" || $dow == "1/1") {
 						$b1 = "<b>";
 						$b2 = "</b>";
 					}
 				}
 
-				$loginDetail .= $b1 . date("m/d/Y-", $row1[\DATE]). $time1 . "&nbsp; " . $b2;
+				$loginDetail .= $b1 . date("m/d/Y-", $row1['date']). $time1 . "&nbsp; " . $b2;
 			}
 		}
 	}
@@ -368,7 +368,7 @@ if($dataFrom == "locker") return;
 	$cnt = 0;
 	$date1 = "";
   	while ($row = @mysqli_fetch_array($result)) {
-		$date2 = $row[\DATE];
+		$date2 = $row['date'];
 		$date2 = substr((string) $date2,5,2) . "/" . substr((string) $date2,8,2) . "/" . substr((string) $date2,0,4) ;
 		if($dataFrom == "diff") {
 //echo " $loginDetail ($date2) [" . substr_count($loginDetail,$date2) . "]<br>";
@@ -526,14 +526,14 @@ global $classification, $isMentoring;
 //echo "mysqli_db=$mysqli_db<br>";
 	    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query3 ($query_string)");
 	    while ($row = @mysqli_fetch_array($result)) {
-	        $ID 	   = $row[\IDNUMBER];
-			$firstName = $row[\FIRSTNAME];
-			$lastName  = $row[\LASTNAME];
+	        $ID 	   = $row['IDNumber'];
+			$firstName = $row['FirstName'];
+			$lastName  = $row['LastName'];
 			$name = $firstName . " " . $lastName;
 //echo "name = $name<br>";
-			$classification = $row[\CLASSIFICATIONCODE];
-			$isMentoring = $row[\MENTORING];
-			$commitment= $row[\COMMITMENT];
+			$classification = $row['ClassificationCode'];
+			$isMentoring = $row['Mentoring'];
+			$commitment= $row['Commitment'];
 			//allow to view only One patroller
 			DisplayLoginHistory($name,$commitment,$firstName,$lastName);
 			DisplayWebHistory($name,$commitment,$ID);
@@ -544,7 +544,7 @@ global $classification, $isMentoring;
 	    $result1 = @mysqli_query($connect_string, $query_string1) or die ("Invalid query4 ($query_string1)");
         $patrollers=[];
 	    while ($row1 = @mysqli_fetch_array($result1)) {
-	        $name 	   = $row1[\NAME];
+	        $name 	   = $row1['name'];
 			$pos = strpos((string) $name," ");
 //$ID	   = $row[ patroller_id ];
 //$patrollers[$ID] = true;
@@ -556,15 +556,15 @@ global $classification, $isMentoring;
 
 		    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query5 ($query_string)");
 		    if ($row = @mysqli_fetch_array($result)) {
-		        $ID 	   = $row[ \IDNUMBER ];
+		        $ID 	   = $row['IDNumber'];
 				$patrollers[$ID] = true;
 //echo "++$ID, $patrollers[$ID]<br>";
 //		        $firstName = $row[FirstName];
 //		        $lastName  = $row[LastName];
 //				$name = $firstName . " " . $lastName;
-				$commitment= $row[\COMMITMENT];
-			$classification = $row[\CLASSIFICATIONCODE];
-			$isMentoring = $row[\MENTORING];
+				$commitment= $row['Commitment'];
+			$classification = $row['ClassificationCode'];
+			$isMentoring = $row['Mentoring'];
 //echo "isMentoring=$isMentoring<br>";
 				//allow to view only One patroller
 				DisplayLoginHistory($name,$commitment,$firstName,$lastName);
@@ -580,15 +580,15 @@ global $classification, $isMentoring;
 		    $query_string = "SELECT * FROM roster WHERE 1 ORDER BY LastName";
 		    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query6 ($query_string)");
 	    	while ($row = @mysqli_fetch_array($result)) {
-		        $ID = $row[\IDNUMBER];
+		        $ID = $row['IDNumber'];
 //echo "ID=$ID ($patrollers[$ID])<br>";
 				if(!$patrollers[$ID]) {
-					$firstName = $row[\FIRSTNAME];
-					$lastName  = $row[\LASTNAME];
+					$firstName = $row['FirstName'];
+					$lastName  = $row['LastName'];
 					$name = $firstName . " " . $lastName;
-					$commitment= $row[\COMMITMENT];
-					$classification = $row[\CLASSIFICATIONCODE];
-					$isMentoring = $row[\MENTORING];
+					$commitment= $row['Commitment'];
+					$classification = $row['ClassificationCode'];
+					$isMentoring = $row['Mentoring'];
 //echo "$firstName, $lastName, $isMentoring<br>";
 					DisplayLoginHistory($name,$commitment,$firstName,$lastName);
 					DisplayWebHistory($name,$commitment,$ID);

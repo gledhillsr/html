@@ -17,16 +17,16 @@ echo "$query_string<br>";
     }
 
     $arrDate = getdate();
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
     $query_string = "SELECT sweep_ids, patroller_id FROM skihistory WHERE date=$today AND shift=0";
     $sweepsAssigned=[];
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 5");
     while ($row = @mysqli_fetch_array($result)) {
-        $oldSweep = $row[\SWEEP_IDS];
+        $oldSweep = $row['sweep_ids'];
         //loop through all tokens in the list
         $tok = strtok($oldSweep, " ");
         while ($tok) {
-            $sweepsAssigned[$tok] = $row[\PATROLLER_ID];
+            $sweepsAssigned[$tok] = $row['patroller_id'];
 //echo "sweepsAssigned[" . $tok . "] = $row[patroller_id]<br>";
            $tok = strtok(" ");
         }
@@ -101,12 +101,12 @@ function checkPassword() {
 //echo "$query_string ";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 7");
         while ($row = @mysqli_fetch_array($result)) {
-            $patroller_id = $row[\PATROLLER_ID];
+            $patroller_id = $row['patroller_id'];
 //echo "$patroller_id ";
             $query_string = "SELECT ClassificationCode FROM roster WHERE IDNumber =$patroller_id";
             $result1 = @mysqli_query($connect_string, $query_string) or die ("Invalid query 7.1");
             if ($row1 = @mysqli_fetch_array($result1)) {
-                $class = $row1[ \CLASSIFICATIONCODE ];
+                $class = $row1['ClassificationCode'];
                 if($class == "SR")       $SrCnt++;
                 else if($class == "SRA") $SrACnt++;
                 else if($class == "BAS") $BasCnt++;
@@ -155,18 +155,18 @@ function checkPassword() {
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 7");
     while ($row = @mysqli_fetch_array($result)) {
-        $area = $row[ \AREAID ];
-        $loc =  $row[ \LOCATION ];
+        $area = $row['areaID'];
+        $loc =  $row['location'];
 //        if($area != $areaID && $area != 5) //must be THIS area, or "Any Area"
 //            continue;
-        $time = $row[ \START_TIME ];
+        $time = $row['start_time'];
         $time = secondsToTime($time);
-        $t2 = $row[ \END_TIME ];
+        $t2 = $row['end_time'];
         $t2 = secondsToTime($t2);
-        $id   = $row[ \ID ];
+        $id   = $row['id'];
         if($sweepsAssigned[$id])
             continue;
-        $desc = $row[ \DESCRIPTION ];
+        $desc = $row['description'];
         $pos = strpos((string) $desc,"\n");
         if(!$pos)
             $pos = 30;
@@ -202,7 +202,7 @@ function checkPassword() {
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 9");
     $inLockout = 0;
     if ($row = @mysqli_fetch_array($result)) {
-        $lockTime = $row[\SIGNINLOCKOUT];
+        $lockTime = $row['signinLockout'];
         if($lockTime < $now)
             echo "Lockout time has been cleared.<br><br>";
         else{

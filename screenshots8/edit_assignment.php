@@ -12,9 +12,9 @@ function readRecord($id) {
     $query_string = "SELECT * FROM sweepdefinitions WHERE id=\"$id\"";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)avail");
     if ($row = @mysqli_fetch_array($result)) {
-        $area      = $row[ \AREAID ];
+        $area      = $row['areaID'];
 		$area = $getAreaShort[ $area ];
-        $minLevel  = $row[ \SKI_LEVEL ];
+        $minLevel  = $row['ski_level'];
         if($minLevel == 0)
             $minLevel = "Team Leader";
         else if($minLevel == 1)
@@ -23,16 +23,16 @@ function readRecord($id) {
             $minLevel = "Basic";
         else //if($minLevel == 3)
             $minLevel = "Auxilary";
-        $description = $row[ \DESCRIPTION ];
-        $topShack  = $row[ \LOCATION ];
-        $startTime = secondsToTime($row[ \START_TIME ]);
-        $endTime   = secondsToTime($row[ \END_TIME ]);
-        $topShack2  = $row[ \LOCATION2 ];
+        $description = $row['description'];
+        $topShack  = $row['location'];
+        $startTime = secondsToTime($row['start_time']);
+        $endTime   = secondsToTime($row['end_time']);
+        $topShack2  = $row['location2'];
 		if(!$topShack2)
 			$topShack2="None";
-        $startTime2 = secondsToTime($row[ \START_TIME2 ]);
-        $endTime2   = secondsToTime($row[ \END_TIME2 ]);
-        $lateSweep = $row[ \CLOSING ];
+        $startTime2 = secondsToTime($row['start_time2']);
+        $endTime2   = secondsToTime($row['end_time2']);
+        $lateSweep = $row['closing'];
     }
     @mysqli_close($connect_string);
     $title="Save Completed";

@@ -1,7 +1,6 @@
 <?php 
 require("config.php");
-    $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
-    mysqli_select_db($connect_string, $mysqli_db);
+    $connect_string = getDBConnection() or die ("Could not connect to the database.");
     $arrDate = getdate();
 //$showWeb=0; //hack
 //echo "shiftOverride=$shiftOverride<br>";
@@ -31,12 +30,12 @@ require("config.php");
         }
 
     } else {
-        $currDayOfWeek = $arrDate[\WEEKDAY];
-        $sec=$arrDate[\SECONDS];
-        $min=$arrDate[\MINUTES];
-        $hr =$arrDate[\HOURS];
+        $currDayOfWeek = $arrDate['wday'];
+        $sec=$arrDate['seconds'];
+        $min=$arrDate['minutes'];
+        $hr =$arrDate['hours'];
     }
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $today = getTodayTimestamp();
     $getLBName = [-1 => "Unassigned", 0 => "Crest", 1 => "Snake", 2 => "Western",   3 => "Millicent",  4 => "Training", 5 => "Staff"];
     $strToday = date("F-d-Y", $today);
     if($saveBtn) {
@@ -82,10 +81,10 @@ global $connect_string,$today;
 //echo "result=$result<br>";
         if ($row = @mysqli_fetch_array($result)) {
 //echo "row=$row<br>";
-            $oldLeadership = $row[\TEAMLEAD];
-            $oldArea = $row[\AREAID];
-            $oldSweep = $row[\SWEEP_IDS];
-            $history_id =  $row[\HISTORY_ID];
+            $oldLeadership = $row['teamLead'];
+            $oldArea = $row['areaID'];
+            $oldSweep = $row['sweep_ids'];
+            $history_id =  $row['history_id'];
 //echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leadership=($oldLeadership, $newLeadership)  area($oldArea, $area)<br>";
             if($oldArea != $area)
                 $newSweep = "";
@@ -115,29 +114,23 @@ global $connect_string,$areaID,$getLBName,$today,$totalPatrollers,$currDayOfWeek
     $cnt = 0;
 //Loop in skihistory for today, shift 0, AND this area
     while ($row = @mysqli_fetch_array($result)) {
-        $patroller_id  = $row[\PATROLLER_ID ];
+        $patroller_id  = $row['patroller_id'];
         $patroller_name = "Name not found.";
-        $query_string = "SELECT FirstName, LastName, ClassificationCode FROM roster WHERE IDNumber=\"$patroller_id\"";
-//echo $query_string . "<br>\n";
-//get Roster information
-        $result2 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 4)");
-        if ($row2 = @mysqli_fetch_array($result2)) {
-            $class = $row2[\CLASSIFICATIONCODE];
+        //get Roster information
+        $row2 = getPatrollerInfo($connect_string, $patroller_id);
+        if ($row2) {
+            $class = $row2['ClassificationCode'];
 //echo "totalPatroller = $totalPatroller, class=$class<br>";
-            if($class == "SR") $prefix = "1-";
-            else if($class == "BAS") $prefix = "2-";
-            else if($class == "AUX" || $class == "SRA") $prefix = "3-";
-            else $prefix = "4-";
-            $patroller_name = $prefix . $row2[\FIRSTNAME] . " " . $row2[\LASTNAME];
+            $prefix = getClassificationPrefix($class);
+            $patroller_name = $prefix . $row2['FirstName'] . " " . $row2['LastName'];
             //if I am filling out basic, and I get an Aux (or visa-versa) skip this person
             $bas = ($class == "BAS" || $class == "SR");
             if($bas && $skiLevel == 2) continue;
             if(!$bas && $skiLevel == 1) continue;
-
         }
 //echo $patroller_name . "<br>";
         $totalPatrollers++;
-        $teamLead = $row[\TEAMLEAD];
+        $teamLead = $row['teamLead'];
         $cnt++;
         if($areaID == -1) {
             echo "    <option value=\"$patroller_id\">$patroller_name</option>\n";
@@ -499,12 +492,12 @@ if (document.all || document.getElementById) {
     if ($row = @mysqli_fetch_array($result)) {
 //echo "$currDayOfWeek<br>\n";
         if($currDayOfWeek == "Saturday") {
-            $todayBasic=$row[ \SATURDAYBASIC ];
+            $todayBasic=$row['saturdaybasic'];
 //echo "basic=$todayBasic<br>\n";
-            $todayAux=$row[ \SATURDAYAUX ];
+            $todayAux=$row['saturdayaux'];
         } else if ($currDayOfWeek == "Sunday") {
-            $todayBasic=$row[ \SUNDAYBASIC ];
-            $todayAux=$row[ \SUNDAYAUX ];
+            $todayBasic=$row['sundaybasic'];
+            $todayAux=$row['sundayaux'];
         } else {
             $todayBasic=0;
             $todayAux=0;
@@ -540,10 +533,10 @@ if (document.all || document.getElementById) {
      $lockerIDList=[];
      while ($row = @mysqli_fetch_array($result)) 
      {
-			$id = $row[ \PATROLLER_ID];
-			$ar = $row[ \AREAID ];
+			$id = $row['patroller_id'];
+			$ar = $row['areaID'];
 			
-         $lockerIDList[$id] = $getLBName[$ar] . " " . $row[ \NAME ] ;
+         $lockerIDList[$id] = $getLBName[$ar] . " " . $row['name'] ;
 	  }
 
 	   //new column
@@ -557,19 +550,19 @@ if (document.all || document.getElementById) {
 		$connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to web database.");
         mysqli_select_db($connect_string, $mysqli_db);
 		//build date string
-		  $tdate  = $arrDate[\YEAR] . "-";
-		  if($arrDate[\MON] < 10) $tdate .= "0";
-		  $tdate .= $arrDate[\MON] . "-";
-		  if($arrDate[\MDAY] < 10) $tdate .= "0";
-		  $tdate .= $arrDate[\MDAY];
+		  $tdate  = $arrDate['year'] . "-";
+		  if($arrDate['mon'] < 10) $tdate .= "0";
+		  $tdate .= $arrDate['mon'] . "-";
+		  if($arrDate['mday'] < 10) $tdate .= "0";
+		  $tdate .= $arrDate['mday'];
         $query_string = "SELECT * FROM `assignments` WHERE `Date`> '". $tdate . "_0' AND `Date` < '" . $tdate . "_z'";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 11)");
 	     $webIDList=[];
 
         while ($row = @mysqli_fetch_array($result)) 
         {
-            $startTime = $row[\STARTTIME];
-				$max1 = $row[ \COUNT ];
+            $startTime = $row['startTime'];
+				$max1 = $row['count'];
 				for ($i=0; $i < $max1; ++$i) {
 				  	$idx = "P" . $i;
 				  	$patroller_id = $row[ $idx ];
@@ -583,7 +576,7 @@ if (document.all || document.getElementById) {
 		        		$query_string = "SELECT FirstName, LastName FROM roster WHERE IDNumber=\"$patroller_id\"";
 	        			$result2 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 7)");
 			        	if ($row2 = @mysqli_fetch_array($result2)) {
-							$name = $row2[ \FIRSTNAME ] . " " . $row2[ \LASTNAME ];
+							$name = $row2['FirstName'] . " " . $row2['LastName'];
 					    	echo "  <option>$startTime $status $name</option>\n";
 						} else {
 					    	echo "  <option>patroller $id not found</option>\n";

@@ -8,7 +8,7 @@ if($delete) {
 //echo $query_string . "<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     @mysqli_close($connect_string);
-    @mysqli_free_result($result);
+    // Removed: @mysqli_free_result($result); - not needed for INSERT/UPDATE queries
 
      header("Location: history.php?admin=1&ID=" . $ID); /* Redirect browser */
 
@@ -25,9 +25,9 @@ if($ID) {
 //echo $query_string . "<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     if ($row = @mysqli_fetch_array($result)) {
-        $name = $row[ \FIRSTNAME ] . " " . $row[ \LASTNAME ];
-        $class = $row[\CLASSIFICATIONCODE];
-        $canEarnCredits = $row[\CANEARNCREDITS];
+        $name = $row['FirstName'] . " " . $row['LastName'];
+        $class = $row['ClassificationCode'];
+        $canEarnCredits = $row['canEarnCredits'];
     }
 //echo "name=$name";
 if($addBtn || $saveBtn) {
@@ -65,16 +65,16 @@ switch($shiftSel) {
 //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     @mysqli_close($connect_string);
-    @mysqli_free_result($result);
+    // Removed: @mysqli_free_result($result); - not needed for INSERT/UPDATE queries
     header("Location: history.php?admin=1&ID=" . $ID); /* Redirect browser */
     exit;
 }
 if($add) {
     $arrDate = getdate();
-    $sec=$arrDate[\SECONDS];
-    $min=$arrDate[\MINUTES];
-    $hr =$arrDate[\HOURS];
-    $today=mktime(0, 0, 0, $arrDate[\MON], $arrDate[\MDAY], $arrDate[\YEAR]);
+    $sec=$arrDate['seconds'];
+    $min=$arrDate['minutes'];
+    $hr =$arrDate['hours'];
+    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
     $seconds = ($hr*3600) + ($min * 60) + $sec;
     $strToday = date("m/d/Y", $today);
 
@@ -103,19 +103,19 @@ if($add) {
 //echo $query_string . "<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
     if ($row = @mysqli_fetch_array($result)) {
-        $date    = $row[ \DATE ];
+        $date    = $row['date'];
         $date = date("m/d/Y", $date);
-        $tmp = $row[\CHECKIN];
+        $tmp = $row['checkin'];
         $time = secondsToTime($tmp);
-        $areaID = $row[\AREAID];
+        $areaID = $row['areaID'];
         $area = $getArea[$areaID];
-        $shift = $row[\SHIFT];
-        $teamLead = $row[\TEAMLEAD];
-        $timeValue = $row[\VALUE];
+        $shift = $row['shift'];
+        $teamLead = $row['teamLead'];
+        $timeValue = $row['value'];
         if($shift == 2 && $timeValue == 3)      $shift = 3;         // 3/4 night
         else if($shift == 2 && $timeValue == 2) $shift = 4; // 1/2 night
         $timeValue /= 2;
-        $mult = $row[\MULTIPLIER]; //0=0.0, 1=1.0, 2=1.3333, 3=0.3333
+        $mult = $row['multiplier']; //0=0.0, 1=1.0, 2=1.3333, 3=0.3333
     } else
         echo "Error, History not found.";
 }
