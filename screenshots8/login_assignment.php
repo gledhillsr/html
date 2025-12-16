@@ -2,6 +2,44 @@
 require_once 'config.php';
 $connect_string = getDBConnection() or die ("Could not connect to the database.");
 
+// Initialize shiftOverride - prioritize POST/GET over COOKIE
+// NOTE: config.php's initRequestVars() may have already set $shiftOverride,
+// but we explicitly override it here to ensure proper priority, validation, and cookie management
+// IMPORTANT: If value is 0, it means "use actual time" and should clear any override
+
+// Get value with proper priority (POST → GET → COOKIE) using the same logic as getRequestVar()
+if (isset($_POST['shiftOverride'])) {
+    $shiftOverride = (int)$_POST['shiftOverride'];
+} elseif (isset($_GET['shiftOverride'])) {
+    $shiftOverride = (int)$_GET['shiftOverride'];
+} elseif (isset($_COOKIE['shiftOverride'])) {
+    $shiftOverride = (int)$_COOKIE['shiftOverride'];
+} else {
+    // Check if initRequestVars() set it (fallback)
+    $shiftOverride = isset($shiftOverride) ? (int)$shiftOverride : 0;
+}
+
+// Validate and handle cookie based on the determined value
+if ($shiftOverride == 0) {
+    // Value 0 means "use actual time" - clear any existing cookie
+    if (isset($_COOKIE['shiftOverride'])) {
+        setcookie("shiftOverride", "", time() - 3600, "/");
+        unset($_COOKIE['shiftOverride']);
+    }
+} elseif ($shiftOverride > 0 && $shiftOverride <= 8) {
+    // Valid override value (1-8) - ensure cookie is set
+    if (!isset($_COOKIE['shiftOverride']) || (int)$_COOKIE['shiftOverride'] != $shiftOverride) {
+        setcookie("shiftOverride", (string)$shiftOverride, time() + (365 * 24 * 60 * 60), "/");
+    }
+} else {
+    // Invalid value - reset to 0 and clear cookie
+    $shiftOverride = 0;
+    if (isset($_COOKIE['shiftOverride'])) {
+        setcookie("shiftOverride", "", time() - 3600, "/");
+        unset($_COOKIE['shiftOverride']);
+    }
+}
+
 //define("TEAM_LEAD", 1);
 //define("ASST_TEAM_LEAD", 2);
 //define("DAY_SHIFT", 0);
@@ -37,9 +75,9 @@ if (isset($deleteID)) {
 }
 
 //$arrDate = getdate();
-//$arrDate = date_default_timezone_set("America/Denver");
+// $arrDate = date_default_timezone_set("America/Denver");
 $arrDate =  getdate();
-if (isset($shiftOverride) && $shiftOverride != 0) {
+if ($shiftOverride > 0) {
     //hack hack
     //0 => "Use actual time"  ,
     //1 => "Saturday 7:45",
@@ -107,7 +145,7 @@ $today = getTodayTimestamp();
 $seconds = ($hr * 3600) + ($min * 60) + $sec;
 $strToday = date("l F-d-Y", $today);
 //-------start hack-------
-if (isset($shiftOverride) && $shiftOverride > 0 && !isset($saveBtn)) {
+if ($shiftOverride > 0 && !isset($saveBtn)) {
     echo "HACK, Override: " . $shiftsOvr[$shiftOverride] . "<br>";
 }
 $isWeekend = ($currDayOfWeek == "Saturday" || $currDayOfWeek == "Sunday");

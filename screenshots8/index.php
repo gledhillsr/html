@@ -1,22 +1,28 @@
 <?php
 require_once 'config.php';
 
-// Initialize shiftOverride if not set
-if(!isset($shiftOverride)) {
+// Initialize shiftOverride - prioritize POST/GET over COOKIE
+// This ensures form submission (including 0 to clear) takes precedence
+if (isset($_POST['shiftOverride'])) {
+    $shiftOverride = (int)$_POST['shiftOverride'];
+} elseif (isset($_GET['shiftOverride'])) {
+    $shiftOverride = (int)$_GET['shiftOverride'];
+} elseif (isset($_COOKIE['shiftOverride'])) {
+    $shiftOverride = (int)$_COOKIE['shiftOverride'];
+} else {
     $shiftOverride = 0;
 }
 
-
-//@todo: fix the setting of this cookie, it is not working correctly
-if($shiftOverride && $shiftOverride > 0)
-{
-  //part of my time overide HACK
-  setcookie("shiftOverride",(string) $shiftOverride);
-echo "set cookie shiftOverride=({$shiftOverride})<br>";
-}
-else if($shiftOverride && $shiftOverride == 0){
-  setcookie("shiftOverride","");
-//echo "del shiftoverride cookie";
+// Handle cookie setting/clearing based on shiftOverride value
+if ($shiftOverride > 0) {
+    // Set cookie with shift override value (expires in 1 year)
+    setcookie("shiftOverride", (string)$shiftOverride, time() + (365 * 24 * 60 * 60), "/");
+    echo "Cookie set: shiftOverride=({$shiftOverride}) - " . $shiftsOvr[$shiftOverride] . "<br>";
+} elseif ($shiftOverride == 0) {
+    // Clear the cookie by setting expiration in the past
+    setcookie("shiftOverride", "", time() - 3600, "/");
+    unset($_COOKIE["shiftOverride"]);
+    echo "Cookie cleared: Using actual time<br>";
 }
 ?>
 
@@ -33,8 +39,11 @@ else if($shiftOverride && $shiftOverride == 0){
 <p>Brighton Ski Patrol Onsite Software</p>
 <form method="POST" action="index.php">
 <?php 
-  if($shiftOverride && $shiftOverride > 0)
-    echo "Testing time has been set.<br>";
+  if($shiftOverride > 0) {
+    echo "Testing time override is ACTIVE: <strong>" . $shiftsOvr[$shiftOverride] . "</strong><br>";
+  } else {
+    echo "Using actual time (no override set)<br>";
+  }
 ?>
   <p>( Testing only - enter shift override time
   <select size="1" name="shiftOverride">
@@ -54,8 +63,3 @@ for($i=0; $i <= 8; $i++){
 </body>
 
 </html>
-<?php 
-#mysqli_close($link);
-#echo 'db closed';
-?>
-
