@@ -108,6 +108,9 @@ class SkiHistory {
 // ***********************
 // *  class Assignments  *
 // ***********************
+// NOTE: When creating new Assignments, set $Date using getAssignmentDateString() 
+// from config.php to ensure it includes hour, minutes, and seconds.
+// Format: YYYY-MM-DD_HH:MM:SS (e.g., "2024-01-15_14:30:45")
 class Assignments {
     public $Date;
     public $StartTime;
@@ -205,6 +208,7 @@ $totalHistories=1;
 if ($SHOW_DEBUG)echo "open local connection: $mysqli_host<br>";
 $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
 mysqli_select_db($connect_string, $mysqli_db);
+setMySQLTimezone($connect_string);
 
 //--------------------------------------------------------------------
 if ($SHOW_DEBUG) echo "Reading ski histroy from $mysqli_host<br>";
@@ -282,6 +286,7 @@ $historiesProcessed = 0;
     if ($SHOW_DEBUG) echo "open remote connection ($gledhills_host)<br>\n";
     $connect_string = @mysqli_connect($gledhills_host, $mysqli_username, $gledhills_mysqli_password) or die ("Could not connect to the database.");
 mysqli_select_db($connect_string, $mysqli_db);
+setMySQLTimezone($connect_string);
     $remote_history_table = "skihistory";
     $query_string = "SELECT COUNT(history_id) AS count  FROM $remote_history_table WHERE 1";
 //

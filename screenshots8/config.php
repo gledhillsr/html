@@ -1,8 +1,11 @@
 <?php
+// Set default timezone for PHP
+date_default_timezone_set("America/Denver");
+
 // Error reporting configuration
 // Suppress warnings for undefined variables and array keys (common in legacy code)
 // Keep fatal errors and parse errors visible
-error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT);
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
 ini_set('display_errors', '1');
 
 // OR for development (show only errors and warnings, not notices)
@@ -183,7 +186,29 @@ function timeToSeconds($strTime) {
  *****************************************************************************/
 
 /**
+ * Set MySQL session timezone to match PHP timezone (America/Denver)
+ * Call this after any mysqli_connect() to ensure database timezone matches PHP
+ * @param mysqli $connect_string Database connection resource
+ * @return void
+ */
+function setMySQLTimezone($connect_string) {
+    if ($connect_string) {
+        // Set MySQL session timezone to match PHP timezone (America/Denver)
+        // Try named timezone first (MySQL 8.0+), fallback to offset if not supported
+        $timezone_set = @mysqli_query($connect_string, "SET time_zone = 'America/Denver'");
+        if (!$timezone_set) {
+            // Fallback for older MySQL versions - calculate current offset
+            // America/Denver is UTC-7 (MST) or UTC-6 (MDT during daylight saving)
+            $is_dst = date('I'); // 1 if DST, 0 if not
+            $offset = $is_dst ? '-06:00' : '-07:00';
+            @mysqli_query($connect_string, "SET time_zone = '$offset'");
+        }
+    }
+}
+
+/**
  * Get database connection (replaces repeated mysqli_connect + mysqli_select_db)
+ * Sets timezone for MySQL connection to match PHP timezone (America/Denver)
  * @return mysqli|false Connection resource or false on failure
  */
 function getDBConnection() {
@@ -191,6 +216,7 @@ function getDBConnection() {
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password);
     if ($connect_string) {
         mysqli_select_db($connect_string, $mysqli_db);
+        setMySQLTimezone($connect_string);
     }
     return $connect_string;
 }
@@ -285,5 +311,31 @@ $shiftsOvr=[
 6 => "Monday 3:15 pm",
 7 => "Monday 6:45pm",
 8 => "Monday 11:45pm"];
+
+/**
+ * Get formatted date string with time for assignments table
+ * Format: YYYY-MM-DD_HH:MM:SS
+ * @param array|null $arrDate Optional date array from getdate(), uses current time if null
+ * @return string Formatted date string with time component
+ */
+function getAssignmentDateString($arrDate = null) {
+    if ($arrDate === null) {
+        $arrDate = getdate();
+    }
+    $tdate = $arrDate['year'] . "-";
+    if($arrDate['mon'] < 10) $tdate .= "0";
+    $tdate .= $arrDate['mon'] . "-";
+    if($arrDate['mday'] < 10) $tdate .= "0";
+    $tdate .= $arrDate['mday'];
+    // Add hour, minutes, and seconds
+    $tdate .= "_";
+    if($arrDate['hours'] < 10) $tdate .= "0";
+    $tdate .= $arrDate['hours'] . ":";
+    if($arrDate['minutes'] < 10) $tdate .= "0";
+    $tdate .= $arrDate['minutes'] . ":";
+    if($arrDate['seconds'] < 10) $tdate .= "0";
+    $tdate .= $arrDate['seconds'];
+    return $tdate;
+}
 
 ?>

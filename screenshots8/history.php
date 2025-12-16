@@ -1,9 +1,8 @@
 <?php
 require("config.php");
     $name="NOBODY";
- //   $arrDate = getdate();
-   $arrDate =  date_default_timezone_set("America/Denver");
-   $arrDate = getdate();
+    // Timezone is now set in config.php (America/Denver)
+    $arrDate = getdate();
    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
     $strToday = date("l F-d-Y", $today);
 	$simpleCredits = 0;
@@ -12,6 +11,7 @@ require("config.php");
 	}
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     mysqli_select_db($connect_string, $mysqli_db);
+    setMySQLTimezone($connect_string);
 
 if($ID) {
     //

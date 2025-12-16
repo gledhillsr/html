@@ -549,13 +549,12 @@ if (document.all || document.getElementById) {
 		$mysqli_host = "gledhills.com"; //54.173.17.203";  //IP of nspOnline.org
 		$connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to web database.");
         mysqli_select_db($connect_string, $mysqli_db);
-		//build date string
-		  $tdate  = $arrDate['year'] . "-";
-		  if($arrDate['mon'] < 10) $tdate .= "0";
-		  $tdate .= $arrDate['mon'] . "-";
-		  if($arrDate['mday'] < 10) $tdate .= "0";
-		  $tdate .= $arrDate['mday'];
-        $query_string = "SELECT * FROM `assignments` WHERE `Date`> '". $tdate . "_0' AND `Date` < '" . $tdate . "_z'";
+        setMySQLTimezone($connect_string);
+		//build date string with time component (format: YYYY-MM-DD_HH:MM:SS)
+		  $tdate = getAssignmentDateString($arrDate);
+		  // Extract just the date part (YYYY-MM-DD) for query range
+		  $dateOnly = substr($tdate, 0, 10); // Get "YYYY-MM-DD" part
+        $query_string = "SELECT * FROM `assignments` WHERE `Date` >= '". $dateOnly . "_00:00:00' AND `Date` < '" . $dateOnly . "_23:59:59'";
         $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 11)");
 	     $webIDList=[];
 
