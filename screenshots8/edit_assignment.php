@@ -8,8 +8,10 @@ function readRecord($id) {
 
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     mysqli_select_db($connect_string, $mysqli_db);
+    setMySQLTimezone($connect_string);
 
-    $query_string = "SELECT * FROM sweepdefinitions WHERE id=\"$id\"";
+    $id = (int)$id; // Ensure id is an integer
+    $query_string = "SELECT * FROM sweepdefinitions WHERE id=$id";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)avail");
     if ($row = @mysqli_fetch_array($result)) {
         $area      = $row['areaID'];
@@ -50,7 +52,9 @@ echo "old=$last, new=$txt\n";
 if($deleteBtn) {
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     mysqli_select_db($connect_string, $mysqli_db);
+    setMySQLTimezone($connect_string);
 
+    $id = (int)$id; // Ensure id is an integer
     $query_string = "DELETE FROM sweepdefinitions WHERE id=$id";
 //echo "$query_string<br>";
     @mysqli_query($connect_string, $query_string) or die ("Invalid query1 (result)");
@@ -81,22 +85,36 @@ exit;
 	$flip = array_flip ( $getAreaShort);
 	$area = $flip[$area];
 
-    $query_string .=  "areaID=\"" . $area . "\", " .
-        "ski_level=\"" . $ski_level . "\", " .
-        "description=\"" . $description . "\", " .
-        "location=\"" . $topShack . "\", " .
-        "start_time=\"" . $startSeconds . "\", " .
-        "end_time=\"" . $endSeconds . "\", " .
-        "location2=\"" . $topShack2 . "\", " .
-        "start_time2=\"" . $startSeconds2 . "\", " .
-        "end_time2=\"" . $endSeconds2 . "\", " .
-        "closing=\"" . $lateSweep . "\"";
-
-    if($id)
-        $query_string .= " WHERE id=\"$id\"";
-//echo "$query_string<br>";
     $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     mysqli_select_db($connect_string, $mysqli_db);
+    setMySQLTimezone($connect_string);
+
+    // Escape all string values to prevent SQL injection and handle special characters
+    $area = (int)$area; // areaID should be an integer
+    $ski_level = (int)$ski_level; // ski_level should be an integer
+    $description = mysqli_real_escape_string($connect_string, $description);
+    $topShack = mysqli_real_escape_string($connect_string, $topShack);
+    $startSeconds = (int)$startSeconds; // time values should be integers
+    $endSeconds = (int)$endSeconds;
+    $topShack2 = mysqli_real_escape_string($connect_string, $topShack2);
+    $startSeconds2 = (int)$startSeconds2;
+    $endSeconds2 = (int)$endSeconds2;
+    $lateSweep = mysqli_real_escape_string($connect_string, $lateSweep);
+
+    $query_string .=  "areaID=" . $area . ", " .
+        "ski_level=" . $ski_level . ", " .
+        "description='" . $description . "', " .
+        "location='" . $topShack . "', " .
+        "start_time=" . $startSeconds . ", " .
+        "end_time=" . $endSeconds . ", " .
+        "location2='" . $topShack2 . "', " .
+        "start_time2=" . $startSeconds2 . ", " .
+        "end_time2=" . $endSeconds2 . ", " .
+        "closing='" . $lateSweep . "'";
+
+    if($id)
+        $query_string .= " WHERE id=" . (int)$id;
+//echo "$query_string<br>";
 
     @mysqli_query($connect_string, $query_string) or die ("Invalid query2 (result)");
     @mysqli_close($connect_string);

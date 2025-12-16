@@ -26,15 +26,8 @@ global $chg,$srtLastPrinted,$strToday, $sortBy, $connect_string, $lastPrintedTic
 global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysqli_db, $dataFrom;
 global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $showWeekday, $showDouble;
 global $StartTime,$EndTime;
-//$mysqli_username = "root";           // MySQL user name
-//$mysqli_password = "Gandalf2";    // MySQL password (leave empty if no password is required.)
-//$mysqli_db       = "Brighton";        // MySQL database name
-//$mysqli_host     = "localhost";      // MySQL server host name
-//echo "connect_string=$mysqli_host<br>";
-//echo "connect_string=$mysqli_username<br>";
-//echo "connect_string=$mysqli_password<br>";
-    $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
-	mysqli_select_db($connect_string, $mysqli_db);
+// Use getDBConnection() from config.php which handles connection and timezone setting
+    $connect_string = getDBConnection() or die ("Could not connect to the database.");
 
 //echo "connect_string=$connect_string<br>";
 //        $query_string = "SELECT * FROM `roster` WHERE 1";
@@ -88,7 +81,7 @@ global $StartTime,$EndTime;
 function DisplayLoginHistory($name,$commitment,$firstName,$lastName) {
 global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysqli_db, $dataFrom;
 global $showDay, $showSwing, $showNight, $showWeekday, $showDouble, $loginDetail;
-global $showZero, $classification, $isMentoring;
+global $showZero, $classification, $isMentoring, $connect_string;
 
 //global $ID, $firstName, $lastName;
 //dataFrom
@@ -481,7 +474,7 @@ function displaySortedData(){
 global $chg,$srtLastPrinted,$strToday, $sortBy, $query_string1, $showDouble;
 global $showDetails,$showCommitment,$startingTicks,$endingTicks,$mysqli_db, $dataFrom;
 global $showDay, $showSwing, $showNight, $strBeginning, $strEnding, $siz, $showWeekday,$showZero;
-global $classification, $isMentoring;
+global $classification, $isMentoring, $connect_string;
 //global $ID, $firstName, $lastName;
 
 //display title
