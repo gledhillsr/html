@@ -1,9 +1,36 @@
 <?php 
+//area_staffing.php
 require("config.php");
     $connect_string = getDBConnection() or die ("Could not connect to the database.");
     $arrDate = getdate();
 //$showWeb=0; //hack
 //echo "shiftOverride=$shiftOverride<br>";
+if (isset($_POST['shiftOverride'])) {
+    $shiftOverride = (int)$_POST['shiftOverride'];
+} elseif (isset($_GET['shiftOverride'])) {
+    $shiftOverride = (int)$_GET['shiftOverride'];
+} elseif (isset($_COOKIE['shiftOverride'])) {
+    $shiftOverride = (int)$_COOKIE['shiftOverride'];
+} else {
+    // Check if initRequestVars() set it (fallback)
+    $shiftOverride = isset($shiftOverride) ? (int)$shiftOverride : 0;
+}
+
+// Validate and handle cookie based on the determined value
+if ($shiftOverride > 0 && $shiftOverride <= 8) {
+    // Valid override value (1-8) - ensure cookie is set
+    if (!isset($_COOKIE['shiftOverride']) || (int)$_COOKIE['shiftOverride'] != $shiftOverride) {
+        setcookie("shiftOverride", (string)$shiftOverride, time() + (365 * 24 * 60 * 60), "/");
+    }
+} else {
+    // Invalid value - reset to 0 and clear cookie
+    $shiftOverride = 0;
+    if (isset($_COOKIE['shiftOverride'])) {
+        setcookie("shiftOverride", "", time() - 3600, "/");
+        unset($_COOKIE['shiftOverride']);
+    }
+}
+
     if($shiftOverride && $shiftOverride != 0) {
 //hack hack
 //0 => "Use actual time"  ,
@@ -30,7 +57,7 @@ require("config.php");
         }
 
     } else {
-        $currDayOfWeek = $arrDate['wday'];
+        $currDayOfWeek = $arrDate['weekday'];
         $sec=$arrDate['seconds'];
         $min=$arrDate['minutes'];
         $hr =$arrDate['hours'];
@@ -47,6 +74,8 @@ require("config.php");
         if($area5)  updateHistory($area5,4);  //Training
         if($area6)  updateHistory($area6,5);  //Staff
     }
+//echo "shiftOverride=" . $shiftOverride . "<br/>";
+echo " currDayOfWeek = " . $currDayOfWeek . " hr=" . $hr . " min=" . $min . "<br/>";
 
     $totalPatrollers = 0;
 //============================================================
