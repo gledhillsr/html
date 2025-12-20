@@ -20,13 +20,7 @@ if (isset($_POST['shiftOverride'])) {
 }
 
 // Validate and handle cookie based on the determined value
-if ($shiftOverride == 0) {
-    // Value 0 means "use actual time" - clear any existing cookie
-    if (isset($_COOKIE['shiftOverride'])) {
-        setcookie("shiftOverride", "", time() - 3600, "/");
-        unset($_COOKIE['shiftOverride']);
-    }
-} elseif ($shiftOverride > 0 && $shiftOverride <= 8) {
+if ($shiftOverride > 0 && $shiftOverride <= 8) {
     // Valid override value (1-8) - ensure cookie is set
     if (!isset($_COOKIE['shiftOverride']) || (int)$_COOKIE['shiftOverride'] != $shiftOverride) {
         setcookie("shiftOverride", (string)$shiftOverride, time() + (365 * 24 * 60 * 60), "/");
@@ -90,67 +84,39 @@ if ($shiftOverride > 0) {
     //8 => "Monday 11:45pm");
     $sec = 0;
     $min = 45;
-    switch ($shiftOverride) {
-        case 1:
-            $currDayOfWeek = "Saturday";
-            $hr = 7;
-            break;
-        case 2:
-            $currDayOfWeek = "Saturday";
-            $hr = 13;
-            break;
-        case 3:
-            $currDayOfWeek = "Sunday";
-            $hr = 7;
-            break;
-        case 4:
-            $currDayOfWeek = "Monday";
-            $hr = 7;
-            break;
-        case 5:
-            $currDayOfWeek = "Monday";
-            $hr = 14;
-            break;
-        case 6:
-            $currDayOfWeek = "Monday";
-            $hr = 15;
-            $min = 15;
-            break;
-        case 7:
-            $currDayOfWeek = "Monday";
-            $hr = 18;
-            break;
-        case 8:
-            $currDayOfWeek = "Monday";
-            $hr = 23;
-            break;
-        default:
-            $currDayOfWeek = "Saturday";
-            $hr = 7;
-            break;
-    }
-
+        switch ($shiftOverride) {
+        case 1: $currDayOfWeek = "Saturday";    $hr = 7;   break;
+        case 2: $currDayOfWeek = "Saturday";    $hr = 13;  break;
+        case 3: $currDayOfWeek = "Sunday";      $hr = 7;   break;
+        case 4: $currDayOfWeek = "Monday";      $hr = 7;   break;
+        case 5: $currDayOfWeek = "Monday";      $hr = 14;  break;
+        case 6: $currDayOfWeek = "Monday";      $hr = 17;  break;
+        case 7: $currDayOfWeek = "Monday";      $hr = 18;  break;
+        case 8: $currDayOfWeek = "Monday";      $hr = 23;  break;
+        default: $currDayOfWeek = "Saturday";   $hr = 7;   break;
+        }
 }
 else {
-    $currDayOfWeek = $arrDate['wday'];
+    $currDayOfWeek = $arrDate['weekday'];
     $sec = $arrDate['seconds'];
     $min = $arrDate['minutes'];
     $hr = $arrDate['hours'];
 }
-//echo "shiftOverride=" . $shiftOverride + "<br/>"
-//echo "arrDate=" . $arrDate[year] . "<br/>";
-//echo " currDauOfWeek = " . $currDayOfWeek . "<br/>";
+// echo "shiftOverride=" . $shiftOverride . "<br/>";
+// echo "arrDate=" . $arrDate['year'] . "<br/>";
+// echo " currDayOfWeek = " . $currDayOfWeek . "<br/>";
 $today = getTodayTimestamp();
-//echo "today=" . $today . "<br/>";
+//echo "today=" . $today . " " . $hr"<br/>";
 $seconds = ($hr * 3600) + ($min * 60) + $sec;
 $strToday = date("l F-d-Y", $today);
 //-------start hack-------
 if ($shiftOverride > 0 && !isset($saveBtn)) {
-    echo "HACK, Override: " . $shiftsOvr[$shiftOverride] . "<br>";
+    echo "HACK, Override: " . $shiftsOvr[$shiftOverride] . " currDayOfWeek = " . $currDayOfWeek . "<br>";
 }
+//zzzzz
 $isWeekend = ($currDayOfWeek == "Saturday" || $currDayOfWeek == "Sunday");
 //compute Day, Swing, Night  0 = day, 1 = swing, 2 = night
-if ($hr <= 9) { //before 9am is a DAY
+if ($hr <= 9) { //`before 9am is a DAY
     $currShift = 0;
     $shiftValue = 4;
 }
