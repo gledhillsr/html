@@ -1,274 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Pragma" content="no-cache">
-<title>Volunteer at Brighton</title>
+<title>Volunteer at Brighton — Brighton Ski Patrol</title>
 
-<script language="JavaScript">
-
+<script>
   function validateFields() {
     if (document.myForm.firstName.value == "") {
-		alert("First name must not be empty");
-		document.myForm.firstName.focus(); // Place the cursor on the first name
-		return (false);// return false to stop further processing
-	}
+      alert("First name must not be empty");
+      document.myForm.firstName.focus();
+      return (false);
+    }
     if (document.myForm.lastName.value == "") {
-		alert("Last name must not be empty");
-		document.myForm.lastName.focus(); // Place the cursor on the first name
-		return (false);// return false to stop further processing
-	}
+      alert("Last name must not be empty");
+      document.myForm.lastName.focus();
+      return (false);
+    }
     if (document.myForm.cellNumber.value == "") {
-		alert("Phone Number must not be empty");
-		document.myForm.cellNumber.focus(); // Place the cursor on the first name
-		return (false);// return false to stop further processing
-	}
+      alert("Phone Number must not be empty");
+      document.myForm.cellNumber.focus();
+      return (false);
+    }
     if (document.myForm.email.value == "") {
-		alert("Email address must not be empty");
-		document.myForm.email.focus(); // Place the cursor on the first name
-		return (false);// return false to stop further processing
-	}
+      alert("Email address must not be empty");
+      document.myForm.email.focus();
+      return (false);
+    }
     if (document.myForm.yearsSkied.value == "") {
-		alert("Years Skied must not be empty");
-		document.myForm.yearsSkied.focus(); // Place the cursor on the first name
-		return (false);// return false to stop further processing
-	}
+      alert("Years Skied must not be empty");
+      document.myForm.yearsSkied.focus();
+      return (false);
+    }
     if (document.myForm.skiExperience.value == "") {
-		alert("Ski Experience must not be empty");
-		document.myForm.skiExperience.focus(); // Place the cursor on the first name
-		return (false);// return false to stop further processing
-	}
-
-	return (true);  // If text_name is not null continue processing
+      alert("Ski Experience must not be empty");
+      document.myForm.skiExperience.focus();
+      return (false);
+    }
+    return (true);
   }
-
-  // function sendForm() { //todo WIP
-  //   if (validateFields()) {
-  //     var data = $('[name="myForm"').serialize();
-  //     changeMainWindow(this, '/Brighton/sendmail.php?'+data);
-  //   }
-  //   else {
-  //     return false;
-  //   }
-  // }
-
-  //    function checkForChanges() {
-//        if(changesMade) {
-//            if(window.confirm("Save -new- ENDING time?")) {
-//                saveChanges();
-//            }
-//        }
-//    }
-//
-//  function saveChanges() {
-//    changesMade = false;
-//    param = "ski_credits.php?saveTimeBtn=1&EndTime=<? echo $strEnding; ?>";
-//    window.location=param;
-//  }
-
 </script>
 
 <style>
-<!--
- /* Font Definitions */
- @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
- /* Style Definitions */
- p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Times New Roman","serif";
-	mso-fareast-font-family:"Times New Roman";}
-h1
-	{margin-right:0in;
-	margin-left:0in;
-	font-size:24.0pt;
-	font-family:"Times New Roman","serif";
-	font-weight:bold;}
-a:link
-	{	color:blue;
-	text-decoration:underline;
-	text-underline:single;}
-a:visited
-	{	color:purple;
-	text-decoration:underline;
-	text-underline:single;}
-p
-	{margin-right:0in;
-	margin-left:0in;
-	font-size:12.0pt;
-	font-family:"Times New Roman","serif";}
-@page Section1
-	{size:8.5in 11.0in;
-	margin:.25in 1.25in 27.0pt 1.25in;}
-div.Section1
-	{page:Section1;}
-ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
--->
-</style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #1f2937;
+    background: #f0f5fa;
+  }
 
+  /* ============ Hero ============ */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #001a33 0%, #003366 45%, #1e6091 80%, #58a4d1 100%);
+    color: white;
+    text-align: center;
+    padding: 56px 20px 0;
+  }
+  .hero .logo {
+    background: white;
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+  }
+  .hero .logo img {
+    max-width: 100%;
+    height: auto;
+  }
+  .hero h1 {
+    font-size: clamp(1.7em, 4.5vw, 2.6em);
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  }
+  .hero .sub {
+    font-size: 1.15em;
+    opacity: 0.92;
+    max-width: 640px;
+    margin: 0 auto 34px;
+  }
+  /* snowfall (CSS only) */
+  .flake {
+    position: absolute;
+    top: -30px;
+    color: rgba(255,255,255,0.85);
+    user-select: none;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-30px) translateX(0)    rotate(0deg); }
+    50%  { transform: translateY(45vh)  translateX(28px) rotate(180deg); }
+    100% { transform: translateY(95vh)  translateX(-12px) rotate(360deg); }
+  }
+  /* skier gliding along the slope edge */
+  .slope {
+    position: relative;
+    height: 74px;
+    margin-top: 10px;
+  }
+  .slope svg { display: block; width: 100%; height: 100%; }
+  .skier {
+    position: absolute;
+    bottom: 26px;
+    font-size: 34px;
+    animation: ski 14s linear infinite;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.35));
+  }
+  @keyframes ski {
+    0%   { left: -6%;  bottom: 44px; transform: rotate(-8deg); }
+    50%  { left: 50%;  bottom: 30px; transform: rotate(6deg); }
+    100% { left: 104%; bottom: 12px; transform: rotate(-8deg); }
+  }
+
+  /* ============ Layout ============ */
+  .wrap { max-width: 880px; margin: 0 auto; padding: 34px 18px 60px; }
+  .card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e3e8ee;
+    box-shadow: 0 2px 10px rgba(0,20,50,0.07);
+    padding: 28px 32px;
+    margin-bottom: 26px;
+  }
+  h2 {
+    color: #003366;
+    font-size: 1.35em;
+    margin: 0 0 14px;
+  }
+  .contact { color: #4b5563; font-size: 0.95em; }
+  .contact a { color: #1e6091; }
+
+  /* ============ Trail-map journey ============ */
+  .journey { list-style: none; margin: 0; padding: 0; }
+  .journey li {
+    position: relative;
+    padding: 0 0 26px 62px;
+  }
+  .journey li:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 44px;
+    bottom: 2px;
+    width: 3px;
+    border-left: 3px dashed #b9cfe0;
+  }
+  .badge {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f5fa;
+    border: 1px solid #d4dfe9;
+    border-radius: 10px;
+  }
+  /* ski-run difficulty shapes */
+  .run-green  { width: 20px; height: 20px; border-radius: 50%; background: #1a7f37; }
+  .run-blue   { width: 18px; height: 18px; background: #1e5eb8; }
+  .run-black  { width: 16px; height: 16px; background: #111827; transform: rotate(45deg); }
+  .run-dblack { display: flex; gap: 2px; }
+  .run-dblack span { width: 12px; height: 12px; background: #111827; transform: rotate(45deg); }
+  .run-summit { font-size: 22px; }
+  .journey h3 {
+    margin: 0 0 6px;
+    font-size: 1.06em;
+    color: #003366;
+  }
+  .journey p { margin: 0; color: #374151; }
+
+  /* ============ Pull quote ============ */
+  .quote {
+    text-align: center;
+    background: linear-gradient(160deg, #003366, #1e6091);
+    color: white;
+    border-radius: 12px;
+    padding: 34px 24px;
+    margin-bottom: 26px;
+    box-shadow: 0 2px 10px rgba(0,20,50,0.15);
+  }
+  .quote .big { font-size: 1.45em; font-weight: bold; margin: 6px 0; }
+  .quote .and { font-size: 0.95em; opacity: 0.8; letter-spacing: 0.2em; margin: 10px 0; }
+
+  /* ============ Perks ============ */
+  .perks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+  }
+  .perks-grid h3 { color: #003366; font-size: 1.05em; margin: 0 0 10px; }
+  .perks-grid ul { list-style: none; margin: 0; padding: 0; }
+  .perks-grid li { padding: 4px 0 4px 26px; position: relative; }
+  .perks-grid li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #1a7f37;
+    font-weight: bold;
+  }
+  .perks-grid .commit li::before { content: "⛷"; color: #003366; }
+  .perks-grid li ul { margin-top: 4px; }
+  .perks-grid li ul li { padding-left: 22px; font-size: 0.95em; color: #4b5563; }
+  .perks-grid li ul li::before { content: "–"; color: #6b7280; }
+
+  /* ============ Form ============ */
+  .form-card h2 { text-align: center; }
+  .form-sub { text-align: center; color: #6b7280; margin: 0 0 20px; }
+  .req { color: #c81e1e; }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 18px;
+  }
+  .grid .full { grid-column: 1 / -1; }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 14px 18px;
+    grid-column: 1 / -1;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.85em;
+    color: #374151;
+    margin-bottom: 4px;
+  }
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 1em;
+    font-family: inherit;
+    border: 1px solid #c6cdd4;
+    border-radius: 6px;
+    background: #fdfdfd;
+  }
+  input[type="text"]:focus, textarea:focus {
+    outline: 2px solid #003366;
+    border-color: #003366;
+    background: white;
+  }
+  .submit-row { text-align: center; margin-top: 22px; }
+  input[type="submit"] {
+    background: #003366;
+    color: white;
+    font-size: 1.05em;
+    font-weight: bold;
+    font-family: inherit;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 34px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  input[type="submit"]:hover { background: #1e6091; }
+
+  @media (max-width: 620px) {
+    .grid, .grid-3 { grid-template-columns: 1fr; }
+    .card { padding: 22px 18px; }
+  }
+</style>
 </head>
 
-<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in' BACKGROUND="/images/ncmnthbk.jpg">
+<body>
 
-<div class=Section1>
+  <!-- ============ Hero banner ============ -->
+  <div class="hero">
+    <span class="flake" style="left: 6%;  font-size: 14px; animation-duration: 9s;  animation-delay: 0s;">&#10052;</span>
+    <span class="flake" style="left: 16%; font-size: 20px; animation-duration: 12s; animation-delay: 3s;">&#10052;</span>
+    <span class="flake" style="left: 27%; font-size: 12px; animation-duration: 10s; animation-delay: 6s;">&#10053;</span>
+    <span class="flake" style="left: 38%; font-size: 17px; animation-duration: 13s; animation-delay: 1s;">&#10052;</span>
+    <span class="flake" style="left: 52%; font-size: 13px; animation-duration: 9s;  animation-delay: 5s;">&#10053;</span>
+    <span class="flake" style="left: 63%; font-size: 19px; animation-duration: 11s; animation-delay: 2s;">&#10052;</span>
+    <span class="flake" style="left: 74%; font-size: 14px; animation-duration: 14s; animation-delay: 7s;">&#10052;</span>
+    <span class="flake" style="left: 85%; font-size: 16px; animation-duration: 10s; animation-delay: 4s;">&#10053;</span>
+    <span class="flake" style="left: 94%; font-size: 12px; animation-duration: 12s; animation-delay: 8s;">&#10052;</span>
 
-<p class=MsoNormal style='margin-right:0.0pt'></p>
+    <div class="logo"><img src="/images/Brighton.gif" width="416" height="94" alt="Brighton Resort"></div>
+    <h1>Make a Difference &mdash; Become a Volunteer Ski Patroller</h1>
+    <p class="sub">
+      Love the mountain? Love helping people? The Brighton Volunteer Ski Patrol
+      combines the outdoors, skiing, first response, and lifelong friendships.
+    </p>
 
-<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
- style='width:100%;mso-cellspacing:0in;margin-left:
- auto
- ;mso-padding-alt:
- 0in 0in 0in 0in'>
- <tr>
-  <td width="15%" style='width:14.52%;padding:0in 0in 0in 0in'>
-  <p class=MsoNormal>
-    <img width=107 height=113
-  src="/images/NSP_logo.gif"></p>
-  </td>
-  <td width="61%" style='width:62.9%;padding:0in 0in 0in 0in'>
-  <h1 align=center style='text-align:center'><span style='font-size:20.0pt;
-  mso-bidi-font-size:24.0pt'>Make a Difference, Become a Volunteer</span></h1>
-  <p align=center style='text-align:center'>
-    <span style='font-size:13.5pt'>Ski Patrol Open House and Ski Test</span></p>
-  <p align=center style='text-align:center'>
-<!--<span style='font-size:13.5pt'>March 30<sup>th</sup> or March 31<sup>st</sup> 2019<br>
-  9 a.m. in the &quot;A&quot; frame building, (next to Crest lift)<br>
-  Meet on the main floor.&nbsp; Yes, there is a cost -- a $30 Day Pass</span> -->
+    <div class="slope">
+      <span class="skier">&#9975;</span>
+      <svg viewBox="0 0 100 12" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,4 L50,7 L100,10 L100,12 L0,12 Z" fill="#f0f5fa"/>
+      </svg>
+    </div>
+  </div>
 
-<!--    <b>Ski Patrol Open House - Sunday March 22, 2020</b>-->
-    <br><br>
-<!--    <q>Due to the current number of retained members on the Brighton Volunteer Ski Patrol,<br>-->
-<!--      we will not be accepting candidates for the upcoming ski season.  <br>-->
-<!--      We appreciate your interest and look forward  to seeing you in 2020.</q>-->
+  <div class="wrap">
 
-  </p>
-  </td>
-  <td width="24%" style='width:22.58%;padding:0in 0in 0in 0in'>
-  <p class=MsoNormal><![if !vml]><img width=208 height=47
-  src="/images/Brighton.gif"><![endif]></p>
-  </td>
- </tr>
-</table>
-<br>
-Thank you for your interest in the National Ski Patrol at Brighton Resort! The Brighton Patrol is a challenging and rewarding endeavor that can truly make a difference. It combines a love for the outdoors, skiing, helping others, pride in a job well done, and making long-lasting friendships.
+    <!-- ============ Intro ============ -->
+    <div class="card">
+      <h2>Thank You for Your Interest!</h2>
+      <p>
+        Thank you for your interest in the National Ski Patrol at Brighton Resort! The Brighton Patrol
+        is a challenging and rewarding endeavor that can truly make a difference. It combines a love for
+        the outdoors, skiing, helping others, pride in a job well done, and making long-lasting friendships.
+      </p>
+      <p>
+        Candidates must demonstrate the patroller mind-set: a strong work ethic, compassion, camaraderie,
+        commitment to individual patients and to the patrol, assumption of the roles and responsibilities
+        of a patroller, and teamwork. We require an attitude that combines a positive outlook, a willingness
+        to work, and a desire to help others.
+      </p>
+      <p class="contact">
+        If you fit this description and want to take the steps to become a Volunteer Patroller, complete the
+        application at the bottom of this page. Questions? Contact us at
+        <a href="mailto:brightonnsp@gmail.com">brightonnsp@gmail.com</a>.
+      </p>
+    </div>
 
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-Candidates must demonstrate the patroller mind-set consisting of such attitudes as a strong work ethic, compassion, camaraderie, commitment to individual patients and to the patrol, assumption of the roles and responsibilities of a patroller, and teamwork.  We require an attitude that combines a positive outlook, a willingness to work, and a desire to help others.
+    <!-- ============ The journey (trail map) ============ -->
+    <div class="card">
+      <h2>Your Trail Map to Becoming a Patroller</h2>
+      <ul class="journey">
+        <li>
+          <span class="badge"><span class="run-green"></span></span>
+          <h3>Open House &amp; Ski Test</h3>
+          <p>Spend a day skiing with the patrol. The training staff will let you know if your skiing or
+             boarding is at a level to continue, or if you need more practice. You must be at least 17 years old.</p>
+        </li>
+        <li>
+          <span class="badge"><span class="run-blue"></span></span>
+          <h3>Orientation Days</h3>
+          <p>If your skiing or boarding meets the expectation, you'll come back for two Orientation Days
+             following the Ski Test weekend &mdash; shadowing the patrol from the 8:00 a.m. morning meeting
+             until closing sweeps are &quot;down and clear&quot; (usually around 4:45 p.m.).</p>
+        </li>
+        <li>
+          <span class="badge"><span class="run-blue"></span></span>
+          <h3>Outdoor Emergency Care (OEC)</h3>
+          <p>Complete the OEC first aid course, including professional CPR, a written test, and a practical
+             exam. The hybrid course runs in two sections: Online (June&ndash;August, concluding with the written
+             exam) and Hands-On (September&ndash;October, twice a week, 3+ hours per class, finishing with the
+             practical skills exam). Three on-the-hill working classes follow at the start of the ski season.</p>
+        </li>
+        <li>
+          <span class="badge"><span class="run-black"></span></span>
+          <h3>Ski &amp; Toboggan Training</h3>
+          <p>Following OEC, you enter S&amp;T training at Brighton &mdash; about 6 weekends on the snow,
+             concluding with a practical evaluation of your skiing and toboggan-handling skills.</p>
+        </li>
+        <li>
+          <span class="badge"><span class="run-dblack"><span></span><span></span></span></span>
+          <h3>Mentoring &amp; Sign-Off</h3>
+          <p>Sign up for patrol days of your choice, work through your mentoring milestones, and get signed off.</p>
+        </li>
+        <li>
+          <span class="badge"><span class="run-summit">&#127956;</span></span>
+          <h3>Full Patroller!</h3>
+          <p>You made it &mdash; you're part of the team. Starting the following season, you're eligible
+             for full benefits (see Perks and Requirements below).</p>
+        </li>
+      </ul>
+    </div>
 
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-If you fit this description, can emulate these behaviors, and want to take the steps and commitment necessary to become a Volunteer Patroller, please complete the form at the bottom of this page.  If you have any questions, please feel free to contact:
-<br>
+    <!-- ============ Pull quote ============ -->
+    <div class="quote">
+      <div>Patrollers are&hellip;</div>
+      <div class="big">People who have a desire to help people</div>
+      <div class="and">AND</div>
+      <div class="big">People who love to Ski and Board</div>
+    </div>
 
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-<B>Open House</B><br>
-At the Open House you spend a day skiing with the patrol. The training staff will inform you if your skiing or boarding skills are at a level to continue the process of becoming a patroller, or if you need more practice.   You must be at least 17 years old.
+    <!-- ============ Perks & requirements ============ -->
+    <div class="card">
+      <h2>Perks &amp; Requirements for Full-Time Volunteer Patrollers</h2>
+      <div class="perks-grid">
+        <div>
+          <h3>Your Commitment (per season)</h3>
+          <ul class="commit">
+            <li>16&ndash;18 weekend days</li>
+            <li>3&ndash;5 nights</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Your Patrol Benefits</h3>
+          <ul>
+            <li>Fulfillment of the desire to help others</li>
+            <li>Camaraderie with fellow skiers</li>
+            <li>First-response knowledge, ability, and experience</li>
+            <li>1st year (training year): skiing privileges up to 3&times; a week &mdash; must be current on training!</li>
+            <li>2nd year and beyond: Season Pass</li>
+            <li>Ski Pass (credits or family program)
+              <ul>
+                <li>Credits (new details coming soon)</li>
+                <li>Family Program (new details coming soon)</li>
+              </ul>
+            </li>
+            <li>Canyon UTA bus pass</li>
+            <li>Discounts on ski lessons and rentals (for you and dependents)</li>
+            <li>Discounts on food</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-<B>Orientation Days</B><br>
-If your skiing or boarding level meets the expectation, you will be asked to come back for two (2) Orientation Days following the Ski Test weekend.  During Orientation, you will shadow the patrol, beginning with morning meeting at 8:00 a.m. (same meeting location) and concluding after closing sweeps are "down and clear" for the day (usually around 4:45 p.m.).
+    <!-- ============ Application form ============ -->
+    <div class="card form-card">
+      <h2>Request an Application</h2>
+      <p class="form-sub">Brighton Ski Patrol &mdash; <span class="req">*</span> indicates required fields</p>
 
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-<B>Outdoor Emergency Care Training</B><br>
-  The next step in the process is to complete the Outdoor Emergency Care (OEC) first aid course, which includes
-  professional CPR, written first aid test, and a practical first aid test. We use a hybrid course structure that is
-  split into two sections, Online and Hands On.  The Online section will run Jun through Aug which concentrates on the
-  book and concludes with a written exam.  The Hands On section will run Sep through Oct, meeting twice a week for 3+
-  hours a class, finishing with a practical skills exam.
-  Additionally there will be three on-the-hill working classes at the beginning of the ski season.
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-<B>Ski and Toboggan Training</B><br>
-  Following OEC, you enter Ski and Toboggan training (S&T). This training happens at Brighton over the course of approximately 6 weeks, on Weekends.  At the conclusion of S&T training, you will have a practical evaluation of your Skiing and Toboggan Handling Skills.
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-<B>Mentoring and Sign-Off</B><br>
-At this point, you sign up for patrol days of your choice, and once you've signed off certain mentoring milestones you are considered a full patroller!  At the start of the following season you will be eligible for full benefits (see Perks and Requirements below). 
-<!-- ------- -->
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-<p align=center style='margin-top:0in;margin-right:0in;margin-left:.5in;margin-bottom:.0001pt;text-align:center'>
-<b style='mso-bidi-font-weight:normal'><span style='font-size:24.0pt;color:black'>
-Patrollers are:
-</span></b></p>
+      <form action="/calendar-1/VolunteerForm" name="myForm" onsubmit="return validateFields()" method="POST">
+        <input type="hidden" name="resort" value="Brighton">
+        <input type="hidden" name="ID" value="192443">
 
-<p align=center style='margin-top:0in;margin-right:0in;margin-left:.5in;margin-bottom:.0001pt;text-align:center'>
-<b style='mso-bidi-font-weight:normal'><span style='font-size:24.0pt;color:black'>
-People who have a desire to help people
-</span></b></p>
+        <div class="grid">
+          <div>
+            <label><span class="req">*</span> First Name</label>
+            <input name="firstName" type="text">
+          </div>
+          <div>
+            <label><span class="req">*</span> Last Name</label>
+            <input name="lastName" type="text">
+          </div>
 
-<p align=center style='margin-top:0in;margin-right:0in;margin-left:.5in;margin-bottom:.0001pt;text-align:center'>
-<b style='mso-bidi-font-weight:normal'><span style='font-size:24.0pt;color:black'>
-AND
-</span></b></p>
+          <div class="full">
+            <label>Address</label>
+            <input name="address" type="text">
+          </div>
 
-<p align=center style='margin-top:0in;margin-right:0in;margin-left:.5in;margin-bottom:.0001pt;text-align:center'>
-<b style='mso-bidi-font-weight:normal'><span style='font-size:24.0pt;color:black'>
-People who love to Ski and Board
-</span></b></p>
-<br><br>
+          <div class="grid-3">
+            <div>
+              <label>City</label>
+              <input name="city" type="text">
+            </div>
+            <div>
+              <label>State</label>
+              <input name="state" type="text">
+            </div>
+            <div>
+              <label>Zip</label>
+              <input name="zip" type="text">
+            </div>
+          </div>
 
-<b>Perks and Requirements for Full-time Volunteer Patrollers</b><br>
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-Required Number of Patrol Days per Season
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-&nbsp;&nbsp;&nbsp;* 16-18 weekend days<br>
-&nbsp;&nbsp;&nbsp;* 3-5 nights<br>
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-Your Patrol Benefits
-<p class=MsoNormal style='margin-right:0.0pt'></p>
-&nbsp;&nbsp;&nbsp;* - Fulfillment of desire to help others<br>
-&nbsp;&nbsp;&nbsp;* - Camaraderie with fellow skiers<br>
-&nbsp;&nbsp;&nbsp;* - First response knowledge, ability and experience<br>
-&nbsp;&nbsp;&nbsp;* - 1st year (Training year): Skiing privileges up to 3 times a week.  Must be current on training!<br>
-&nbsp;&nbsp;&nbsp;* - 2nd year and beyond: Season Pass<br>
-&nbsp;&nbsp;&nbsp;* - Ski Pass (credits or family program)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* - Credits (New details coming soon)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;* - Family Program (New details coming soon)<br>
-&nbsp;&nbsp;&nbsp;* - Canyon UTA bus pass<br>
-&nbsp;&nbsp;&nbsp;* - Discounts on ski lessons and ski rentals (for yourself and dependents)<br>
-&nbsp;&nbsp;&nbsp;* - Discounts on food<br><br>
+          <div>
+            <label><span class="req">*</span> Phone Number</label>
+            <input name="cellNumber" type="text">
+          </div>
+          <div>
+            <label><span class="req">*</span> Email Address</label>
+            <input name="email" type="text">
+          </div>
 
-<br>
+          <div class="full">
+            <label><span class="req">*</span> How many years have you skied or boarded?</label>
+            <input name="yearsSkied" type="text" style="max-width: 110px;">
+          </div>
 
-<p style='margin-top:0in;margin-right:-63.35pt;margin-left:
-0in;margin-bottom:.0001pt'><span style='font-size:11.0pt;mso-bidi-font-size:
-12.0pt;color:black'>Please fill out and submit the form out below</span></p>
+          <div class="full">
+            <label><span class="req">*</span> Tell us about you and your boarding or skiing experience</label>
+            <textarea name="skiExperience" rows="6" title="experience"></textarea>
+          </div>
+        </div>
 
-<p align=center style='margin:0in;margin-bottom:.0001pt;text-align:center'><b
-style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
-style='font-size:14.0pt;color:black'>Brighton Ski Patrol</span></i></b></p>
+        <div class="submit-row">
+          <input type="submit" value="Submit Application">
+        </div>
+      </form>
+    </div>
 
-<p align=center style='margin:0in;margin-bottom:.0001pt;text-align:center'><b
-style='mso-bidi-font-weight:normal'><i style='mso-bidi-font-style:normal'><span
-style='font-size:14.0pt;color:black'>Request for application</span></i></b></p>
-
-<font color="red">*</font> Indicates required fields.<br><br>
-<form action="/calendar-1/VolunteerForm" target="main" name="myForm" onsubmit="return validateFields()" method="POST">&nbsp;&nbsp;
-  <INPUT TYPE='HIDDEN' NAME='resort' VALUE='Brighton'>
-  <INPUT TYPE='HIDDEN' NAME='ID' VALUE='192443'>
-<font color="red">*</font>First Name:&nbsp;<input name="firstName" type="text" size="14">&nbsp;&nbsp;&nbsp;
-Last Name:&nbsp;<input name="lastName" type="text" size="14"><br><br>&nbsp;&nbsp;
-Address:&nbsp;<input name="address" type="text" size="32"><br><br>&nbsp;&nbsp;
-City:&nbsp;<input name="city" type="text" size="32">&nbsp;&nbsp;
-State:&nbsp;<input name="state" type="text" size="12">&nbsp;&nbsp;
-Zip:&nbsp;<input name="zip" type="text" size="8"><br><br>&nbsp;&nbsp;
-<font color="red">*</font>Phone number:&nbsp;<input name="cellNumber" type="text" size="14"><br><br>&nbsp;&nbsp;
-<font color="red">*</font>Email Address: <input name="email" type="text" size="30"><br><br>&nbsp;&nbsp;
-<font color="red">*</font>How many years have you skied or boarded? <input name="yearsSkied" type="text" size="3"><br><br>&nbsp;&nbsp;
-<font color="red">*</font>Tell us about you and your boarding or skiing experience:<br>
-     <textarea name="skiExperience" cols="90" rows="6" title="experience"></textarea>
-
-<br><br>&nbsp;&nbsp;
-<input type="submit" value="Submit Application">
-<br><br>&nbsp;&nbsp;
-</form>
-
-</div>
+  </div>
 
 </body>
-
+</html>
