@@ -1,5 +1,6 @@
 <?php 
  require("config.php");
+ mysqli_report(MYSQLI_REPORT_OFF);
  $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
  mysqli_select_db($connect_string, $mysqli_db);
  $strToday = "uninitialized";
