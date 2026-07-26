@@ -1,7 +1,8 @@
 <?php 
  require("config.php");
- $connect_string = @mysql_connect($mysql_host, $mysql_username, $mysql_password) or die ("Could not connect to the database.");
- $strToday = "uninitialized";   
+ $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
+ mysqli_select_db($connect_string, $mysqli_db);
+ $strToday = "uninitialized";
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
@@ -74,8 +75,8 @@
 	$today=mktime($arrDate['hours'], $arrDate['minutes'], 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
 	$strToday = date("m/d/Y g:i a", $today);
     $query_string = "SELECT * FROM roster WHERE IDNumber=$id";
-	$result = @mysql_db_query($mysql_db, $query_string) or die ("Invalid query member id [$id] not recognized");
-	if ($row = @mysql_fetch_array($result)) {
+	$result = @mysqli_query($connect_string, $query_string) or die ("Invalid query member id [$id] not recognized");
+	if ($row = @mysqli_fetch_array($result)) {
 		$firstName = $row["FirstName"];
 		$lastName = $row["LastName"];
 	}
