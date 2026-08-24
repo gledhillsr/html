@@ -3,7 +3,7 @@ $patrols = [
     ["name" => "Afton Alps", "href" => "/Afton", "img" => "images/AftonLogo.jpg"],
     ["name" => "Andes Tower Hills", "href" => "/Andes", "img" => "images/andes_logo.jpg"],
     ["name" => "Antelope Butte", "href" => "/AntelopeButte", "img" => "images/AntelopeButte.png"],
-    ["name" => "BigRock", "href" => "/BigRock", "img" => "images/BigRock.jpeg"],
+//     ["name" => "BigRock", "href" => "/BigRock", "img" => "images/BigRock.jpeg"],
     ["name" => "Black River Basin", "href" => "/BlackjackMountain", "img" => "images/SnowRiver.png"],
     ["name" => "Black Mountain", "href" => "/BlackMountain", "img" => "images/BlackMountain2.png"],
     ["name" => "Brighton", "href" => "/Brighton", "img" => "images/Brighton.gif"],
@@ -11,7 +11,7 @@ $patrols = [
     ["name" => "Casper Mountain", "href" => "/CasperMountain", "img" => "images/CasperMountain.png"],
     ["name" => "Coffee Mill", "href" => "/CoffeeMill", "img" => "images/CoffeeMillLogo.png"],
     ["name" => "Detroit Mountain", "href" => "/DetroitMountain", "img" => "images/DetroitMountain.png"],
-    ["name" => "Devil's Head", "href" => "/DevilsHead", "img" => "images/DevilsHeadSkiPatrol.png"],
+//    ["name" => "Devil's Head", "href" => "/DevilsHead", "img" => "images/DevilsHeadSkiPatrol.png"],
     ["name" => "Grand Targhee Hosts", "href" => "/GrandTargheeHosts", "img" => "images/GrandTarghee.jpg"],
     ["name" => "Great Divide", "href" => "/GreatDivide", "img" => "images/GreatDivide.jpg"],
     ["name" => "Hermon Mountain", "href" => "/HermonMountain", "img" => "images/HermonMountain.jpg"],
@@ -44,8 +44,8 @@ $patrols = [
     ["name" => "Soldier Mountain", "href" => "/SoldierMountain", "img" => "images/SoldierMountain.gif"],
     ["name" => "Steeplechase", "href" => "/Steeplechase", "img" => "images/Steeplechase.png"],
     ["name" => "Teton Valley Mountain Patrol", "href" => "/GrandTarghee", "img" => "images/GrandTarghee.jpg"],
-    ["name" => "White Pine", "href" => "/WhitePine", "img" => "images/WhitePine.jpg"],
-    ["name" => "Willamette Backcountry", "href" => "/Willamette", "img" => "images/Willamette.jpeg"],
+//    ["name" => "White Pine", "href" => "/WhitePine", "img" => "images/WhitePine.jpg"],
+//    ["name" => "Willamette Backcountry", "href" => "/Willamette", "img" => "images/Willamette.jpeg"],
 ];
 ?>
 <!DOCTYPE html>
