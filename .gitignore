@@ -1,8 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 *.class
-screenshots/dbconfig.php
-screenshots8/dbconfig.php
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -26,5 +24,15 @@ out/
 nspImages/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-environment.ini
+
+# --- Credentials: never commit ---------------------------------------
+# Real values live in ../hiddenFiles/, which mirrors the deploy paths.
+# Bare filenames so these match at ANY depth, not just the resort dirs
+# that happened to exist when a rule was written.
+dbconfig.php
+credentials.properties
 config_secure.php
+environment.ini
+# NOTE: `config.php` above is a per-resort file that IS tracked, holding
+# placeholder values only. The ignore rule does not untrack the existing
+# copies -- editing one in place on a server can still be committed.
