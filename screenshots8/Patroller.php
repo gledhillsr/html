@@ -76,38 +76,34 @@
 //-------------------
 // getSQLRosterInsert
 //-------------------
-     function getSQLRosterInsert($table) {
-        return "INSERT INTO `" . $table . "` VALUES ("
-            . "'". $this->IDNumber
-            . "', '" . $this->ClassificationCode
-            . "', '" . $this->LastName
-            . "', '" . $this->FirstName
-            . "', '" . $this->Spouse
-            . "', '" . $this->Address
-            . "', '" . $this->City
-            . "', '" . $this->State
-            . "', '" . $this->ZipCode
-            . "', '" . $this->HomePhone
-            . "', '" . $this->WorkPhone
-            . "', '" . $this->CellPhone
-            . "', '" . $this->Pager
-            . "', '" . $this->email
-            . "', '" . $this->EmergencyCallUp
-            . "', '" . $this->Password
-            . "', '" . $this->NightSubsitute
-            . "', '" . $this->Commitment
-            . "', '" . $this->Instructor
-            . "', '" . $this->Director
-            . "', '" . $this->lastUpdated
-            . "', '" . $this->carryOverCredits
-            . "', '" . $this->lastCreditUpdate
-            . "', '" . $this->canEarnCredits
-            . "', '" . $this->creditsEarned
-            . "', '" . $this->creditsUsed
-            . "', '" . $this->teamLead
-            . "', '" . $this->mentoring
-            . "', '" . $this->comment
-            . "');";
+     // $connect_string is the mysqli link the INSERT will run on; it is used to
+     // escape the values. Names like O'Brien used to abort the whole sync.
+     function getSQLRosterInsert($table, $connect_string = null) {
+        $columns = array(
+            "IDNumber", "ClassificationCode", "LastName", "FirstName", "Spouse",
+            "Address", "City", "State", "ZipCode", "HomePhone", "WorkPhone",
+            "CellPhone", "Pager", "email", "EmergencyCallUp", "Password",
+            "NightSubsitute", "Commitment", "Instructor", "Director",
+            "lastUpdated", "carryOverCredits", "lastCreditUpdate",
+            "canEarnCredits", "creditsEarned", "creditsUsed", "teamLead",
+            "mentoring", "comments");
+
+        $names = array();
+        $values = array();
+        foreach ($columns as $column) {
+            $value = isset($this->$column) ? $this->$column : "";
+            if ($connect_string) {
+                $value = mysqli_real_escape_string($connect_string, $value);
+            } else {
+                $value = addslashes($value);
+            }
+            $names[]  = "`" . $column . "`";
+            $values[] = "'" . $value . "'";
+        }
+
+        return "INSERT INTO `" . $table . "` ("
+            . implode(", ", $names) . ") VALUES ("
+            . implode(", ", $values) . ");";
      }
 
  //==========================
@@ -146,7 +142,7 @@
  	" `creditsUsed` smallint(6) NOT NULL default '0'," .
  	" `teamLead` tinyint(4) NOT NULL default '0'," .
  	" `mentoring` tinyint(4) NOT NULL default '0'," .
- 	" `comments` text NOT NULL default ''," .
+ 	" `comments` text NOT NULL," .   // MySQL 8: TEXT columns cannot have a DEFAULT
  	" PRIMARY KEY  (`IDNumber`)" .
  	" );";
  }

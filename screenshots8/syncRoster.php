@@ -12,6 +12,7 @@ if (file_exists ( "runningFromWeb.php" )) {
 
 
 $roster = [];
+$count = 0;
 
  //Contants
 $SHOW_DEBUG = true;
@@ -143,23 +144,23 @@ showProgressIndicator();
         //STARTING FIRST BLOCK OF NAMES: SETUP TEMPORARY DATABASE TABLES
         //delete previous temp roster
         $query_string = getSQLRosterDrop($tmp_roster);
-        $result = @mysqli_query($connect_string, $query_string) or die ("Error: new_roster DROP Failed on " . $query_string . " MYSQL error:" .mysqli_error() );
+        $result = @mysqli_query($connect_string, $query_string) or die ("Error: new_roster DROP Failed on " . $query_string . " MYSQL error:" .mysqli_error($connect_string) );
         echo "&nbsp;&nbsp;&nbsp;'$tmp_roster' DROP Successful<br>";
 
         //create temp roster
         $rosterDB = new Patroller();
         $query_string = $rosterDB->getSQLRosterCreate($tmp_roster);
+        $result = @mysqli_query($connect_string, $query_string) or die ("  - $tmp_roster CREATE Failed on " . $query_string . " MYSQL error:" . mysqli_error($connect_string) );
         echo "&nbsp;&nbsp;&nbsp;'$tmp_roster' CREATE Successful<br>";
-        $result = @mysqli_query($connect_string, $query_string) or die ("  - $tmp_roster CREATE Failed on " . $query_string . " MYSQL error:" . mysqli_error() );
     }
 
     reset($roster);
     $count = 0;
     foreach ($roster as $key => $val) {
-        $query_string = $val->getSQLRosterInsert($tmp_roster);
+        $query_string = $val->getSQLRosterInsert($tmp_roster, $connect_string);
         //====================================================================
         if ($SHOW_DEBUG) echo $query_string . "<br>";
-        $result = @mysqli_query($connect_string, $query_string) or die ("  - $tmp_roster INSERT Failed on " . $query_string . " MYSQL error:" . mysqli_error());
+        $result = @mysqli_query($connect_string, $query_string) or die ("  - $tmp_roster INSERT Failed on " . $query_string . " MYSQL error:" . mysqli_error($connect_string));
         echo ".";
         //====================================================================
         $count++;
@@ -174,7 +175,7 @@ showProgressIndicator();
     if($recordsProcessed + $count >= $totalPatrollers) {
         $new_roster = "roster_" . $suffix;
         $query_string = "DROP TABLE IF EXISTS " . $new_roster . ";";
-        $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error() );
+        $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error($connect_string) );
         echo "&nbsp;&nbsp;&nbsp;'$query_string' was Successful<br>";
         if($runningFromWeb) {
             echo "<font color='red' size=4>Synchronization is <b>Disabled</b> while viewing from web. ROSTER NEVER UPDATED</font><br>";
@@ -182,11 +183,11 @@ showProgressIndicator();
         }
         else {
             $query_string = "RENAME TABLE roster TO $new_roster;";
-            $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error() );
+            $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error($connect_string) );
             echo "&nbsp;&nbsp;&nbsp;'$query_string' was Successful<br>";
 
             $query_string = "RENAME TABLE $tmp_roster TO roster;";
-            $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error() );
+            $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error($connect_string) );
             echo "&nbsp;&nbsp;&nbsp;'$query_string' was Successful<br>";
         }
     }  //end renaming roster tables
