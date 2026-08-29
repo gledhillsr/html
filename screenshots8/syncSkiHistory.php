@@ -76,6 +76,25 @@ class SkiHistory {
 	$this->name = $row['name'];
   }
 
+  //The row as the upload endpoint wants it: column name to value, matching the
+  //skihistory table exactly.  Values go as strings; the web site writes them
+  //through a prepared statement, so MySQL converts them back on the way in.
+  function toRow() {
+      return [
+          "date"         => (string)$this->date,
+          "checkin"      => (string)$this->checkin,
+          "areaID"       => (string)$this->areaID,
+          "shift"        => (string)$this->shift,
+          "value"        => (string)$this->value,
+          "multiplier"   => (string)$this->multiplier,
+          "patroller_id" => (string)$this->patroller_id,
+          "history_id"   => (string)$this->history_id,
+          "sweep_ids"    => (string)$this->sweep_ids,
+          "teamLead"     => (string)$this->teamLead,
+          "name"         => (string)$this->name,
+      ];
+  }
+
   function getSQLSkiHistoryDelete($table) {
 	    return "DELETE FROM `" . $table . "` WHERE `history_id`='" . $this->history_id . "'";
   }
@@ -280,91 +299,66 @@ $historiesProcessed = 0;
     @mysqli_close($connect_string);
     @mysqli_free_result($result);
 
-// ===================================
-// ===== OPEN REMOTE SKIHISTORY ======
-// ===================================
-    if ($SHOW_DEBUG) echo "open remote connection ($gledhills_host)<br>\n";
-    $connect_string = @mysqli_connect($gledhills_host, $mysqli_username, $gledhills_mysqli_password) or die ("Could not connect to the database.");
-mysqli_select_db($connect_string, $mysqli_db);
-setMySQLTimezone($connect_string);
-    $remote_history_table = "skihistory";
-    $query_string = "SELECT COUNT(history_id) AS count  FROM $remote_history_table WHERE 1";
+// ==========================================================
+// ===== SEND THE HISTORY UP TO THE WEB SITE ================
+// ==========================================================
+// This used to open a MySQL connection to gledhills.com and reconcile the two
+// tables row by row from here - a SELECT of the whole remote table, then an
+// INSERT, DELETE or DELETE+INSERT per differing row, each its own round trip.
+// Port 3306 there is firewalled, so it could not run at all, and it needed a
+// production database credential on this machine.
 //
-//    echo "****** query_string=" . $query_string . "<br>\n";
-    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 2 skihistory)");
-    if ($row = @mysqli_fetch_array($result)) {
-    $historiesProcessed=$row['count'];
-//    echo "****** REMOTE ski histories=" . $historiesProcessed . "<br>\n";
-echo "YTD -gledhills.com- ski histories to compare=$historiesProcessed<br>";
-    }
+// The whole local table now goes up in one POST and the web site does the
+// reconciling.  Same end state: rows it does not have are added, rows that
+// differ are replaced, rows this machine no longer has are removed.
+if (empty($lockerApiUrl) || empty($lockerApiKey)) {
+    die("<h2>Not configured: set \$lockerApiUrl and \$lockerApiKey in dbconfig.php</h2>");
+}
 
-    $query_string = "SELECT * FROM $remote_history_table WHERE 1";
-    if ($SHOW_DEBUG) echo "$query_string<br>\n";
-    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 22 skiHistory)");
-    while ($row = @mysqli_fetch_array($result)) {
-        $tmp = new SkiHistory();
-        $lastID = $row['history_id'];
-    //echo "id=" . $lastID . "<br>\n";
-        $tmp->read_info($row);
-        $k = $tmp->getHistoryID();
-        $remoteSkiHistory[$k] = $tmp;
-    }
+$rows = [];
+foreach ($localSkiHistory as $historyID => $val) {
+    $rows[] = $val->toRow();
+}
+echo "sending " . count($rows) . " ski history records to the web site...<br>\n";
+flush();
 
-    // ********************************************************************
-    // remove non-duplicate from gledhills.com  (may have used same "history_id" key 
-    // ********************************************************************
-echo "remove non-duplicate from gledhills.com<br>";
-    reset($localSkiHistory);
-    reset($remoteSkiHistory);
-//loop through gledhills, and remove mismatched values
-    foreach ($remoteSkiHistory as $historyID => $val) {
-        //        echo "historyID=$historyID local=".$localSkiHistory[$historyID]." , remote=" . $remoteSkiHistory[$historyID] . "<br>";
-        if(array_key_exists($historyID,$localSkiHistory)) {
-        } else {
-            echo "remote key value: $historyID, does NOT exist in local<br>";
-            echo "removing key,value from remote<br>";
-            $query_string = $val->getSQLSkiHistoryDelete($remote_history_table);
-            echo "$query_string<br>";
-            $result = @mysqli_query($connect_string, $query_string) or die ("  - $remoteSkiHistory DELETE Failed on " . $query_string . " MYSQL error:" . mysqli_error());
+$url = rtrim($lockerApiUrl, "/") . "/skihistory?resort=" . rawurlencode($lockerResort);
+if (isset($force) && $force) {
+    $url .= "&force=true";
+}
+$answer = webPost($url, $lockerApiKey, ["rows" => $rows]);
 
-        }
-    }
-//echo "time=" .date("h:i:s ") ."<br>" ;
-//loop through local, and 
-//  1) if does NOT exist, then add it to remote (no chance of key dup (test was above, and table defines history_id as unique)
-//  2) else test if equal
-//     if NOT equal, then update remote
-    $count = 0;
-    foreach ($localSkiHistory as $historyID => $val) {
-        //        echo "historyID=$historyID local=".$localSkiHistory[$historyID]." , remote=" . $remoteSkiHistory[$historyID] . "<br>";
-        if(!array_key_exists($historyID,$remoteSkiHistory)) {
-            $query_string = $val->getSQLSkiHistoryInsert($remote_history_table);
-            echo "$query_string<br>";
-            $result = @mysqli_query($connect_string, $query_string) or die ("  - $remoteSkiHistory INSERT Failed on " . $query_string . " MYSQL error:" . mysqli_error());
-        } else {
-            $rem_sh = $remoteSkiHistory[$historyID];
-            if($rem_sh->toString() != $val->toString()) {
-echo "UPDATING ski history record on remote machine.  For: ".$val->toString()."<br>";
-                $query_string = $val->getSQLSkiHistoryDelete($remote_history_table);
-                $result = @mysqli_query($connect_string, $query_string) or die ("  - $remoteSkiHistory DELETE Failed on " . $query_string . " MYSQL error:" . mysqli_error());
-                $query_string = $val->getSQLSkiHistoryInsert($remote_history_table);
-                $result = @mysqli_query($connect_string, $query_string) or die ("  - $remoteSkiHistory INSERT Failed on " . $query_string . " MYSQL error:" . mysqli_error());
-            } else {
-                $count += 1;
-            }
-        }
-    }
-echo $count . " exact duplicates between the data bases<br>";
-//echo "time=" .date("h:i:s ") ."<br>" ;
-//now loop through the skihistory, and verify what is on the calendar
-    reset($localSkiHistory);
-//loop through gledhills, and remove mismatched values
-echo "remove mis-matches on gledhills.com<br>";
-echo "Note to Steve:  This still needs to be cleaned up<br>";
+if ($answer['error'] !== "") {
+    die("<h2>Could not reach the web site: " . htmlspecialchars($answer['error']) . "</h2>");
+}
+$apiResult = json_decode($answer['body'], true);
+if (!is_array($apiResult)) {
+    die("<h2>HTTP " . $answer['status'] . ": unreadable answer</h2>");
+}
+
+if ($answer['status'] == 409 && isset($apiResult['refused'])) {
+    //the web site would have deleted a large share of its history - almost always a sign
+    //that the local database is incomplete rather than a real correction
+    echo "<h2 style='color:#C00000'>Upload refused</h2>\n";
+    echo htmlspecialchars($apiResult['refused']) . "<br><br>\n";
+    echo "If the local ski history really is correct and the web site should match it, ";
+    echo "<a href=\"syncSkiHistory.php?force=1\">click here to upload anyway</a>.<br>\n";
+}
+else if ($answer['status'] != 200) {
+    $msg = isset($apiResult['error']) ? $apiResult['error'] : "unexpected answer";
+    echo "<h2 style='color:#C00000'>HTTP " . $answer['status'] . ": " . htmlspecialchars($msg) . "</h2>\n";
+}
+else {
+    echo "<b>" . (int)$apiResult['inserted'] . "</b> added, ";
+    echo "<b>" . (int)$apiResult['updated']  . "</b> updated, ";
+    echo "<b>" . (int)$apiResult['deleted']  . "</b> removed, ";
+    echo "<b>" . (int)$apiResult['unchanged'] . "</b> already matched.<br>\n";
+}
+
 echo "<br><br>Done.<br>";
-//close last connection
-@mysqli_close($connect_string);
-@mysqli_free_result($result);
+//The local connection was closed before the upload, and there is no remote
+//connection any more - closing $connect_string again here is a fatal error
+//in PHP 8 ("mysqli object is already closed"), which @ does not suppress.
 
 
 ?>

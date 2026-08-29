@@ -6,20 +6,25 @@
 <meta HTTP-EQUIV="Expires" CONTENT="-1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
 <title>Unassigned</title>
+<?php require("patrol_dialog.php"); ?>
 <script language="JavaScript">
 function saveit() {
-	alert("save button NOT working yet");
+	patrolAlert("save button NOT working yet");
+	return false;	//hold the submit, otherwise the page navigates out from under the message
 } 
   function lockout(lock) {
   	if(lock)
-  		alert("Lock-out is not enabled yet");
+  		patrolAlert("Lock-out is not enabled yet");
   	else {
-		var password;
-		password=prompt("Enter password to Unlock Login's",' ');
-		if (password=="patrick")
-	  		alert("REMOVE Lock-out is not enabled yet");
-	  	else
-	  		alert("Sorry, wrong password");
+		//patrolPrompt is asynchronous - the typed password arrives in the callback
+		patrolPrompt("Enter password to Unlock Login's", "", function (password) {
+			if (password === null)
+				return;	//Cancel
+			if (password=="patrick")
+				patrolAlert("REMOVE Lock-out is not enabled yet");
+			else
+				patrolAlert("Sorry, wrong password");
+		}, "password");
   	}
   }
   
@@ -199,7 +204,7 @@ else
   window.onload=startit
 </script>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="submit" value="Save Changes" name="saveBtn"  onclick="saveit()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Save Changes" name="saveBtn"  onclick="return saveit()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <br>
 <br>
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="800" id="AutoNumber1">

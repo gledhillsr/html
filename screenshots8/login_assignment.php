@@ -301,6 +301,7 @@ else {
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
     <meta HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
     <meta HTTP-EQUIV="Expires" CONTENT="-1"/>
+<?php require("patrol_dialog.php"); ?>
     <script language="JavaScript">
         <!--
 
@@ -340,6 +341,58 @@ else {
             document.myForm.saveBtn.disabled = false;
         }
 
+        var leadershipAnswered = false;
+
+        //Ask whether this patroller wants the open Team Lead / Asst Team Lead slot in
+        //the area they picked, then finish the save.  Only the four mountain areas
+        //(0-3) carry leadership slots; Training and Staff do not.
+        function askLeadership() {
+            var i, picked = -1;
+            for (i = 0; i <= 3; ++i) {
+                if (document.myForm.areaID[i].checked) {
+                    picked = i;
+                    break;
+                }
+            }
+            if (picked < 0) {                 //Training, Staff, or nothing picked
+                finishSave();
+            } else if (TL[picked]) {
+                patrolConfirm("Do you want to be a Team Leader?", "Yes", "No", function (yes) {
+                    if (yes) {
+                        document.myForm.TeamLead.value = 1;
+                        teamLeader = 1;
+                        finishSave();
+                    } else {
+                        askAsstLeadership(picked);
+                    }
+                });
+            } else {
+                askAsstLeadership(picked);
+            }
+        }
+
+        function askAsstLeadership(picked) {
+            if (!ATL[picked]) {
+                finishSave();
+                return;
+            }
+            patrolConfirm("Do you want to be an Assistant Team Leader?", "Yes", "No", function (yes) {
+                if (yes) {
+                    document.myForm.TeamLead.value = 2;
+                    teamLeader = 2;
+                }
+                finishSave();
+            });
+        }
+
+        function finishSave() {
+            leadershipAnswered = true;
+            changesMade = false;
+            //re-click the real Save button so saveBtn is posted with the form;
+            //form.submit() would leave it out and the PHP save would not run.
+            document.myForm.saveBtn.click();
+        }
+
         function myButton(btn, hist_id) {
             madeChanges();
             changesMade = false;
@@ -354,44 +407,17 @@ else {
                 //reset
             } else if (btn == 1) {    //SAVE BUTTON
             <?php    if ($canBeTeamLead && $isWeekendMorning) { ?>
-                var i;
-                for (i = 0; i <= 3; ++i) {    //loop to see which area is checked
-                    //now
-                    if (document.myForm.areaID[i].checked) {
-                        value = document.myForm.areaID_available[i].value;
-                        //alert("value="+value);
-                        if (TL[i]) {
-                            if (confirm("Do you want to be a Team Leader? (OK = Yes, Cancel = No)")) {
-                                document.myForm.TeamLead.value = 1;
-                                teamLeader = 1;
-                                break;
-                            } else {
-                                value -= 1;
-                            }
-                        }
-                        if (ATL[i]) {
-                            if (confirm("Do you want to be an Assistant Team Leader?  (OK = Yes, Cancel = No)")) {
-                                document.myForm.TeamLead.value = 2;
-                                teamLeader = 2;
-                                break;
-                            } else {
-                                value -= 1;
-                            }
-                        }
-                        //alert("value="+value);
-//				if(value == 0) {
-////???
-//alert("Sorry, try a different area.  Only Team Lead or Assistant Team Lead is available here.");
-//document.myForm.TeamLead.value = -1;	//error, try again
-//document.myForm.areaID[i].checked = false;
-//				}
-                    }
+                //patrolConfirm() is asynchronous, so the leadership questions cannot be
+                //answered inline the way window.confirm() allowed.  Hold the submit,
+                //ask, then click Save again once leadershipAnswered is set.
+                if (!leadershipAnswered) {
+                    askLeadership();
+                    return false;
                 }
-                <?php }   ?>
-//        if(teamLeader == 1) alert("Team Leader of "+i);
-//        if(teamLeader == 2) alert("Assistant Team Leader of "+i);
+            <?php }   ?>
                 changesMade = false;
             }
+            return true;
         }
         //-->
     </script>
@@ -657,7 +683,7 @@ else {
     echo "<input type=\"HIDDEN\" name=\"shiftValue\" VALUE=\"$shiftValue\">\n";
     echo "<input type=\"HIDDEN\" name=\"ID\" VALUE=\"$ID\">\n";
     echo "<input type=\"HIDDEN\" name=TeamLead VALUE=0>\n";
-    echo "<input type=\"submit\" value=\"Save\" disabled name=\"saveBtn\" onclick=\"myButton(1,0)\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
+    echo "<input type=\"submit\" value=\"Save\" disabled name=\"saveBtn\" onclick=\"return myButton(1,0)\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n";
     if ($history_id) {
         echo "<input type=\"button\" value=\"Remove Assignment\" name=\"resetBtn\" onclick=\"myButton(2,$history_id)\">&nbsp;&nbsp;&nbsp;&nbsp;\n";
     }

@@ -22,49 +22,18 @@ $SHOW_DEBUG = true;
  //==========================
 
 function showProgressIndicator() {
-    global $connect_string, $startPatroller, $connect_string, $mysqli_host, $totalPatrollers, $recordsProcessed;
-    global $SHOW_DEBUG, $blockSize, $gledhills_host;
+    global $mysqli_host, $totalPatrollers, $lockerApiUrl;
 
-    if(isset($startPatroller)) {
-        //----------------------------------------------
-        // setup variables for ROSTER progress indicator (from gledhills.com)
-        //----------------------------------------------
-        //get total patroller count
-        $query_string = "SELECT COUNT(IDNumber) AS count  FROM roster WHERE 1";
-        $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result l Roster)");
-        if ($row = @mysqli_fetch_array($result)) {
-            $totalPatrollers=$row['count'];
-        }
-        echo "total patroller records on web to syncronize: $totalPatrollers<br>\n";
-        //get patrollers processed
-        $query_string = "SELECT COUNT(IDNumber) AS count  FROM roster WHERE IDNumber<=$startPatroller";
-        $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 2 Roster)");
-        if ($row = @mysqli_fetch_array($result)) {
-            $recordsProcessed=$row['count'];
-        }
-    } //end isset($startPatroller)
-
-    //setup progress indicator
+    //The counting queries that used to live here ran over a MySQL connection to
+    //gledhills.com. That connection is gone - the roster now arrives in one JSON
+    //response - so the total is simply how many members came back.
     echo "<div align=center>\n";
     echo "  <center>\n";
-    echo "<font size=5>---Downloading 'roster' from $gledhills_host to $mysqli_host---<br></font>\n";
-    // if(isset($startPatroller)) {
-    //     $left = 500  * $recordsProcessed / $totalPatrollers;
-    //     $right = 500 - $left;
-    // } else {
-    $left = 500;
-    $right = 0;
-    //}
-
-    //--------------------------------------
-    // display progress indicator for ROSTER
-    //--------------------------------------
+    echo "<font size=5>---Downloading 'roster' from the web site to $mysqli_host---<br></font>\n";
+    echo "<font size=2>$lockerApiUrl</font><br>\n";
     echo "  <table border=1 cellpadding=0 cellspacing=0 style=\"border-collapse: collapse\" bordercolor=\"#111111\" width=500 >\n";
     echo "    <tr>\n";
-    echo "      <td bgcolor=\"#0000FF\" width=$left>&nbsp;</td>\n";
-    // if(isset($startPatroller)) {
-    //     echo "      <td width=$right>&nbsp;</td>\n";
-    // }
+    echo "      <td bgcolor=\"#0000FF\" width=500>&nbsp;</td>\n";
     echo "    </tr>\n";
     echo "  </table>\n";
     echo "  </center>\n";
@@ -102,38 +71,49 @@ function showProgressIndicator() {
 $suffix = "old";
 $blockSize = 1000;
 
-     if ($SHOW_DEBUG) echo "connect to remote machine<br>";
-     $connect_string = @mysqli_connect($gledhills_host, $mysqli_username, $gledhills_mysqli_password) or die ("Could not connect to the database at $gledhills_host.");
- mysqli_select_db($connect_string, $mysqli_db);
-
+     //--------------------------------------------------------------
+     // Read the roster from the web site over HTTPS.
+     //
+     // This used to be a MySQL connection straight to gledhills.com, pulled down
+     // in blocks of $blockSize because the link was slow and remote. Port 3306
+     // there is firewalled, so that never actually worked from here - and it
+     // meant this machine held a production database credential. It is now one
+     // request to LockerRoomApiController, which returns every member at once,
+     // so the block paging is gone with it.
+     //
+     // NOTE: the response deliberately carries no Password / newPassword column.
+     // Nothing here ever read them, and getSQLRosterInsert() writes '' for a
+     // column it was not given, so tmp_roster keeps its shape.
+     //--------------------------------------------------------------
 showProgressIndicator();
 
-//----------------------------------------------------
-// copy block of names from remote ROSTER to localhost
-//----------------------------------------------------
- if(isset($startPatroller)) {
-    //read roster from local
-    $query_string = "SELECT * FROM roster WHERE IDNumber>$startPatroller ORDER BY IDNumber LIMIT $blockSize";
-    if($SHOW_DEBUG) echo "$query_string<br>";
-    $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 3 roster)");
-    $count = 0;
-    while ($row = @mysqli_fetch_array($result)) {
+if (isset($startPatroller)) {
+    if (empty($lockerApiUrl) || empty($lockerApiKey)) {
+        die("<h2>Not configured: set \$lockerApiUrl and \$lockerApiKey in dbconfig.php</h2>");
+    }
+    $url = rtrim($lockerApiUrl, "/") . "/roster?resort=" . rawurlencode($lockerResort);
+    if ($SHOW_DEBUG) echo "reading roster from $url<br>";
+
+    $answer = webFetch($url, $lockerApiKey);
+    if ($answer['error'] !== "") {
+        die("<h2>Could not reach the web site: " . htmlspecialchars($answer['error']) . "</h2>");
+    }
+    $data = json_decode($answer['body'], true);
+    if (!is_array($data) || !isset($data['members'])) {
+        $msg = (is_array($data) && isset($data['error'])) ? $data['error'] : "unreadable answer";
+        die("<h2>HTTP " . $answer['status'] . ": " . htmlspecialchars($msg) . "</h2>");
+    }
+
+    foreach ($data['members'] as $row) {
         $patroller = new Patroller();
-        $lastPatrollerID = $row['IDNumber'];
         $patroller->init_from_row_query($row);
-        $count += 1;
-        $tmp = $recordsProcessed + $count;
-        if ($SHOW_DEBUG) {
-            echo "reading from web. ID $lastPatrollerID ($tmp /$totalPatrollers)<br>";
-        } else {
-	        echo ".";
-	    }
         $roster[] = $patroller;
     }
-    echo "<br>\n";
-    echo "Reading 'roster' from $gledhills_host was Successful, now close remote connection.  Read $count patrollers.<br>";
+    $totalPatrollers = count($roster);
+    $count = $totalPatrollers;
+    $recordsProcessed = 0;
+    echo "Read $count patrollers from the web site.<br>";
 
-    @mysqli_close($connect_string);	//close gledhills.com connection
     $tmp_roster = "tmp_roster";
 
     echo "open local connection, and processing roster into $mysqli_host<br>";

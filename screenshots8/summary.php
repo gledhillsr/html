@@ -39,6 +39,7 @@ echo "$query_string<br>";
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
 <meta HTTP-EQUIV="Pragma" CONTENT="no-cache"/>
 <meta HTTP-EQUIV="Expires" CONTENT="-1"/>
+<?php require("patrol_dialog.php"); ?>
 <script language="JavaScript">
 <!--
 
@@ -46,7 +47,7 @@ function checkPassword() {
     if(document.myForm.Password.value == "pass")
         return true;
 
-    alert("Oops bad password");
+    patrolAlert("Oops bad password");
     return false;
 }
 
@@ -74,6 +75,7 @@ function checkPassword() {
           <td width="40" align="center">Bas</td>
           <td width="40" align="center">Aux</td>
           <td width="40" align="center">Can</td>
+          <td width="40" align="center">Other</td>
           <td width="40" align="center">Total</td>
         </tr>
 <?php 
@@ -90,12 +92,17 @@ function checkPassword() {
     $BasTotal = 0;
     $AuxTotal = 0;
     $CanTotal = 0;
-    for($i=-1; $i < $areaCount; $i++){
+    $OthTotal = 0;
+    //areas only - the Unassigned row (areaID -1) is no longer shown, so the
+    //Total below is the sum of the rows above it rather than including a row
+    //that is not displayed
+    for($i=0; $i < $areaCount; $i++){
         $SrCnt =0;
         $SrACnt =0;
         $BasCnt =0;
         $AuxCnt =0;
         $CanCnt =0;
+        $OthCnt =0;
         $AreaCnt = 0;
         $query_string = "SELECT patroller_id, areaID FROM skihistory WHERE shift=0 AND date=$today AND areaID=$i";
 //echo "$query_string ";
@@ -111,21 +118,20 @@ function checkPassword() {
                 else if($class == "SRA") $SrACnt++;
                 else if($class == "BAS") $BasCnt++;
                 else if($class == "AUX") $AuxCnt++;
-                else                     $CanCnt++;
+                else if($class == "CAN") $CanCnt++;
+                else                     $OthCnt++;   //PRO, OTH, ALM, TRA, or anything new
                 $AreaCnt++;
             }
         }
 //echo "<br>\n";
         echo "<tr>\n";
-        if($i == -1)
-            echo "  <td>Unassigned</td>\n";
-        else
-            echo "  <td>$getAreaShort[$i]</td>\n";
+        echo "  <td>$getAreaShort[$i]</td>\n";
         echo "  <td align=\"center\">$SrCnt</td>\n";
         echo "  <td align=\"center\">$SrACnt</td>\n";
         echo "  <td align=\"center\">$BasCnt</td>\n";
         echo "  <td align=\"center\">$AuxCnt</td>\n";
         echo "  <td align=\"center\">$CanCnt</td>\n";
+        echo "  <td align=\"center\">$OthCnt</td>\n";
         echo "  <td align=\"center\" bgcolor=\"#E9E9E9\">$AreaCnt</td>\n";
         echo "</tr>\n";
         $SrTotal  += $SrCnt;
@@ -133,6 +139,7 @@ function checkPassword() {
         $BasTotal += $BasCnt;
         $AuxTotal += $AuxCnt;
         $CanTotal += $CanCnt;
+        $OthTotal += $OthCnt;
         $GrandTotal += $AreaCnt;
     }
     echo "<tr>\n";
@@ -142,6 +149,7 @@ function checkPassword() {
     echo "  <td  align=\"center\" bgcolor=\"#E9E9E9\">$BasTotal</td>\n";
     echo "  <td  align=\"center\" bgcolor=\"#E9E9E9\">$AuxTotal</td>\n";
     echo "  <td  align=\"center\" bgcolor=\"#E9E9E9\">$CanTotal</td>\n";
+    echo "  <td  align=\"center\" bgcolor=\"#E9E9E9\">$OthTotal</td>\n";
     echo "  <td  align=\"center\" bgcolor=\"#C0C0C0\">$GrandTotal</td>\n";
     echo "</tr>\n";
 ?>

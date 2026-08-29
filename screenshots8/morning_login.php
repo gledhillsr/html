@@ -1,5 +1,44 @@
 <?php 
 require("config.php");
+
+// --- testing time override (same rules as index.php / area_staffing.php / login_assignment.php) ---
+// Read-only here: index.php owns setting and clearing the cookie.
+if (isset($_POST['shiftOverride'])) {
+    $shiftOverride = (int)$_POST['shiftOverride'];
+} elseif (isset($_GET['shiftOverride'])) {
+    $shiftOverride = (int)$_GET['shiftOverride'];
+} elseif (isset($_COOKIE['shiftOverride'])) {
+    $shiftOverride = (int)$_COOKIE['shiftOverride'];
+} else {
+    $shiftOverride = 0;
+}
+if ($shiftOverride < 0 || $shiftOverride > 8) $shiftOverride = 0;
+
+$arrDate = getdate();
+if ($shiftOverride > 0) {
+    $sec = 0;
+    $min = 45;
+    switch ($shiftOverride) {
+    case 1: $currDayOfWeek = "Saturday";    $hr = 7;   break;
+    case 2: $currDayOfWeek = "Saturday";    $hr = 13;  break;
+    case 3: $currDayOfWeek = "Sunday";      $hr = 7;   break;
+    case 4: $currDayOfWeek = "Monday";      $hr = 7;   break;
+    case 5: $currDayOfWeek = "Monday";      $hr = 14;  break;
+    case 6: $currDayOfWeek = "Monday";      $hr = 17;  break;
+    case 7: $currDayOfWeek = "Monday";      $hr = 18;  break;
+    case 8: $currDayOfWeek = "Monday";      $hr = 23;  break;
+    default: $currDayOfWeek = "Saturday";   $hr = 7;   break;
+    }
+} else {
+    $currDayOfWeek = $arrDate['weekday'];
+    $sec = $arrDate['seconds'];
+    $min = $arrDate['minutes'];
+    $hr  = $arrDate['hours'];
+}
+$isWeekend = ($currDayOfWeek == "Saturday" || $currDayOfWeek == "Sunday");
+if ($shiftOverride > 0) {
+    echo " currDayOfWeek = " . $currDayOfWeek . " hr=" . $hr . " min=" . $min . "<br/>";
+}
 if (isset($delID) || isset($newID)) {
 //echo "shiftOverride -($shiftOverride)-";	//was testing override enabled?
 	$id = $newID ?? $delID;
@@ -49,6 +88,7 @@ echo "</body></html>\n";
 <meta HTTP-EQUIV="Expires" CONTENT="-1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
 <title>Brighton Ski Patrol</title>
+<?php require("patrol_dialog.php"); ?>
 <script language="JavaScript">
 <!--
 //verify that this is the top frame.  If it's not, them reload it as the top frame
@@ -61,7 +101,7 @@ var id = 0;
 
 //	 if(evt == null && index == 0)
 	 if((evt == null || evt == 0) && index == 0)
-				alert("Please Select your name.");
+				patrolAlert("Please select your name.");
 
     if(index > 0)
        id = document.myForm.pname.options[index].value;

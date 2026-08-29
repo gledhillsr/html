@@ -75,7 +75,10 @@ if ($shiftOverride > 0 && $shiftOverride <= 8) {
         if($area6)  updateHistory($area6,5);  //Staff
     }
 //echo "shiftOverride=" . $shiftOverride . "<br/>";
-echo " currDayOfWeek = " . $currDayOfWeek . " hr=" . $hr . " min=" . $min . "<br/>";
+//only while a testing time override is set - "Use actual time" shows nothing
+if ($shiftOverride > 0) {
+    echo " currDayOfWeek = " . $currDayOfWeek . " hr=" . $hr . " min=" . $min . "<br/>";
+}
 
     $totalPatrollers = 0;
 //============================================================
@@ -130,6 +133,110 @@ global $connect_string,$today;
 //echo "leaving<br>";
 }
 //============================================================
+//----------------- webColumn --------------------------------
+// The extra right-hand column behind "Display Staffing from Web!".
+//
+// Lists today's sign-ups from the production web site next to the locker-room
+// board, marking who has actually shown up.  Read-only: the rows are not
+// draggable and the live poller leaves this column alone.
+//
+// This used to open a MySQL connection straight to gledhills.com, which cannot
+// work - port 3306 there is firewalled - and which would have handed this
+// machine raw SQL access to production.  It now calls a JSON endpoint
+// (LockerRoomApiController in the patrolCalendar Java app) over HTTPS, which
+// needs no database credentials here at all.
+//
+// $local stays open throughout; the old version closed it here, which broke
+// everything rendered after this point.
+//============================================================
+function webColumn($local, $today, $getLBName) {
+    global $lockerApiUrl, $lockerApiKey, $lockerResort;
+
+    //who is signed in at the locker room today
+    $lockerIDList = [];
+    $result = @mysqli_query($local, "SELECT * FROM skihistory WHERE date=\"$today\" AND shift=0");
+    if ($result) {
+        while ($row = @mysqli_fetch_array($result)) {
+            $lockerIDList[$row['patroller_id']] = $getLBName[$row['areaID']] . " " . $row['name'];
+        }
+        @mysqli_free_result($result);
+    }
+
+    $out  = "  <td valign=\"top\">\n";
+    $out .= "  <div class=\"lb webcol\" id=\"WebLB\">\n";
+
+    if (empty($lockerApiUrl) || empty($lockerApiKey)) {
+        $out .= webRow("Web lookup is not configured", "err");
+        $out .= webRow("set \$lockerApiUrl and \$lockerApiKey in dbconfig.php", "err");
+        return $out . "  </div>\n</td>\n";
+    }
+
+    $url = rtrim($lockerApiUrl, "/") . "/assignments?resort=" . rawurlencode($lockerResort) .
+           "&date=" . rawurlencode(date("Y-m-d", $today));
+    $answer = webFetch($url, $lockerApiKey);
+
+    if ($answer['error'] !== "") {
+        $out .= webRow("Cannot reach the web site", "err");
+        $out .= webRow($answer['error'], "err");
+        return $out . "  </div>\n</td>\n";
+    }
+    $data = json_decode($answer['body'], true);
+    if (!is_array($data) || !isset($data['slots'])) {
+        $msg = (is_array($data) && isset($data['error'])) ? $data['error'] : "unreadable answer from the web site";
+        $out .= webRow("HTTP " . $answer['status'] . ": " . $msg, "err");
+        return $out . "  </div>\n</td>\n";
+    }
+
+    $webIDList = [];
+    foreach ($data['slots'] as $slot) {
+        $pid  = isset($slot['patrollerId']) ? $slot['patrollerId'] : "0";
+        $time = isset($slot['startTime']) ? $slot['startTime'] : "";
+        if ($pid === "0" || $pid === "" || $pid === null) {
+            $out .= webRow($time . " -- EMPTY", "empty");
+            continue;
+        }
+        $webIDList[$pid] = $pid;
+        //"-" means they are already signed in downstairs, "??" means not yet
+        $status = array_key_exists($pid, $lockerIDList) ? "-" : "??";
+        $who = (isset($slot['name']) && $slot['name'] !== null) ? $slot['name'] : "patroller $pid not found";
+        $out .= webRow($time . " " . $status . " " . $who, "");
+    }
+
+    //anyone in the locker room who is not on the web schedule at all
+    foreach ($lockerIDList as $k => $v) {
+        if (!array_key_exists($k, $webIDList)) {
+            $out .= webRow("xx " . $v, "extra");
+        }
+    }
+    if (count($data['slots']) == 0) {
+        $out .= webRow("No web assignments for " . date("Y-m-d", $today), "empty");
+    }
+
+    return $out . "  </div>\n</td>\n";
+}
+
+//A web column row.  No data-id and no draggable attribute, so wireColumns()
+//and the drag handlers never pick these up - this column is display only.
+function webRow($text, $kind) {
+    $cls = "lbrow webrow" . ($kind !== "" ? " web$kind" : "");
+    return "    <div class=\"$cls\">" . htmlspecialchars($text) . "</div>\n";
+}
+
+//============================================================
+//----------------- lbRow ------------------------------------
+// One row of a column.  Occupied rows are draggable; empty ones are drop
+// targets.  data-label keeps the slot title ("Bas..", "aux..", "TL..") apart
+// from the patroller name so neither has to be recovered by substr() later.
+//============================================================
+function lbRow($label, $name, $id) {
+    $cls  = ($id === "" || $id === null) ? "lbrow empty" : "lbrow";
+    $drag = ($id === "" || $id === null) ? "" : " draggable=\"true\"";
+    return "<div class=\"$cls\"$drag data-id=\"" . htmlspecialchars((string)$id, ENT_QUOTES) .
+           "\" data-label=\"" . htmlspecialchars($label, ENT_QUOTES) .
+           "\" data-name=\"" . htmlspecialchars($name, ENT_QUOTES) . "\">" .
+           htmlspecialchars($label . $name) . "</div>";
+}
+//============================================================
 //----------------- insertRow --------------------------------
 //============================================================
 function insertRow($tl,$minRows,$skiLevel){ //skiLevel, 1=basic/sr, 2=aux/SrA
@@ -162,7 +269,7 @@ global $connect_string,$areaID,$getLBName,$today,$totalPatrollers,$currDayOfWeek
         $teamLead = $row['teamLead'];
         $cnt++;
         if($areaID == -1) {
-            echo "    <option value=\"$patroller_id\">$patroller_name</option>\n";
+            echo "    " . lbRow("", $patroller_name, $patroller_id) . "\n";
         } else {
             if($areaID > 3)        $pos = ".....";
             else if($teamLead == 1) $pos="TL...";
@@ -172,7 +279,7 @@ global $connect_string,$areaID,$getLBName,$today,$totalPatrollers,$currDayOfWeek
             else $areaID . $pos="aux..";   //bas.. aux.. xtra.
 //            else if($class == "SR" || $class == "BAS") $pos="bas..";   //bas.. aux.. xtra.
 //            else $pos="aux..";   //bas.. aux.. xtra.
-            echo "  <option value=\"$patroller_id\">{$pos}{$patroller_name}</option>\n";
+            echo "  " . lbRow($pos, $patroller_name, $patroller_id) . "\n";
         }
     } //end loop for each patroller
    	if($currDayOfWeek != "Saturday" && $currDayOfWeek != "Sunday") 
@@ -187,7 +294,7 @@ global $connect_string,$areaID,$getLBName,$today,$totalPatrollers,$currDayOfWeek
         else if($skiLevel == 1) $pos = "bas.."; //bas or sr
         else if($skiLevel == 2) $pos = "aux.."; //aux
         else                    $pos = "....."; //extra
-        echo "  <option>{$pos}</option>\n";
+        echo "  " . lbRow($pos, "", "") . "\n";
     }
 	if ($cnt > $minRows) 
 		return ($cnt - $minRows);
@@ -207,275 +314,542 @@ global $connect_string,$areaID,$getLBName,$today,$totalPatrollers,$currDayOfWeek
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <title>Unassigned</title>
 
+<?php require("patrol_dialog.php"); ?>
 <script type="text/JavaScript">
 var changesMade = false;
 var param;
-//configure refresh interval (in seconds)
-var countDownInterval = 0;
-
-function refreshDocument() {
-    if (changesMade) {
-        if (window.confirm("Save your changes?")) {
-            saveChanges();
-        }
-    }
-    else
-        window.location.reload();
-}
-function cancelChanges() {
-    changesMade = false;
-    window.location.reload();
-}
-
-function checkForChanges() {
-    if (changesMade) {
-        if (window.confirm("Save your changes?")) {
-            saveChanges();
-        }
-    }
-}
-
 function madeChanges() {
     changesMade = true;
     //      document.myForm.saveBtn.disabled = false;
 }
 
-// bldParam - build Param string that ONLY consists of valid List box ID's
-function bldParam(listbox, area) {
-    var count = listbox.length;
-    var id,txt;
+// bldParam - build Param string that ONLY consists of valid patroller ID's
+function bldParam(col, area) {
+    var rows = rowsOf(col);
+    var id, txt, i;
     var first = true;
 
-    for (var i = 0; i < count; i++) {
-        id = listbox.options[i].value;
-        if (area == 0)
-            txt = "Un";
-        else
-            txt = listbox.options[i].text.substr(0, 2);
-        //alert("parseFloat(id)="+parseFloat(id));
-
-        //alert("i="+i+", id=("+id+"), txt="+txt);
-        id = parseFloat(id);
-        if (id != NaN && id > 0) {
-            if (first) {
-                param += "&area" + area + "=" + id + "-" + txt;
-                first = false;
-            } else
-                param += "," + id + "-" + txt;
+    for (i = 0; i < rows.length; i++) {
+        id = parseFloat(rowId(rows[i]));
+        if (!(id > 0)) {
+            continue;                       //empty slot
         }
-        //	param += "&_" + area + "_";
+        //the first 2 characters of the slot title are what updateHistory()
+        //reads back as leadership: TL=lead, AT=assistant, Xt=extra
+        txt = (area == 0) ? "Un" : rowLabel(rows[i]).substr(0, 2);
+        if (first) {
+            param += "&area" + area + "=" + id + "-" + txt;
+            first = false;
+        } else {
+            param += "," + id + "-" + txt;
+        }
     }
 }
 
-function saveChanges() {
-    changesMade = false;
+//Build the save URL from what is on screen.  Area numbers stay as they were
+//(1=Crest .. 6=Staff) so updateHistory() keeps mapping them the same way.
+function collectParam(extra) {
+    param = "area_staffing.php?saveBtn=1" + (extra ? extra : "");
+    bldParam(colOf("Crest"), 1);
+    bldParam(colOf("Snake"), 2);
+    bldParam(colOf("Western"), 3);
+    bldParam(colOf("Millicent"), 4);
+    bldParam(colOf("Training"), 5);
+    bldParam(colOf("Staff"), 6);
+    return param;
+}
 
-    param = "area_staffing.php?saveBtn=1";
-    bldParam(document.form1.UnassignedLB, 0);
-    bldParam(document.form1.CrestLB, 1);
-    bldParam(document.form1.SnakeLB, 2);
-    bldParam(document.form1.WesternLB, 3);
-    bldParam(document.form1.MillicentLB, 4);
-    bldParam(document.form1.TrainingLB, 5);
-    bldParam(document.form1.StaffLB, 6);
-    //alert(param);
-    //alert("data=" + param);
-    window.location.href = param;
-    //alert("now don't you wish SAVE worked :-)");
+function setSaveState(msg, bad) {
+    var el = document.getElementById("saveState");
+    if (!el) {
+        return;
+    }
+    el.innerHTML = "";
+    el.appendChild(document.createTextNode(msg));
+    el.className = bad ? "savebad" : "saveok";
+}
+
+function clockNow() {
+    var d = new Date(), m = d.getMinutes(), s2 = d.getSeconds();
+    return d.getHours() + ":" + (m < 10 ? "0" : "") + m + ":" + (s2 < 10 ? "0" : "") + s2;
+}
+
+//Saved after every move.  The board is not reloaded - the request goes out in
+//the background so the columns stay exactly where they are.
+function autoSave() {
+    var url = collectParam("");
+    setSaveState("Saving...");
+    saveInFlight++;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState != 4) {
+            return;
+        }
+        saveInFlight--;
+        if (xhr.status >= 200 && xhr.status < 300) {
+            changesMade = false;
+            setSaveState("Saved " + clockNow());
+        } else {
+            if (!pageLeaving) {
+                setSaveState("SAVE FAILED (" + xhr.status + ") - reload the page and try again", true);
+            }
+        }
+    };
+    xhr.send(null);
 }
 
 function webStaffing() {
-
     changesMade = false;
+    window.location.href = collectParam("&showWeb=1");
+}
 
-    param = "area_staffing.php?saveBtn=1&showWeb=1";
-    bldParam(document.form1.UnassignedLB, 0);
-    bldParam(document.form1.CrestLB, 1);
-    bldParam(document.form1.SnakeLB, 2);
-    bldParam(document.form1.WesternLB, 3);
-    bldParam(document.form1.MillicentLB, 4);
-    bldParam(document.form1.TrainingLB, 5);
-    bldParam(document.form1.StaffLB, 6);
-    //alert(param.substr(0,20));
-    window.location.href = param;
-    //    alert("now don't you wish SAVE worked :-)");
+function xtraCol(pos) {
+    return colOf(["Crest", "Snake", "Western", "Millicent", "Training", "Staff"][pos]);
+}
+
+function newRow(col, label) {
+    var row = document.createElement("div");
+    row.className = "lbrow empty";
+    row.setAttribute("data-id", "");
+    row.setAttribute("data-label", label);
+    row.setAttribute("data-name", "");
+    row.appendChild(document.createTextNode(label));
+    col.appendChild(row);
+    wireRow(col, row);                      //new rows must accept drops too
+    return row;
 }
 
 function do_add(pos) {
-    var listbox;
     //the 'add' only button is only available for column 4 (training) and 5 (staff)
-    if (pos == 4)
-        listbox = document.form1.TrainingLB
-    else
-        listbox = document.form1.StaffLB
-
-    var lastPos = listbox.options.length;
-    var myNewOption = new Option(".....");
-    listbox.options[lastPos] = myNewOption;
-    listbox.options.selectedIndex = -1;
+    newRow(xtraCol(pos), ".....");
+    clearSel();
 }
 
 function del_xtra(pos) {
-    var listbox;
-    if (pos == 0)
-        listbox = document.form1.CrestLB
-    else if (pos == 1)
-        listbox = document.form1.SnakeLB
-    else if (pos == 2)
-            listbox = document.form1.WesternLB
-        else //3
-            listbox = document.form1.MillicentLB
-
-    var lastPos = listbox.options.length;
-    //loop through all entries and if a "Xtra." is found, delete it
-    var found = false;
-    for (var $i = 2; $i < lastPos; $i++) {
-        var txt = listbox.options[$i].text;
-        if (txt == "Xtra.") {
-            found = true;
-            listbox.options[$i] = null;
-            break;
-        }
-    }
-    if (found == false)
-        alert("Oops, no EMPTY 'Xtra.' positions found");
-}
-
-function add_xtra(pos) {
-    var listbox;
-    if (pos == 0)
-        listbox = document.form1.CrestLB
-    else if (pos == 1)
-        listbox = document.form1.SnakeLB
-    else if (pos == 2)
-            listbox = document.form1.WesternLB
-        else // 3
-            listbox = document.form1.MillicentLB
-
-    var lastPos = listbox.options.length;
-    var myNewOption = new Option("Xtra.");
-    listbox.options[lastPos] = myNewOption;
-    listbox.options.selectedIndex = -1;
-}
-
-function move_name(mountain, listbox) {
-    changesMade = true;
-    var currIndex = listbox.selectedIndex;
-    var currID = listbox.options[currIndex].value;
-    var currName = listbox.options[currIndex].text;
-    var currTitle = currName.substr(0, 5);
-    currName = currName.substr(5);
-    var messageStr
-    var unAssigned = document.form1.UnassignedLB;
-    //  var txtDisplay   = document.form1.lastCommand;
-    var unIndex = unAssigned.selectedIndex
-    var unID
-    var unName
-    if (unIndex != -1) {
-        unID = unAssigned.options[unIndex].value;
-        unName = unAssigned.options[unIndex].text;
-
-        //currTitle ->"bas..", "TL...", "ATL..", etc
-        var newLevel = unName.substr(0, 1);	//1 (sr),2(bas),3(aux),4(can...)
-        if (newLevel >= 3 && (currTitle == "bas.." || currTitle == "TL..." || currTitle == "ATl..")) {
-            alert("Error, invalid assignment.  Must have SR or BAS ski level");
-            unAssigned.selectedIndex = -1;	//unselect everything
-            listbox.selectedIndex = -1;
+    var col = xtraCol(pos);
+    var rows = rowsOf(col);
+    for (var i = rows.length - 1; i >= 0; i--) {
+        if (rowLabel(rows[i]) == "Xtra." && rowIsEmpty(rows[i])) {
+            col.removeChild(rows[i]);
             return;
         }
     }
+    patrolAlert("Oops, no EMPTY 'Xtra.' positions found");
+}
 
-    //  alert("currindex=("+currIndex+")\n unindex=("+unIndex+")\n currID=("+currID+")\n currTitle=("+currTitle+")");
-    //alert("(" +currTitle+", " + newLevel + ")");
-    if (unIndex == -1 && (currID == null || currID == 0)) {
-        messageStr = "Oops, no one is selected as Unassigned";
-        listbox.selectedIndex = -1;
-    } else {
-        if (currID && currID > 0) {
-            //
-            // there was a patroller in this listbox, so move to "Unassigned"
-            //
+function add_xtra(pos) {
+    newRow(xtraCol(pos), "Xtra.");
+    clearSel();
+}
 
-            messageStr = "Moved '" + currName + "' from " + mountain + " To 'Unassigned' (id=" + currID + ")"
-            lastPos = unAssigned.options.length; //this is bogus, I should not subtract a 1
-            //add to end of "unassigned" list
-            var myNewOption = new Option(currName, currID);
-            unAssigned.options[lastPos] = myNewOption;
-            unAssigned.options.selectedIndex = lastPos;
-            //remove from current list
-            listbox.options[currIndex].value = null;
-            listbox.options[currIndex].text = currTitle;
-            listbox.selectedIndex = -1;
-        } else {
-            //
-            //this position was empty, so move "unassigned" patroller here
-            //
-            messageStr = "Moved " + unName + " to " + mountain + " (id=" + unID + ")";    //history text
-            listbox.options[currIndex].text = currTitle + unName;               //add to new list box
-            listbox.options[currIndex].value = unID;
-            listbox.selectedIndex = -1;
-            unAssigned.options[unIndex] = null;                                //remove from Unassigned
-            if (unAssigned.options.length <= unIndex)
-                unAssigned.selectedIndex = unIndex - 1;
-            else
-                unAssigned.selectedIndex = unIndex;
+//============================================================
+// Moving people between areas
+//------------------------------------------------------------
+// Two ways to move somebody, and they work together:
+//
+//   Drag  - drag a name straight onto an open slot in any column.  Every slot
+//           that will accept them lights up green while you drag.
+//   Click - click a name to pick it up in place, then click the open slot you
+//           want it in.  Clicking it again puts it back down.
+//
+// Either way the move is saved immediately in the background - there is no
+// Save button and no Unassigned column any more.
+//
+// Each column is a div with class "lb" and id "<area>LB", holding one child
+// div of class "lbrow" per slot.  A row carries data-id (the patroller id,
+// empty when the slot is free), data-label (the slot title) and data-name.
+//============================================================
+var AREA_KEYS = ["Crest", "Snake", "Western", "Millicent", "Training", "Staff"];
+
+function colOf(key)  { return document.getElementById(key + "LB"); }
+function areaOfCol(col) { return col.getAttribute("data-area"); }
+
+function rowsOf(col) {
+    var out = [], kids = col.childNodes, i;
+    for (i = 0; i < kids.length; i++) {
+        if (kids[i].nodeType == 1 && kids[i].className.indexOf("lbrow") === 0) {
+            out.push(kids[i]);
         }
     }
-    //display string of what changed
-    //    txtDisplay.value = messageStr;
+    return out;
 }
+
+function rowId(row)    { return row.getAttribute("data-id") || ""; }
+function rowLabel(row) { return row.getAttribute("data-label") || ""; }
+function rowName(row)  { return row.getAttribute("data-name") || ""; }
+function rowIsEmpty(row) { return !(parseFloat(rowId(row)) > 0); }
+
+function setRow(row, id, name) {
+    row.setAttribute("data-id", id);
+    row.setAttribute("data-name", name);
+    row.innerHTML = "";
+    row.appendChild(document.createTextNode(rowLabel(row) + name));
+    if (id === "") {
+        row.className = "lbrow empty";
+        row.removeAttribute("draggable");
+    } else {
+        row.className = "lbrow";
+        row.setAttribute("draggable", "true");
+    }
+}
+
+function slotKind(label) {
+    var l = label.toLowerCase();
+    if (l.indexOf("atl") === 0)  return "ATL";
+    if (l.indexOf("tl.") === 0)  return "TL";
+    if (l.indexOf("bas") === 0)  return "BAS";
+    if (l.indexOf("aux") === 0)  return "AUX";
+    if (l.indexOf("xtra") === 0) return "XTRA";
+    return "OTHER";                     //"....." - Training and Staff rows
+}
+
+//names are prefixed by getClassificationPrefix(): 1=SR, 2=BAS, 3=AUX/SRA, 4=other
+function levelOf(name) {
+    var n = parseInt(name.substr(0, 1), 10);
+    return isNaN(n) ? 4 : n;
+}
+
+//The original rule, but it now also covers the empty "TL.." row, which used to
+//slip past a test that looked for a 5-character "TL...".
+function canOccupy(level, kind) {
+    if (level >= 3) {
+        return (kind == "AUX" || kind == "XTRA" || kind == "OTHER");
+    }
+    return true;
+}
+
+function canDropOn(level, row) {
+    return rowIsEmpty(row) && canOccupy(level, slotKind(rowLabel(row)));
+}
+
+//------------------------------------------------------------ selection (click)
+var selRow = null;                       //the row currently highlighted
+
+function clearSel() {
+    if (selRow) {
+        selRow.className = selRow.className.replace(/ sel\b/, "");
+        selRow = null;
+    }
+}
+
+function selectRow(row) {
+    clearSel();
+    selRow = row;
+    row.className += " sel";
+}
+
+//------------------------------------------------------------ the move itself
+function placeInto(row, id, name, fromRow) {
+    setRow(fromRow, "", "");             //the slot they came from stays, empty
+    setRow(row, id, name);
+    changesMade = true;
+    autoSave();
+}
+
+//------------------------------------------------------------ click handling
+// With the Unassigned column gone there is nowhere to park someone, so a click
+// picks a patroller up in place (highlighted) and the next click on an open
+// slot moves them there.  Clicking them again puts them back down.
+function rowClick(row) {
+    if (!rowIsEmpty(row)) {
+        if (selRow == row) {
+            clearSel();
+        } else {
+            selectRow(row);
+        }
+        return;
+    }
+    if (!selRow || rowIsEmpty(selRow)) {
+        return;                          //nothing picked up yet
+    }
+    if (!canOccupy(levelOf(rowName(selRow)), slotKind(rowLabel(row)))) {
+        patrolAlert("Error, invalid assignment.  Must have SR or BAS ski level");
+        clearSel();
+        return;
+    }
+    var from = selRow;
+    clearSel();
+    placeInto(row, rowId(from), rowName(from), from);
+}
+
+//------------------------------------------------------------ drag and drop
+var dragRow = null;
+
+function markTargets(on, level) {
+    for (var a = 0; a < AREA_KEYS.length; a++) {
+        var col = colOf(AREA_KEYS[a]);
+        if (!col) {
+            continue;
+        }
+        var rows = rowsOf(col);
+        for (var i = 0; i < rows.length; i++) {
+            var r = rows[i];
+            r.className = r.className.replace(/ (ok|no)\b/g, "");
+            if (on && rowIsEmpty(r)) {
+                r.className += canDropOn(level, r) ? " ok" : " no";
+            }
+        }
+    }
+}
+
+function onDragStart(e, row) {
+    dragRow = row;
+    clearSel();
+    row.className += " dragging";
+    if (e.dataTransfer) {
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData("text/plain", rowId(row));   //Firefox needs a payload
+    }
+    markTargets(true, levelOf(rowName(row)));
+}
+
+function onDragEnd(row) {
+    markTargets(false, 0);
+    row.className = row.className.replace(/ dragging\b/, "");
+    dragRow = null;
+}
+
+//returning false from dragover is what tells the browser a drop is allowed here
+function onDragOver(e, row, col) {
+    if (!dragRow) {
+        return true;
+    }
+    var ok = (row && canDropOn(levelOf(rowName(dragRow)), row));
+    if (!ok) {
+        return true;
+    }
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
+    if (e.dataTransfer) {
+        e.dataTransfer.dropEffect = "move";
+    }
+    return false;
+}
+
+function onDrop(e, row, col) {
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+    if (!dragRow) {
+        return false;
+    }
+    if (row && canDropOn(levelOf(rowName(dragRow)), row)) {
+        placeInto(row, rowId(dragRow), rowName(dragRow), dragRow);
+    }
+    return false;
+}
+
+//------------------------------------------------------------ wiring
+function wireRow(col, r) {
+    r.ondragover = function (e) { return onDragOver(e || window.event, r, col); };
+    r.ondrop     = function (e) { return onDrop(e || window.event, r, col); };
+}
+
+function wireColumns() {
+    for (var a = 0; a < AREA_KEYS.length; a++) {
+        var col = colOf(AREA_KEYS[a]);
+        if (!col) {
+            continue;
+        }
+        (function (col) {
+            col.ondragover = function (e) { return onDragOver(e || window.event, null, col); };
+            col.ondrop     = function (e) { return onDrop(e || window.event, null, col); };
+            col.onclick = function (e) {
+                e = e || window.event;
+                var t = e.target || e.srcElement;
+                while (t && t != col && t.className.indexOf("lbrow") !== 0) {
+                    t = t.parentNode;
+                }
+                if (t && t != col) {
+                    rowClick(t);
+                }
+            };
+            col.ondragstart = function (e) {
+                e = e || window.event;
+                var t = e.target || e.srcElement;
+                if (t && t.className.indexOf("lbrow") === 0 && !rowIsEmpty(t)) {
+                    onDragStart(e, t);
+                    return true;
+                }
+                return false;
+            };
+            col.ondragend = function () { if (dragRow) { onDragEnd(dragRow); } };
+            var rows = rowsOf(col), i;
+            for (i = 0; i < rows.length; i++) {
+                wireRow(col, rows[i]);
+            }
+        })(col);
+    }
+}
+
 
 function congrats (data) {
-    alert("cool");
+    patrolAlert("cool");
 }
-var countDownTime = countDownInterval - 1;
+//============================================================
+// Live board
+//------------------------------------------------------------
+// The morning login screen in the other room writes straight to skihistory,
+// so this page re-reads the board every few seconds and swaps in any column
+// that changed.  New logins appear on their own; there is no refresh button.
+//
+// It polls rather than holding a stream open on purpose: this runs under
+// "php -S", which serves one request at a time, so an open EventSource or a
+// long-poll would block the login screen from being served at all.
+//============================================================
+var POLL_MS = 4000;
+var pollBusy = false;
+var saveInFlight = 0;
+var deferredPolls = 0;
+var pollFailures = 0;
+var liveWarned = false;
+var pageLeaving = false;
 
-function countUp() {
-    countDownTime++;
-    //  if (countDownTime > 100){
-    //    countDownTime=countDownInterval;
-    //    clearTimeout(counter)
-    //    window.location.reload()
-    //    return
-    //  }
-    var sec = countDownTime % 60;
-    var min = (countDownTime - sec ) / 60;
-    var tim = min + ':';
-    if (sec < 10)
-        tim += '0';
-    tim += sec;
+//Navigating away aborts any in-flight XHR, which surfaces as readyState 4 with
+//status 0 - indistinguishable from a dead server unless we notice we are leaving.
+//Clicking "Display Staffing from Web!" navigates, so without this the board
+//flashed "server unreachable (0)" on the way out.
+window.onbeforeunload = function () {
+    pageLeaving = true;
+};
 
-    if (document.all) //if IE 4+
-        document.all.countDownText.innerText = tim;
-    else if (document.getElementById) //else if NS6+
-        document.getElementById("countDownText").innerHTML = tim
-    else if (document.layers) { //CHANGE TEXT BELOW TO YOUR OWN
-            document.c_reload.document.c_reload2.document.write(
-                    'Time since last <a href="javascript:refreshDocument()">refresh</a> is <b id="countDownText">' + tim + ' </b> seconds')
-            document.c_reload.document.c_reload2.document.close()
+function setLiveState(msg, bad) {
+    var el = document.getElementById("liveState");
+    if (!el) {
+        return;
+    }
+    el.innerHTML = "";
+    el.appendChild(document.createTextNode(msg));
+    el.className = bad ? "savebad" : "";
+}
+
+//Parse the fetched page with the browser's own HTML parser and pull the
+//columns out by id.  This used to be done with a regex over the raw text,
+//which was a mistake: script and comment text in the page can contain markup
+//that looks exactly like a column, and the regex happily matched it and
+//pasted JavaScript source into the board.  A real parse cannot do that -
+//text inside <script> is not markup.  Nothing in the parsed document runs.
+function parseBoard(html) {
+    if (typeof DOMParser == "undefined") {
+        return null;
+    }
+    return new DOMParser().parseFromString(html, "text/html");
+}
+
+//A cheap fingerprint of who is sitting where, so an unchanged column is left
+//alone instead of being rebuilt (which would throw away its scroll position).
+function sigFromDom(col) {
+    var rows = rowsOf(col), out = [], i;
+    for (i = 0; i < rows.length; i++) {
+        out.push(rowId(rows[i]) + ":" + rowLabel(rows[i]));
+    }
+    return out.join("|");
+}
+
+function applyBoard(html) {
+    var doc = parseBoard(html);
+    if (!doc) {
+        return;
+    }
+    var changed = 0;
+    for (var a = 0; a < AREA_KEYS.length; a++) {
+        var key = AREA_KEYS[a];
+        var col = colOf(key);
+        var fresh = doc.getElementById(key + "LB");
+        if (!col || !fresh) {
+            continue;
         }
-    counter = setTimeout("countUp()", 1000);
+        //only trust a node that really is a column of rows
+        if (fresh.className != "lb" || sigFromDom(fresh) == sigFromDom(col)) {
+            continue;                       //nobody moved in this column
+        }
+        var top = col.scrollTop;
+        col.innerHTML = fresh.innerHTML;
+        col.scrollTop = top;
+        var rows = rowsOf(col), i;
+        for (i = 0; i < rows.length; i++) {
+            wireRow(col, rows[i]);
+        }
+        changed++;
+    }
+    if (changed > 0) {
+        setLiveState("Updated " + clockNow());
+    }
 }
+
+function pollBoard() {
+    if (pollBusy) {
+        return;
+    }
+    //never redraw out from under someone who is in the middle of a move
+    if (dragRow || saveInFlight > 0) {
+        return;
+    }
+    if (selRow) {
+        deferredPolls++;
+        if (deferredPolls < 4) {
+            return;                         //give them a few seconds to finish
+        }
+        clearSel();                         //left selected - stop holding updates
+    }
+    deferredPolls = 0;
+    pollBusy = true;
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "area_staffing.php?_=" + (new Date()).getTime(), true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState != 4) {
+            return;
+        }
+        pollBusy = false;
+        if (xhr.status < 200 || xhr.status >= 300) {
+            if (pageLeaving) {
+                return;                     //aborted because we are navigating, not a failure
+            }
+            //one missed poll is not worth alarming over - a reload, a blip, a
+            //momentarily busy single-threaded server.  Say something once it persists.
+            pollFailures++;
+            if (pollFailures >= 3) {
+                setLiveState("Not updating - server unreachable (" + xhr.status + ")", true);
+                liveWarned = true;
+            }
+            return;
+        }
+        pollFailures = 0;
+        if (liveWarned) {
+            //applyBoard() only writes the status line when a column actually changed, so
+            //without this the red warning would sit there for good once the server came back
+            setLiveState(LIVE_READY);
+            liveWarned = false;
+        }
+        if (dragRow || saveInFlight > 0) {
+            return;                         //answer came back mid-move; try next tick
+        }
+        applyBoard(xhr.responseText);
+    };
+    xhr.send(null);
+}
+
+var LIVE_READY = "Live - new logins appear automatically";
 
 function startit() {
-    if (document.all || document.getElementById) //CHANGE TEXT BELOW TO YOUR OWN
-        var sec = countDownTime % 60;
-    var min = (countDownTime - sec ) / 60;
-    var tim = min + ':';
-    if (sec < 10)
-        tim += '0';
-    tim += sec;
-    //    document.write('Time since last <a href="javascript:window.location.reload()">refresh</a> is <b id="countDownText">'+tim+'</b>')
-    document.write('Time since last <a href="javascript:refreshDocument()">refresh</a> is <b id="countDownText">' + tim + '</b>')
-    countUp()
+    document.write('<span id="liveState">Live &#8211; new logins appear automatically</span>');
+}
+
+function startLive() {
+    setInterval(pollBoard, POLL_MS);
 }
 
 if (document.all || document.getElementById) {
     startit();
 } else {
-    window.onload = function(){
+    window.onload = function () {
         startit();
-    }
+    };
 }
 </script>
 </head>
@@ -483,12 +857,49 @@ if (document.all || document.getElementById) {
 <body onunload="checkForChanges();" background="images/ncmnthbk.jpg">
 <form name="form1" method="POST" id="form1" action="area_staffing.php">
 
+<style type="text/css">
+/* the seven columns - these used to be <select size=25> listboxes */
+.lb {
+    width: 133px;
+    height: 340px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #7F9DB9;
+    background: #FFFFFF;
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+.lbrow {
+    padding: 1px 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 1.25;
+    cursor: default;
+}
+.lbrow:not(.empty)  { cursor: move; }      /* an occupied row can be dragged */
+.lbrow.empty        { color: #808080; }
+.lbrow.sel          { background: #316AC5; color: #FFFFFF; }
+.lbrow.dragging     { opacity: 0.4; }
+/* while dragging: green = this slot will take them, grey = it will not */
+.lbrow.ok           { background: #CCF0CC; outline: 1px dashed #2E7D32; color: #000; }
+.lbrow.no           { background: #EFEFEF; color: #B0B0B0; }
+/* the read-only web column - no drag, no drop, tinted so it reads as separate */
+.lb.webcol          { background: #F7F7F0; }
+.lbrow.webrow       { cursor: default; }
+.lbrow.webempty     { color: #909090; font-style: italic; }
+.lbrow.webextra     { color: #14507A; }
+.lbrow.weberr       { color: #C00000; white-space: normal; }
+#saveState          { font-family: Arial, Helvetica, sans-serif; font-size: 13px; }
+.saveok             { color: #2E7D32; }
+.savebad            { color: #C00000; font-weight: bold; }
+</style>
+
 <br>
 <br>
 <?php /*===================== table ================================*/ ?>
 <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" width="800" id="AutoNumber1">
   <tr>
-    <td align="center" width="133">Unassigned</td>
     <td align="center" width="133">Crest</td>
     <td align="center" width="133">Snake Creek</td>
     <td align="center" width="133">Great Western</td>
@@ -502,14 +913,11 @@ if (document.all || document.getElementById) {
   </tr>
   <tr>
 <?php
-  for($areaID = -1; $areaID <= 5; $areaID++) {
+  for($areaID = 0; $areaID <= 5; $areaID++) {
 //Display "TL..." or "ATl..." UNLESS training, or Staff
     echo "<td>\n";
-    if($areaID == -1) {
-      echo "  <select size=25 name=\"" . $getLBName[$areaID] . "LB\" style=\"font-size: 8pt; width: 133\">\n";
-      insertRow(0,0,0); //(tl)  1st arg - tl=1, 2=atl, 0=other
-    } else if($areaID > 3) {
-      echo "  <select size=\"25\" name=\"{$getLBName[$areaID]}LB\" onclick=\"move_name('{$getLBName[$areaID]}',this);\" style=\"font-size: 8pt; width: 133\">\n";
+    if($areaID > 3) {
+      echo "  <div class=\"lb\" id=\"{$getLBName[$areaID]}LB\" data-area=\"{$getLBName[$areaID]}\">\n";
       insertRow(0,3,0); //(tl)  1st arg - tl=1, 2=atl, 0=other
     } else {
 
@@ -539,7 +947,7 @@ if (document.all || document.getElementById) {
 //------
 //echo "basic=$todayBasic<br>\n";
 
-      echo "  <select size=\"25\" name=\"{$getLBName[$areaID]}LB\" onclick=\"move_name('{$getLBName[$areaID]}',this);\" style=\"font-size: 8pt; width: 133\">\n";
+      echo "  <div class=\"lb\" id=\"{$getLBName[$areaID]}LB\" data-area=\"{$getLBName[$areaID]}\">\n";
       insertRow(1,1,0); //(tl)  1st arg - tl=1, 2=atl, 0=other, 3=Extra
       insertRow(2,1,0); //(atl) 2nd arg - Minimum number of rows to display
 //echo "insertRow, basic=$todayBasic<br>\n";
@@ -551,88 +959,18 @@ if (document.all || document.getElementById) {
 	      insertRow(0,$todayAux,2); //(aux)
       insertRow(3,0,0); //extra
     }
-    echo "  </select>\n</td>\n";
+    echo "  </div>\n</td>\n";
   } //end loop for areas
 
 //========= show web column ========
 	if($showWeb) {
-		//get list of patrollers who are here today
-     $query_string = "SELECT * FROM skihistory WHERE date=\"$today\"";
-     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 10)");
-     $lockerIDList=[];
-     while ($row = @mysqli_fetch_array($result)) 
-     {
-			$id = $row['patroller_id'];
-			$ar = $row['areaID'];
-			
-         $lockerIDList[$id] = $getLBName[$ar] . " " . $row['name'] ;
-	  }
-
-	   //new column
-      echo "  <td><select size=25 name=\"showWebLB\" style=\"font-size: 8pt; width: 133\">\n";
-		//close local connection
-    	@mysqli_close($connect_string);
-    	@mysqli_free_result($result);
-
-		//open web connection
-		$mysqli_host = "gledhills.com"; //54.173.17.203";  //IP of nspOnline.org
-		$connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to web database.");
-        mysqli_select_db($connect_string, $mysqli_db);
-        setMySQLTimezone($connect_string);
-		//build date string with time component (format: YYYY-MM-DD_HH:MM:SS)
-		  $tdate = getAssignmentDateString($arrDate);
-		  // Extract just the date part (YYYY-MM-DD) for query range
-		  $dateOnly = substr($tdate, 0, 10); // Get "YYYY-MM-DD" part
-        $query_string = "SELECT * FROM `assignments` WHERE `Date` >= '". $dateOnly . "_00:00:00' AND `Date` < '" . $dateOnly . "_23:59:59'";
-        $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 11)");
-	     $webIDList=[];
-
-        while ($row = @mysqli_fetch_array($result)) 
-        {
-            $startTime = $row['startTime'];
-				$max1 = $row['count'];
-				for ($i=0; $i < $max1; ++$i) {
-				  	$idx = "P" . $i;
-				  	$patroller_id = $row[ $idx ];
-					$webIDList[ $patroller_id ] = $patroller_id;
-					if($patroller_id != 0) {
-//zzz
-						$status = "??";	//not here
-						if (array_key_exists($patroller_id, $lockerIDList)) {
-							$status = "-";	//not here
-						}
-		        		$query_string = "SELECT FirstName, LastName FROM roster WHERE IDNumber=\"$patroller_id\"";
-	        			$result2 = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result 7)");
-			        	if ($row2 = @mysqli_fetch_array($result2)) {
-							$name = $row2['FirstName'] . " " . $row2['LastName'];
-					    	echo "  <option>$startTime $status $name</option>\n";
-						} else {
-					    	echo "  <option>patroller $id not found</option>\n";
-						}
-					} else {
-					    	echo "  <option>$startTime -- EMPTY</option>\n";
-					}
-				}
-        } //end loop for reading web assignments
-
-//zzz
-//						$lockerIDList[$id]
-//webIDList
-       foreach($lockerIDList as $k => $v) {
-//			    	echo "  <option>xx $k $v</option>\n";
-			  if (!in_array($k, $webIDList)) {
-			    	echo "  <option>xx $v</option>\n";
-				}
-       }
-    echo "  </select>\n</td>\n";
-
-    }  //end showWeb
+		echo webColumn($connect_string, $today, $getLBName);
+	}  //end showWeb
 
 
 ?>
   </tr>
   <tr>
-    <td align="center" width="133">Add to list --&gt;</td>
     <td align="center" width="133"><input type="button" value="Xtra" name="B15" onclick="add_xtra(0)"><input type="button" value="Del" name="B17" onclick="del_xtra(0)"></td>
     <td align="center" width="133"><input type="button" value="Xtra" name="B19" onclick="add_xtra(1)"><input type="button" value="Del" name="B20" onclick="del_xtra(1)"></td>
     <td align="center" width="133"><input type="button" value="Xtra" name="B22" onclick="add_xtra(2)"><input type="button" value="Del" name="B23" onclick="del_xtra(2)"></td>
@@ -644,15 +982,15 @@ if (document.all || document.getElementById) {
 
   <?php echo "<b>$totalPatrollers"; ?> Total Patrollers</b><br>
  
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="button" id="save" value="Save Changes" onclick="saveChanges()">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="button" value="Cancel Changes" onclick="cancelChanges()">
-  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span id="saveState">Every move is saved automatically.</span>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <input type="button" value="Display Staffing from Web!" onclick="webStaffing()">
 
 </form>
+<script type="text/JavaScript">
+    wireColumns();
+    startLive();
+</script>
 <HR>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size=3>Ski Level: 1=SR, 2=BAS, 3=AUX, 4=Other&nbsp;&nbsp;&nbsp;&nbsp;Today is: <?php echo "$currDayOfWeek $strToday"; ?></font>
 <?php

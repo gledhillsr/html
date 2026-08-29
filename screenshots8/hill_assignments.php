@@ -262,17 +262,18 @@ function addRow($class,$ID,$name,$areaID,$sweeps){
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
+<?php require("patrol_dialog.php"); ?>
 <script type="text/javascript">
 function showTimeConflict() {
-    alert("<?php echo $szTimeConflict; ?>");
+    patrolAlert("<?php echo $szTimeConflict; ?>");
 }
 
 function insertBtn(patrollerID, areaID) {
     var assID = document.myForm.assignments.selectedIndex;
     if (assID < 0) {
-        alert("Error, you must first select a sweep.");
+        patrolAlert("Error, you must first select a sweep.");
     } else if (!patrollerID) {
-        alert("Oops, no patroller ID is defined");
+        patrolAlert("Oops, no patroller ID is defined");
     } else {
         var sel = document.myForm.assignments;
         var sweepID = sel.options[assID].value;
@@ -283,9 +284,9 @@ function insertBtn(patrollerID, areaID) {
 }
 function clearBtn(patrollerID, areaID, sweepID) {
     if (!patrollerID) {
-        alert("Oops, no patroller ID is defined");
+        patrolAlert("Oops, no patroller ID is defined");
     } else if (sweepID == 0) {
-        alert("Oops, no sweep is assigned");
+        patrolAlert("Oops, no sweep is assigned");
     } else {
         document.myForm.clear.value=sweepID;
         document.myForm.patrollerID.value=patrollerID;

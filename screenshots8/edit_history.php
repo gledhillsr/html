@@ -135,6 +135,7 @@ else
 <meta HTTP-EQUIV="Expires" CONTENT="-1"/>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
 <title>Date</title>
+<?php require("patrol_dialog.php"); ?>
 <script language="JavaScript">
 <!--
 function updateTotal(which) {
@@ -153,10 +154,11 @@ function updateTotal(which) {
     document.myForm.totalCreditValue.value = final ;
 }
 function verifyDelete(user_id,history_id) {
-    if(confirm("Are you sure you want to delete this Ski Assignment?")) {
-//      alert("you answered yes");
-       window.location.href="edit_history.php?ID="+user_id+"&delete="+history_id;
-    }
+    patrolConfirm("Are you sure you want to delete this Ski Assignment?", "Yes", "No", function (yes) {
+        if (yes) {
+            window.location.href="edit_history.php?ID="+user_id+"&delete="+history_id;
+        }
+    });
 }
 //-->
 </script>

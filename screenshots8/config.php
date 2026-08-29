@@ -301,6 +301,76 @@ $shiftValue=[0 => 1  , 1 => 1, 2 => 1, 3=> 0.75, 4 => 0.5];
 
 $getTeamLead=[0 => "No", 1 => "Team Lead", 2 =>"Asst Team Lead", 3=> "Extra"];
 
+define("WEB_CONNECT_TIMEOUT", 5);   //seconds to wait for the web site
+define("WEB_READ_TIMEOUT", 10);
+define("WEB_UPLOAD_TIMEOUT", 120);  //a whole season of ski history in one POST     //seconds to wait for its answer
+
+//One GET to the locker-room API.  Returns ['status'=>int, 'body'=>string, 'error'=>string].
+//Short timeouts matter: "php -S" serves one request at a time, so a hung call here would
+//freeze this board AND the morning login screen in the other room for its whole duration.
+//A User-Agent is set deliberately - the server rejects requests that look like scripts on
+//every other path, and a blank one is the most script-looking of all.
+function webFetch($url, $apiKey) {
+    $headers = ["X-Locker-Key: " . $apiKey, "Accept: application/json"];
+    $agent = "BrightonLockerRoom/1.0";
+
+    if (function_exists("curl_init")) {
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, WEB_CONNECT_TIMEOUT);
+        curl_setopt($ch, CURLOPT_TIMEOUT, WEB_READ_TIMEOUT);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+        $body = curl_exec($ch);
+        $err = curl_error($ch);
+        $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($body === false) {
+            return ["status" => 0, "body" => "", "error" => $err];
+        }
+        return ["status" => $status, "body" => $body, "error" => ""];
+    }
+
+    //No cURL: say so plainly rather than falling back to file_get_contents(), whose
+    //$http_response_header is deprecated in PHP 8.5 and absent before 8.4's replacement.
+    return ["status" => 0, "body" => "",
+            "error" => "PHP on this machine has no cURL extension"];
+}
+
+//One POST of JSON to the locker-room API.  Same shape of answer as webFetch().
+//The body can be a few hundred KB (a season of ski history), which is why this
+//sends it in one request rather than the thousands of round trips the old
+//row-by-row sync made over a remote MySQL connection.
+function webPost($url, $apiKey, $payload) {
+    if (!function_exists("curl_init")) {
+        return ["status" => 0, "body" => "",
+                "error" => "PHP on this machine has no cURL extension"];
+    }
+    $json = json_encode($payload);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, WEB_CONNECT_TIMEOUT);
+    curl_setopt($ch, CURLOPT_TIMEOUT, WEB_UPLOAD_TIMEOUT);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "X-Locker-Key: " . $apiKey,
+        "Content-Type: application/json",
+        "Accept: application/json",
+        "Content-Length: " . strlen($json),
+    ]);
+    curl_setopt($ch, CURLOPT_USERAGENT, "BrightonLockerRoom/1.0");
+    $body = curl_exec($ch);
+    $err = curl_error($ch);
+    $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    if ($body === false) {
+        return ["status" => 0, "body" => "", "error" => $err];
+    }
+    return ["status" => $status, "body" => $body, "error" => ""];
+}
+
+
 $shiftsOvr=[
 0 => "Use actual time"  ,
 1 => "Saturday 7:45",
