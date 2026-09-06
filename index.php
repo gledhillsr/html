@@ -91,9 +91,11 @@ $patrols = [
   </div>
   <div class="alert alert-custom">
     <strong>Important Notice:</strong><br>
-    If you're accessing this site using <code>nsponline.org</code>, please use <b>gledhills.com</b> instead.<br>
-    The old URL will be surrendered due to trademark issues. Gledhills.com will continue to support this service.<br>
-    Thank you for your understanding — <strong>Steven Gledhill</strong>.
+    Please update your links for this site to <b>PatrolCalendar.com</b>. It is the exact same site —
+    I am just moving off my personal domain <b>gledhills.com</b>, to look a little more professional
+    and be easier to remember.<br>
+    Both addresses will continue to work.<br>
+    Thank you — <strong>Steven Gledhill</strong>.
   </div>
 
   <h2 class="mt-4">Ski Patrol Scheduling Links</h2>

@@ -86,7 +86,7 @@
             "NightSubsitute", "Commitment", "Instructor", "Director",
             "lastUpdated", "carryOverCredits", "lastCreditUpdate",
             "canEarnCredits", "creditsEarned", "creditsUsed", "teamLead",
-            "mentoring", "comments");
+            "mentoring", "comments", "newPassword");
 
         $names = array();
         $values = array();
@@ -143,6 +143,10 @@
  	" `teamLead` tinyint(4) NOT NULL default '0'," .
  	" `mentoring` tinyint(4) NOT NULL default '0'," .
  	" `comments` text NOT NULL," .   // MySQL 8: TEXT columns cannot have a DEFAULT
+ 	// The app hashes into newPassword and reads it on every login. Leaving it out of this
+ 	// CREATE is what made the renamed table unusable: getString("newPassword") threw, the
+ 	// login swallowed it, and every member was rejected. Matches the real schema.
+ 	" `newPassword` varchar(128) NOT NULL," .
  	" PRIMARY KEY  (`IDNumber`)" .
  	" );";
  }

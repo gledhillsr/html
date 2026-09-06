@@ -46,6 +46,49 @@ function showProgressIndicator() {
  function getSQLRosterDrop($table) {
      return "DROP TABLE IF EXISTS " . $table . ";";
  }
+ //==========================
+ //  carryPasswordsForward
+ //==========================
+ // The roster arrives from the web site with no Password / newPassword column, and that stays
+ // that way on purpose - shipping password hashes over the API is a far worse trade than not
+ // having them here. So the passwords already on THIS machine are copied into the new table
+ // before it takes over, matched on IDNumber.
+ //
+ // Without this the rename left every member with a blank password, which the app reads as
+ // "no password set" and answers by accepting the member's LAST NAME instead. Login appeared
+ // broken for anyone who typed their real password, and was wide open to anyone who did not.
+ //
+ // Note this keeps the local passwords rather than fetching current ones, so a password
+ // changed on the web site since the last sync will not follow it down here. Nothing is
+ // carried for a member who is new since the last sync - there is no local row to copy from.
+ function carryPasswordsForward($connect_string, $tmp_roster) {
+     $tables = @mysqli_query($connect_string, "SHOW TABLES LIKE 'roster'");
+     if (!$tables || mysqli_num_rows($tables) == 0) {
+         echo "&nbsp;&nbsp;&nbsp;no existing 'roster' here to carry passwords from (first sync?)<br>";
+         return;
+     }
+
+     $sets = array("t.`Password` = r.`Password`");
+     //a roster left behind by a sync from before this was fixed has no newPassword column at all
+     $columns = @mysqli_query($connect_string, "SHOW COLUMNS FROM `roster` LIKE 'newPassword'");
+     if ($columns && mysqli_num_rows($columns) > 0) {
+         $sets[] = "t.`newPassword` = r.`newPassword`";
+     }
+     else {
+         echo "&nbsp;&nbsp;&nbsp;<font color='red'>the existing 'roster' has no newPassword column, so only the" .
+              " old plaintext Password can be carried. Hashed passwords are gone - restore them from a" .
+              " roster_old that still has the column, or reset them.</font><br>";
+     }
+
+     $query_string = "UPDATE `" . $tmp_roster . "` t JOIN `roster` r ON r.`IDNumber` = t.`IDNumber`" .
+                     " SET " . implode(", ", $sets) . ";";
+     $result = @mysqli_query($connect_string, $query_string)
+         or die("Error: carrying passwords forward failed on " . $query_string .
+                " MYSQL error:" . mysqli_error($connect_string));
+     echo "&nbsp;&nbsp;&nbsp;passwords carried forward: " . mysqli_affected_rows($connect_string) .
+          " member(s) updated<br>";
+ }
+
  //-----------------------------------------------------------
  //---------------- end of functions -------------------------
  //-----------------------------------------------------------
@@ -81,9 +124,10 @@ $blockSize = 1000;
      // request to LockerRoomApiController, which returns every member at once,
      // so the block paging is gone with it.
      //
-     // NOTE: the response deliberately carries no Password / newPassword column.
-     // Nothing here ever read them, and getSQLRosterInsert() writes '' for a
-     // column it was not given, so tmp_roster keeps its shape.
+     // NOTE: the response deliberately carries no Password / newPassword column,
+     // so no password hash ever crosses the network. The passwords already on this
+     // machine are copied into the new table instead - see carryPasswordsForward(),
+     // called just before the rename.
      //--------------------------------------------------------------
 showProgressIndicator();
 
@@ -162,6 +206,9 @@ if (isset($startPatroller)) {
             echo "but ($tmp_roster) EXISTS<br>\n";
         }
         else {
+            //must run before the rename below, while `roster` is still the old table
+            carryPasswordsForward($connect_string, $tmp_roster);
+
             $query_string = "RENAME TABLE roster TO $new_roster;";
             $result = @mysqli_query($connect_string, $query_string) or die ("Error: on \"" . $query_string . "\" MYSQL error:" .mysqli_error($connect_string) );
             echo "&nbsp;&nbsp;&nbsp;'$query_string' was Successful<br>";
