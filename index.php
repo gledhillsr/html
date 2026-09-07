@@ -81,21 +81,53 @@ $patrols = [
     .card-body {
       flex-grow: 1;
     }
+    /* The snowflake occupies the same slot as a patrol logo, so this card lines up with the
+       ones below it rather than looking like a different kind of thing. */
+    .sample-flake {
+      width: 40%;
+      max-height: 50px;
+      flex-shrink: 0;
+      text-align: center;
+      font-size: 2rem;
+      line-height: 1;
+      color: #0d6efd;
+    }
+    .sample-card {
+      border-color: #0d6efd;
+    }
   </style>
 </head>
 <body>
 <div class="container py-4">
-  <div class="alert alert-danger">
-    <strong>This site is NOT affiliated with the National Ski Patrol.</strong><br>
-    Just a single ski patroller volunteering his time, efforts to assist other ski patrols.
-  </div>
-  <div class="alert alert-custom">
-    <strong>Important Notice:</strong><br>
-    Please update your links for this site to <b>PatrolCalendar.com</b>. It is the exact same site —
-    I am just moving off my personal domain <b>gledhills.com</b>, to look a little more professional
-    and be easier to remember.<br>
-    Both addresses will continue to work.<br>
-    Thank you — <strong>Steven Gledhill</strong>.
+  <!-- The notices share this row with the Sample card, so they stop short of the window edge and
+       the try-it-yourself link sits where the eye lands first. Both stack on a narrow screen. -->
+  <div class="row g-3 align-items-start">
+    <div class="col-lg-8">
+      <div class="alert alert-danger mb-3">
+        <strong>This site is NOT affiliated with the National Ski Patrol.</strong><br>
+        Just a single ski patroller volunteering his time, efforts to assist other ski patrols.
+      </div>
+      <div class="alert alert-custom mb-0">
+        <strong>Important Notice:</strong>
+        Please update your links to <b>PatrolCalendar.com</b> &mdash; the exact same site, just off my
+        personal domain <b>gledhills.com</b> and easier to remember. Both addresses will keep working.<br>
+        Thank you &mdash; <strong>Steven Gledhill</strong>.
+      </div>
+    </div>
+
+    <!-- Try it yourself. Styled as one of the resort cards below, with a snowflake standing in for
+         a patrol logo - Sample is not a real resort and has none. -->
+    <div class="col-lg-4">
+      <a href="/Sample" class="text-decoration-none text-dark">
+        <div class="card station-card sample-card d-flex flex-row align-items-center h-100">
+          <span class="sample-flake" aria-hidden="true">&#10052;</span>
+          <div class="card-body">
+            <h5 class="card-title mb-0">Sample Resort</h5>
+            <small class="text-muted">Experiment with features here &mdash; data is reset daily</small>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 
   <h2 class="mt-4">Ski Patrol Scheduling Links</h2>
@@ -116,7 +148,8 @@ $patrols = [
 
   <footer class="mt-4 text-center">
     <p class="text-muted mb-0">
-      This is a free service to ski patrols that are members of the National Ski Patrol.<br>
+      This is a free service to ski patrols that are members of the National Ski Patrol.
+      Donations are welcome, to help cover my costs.<br>
       <a href="mailto:Steve@Gledhills.com?sub=Questions about online scheduling">Contact Webmaster</a> — Steve Gledhill (Brighton Ski Resort Patroller)
     </p>
   </footer>
