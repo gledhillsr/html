@@ -127,6 +127,13 @@ $patrols = [
           </div>
         </div>
       </a>
+      <!-- The one thing a visiting patrol is most likely to want, next to the demo they just
+           tried. The address matches the Contact Webmaster link in the footer. -->
+      <p class="text-muted small mt-2 mb-0">
+        Would your patrol like to use this?
+        <a href="mailto:Steve@Gledhills.com?subject=Interested in the ski patrol calendar">Contact
+        Steve@Gledhills.com</a> &mdash; there is no charge.
+      </p>
     </div>
   </div>
 
