@@ -4,6 +4,7 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+
 # Package Files #
 *.jar
 *.war
@@ -11,17 +12,6 @@
 *.ini
 .DS_Store
 .idea/
-ScoutDocuments/
-apps/
-config.php
-apps_project/
-documents/
-Brighton_kruft/
-gif/
-gledhills/
-jars/
-out/
-nspImages/
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
@@ -33,6 +23,13 @@ dbconfig.php
 credentials.properties
 config_secure.php
 environment.ini
+config.inc.php
 # NOTE: `config.php` above is a per-resort file that IS tracked, holding
 # placeholder values only. The ignore rule does not untrack the existing
 # copies -- editing one in place on a server can still be committed.
+
+# --- phpMyAdmin: never commit ----------------------------------------
+# Matches at any depth: the directory itself, versioned variants
+# (phpMyAdmin-5.2.1), and any file whose name contains phpMyAdmin.
+*phpMyAdmin*
+*phpmyadmin*
