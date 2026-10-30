@@ -20,7 +20,7 @@ $patrols = [
     ["name" => "Hyland Hills", "href" => "/HylandHills", "img" => "images/ThreeRivers.jpg"],
     ["name" => "Idaho Falls Nordic", "href" => "/IFNordic", "img" => "images/IFNordic.gif"],
     ["name" => "Jackson Creek Summit", "href" => "/IndianHeadMountain", "img" => "images/SnowRiver.png"],
-    ["name" => "Kelly Canyon", "href" => "/KellyCanyon", "img" => "images/KellyCanyon.jpg"],
+    ["name" => "Kelly Canyon", "href" => "/KellyCanyon", "img" => "images/KellyCanyonSkiPatrol.png"],
     ["name" => "Lee Canyon", "href" => "/LeeCanyon", "img" => "images/LeeCanyon.png"],
     ["name" => "Lonesome Pine Trails", "href" => "/LonesomePine", "img" => "images/lonesomepines.gif"],
     ["name" => "Magic Mountain", "href" => "/MagicMountain", "img" => "images/MagicMountain.jpg"],
