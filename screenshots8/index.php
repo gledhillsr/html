@@ -48,7 +48,7 @@ if ($shiftOverride > 0) {
   <p>( Testing only - enter shift override time
   <select size="1" name="shiftOverride">
 <?php 
-for($i=0; $i <= 8; $i++){
+foreach($shiftsOvr as $i => $label){   // array order, not numeric: 9 sits after 3
   $sel = (($shiftOverride == $i) ? "selected='selected' " : "");
   echo "<option value='$i' $sel>" . $shiftsOvr[$i] . "</option>\n";
 

@@ -12,7 +12,7 @@ if (isset($_POST['shiftOverride'])) {
 } else {
     $shiftOverride = 0;
 }
-if ($shiftOverride < 0 || $shiftOverride > 8) $shiftOverride = 0;
+if ($shiftOverride < 0 || $shiftOverride > 9) $shiftOverride = 0;
 
 $arrDate = getdate();
 if ($shiftOverride > 0) {
@@ -22,6 +22,7 @@ if ($shiftOverride > 0) {
     case 1: $currDayOfWeek = "Saturday";    $hr = 7;   break;
     case 2: $currDayOfWeek = "Saturday";    $hr = 13;  break;
     case 3: $currDayOfWeek = "Sunday";      $hr = 7;   break;
+    case 9: $currDayOfWeek = "Sunday";      $hr = 13;  break;
     case 4: $currDayOfWeek = "Monday";      $hr = 7;   break;
     case 5: $currDayOfWeek = "Monday";      $hr = 14;  break;
     case 6: $currDayOfWeek = "Monday";      $hr = 17;  break;

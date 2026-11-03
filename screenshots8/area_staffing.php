@@ -17,8 +17,8 @@ if (isset($_POST['shiftOverride'])) {
 }
 
 // Validate and handle cookie based on the determined value
-if ($shiftOverride > 0 && $shiftOverride <= 8) {
-    // Valid override value (1-8) - ensure cookie is set
+if ($shiftOverride > 0 && $shiftOverride <= 9) {
+    // Valid override value (1-9) - ensure cookie is set
     if (!isset($_COOKIE['shiftOverride']) || (int)$_COOKIE['shiftOverride'] != $shiftOverride) {
         setcookie("shiftOverride", (string)$shiftOverride, time() + (365 * 24 * 60 * 60), "/");
     }
@@ -48,6 +48,7 @@ if ($shiftOverride > 0 && $shiftOverride <= 8) {
         case 1: $currDayOfWeek = "Saturday";    $hr = 7;   break;
         case 2: $currDayOfWeek = "Saturday";    $hr = 13;  break;
         case 3: $currDayOfWeek = "Sunday";      $hr = 7;   break;
+        case 9: $currDayOfWeek = "Sunday";      $hr = 13;  break;
         case 4: $currDayOfWeek = "Monday";      $hr = 7;   break;
         case 5: $currDayOfWeek = "Monday";      $hr = 14;  break;
         case 6: $currDayOfWeek = "Monday";      $hr = 17;  break;

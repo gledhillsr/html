@@ -68,6 +68,7 @@ $shiftsOvr=[
 1 => "Saturday 7:45",
 2 => "Saturday 13:45",
 3 => "Sunday 7:45",
+9 => "Sunday 13:45",     // numbered 9 so saved override cookies keep their meaning; listed here to show after Sunday 7:45
 4 => "Monday 7:45",
 5 => "Monday 2:45 pm",
 6 => "Monday 3:15 pm",
