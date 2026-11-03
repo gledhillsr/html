@@ -1,6 +1,7 @@
 <?php
 require("config.php");
     $name="NOBODY";
+    $fullRoster = !empty($_GET['fullRoster']);
     // Timezone is now set in config.php (America/Denver)
     $arrDate = getdate();
    $today=mktime(0, 0, 0, $arrDate['mon'], $arrDate['mday'], $arrDate['year']);
@@ -54,7 +55,7 @@ var id = 0;
 //alert ("show history for patroller ID=" + id);
 
     if(id > 0 && (evt == null || (evt.keyCode == 13 || evt.keyCode == 32))) {
-        window.location.href="history.php?admin=1&ID="+id;
+        window.location.href="history.php?admin=1<?php echo $fullRoster ? "&fullRoster=1" : ""; ?>&ID="+id;
     }
 }
 
@@ -87,10 +88,14 @@ function printWindow(){
 <form method="POST" name="myForm">
 Select patroller to view:&nbsp;&nbsp;&nbsp;
 <?php
-    $query_string = "SELECT LastName, FirstName, IDNumber FROM roster ORDER BY LastName, FirstName";
+    // Active roster leaves out inactive members and Paid, Alumni, Not Skiing and Other.
+    // The patroller being viewed stays listed, since other pages link here with any ID.
+    $where = $fullRoster ? "" : "WHERE (Commitment<>0 AND ClassificationCode NOT IN ('PRO','ALM','NSK','OTH')) OR IDNumber=\"" . mysqli_real_escape_string($connect_string, $ID ?? "") . "\" ";
+    $query_string = "SELECT LastName, FirstName, IDNumber FROM roster " . $where . "ORDER BY LastName, FirstName";
 //    $connect_string = @mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database.");
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
-    echo "<select size=\"1\" name=\"pname\" onkeypress=\"validateKeyPress(event)\">\n";
+    $rosterCount = mysqli_num_rows($result);
+    echo "<select size=\"1\" name=\"pname\" onchange=\"validateKeyPress(null)\" onkeypress=\"validateKeyPress(event)\">\n";
     while ($row = @mysqli_fetch_array($result)) {
         $szName = $row['LastName'] . ", " . $row['FirstName'];
         $sel = ($row['IDNumber'] == $ID) ? " selected" : "";
@@ -103,6 +108,16 @@ Select patroller to view:&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="button" value="Show" onclick="validateKeyPress(null)"></p>
 
+</form>
+<form action="history.php" method="get" style="position:absolute; top:8px; right:8px; margin:0">
+  <input type="hidden" name="admin" value="1" />
+<?php if ($ID) { ?>
+  <input type="hidden" name="ID" value="<?php echo htmlspecialchars($ID); ?>" />
+<?php } ?>
+<?php if (!$fullRoster) { ?>
+  <input type="hidden" name="fullRoster" value="1" />
+<?php } ?>
+  <input type="submit" value="<?php echo $fullRoster ? "Using FULL roster (all $rosterCount)" : "Using active roster ($rosterCount)"; ?>" />
 </form>
 <hr>
 <?php

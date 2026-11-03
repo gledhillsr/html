@@ -35,6 +35,7 @@ if ($shiftOverride > 0) {
     $min = $arrDate['minutes'];
     $hr  = $arrDate['hours'];
 }
+$fullRoster = !empty($_GET['fullRoster']);
 $isWeekend = ($currDayOfWeek == "Saturday" || $currDayOfWeek == "Sunday");
 if ($shiftOverride > 0) {
     echo " currDayOfWeek = " . $currDayOfWeek . " hr=" . $hr . " min=" . $min . "<br/>";
@@ -144,11 +145,14 @@ var id = 0;
         <p align="center">Morning Login </p>
         <p align="center">
 <?php 
-        $query_string = "SELECT LastName, FirstName, IDNumber FROM roster ORDER BY LastName, FirstName";
+        // Active roster leaves out inactive members and Paid, Alumni, Not Skiing and Other
+        $where = $fullRoster ? "" : "WHERE Commitment<>0 AND ClassificationCode NOT IN ('PRO','ALM','NSK','OTH') ";
+        $query_string = "SELECT LastName, FirstName, IDNumber FROM roster " . $where . "ORDER BY LastName, FirstName";
         $link = mysqli_connect($mysqli_host, $mysqli_username, $mysqli_password) or die ("Could not connect to the database");
         mysqli_select_db($link, $mysqli_db);
 
         $result = mysqli_query($link, $query_string) or die ("Invalid query: " . mysqli_error($link));
+        $rosterCount = mysqli_num_rows($result);
  
 
        echo "<select size=\"1\" name=\"pname\" onkeypress=\"validateKeyPress(event)\">";
@@ -169,6 +173,12 @@ var id = 0;
     </table>
     </center>
   </div>
+</form>
+<form action="morning_login.php" method="get" style="position:absolute; top:8px; right:8px; margin:0">
+<?php if (!$fullRoster) { ?>
+  <input type="hidden" name="fullRoster" value="1" />
+<?php } ?>
+  <input type="submit" value="<?php echo $fullRoster ? "Using FULL roster (all $rosterCount)" : "Using active roster ($rosterCount)"; ?>" />
 </form>
 </body>
 

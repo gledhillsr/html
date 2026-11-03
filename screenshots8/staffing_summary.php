@@ -176,7 +176,7 @@ function printWindow(){
     $area=$getAreaShort[$areaID];
     echo "<tr><th class=t1  colspan=\"4\" align=Center>$area Staff</td></tr>\n";
 
-    $query_string = "SELECT * FROM skihistory WHERE shift=0 AND date=$today AND areaID=$areaID ORDER by name";
+    $query_string = "SELECT * FROM skihistory WHERE shift=0 AND date=$today AND areaID=$areaID ORDER by CASE teamLead WHEN 1 THEN 0 WHEN 2 THEN 1 ELSE 2 END, name"; // TL, then ATL, then everyone else
 //echo "query_string=$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query 2");
     $tl = "";
