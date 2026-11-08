@@ -167,11 +167,8 @@ function printWindow(){
   $patrollerCount = 0;
   $trainingCount = 0;
   $candidateCount = 0;
-  for($areaID = 0; $areaID <= 6; $areaID++) {
+  for($areaID = 0; $areaID <= 5; $areaID++) {   //Crest .. Staff (there is no "Unassigned" any more)
 //area
-    if($areaID == 6)
-        $areaID = -1;   // display unassigned last, not first
-
     echo "<table class=t1 border=0 width=\"255\">\n";
     $area=$getAreaShort[$areaID];
     echo "<tr><th class=t1  colspan=\"4\" align=Center>$area Staff</td></tr>\n";
@@ -242,9 +239,38 @@ function printWindow(){
         echo "</tr>";
     }
     echo "</table><br>\n";
-    if($areaID == -1)   //was unassigned
-      break;        // ok quit
   } //end loop for area's
+
+//--------------------------------
+// Also on a Swing Shift: patrollers with today's day shift AND a swing shift
+// (they are already counted above, so they are not added to $patrollerCount)
+//--------------------------------
+  echo "<br><br><hr width=\"255\" align=left><br>\n";   //set swing apart from the day-shift areas
+  echo "<table class=t1 border=0 width=\"255\">\n";
+  echo "<tr><th class=t1  colspan=\"4\" align=Center>Also on a Swing Shift</td></tr>\n";
+  $query_string = "SELECT DISTINCT d.patroller_id FROM skihistory d JOIN skihistory s" .
+      " ON s.patroller_id=d.patroller_id AND s.date=d.date AND s.shift=1" .
+      " WHERE d.date=$today AND d.shift=0";
+  $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (swing)");
+  $swingRows = [];
+  while ($row = @mysqli_fetch_array($result)) {
+      $id = $row['patroller_id'];
+      $result2 = @mysqli_query($connect_string, "SELECT * FROM roster WHERE IDNumber=\"$id\"") or die ("Invalid query (swing roster)");
+      if ($row2 = @mysqli_fetch_array($result2)) {
+          $name = ($row2['Mentoring'] == "1" ? "* " : "") . $row2['FirstName'] . " " . $row2['LastName'];
+          $swingRows[$row2['LastName'] . " " . $row2['FirstName'] . " " . $id] =
+              [$row2['ClassificationCode'], $name, $row2['CellPhone']];
+      }
+  }
+  ksort($swingRows);
+  foreach ($swingRows as $r) {
+      echo "<tr>";
+      echo "  <td class=t1 width=\"120\"  align=center>{$r[0]}</td>\n";
+      echo "  <td class=t1 width=\"175\">{$r[1]}</td>\n";
+      echo "  <td class=t1 align=center width=\"175\">{$r[2]}</td>\n";
+      echo "</tr>";
+  }
+  echo "</table><br>\n";
 //	$query_string = "select COUNT(date) AS nPatrollers from skihistory where date=\"" . $today . "\"";
 //	$result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (result)");
 //	if ($row = @mysqli_fetch_array($result)) {

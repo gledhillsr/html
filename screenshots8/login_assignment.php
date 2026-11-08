@@ -63,6 +63,11 @@ if (isset($deleteID)) {
     $query_string = "DELETE FROM skihistory WHERE history_id={$deleteID}";
     //echo "$query_string<br>";
     $result = @mysqli_query($connect_string, $query_string) or die ("Invalid query (delete)");
+    //Remove Assignment also removes the 2nd swing checkin when the swing box was checked
+    if (!empty($deleteSwingID)) {
+        $query_string = "DELETE FROM skihistory WHERE history_id=" . (int)$deleteSwingID;
+        @mysqli_query($connect_string, $query_string) or die ("Invalid query (delete swing)");
+    }
     //echo "delID=$deleteID";	//show skihistory ID
     header("Location: morning_login.php?delID=$deleteID"); /* Redirect browser */
     exit;
@@ -150,6 +155,11 @@ if ($isWeekend && $currShift == 0) {
 else {
     $isWeekendMorning = false;
 }
+//weekend before 10am: offer "Also Working a SWING shift today" (2nd assignment on Crest at 2pm)
+$showSwingBox = ($isWeekend && $hr < 10);
+define("SWING_CHECKIN", 14 * 3600);         //2pm
+define("SWING_WINDOW_START", 12 * 3600);    //any 2nd checkin between 12pm...
+define("SWING_WINDOW_END", 15 * 3600);      //...and 3pm counts as the swing
 
 //-------end hack--------
 if ($ID) {
@@ -180,6 +190,17 @@ if ($ID) {
     }
 } else {
     echo "Error, ID not set<br>\n";
+}
+//return the history_id of today's 2nd (swing) checkin between 12pm and 3pm, or 0 if none
+function findSwingCheckin() {
+    global $connect_string, $today, $ID;
+    $query_string = "SELECT history_id FROM skihistory WHERE date=" . (int)$today . " AND patroller_id=" . (int)$ID .
+        " AND checkin>=" . SWING_WINDOW_START . " AND checkin<=" . SWING_WINDOW_END . " ORDER BY checkin LIMIT 1";
+    $result1 = @mysqli_query($connect_string, $query_string) or die ("Invalid query findSwingCheckin");
+    if ($row1 = @mysqli_fetch_array($result1)) {
+        return (int)$row1['history_id'];
+    }
+    return 0;
 }
 function checkForDoubleShift() {
   global $currShift, $connect_string, $doubleShift, $today, $ID;
@@ -223,13 +244,8 @@ if ($saveBtn && $TeamLead >= 0) {
             $mult = 0;
         } //0.00
     }
-    checkForDoubleShift();
-//echo "zzzzz, doubleShift=$doubleShift, shiftValue=$shiftValue<br>";
-
-    if ($doubleShift == 1 && $shiftValue = 4) {
-      $shiftValue = 2;
-  //    echo "shiftValue reset to 2<br>";
-    }
+    //every swing shift is worth 2 credits (value 4), even after a day shift,
+    //so the old double-shift reduction to 1 credit is no longer applied
 //exit;
     if ($history_id) {
         $query_string = "UPDATE skihistory SET ";
@@ -256,6 +272,29 @@ if ($saveBtn && $TeamLead >= 0) {
     }
     //echo $query_string . "<br>";
     @mysqli_query($connect_string, $query_string) or die ("Invalid query (update/insert)");
+    //"Also Working a SWING shift today" checkbox (only posted when the box was displayed)
+    if ($showSwingBox && !empty($swingBoxShown)) {
+        $swingID = findSwingCheckin();
+        if (!empty($alsoSwing) && !$swingID) {
+            //add a 2nd assignment: Crest, swing shift, starting at 2pm (2 credits)
+            $query_string = "INSERT INTO skihistory SET " .
+                "date = \"$today\", " .
+                "checkin = \"" . SWING_CHECKIN . "\", " .
+                "areaID = \"0\", " .
+                "shift = \"1\", " .
+                "value = \"4\", " .
+                "multiplier = \"$mult\", " .
+                "patroller_id = \"$ID\", " .
+                "teamLead = \"0\", " .
+                "sweep_ids = \"\", " .
+                "name = \"$name\"";
+            @mysqli_query($connect_string, $query_string) or die ("Invalid query (insert swing)");
+        } elseif (empty($alsoSwing) && $swingID) {
+            //box was un-checked, remove the 2nd checkin
+            $query_string = "DELETE FROM skihistory WHERE history_id=$swingID";
+            @mysqli_query($connect_string, $query_string) or die ("Invalid query (delete swing)");
+        }
+    }
     if ($stayHere) {
         echo "<h2>Your changes were Saved.</h2>";
     }
@@ -289,6 +328,8 @@ else {
         //echo "error, areaID not initialized<br>";
         //this patroller does not have an assignment for this shift
     }
+    $swingHistoryId = $showSwingBox ? findSwingCheckin() : 0;
+    $hasSwingCheckin = ($swingHistoryId > 0);
 }
 //    echo "areaID=$areaID<br>";
 
@@ -326,6 +367,12 @@ else {
                 }
                 ?>
                     pos += "&saveBtn=1&stayHere=1";
+                    if (document.myForm.alsoSwing) {
+                        pos += "&swingBoxShown=1";
+                        if (document.myForm.alsoSwing.checked) {
+                            pos += "&alsoSwing=1";
+                        }
+                    }
 
                     for (i = 0; i < 5; ++i) {
                         if (document.myForm.areaID[i].checked) {
@@ -403,7 +450,13 @@ else {
                 top.location.href = "morning_login.php";
             } else if (btn == 2) {    //REMOVE BUTTON
 
-                window.location.href = "login_assignment.php?deleteID=" + hist_id;
+                var delURL = "login_assignment.php?deleteID=" + hist_id;
+            <?php if (!empty($swingHistoryId)) { ?>
+                if (document.myForm.alsoSwing && document.myForm.alsoSwing.checked) {
+                    delURL += "&deleteSwingID=<?php echo (int)$swingHistoryId; ?>";
+                }
+            <?php } ?>
+                window.location.href = delURL;
 //        alert("Oops, 'Remove Assignment' not working yet");
 //      exit;
                 //reset
@@ -676,6 +729,18 @@ else {
   </table>
   </center>
   </div>
+<?php if ($showSwingBox) { ?>
+  <br>
+  <div align="center">
+  <input type="HIDDEN" name="swingBoxShown" value="1">
+  <table border="1" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111"
+         width="480" bgcolor="#E9E9E9">
+  <tr>
+      <td align="left"><font size="4"><label><input type="checkbox" name="alsoSwing" value="1" <?php echo (!empty($hasSwingCheckin) ? "checked" : ""); ?> onclick="madeChanges()">&nbsp;Also working a SWING shift today</label></font></td>
+  </tr>
+  </table>
+  </div>
+<?php } ?>
   <p align="center">
 <?php 
     if ($history_id) {
@@ -694,7 +759,6 @@ else {
     echo "<font size=\"4\"><b>Note:</b>&nbsp; If no Mountain Area's display as available, sign in under &quot;Staff&quot;.</font><br>\n";
     if (!$saveBtn) {
         //  echo " FYI, $currDayOfWeek $hr:$min is a ".$currShiftName[$currShift]." worth ".($shiftValue/2)." credit(s)<br>";
-        echo "Note: you are currently signing up for a " . $currShiftName[$currShift] . " (worth " . ($shiftValue / 2) . " credits).<br>";
     }
 } //end of NOT being locked out
 //hack
